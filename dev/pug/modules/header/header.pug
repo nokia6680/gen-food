@@ -1,0 +1,42 @@
+-var navLinks = [{link: '#', name: 'Меню', type: '--title'}, {link: '', name: 'Главная', type: '--main'}, {link: 'meals.html', name: 'Готовые рационы', type: ''}, {link: 'constructor.html', name: 'Конструктор рациона', type: ''}, {link: 'shop.html', name: 'Интернет-магазин', type: ''}, {link: 'selection.html', name: 'Подбор питания', type: '--last'}, {link: 'delivery.html', name: 'Оплата и доставка', type: ''}, {link: 'serts.html', name: 'Сертификаты', type: ''}, {link: 'sales.html', name: 'Акции', type: ''}, {link: 'pricelist.html', name: 'Прайс-лист', type: '--last'}, {link: 'about.html', name: 'О компании', type: ''}, {link: 'contacts.html', name: 'Контакты', type: ''}]
+-var menuLinks = [{link: 'ready.html', name: 'Готовые рационы'}, {link: 'shop.html', name: 'Интернет-магазин'}, {link: 'delivery.html', name: 'Оплата и доставка'}]
+
+header.header
+    // Блок дестопных контактов
+    .header__contacts
+        p.header__contacts-note Принимаем заказы 24 часа
+        button(type="button").header__contacts-ask Остались вопросы?
+        
+        ul.header__contacts-list
+            li.header__contacts-item
+                a(href="#" target="_blank").header__contacts-link.header__contacts-link--wa
+                    i.fab.fa-whatsapp
+                a(href="#" target="_blank").header__contacts-link.header__contacts-link--tg
+                    i.fab.fa-telegram
+                a(href="tel:+78007874244" target="_self").header__contacts-link 8 800 787 42 44
+        button(type="button").header__callback Перезвоните мне
+        
+    nav.header__nav.nav
+        // Logo
+        a(href="" target="_self").nav__logo
+            img(src="static/images/content/gf-logo.svg" alt="General Food Logo").nav__logo-image
+        // Toggle button
+        button(type="button").nav__toggle.js-toggle
+        // Dropdown menu
+        ul.nav__list
+            for i in navLinks
+                li(class="nav__item " +i.type)
+                    a(href="" +i.link target="_self").nav__link=i.name
+        // Desktop visible menu
+        ul.nav__menu
+            for i in menuLinks
+                li.nav__menu-item
+                    a(href="" +i.link target="_self").nav__menu-link=i.name
+        // Controls list
+        ul.nav__controls
+            li.nav__controls-item.nav__controls-item--constructor
+                a(href="contstructor.html" target="_self").nav__controls-link Конструктор рациона
+            li.nav__controls-item.nav__controls-item--login
+                a(href="cabinet.html" target="_self").nav__controls-link
+            li.nav__controls-item.nav__controls-item--cart
+                a(href="cart.html" target="_self").nav__controls-link

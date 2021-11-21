@@ -1,0 +1,28 @@
+.header {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+    z-index: 2;
+
+    &__contacts {
+        width: 100%;
+
+        @include flex-setting(row, flex-end, center);
+
+        padding: 0.3125rem 1.25rem;
+        background-color: $white;
+
+        &-note {
+            @include font-setting($primary-font, 0.75rem, 1.25rem, 400, $darkgray);
+        }
+
+        &-ask,
+        &-list {
+            display: none;
+        }
+    }
+
+    &__callback {
+        display: none;
+    }
+}

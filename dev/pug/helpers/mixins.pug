@@ -1,0 +1,32 @@
+mixin introBlock(type, image, title, subtitle, listTextFirst, listTextSecond, infoText)
+    section(class="intro " +type)
+        // Rotated bg blocks with shadow
+        .intro__bg.intro__bg--1
+        .intro__bg.intro__bg--2
+        .intro__bg.intro__bg--3
+        .intro__bg.intro__bg--4
+        // Overall wrapper
+        .intro__wrapper
+            .intro__details
+                h1.intro__title=title
+                h2.intro__subtitle=subtitle
+                
+                ul.intro__list
+                    li.intro__item
+                        span.intro__item-text=listTextFirst
+                    li.intro__item
+                        span.intro__item-text=listTextSecond
+                .intro__bottom
+                    button(type="button").intro__try Попробовать сейчас
+                    span.intro__info=infoText
+            picture.intro__frame
+                source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".webp" type="image/webp")
+                source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".jpg")
+                source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
+                img(src="static/images/content/" +image +"-mb.jpg" alt="" +title).intro__frame-image
+
+
+mixin faqItem(name, description)
+    li.faq__content-item
+        b.faq__content-name=name
+        p.faq__content-description=description
