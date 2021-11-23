@@ -30,3 +30,21 @@ mixin faqItem(name, description)
     li.faq__content-item
         b.faq__content-name=name
         p.faq__content-description=description
+
+mixin reviewsItem(image)
+    picture.reviews__frame
+        source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".webp" type="image/webp")
+        source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".png")
+        source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
+        img(srcset="static/images/content/" +image +"-mb.png" alt="Отзыв").reviews__frame-image
+
+mixin reasonItem(name, description, image)
+    li.reasons__item
+        .reasons__info
+            h2.reasons__title=name
+            p.reasons__description=description
+        picture.reasons__frame
+            source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".webp" type="image/webp")
+            source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".png")
+            source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
+            img(srcset="static/images/content/" +image +"-mb.png" alt="Отзыв").reasons__frame-image

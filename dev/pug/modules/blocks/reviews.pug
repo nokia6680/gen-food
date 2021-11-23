@@ -1,0 +1,13 @@
+section.reviews
+    .reviews__wrapper
+        h2.reviews__title Отзывы наших клиентов
+        .reviews__controls
+            button(type="button").reviews__prev
+            button(type="button").reviews__next
+    .reviews__slider.swiper-container-reviews
+        .swiper-wrapper
+            +reviewsItem('reviews-1')
+            +reviewsItem('reviews-2')
+            +reviewsItem('reviews-3')
+            +reviewsItem('reviews-4')
+            +reviewsItem('reviews-5')

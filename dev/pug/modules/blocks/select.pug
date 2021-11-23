@@ -1,0 +1,37 @@
+article.select
+    .select__wrapper
+        h2.select__title Выберите своё меню
+        // Выбор типа рациона, описание
+        .select__aside
+            h3.select__subtitle Выберите рацион:
+            
+            .select__filter.s-filter
+                ul.s-filter__list
+                    li(data-sort="fit" onclick="openMeal(event, 'fit')" id="defaultOpen").s-filter__item.active
+                        span.s-filter__icon.s-filter__icon--fit
+                        b.s-filter__name Fit
+                        span.s-filter__type 1300 Ккал
+                    li(data-sort="balance" onclick="openMeal(event, 'balance')").s-filter__item
+                        span.s-filter__icon.s-filter__icon--balance
+                        b.s-filter__name Balance
+                        span.s-filter__type 1800 Ккал
+                    li(data-sort="power" onclick="openMeal(event, 'power')").s-filter__item
+                        span.s-filter__icon.s-filter__icon--power
+                        b.s-filter__name Power
+                        span.s-filter__type 2500 Ккал
+                    li(data-sort="daily" onclick="openMeal(event, 'daily')").s-filter__item
+                        span.s-filter__icon.s-filter__icon--daily
+                        b.s-filter__name Daily
+                        span.s-filter__type 1250 Ккал
+                    li(data-sort="vegan" onclick="openMeal(event, 'vegan')").s-filter__item
+                        span.s-filter__icon.s-filter__icon--vegan
+                        b.s-filter__name Vegan
+                        span.s-filter__type 1350 Ккал
+                    li(data-sort="sea" onclick="openMeal(event, 'sea')").s-filter__item
+                        span.s-filter__icon.s-filter__icon--sea
+                        b.s-filter__name Sea
+                        span.s-filter__type 1350 Ккал
+                
+        .select__content
+            
+        .select__checkout
