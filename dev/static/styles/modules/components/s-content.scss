@@ -1,0 +1,224 @@
+.s-content {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    &__item {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+    }
+
+    &__filter {
+        order: 1;
+        width: 100%;
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+
+        position: relative;
+
+        @include flex-setting(column, flex-start, center);
+
+        &-prev,
+        &-next {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: $white;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: 50%;
+            border: 1px solid $lightgray;
+
+            z-index: 4;
+
+            cursor: pointer;
+
+            &.swiper-button-disabled {
+                border-color: e0e5e0;
+            }
+        }
+
+        &-prev {
+            top: 1.25rem;
+            left: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='22' viewBox='0 0 40 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.9705 0.0297852L12.7522 1.81159L4.82356 9.74031H40V12.2602H4.82356L12.7522 20.1888L10.9705 21.9706L-1.40929e-06 11.0002L10.9705 0.0297852Z' fill='%23222222'/%3E%3C/svg%3E%0A");
+
+            &.swiper-button-disabled {
+                border-color: #e0e5e0;
+                background-image: url("data:image/svg+xml,%3Csvg width='40' height='22' viewBox='0 0 40 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.9705 0.0297852L12.7522 1.81159L4.82356 9.74031H40V12.2602H4.82356L12.7522 20.1888L10.9705 21.9706L-1.40929e-06 11.0002L10.9705 0.0297852Z' fill='%23e0e5e0'/%3E%3C/svg%3E%0A");
+            }
+        }
+
+        &-next {
+            top: 1.25rem;
+            right: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='22' viewBox='0 0 40 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.0295 0.0297852L27.2478 1.81159L35.1764 9.74031H0V12.2602H35.1764L27.2478 20.1888L29.0295 21.9706L40 11.0002L29.0295 0.0297852Z' fill='%23222222'/%3E%3C/svg%3E");
+
+            &.swiper-button-disabled {
+                border-color: #e0e5e0;
+                background-image: url("data:image/svg+xml,%3Csvg width='40' height='22' viewBox='0 0 40 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.0295 0.0297852L27.2478 1.81159L35.1764 9.74031H0V12.2602H35.1764L27.2478 20.1888L29.0295 21.9706L40 11.0002L29.0295 0.0297852Z' fill='%23e0e5e0'/%3E%3C/svg%3E");
+
+            }
+        }
+
+        &-list {
+            width: 100%;
+            max-width: 114px;
+            overflow: hidden;
+        }
+
+        &-btn {
+            width: 100%;
+            max-width: 114px;
+
+            @include flex-setting(column, center, center);
+            @include font-setting($secondary-font, 0.875rem, 1.875rem, 800, $white);
+            padding: 0.3125rem 2.0625rem 0.3125rem 0.9375rem;
+            background-color: $lightgreen;
+            border-radius: 40px;
+            border: none;
+
+            position: relative;
+
+            &::after {
+                position: absolute;
+                content: '';
+
+                width: 8px;
+                height: 8px;
+                background-color: $white;
+                border-radius: 4px;
+
+                top: 50%;
+                right: 0.9375rem;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    &__summary {
+        order: 3;
+
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+
+        &-title {
+            @include font-setting($primary-font, 0.875rem, 1.25rem, 700, $black);
+            margin-bottom: 0.625rem;
+        }
+
+        &-list {
+            width: 100%;
+            @include flex-setting(row, flex-start, center);
+
+            flex-wrap: wrap;
+
+            gap: 0.3125rem 0.625rem;
+
+            margin-bottom: 1.25rem;
+        }
+
+        &-item {
+            width: auto;
+            @include flex-setting(row, flex-start, center);
+        }
+
+        &-name,
+        &-nr {
+            @include font-setting($primary-font, 0.875rem, 1.25rem, 400, $darkgray);
+            display: inline-flex;
+        }
+    }
+
+    &__grid {
+        order: 2;
+
+        width: 100%;
+        @include flex-setting(row, flex-start, center);
+
+        margin-bottom: 1.5625rem;
+
+        &-list {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -ms-overflow-style: none;
+            overflow: -moz-scrollbars-none;
+
+            &::-webkit-scrollbar { width: 0; }
+
+            padding-bottom: 1.625rem;
+            border-bottom: 1px dashed $lightgray;
+        }
+
+        &-item {
+            flex: none;
+            scroll-snap-align: start;
+
+            margin-bottom: 0;
+
+            margin-right: 0.625rem;
+            margin-bottom: 0;
+
+            &.addSecondBreakfast {
+                width: 100%;
+                height: 100%;
+
+                border: 1px dashed $lightgray;
+                border-radius: 25px;
+            }
+        }
+
+        &-inside {
+            width: 100%;
+            height: 100%;
+            @include flex-setting(column, center, center);
+        }
+    }
+
+    &__choose {
+        @include font-setting($secondary-font, 1.125rem, 1.25rem, 800, $black);
+        display: inline-flex;
+        padding-left: 2.8125rem;
+        padding-bottom: 0.1875rem;
+        text-decoration: none;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: 170px;
+            height: 2px;
+            background-color: transparent;
+            border-top: 2px dashed $black;
+
+            bottom: 0;
+            right: 0;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+
+            width: 30px;
+            height: 30px;
+
+            background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0V30H30V0H0ZM28.2422 14.1211H15.8789V1.75781H28.2422V14.1211ZM14.1211 1.75781V14.1211H1.75781V1.75781H14.1211ZM1.75781 15.8789H14.1211V28.2422H1.75781V15.8789ZM15.8789 28.2422V15.8789H28.2422V28.2422H15.8789Z' fill='%23222222'/%3E%3Cpath d='M17.6367 21.1816H26.4843V22.9395H17.6367V21.1816Z' fill='%23222222'/%3E%3Cpath d='M17.6367 7.06055H26.4843V8.81837H17.6367V7.06055Z' fill='%23222222'/%3E%3Cpath d='M21.1816 17.666H22.9395V19.4238H21.1816V17.666Z' fill='%23222222'/%3E%3Cpath d='M21.1816 24.6973H22.9395V26.4551H21.1816V24.6973Z' fill='%23222222'/%3E%3Cpath d='M7.06049 12.3632H8.8183V8.81836H12.3632V7.06055H8.8183V3.51562H7.06049V7.06055H3.51562V8.81836H7.06049V12.3632Z' fill='%23222222'/%3E%3Cpath d='M11.6886 19.554L10.4456 18.311L7.93899 20.8177L5.4324 18.311L4.18945 19.554L6.6961 22.0606L4.18945 24.5672L5.4324 25.8102L7.93899 23.3035L10.4456 25.8102L11.6886 24.5672L9.18194 22.0606L11.6886 19.554Z' fill='%23222222'/%3E%3C/svg%3E");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__note {
+        display: none;
+    }
+}

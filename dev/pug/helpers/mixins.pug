@@ -26,25 +26,72 @@ mixin introBlock(type, image, title, subtitle, listTextFirst, listTextSecond, in
                 img(src="static/images/content/" +image +"-mb.jpg" alt="" +title).intro__frame-image
 
 
-mixin faqItem(name, description)
-    li.faq__content-item
+mixin faqItem(type, name, description)
+    li(class="faq__content-item " +type)
         b.faq__content-name=name
         p.faq__content-description=description
 
 mixin reviewsItem(image)
-    picture.reviews__frame
+    picture.reviews__frame.swiper-slide
         source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".webp" type="image/webp")
-        source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".png")
+        source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".jpg")
         source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
-        img(srcset="static/images/content/" +image +"-mb.png" alt="Отзыв").reviews__frame-image
+        img(srcset="static/images/content/" +image +"-mb.jpg" alt="Отзыв").reviews__frame-image
 
 mixin reasonItem(name, description, image)
     li.reasons__item
-        .reasons__info
-            h2.reasons__title=name
-            p.reasons__description=description
-        picture.reasons__frame
-            source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".webp" type="image/webp")
-            source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".png")
-            source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
-            img(srcset="static/images/content/" +image +"-mb.png" alt="Отзыв").reasons__frame-image
+        .reasons__body
+            .reasons__info
+                h2.reasons__title=name
+                p.reasons__description=description
+            picture.reasons__frame
+                source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".webp" type="image/webp")
+                source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".png")
+                source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
+                img(srcset="static/images/content/" +image +"-mb.png" alt="Отзыв").reasons__frame-image
+
+mixin dateBtn(curDate, curDay, dateTime)
+    button(type="button" class="s-content__filter-btn swiper-slide " +curDay)
+        time(datetime="" +datetime).s-content__filter-btn-date=curDate
+
+
+mixin gridItem(type, image, title, name, suppFirst, suppSecond, suppThird, suppFourth, price, weight)
+    li(class="item " +type)
+        .item__service
+            button(type="button").item__service-btn
+            b.item__service-about Добавить второй завтрак
+        .item__constructor
+            a(href="constructor.html" target="_self").item__constructor-link Конструктор рациона
+        picture.item__frame
+            source(srcset="static/images/content/" +image +".webp" type="image/webp")
+            img(src="static/images/content/" +image +".jpg" alt="" +name).item__frame-image
+        // В каталоге нет справки
+        .item__head
+            h3.item__title=title
+            button(type="button").item__faq
+        p.item__name=name
+        // Только в каталоге
+        .item__info
+            ul.item__supplements
+                li.item__supplements-fact#calories-item
+                    b.item__supplements-name кКал
+                    span.item__supplements-nr=suppFirst
+                li.item__supplements-fact#protein-item
+                    b.item__supplements-name Белки
+                    span.item__supplements-nr=suppSecond
+                li.item__supplements-fact#fats-item
+                    b.item__supplements-name Жиры
+                    span.item__supplements-nr=suppThird
+                li.item__supplements-fact#carbohydrates-item
+                    b.item__supplements-name Углев.
+                    span.item__supplements-nr=suppFourth
+            .item__summary
+                b.item__price=price + '₽'
+                span.item__weight=weight
+        .item__bottom
+            .item__bottom-count
+                button(type="button").item__bottom-btn.item__bottom-btn-increase +
+                input(type="number" name="item-counter" id="item-counter" placeholder="1").item__bottom-input
+                button(type="button").item__bottom-btn.item__bottom-btn-decrease -
+            button(type="button").item__bottom-submit.js-to-cart В корзину
+            button(type="button").item__bottom-submit.js-change Заменить
