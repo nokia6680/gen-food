@@ -175,6 +175,51 @@
         margin-bottom: 1.75rem;
     }
 
+    &__info {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+    }
+
+    &__supplements {
+        width: 100%;
+        @include flex-setting(row, space-between, flex-start);
+
+        padding-bottom: 0.9375rem;
+        border-bottom: 1px dashed $lightgray;
+
+        &-fact {
+            @include flex-setting(column, flex-start, center);
+        }
+
+        &-name {
+            @include font-setting($secondary-font, 0.875rem, 0.9375rem, 700, $black);
+            margin-bottom: 0.3125rem;
+            text-align: center;
+        }
+
+        &-nr {
+            @include font-setting($secondary-font, 0.875rem, 0.9375rem, 400, $darkgray);
+            text-align: center;
+        }
+    }
+
+    &__summary {
+        width: 100%;
+
+        padding-top: 0.9375rem;
+
+        @include flex-setting(row, space-between, center);
+    }
+
+    &__price {
+        @include font-setting($primary-font, 1.5rem, 1.875rem, 800, $black);
+    }
+
+    &__weight {
+        @include font-setting($primary-font, 1.5rem, 1.875rem, 400, $darkgray);
+    }
+
     &__bottom {
         width: 100%;
 

@@ -71,7 +71,6 @@
         width: 100%;
 
         padding: 0 1.25rem;
-        margin-bottom: 3.75rem;
 
         @include flex-setting(column, flex-start, center);
 
@@ -79,6 +78,9 @@
             width: 100%;
 
             @include flex-setting(column, flex-start, center);
+            padding-bottom: 3.75rem;
+
+            border-bottom: 1px dashed $lightgray;
         }
 
         &-item {

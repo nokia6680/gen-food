@@ -1,14 +1,12 @@
 .s-filter {
-    width: calc(100% - 1.875rem - 1.875rem);
+    width: calc(100%);
 
     @include flex-setting(column, flex-start, center);
 
-    border-bottom: 1px dashed $lightgray;
-
     position: absolute;
 
-    top: 1.875rem;
-    left: 1.875rem;
+    top: 0;
+    left: 0;
     right: 1.875rem;
 
     &__subtitle {
@@ -16,15 +14,14 @@
     }
 
     &__list {
+        position: relative;
         width: 100%;
 
         @include flex-setting(column, flex-start, center);
 
-        max-height: 80px;
+        max-height: 110px;
         overflow: hidden;
         transition: 0.4s $cubic;
-
-        position: relative;
 
         background-color: $white;
 
@@ -44,15 +41,53 @@
 
             background-image: url("data:image/svg+xml,%3Csvg width='30' height='16' viewBox='0 0 30 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0.00671387L15.0001 15.2095L30 0.00671387H0Z' fill='%2392C64E'/%3E%3C/svg%3E");
 
-            right: 0;
-            top: 0;
+            right: 1.875rem;
+            top: 1.875rem;
 
             transition: 0.4s $cubic;
         }
 
         &.active {
-            max-height: 600px;
+            max-height: 800px;
+            box-shadow: 0 0 100px 200px rgba(0, 0, 0, 0.7);
+            transition: 0.4s $cubic;
 
+            .s-filter__item {
+                padding-top: 1.875rem;
+                padding-bottom: 1.875rem;
+                margin-bottom: 0;
+                transition: 0.4s $cubic;
+                position: relative;
+
+                &.active {
+                    padding-top: 1.875rem;
+
+                    &::after {
+                        top: 1.875rem;
+                    }
+                }
+
+                &::before {
+                    position: absolute;
+                    content: '';
+
+                    width: calc(100% - 1.875rem - 1.875rem);
+
+                    height: 1px;
+
+                    border-top: 1px dashed $lightgray;
+
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                &:nth-of-type(2) {
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
 
             &::before {
                 transform: rotate(180deg);
@@ -66,11 +101,14 @@
 
         @include flex-setting(column, flex-start, flex-start);
 
-        padding-left: 5.625rem;
-        margin-bottom: 1.25rem;
+        padding-left: calc(5.625rem + 1.875rem);
+        padding-bottom: 1.25rem;
         position: relative;
+        padding-right: 1.875rem;
 
         order: 1;
+
+        transition: 0.4s $cubic;
 
         &::after {
             position: absolute;
@@ -83,9 +121,11 @@
             background-repeat: no-repeat;
             background-size: contain;
 
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
+            left: 1.875rem;
+            top: 1.875rem;
+
+            opacity: 0.3;
+            transition: 0.4s $cubic;
         }
 
         &[data-sort="fit"] {
@@ -125,7 +165,20 @@
         }
 
         &.active {
+            padding-top: 1.875rem;
             order: 0;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+
+            &::after {
+                top: 1.875rem;
+
+                opacity: 1;
+                transition: 0.4s $cubic;
+            }
+
+            &::before {
+                display: none;
+            }
         }
     }
 

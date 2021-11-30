@@ -1,0 +1,36 @@
+.change-meal
+    .change-meal__wrapper
+        .change-meal__head
+            h3.change-meal__title Выберите блюдо
+            button(type="button").change-meal__closer
+        form(method="get" action="" id="search-form").change-meal__form
+            input(type="search" name="change-meal-search" id="change-meal-search" placeholder="Поиск по названию").change-meal__input
+            button(type="submit").change-meal__submit
+        .change-meal__filter
+            ul.change-meal__filter-list#myBtnContainer
+                li.change-meal__filter-item
+                    button(type='button' onclick="filterSelection('all')").change-meal__filter-btn.change-meal__filter-btn--filters Фильтры
+                li.change-meal__filter-item
+                    button(type='button' onclick="filterSelection('descent')").change-meal__filter-btn.change-meal__filter-btn--direction
+                li.change-meal__filter-item
+                    button(type='button' onclick="filterSelection('breakfast')").change-meal__filter-btn Завтраки
+                li.change-meal__filter-item
+                    button(type='button' onclick="filterSelection('salads')").change-meal__filter-btn Салаты и закуски
+                li.change-meal__filter-item
+                    button(type='button' onclick="filterSelection('soups')").change-meal__filter-btn Супы
+                li.change-meal__filter-item 
+                    button(type='button' onclick="filterSelection('second')").change-meal__filter-btn Гарниры
+                li.change-meal__filter-item
+                    button(type='button' onclick="filterSelection('dessert')").change-meal__filter-btn Десерты
+        .change-meal__content
+            ul.change-meal__list
+                +gridItem('change-meal__item breakfast dessert', 'breakfast-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '238', '3', '7', '39', '230', '150 г.')
+                +gridItem('change-meal__item salads', 'dinner-1', 'Обед', 'Курица в соусе Терияки с овощами и розовой чечевицей', '238', '3', '7', '39', '230', '150 г.')
+                +gridItem('change-meal__item soup dessert', 'lunch-1', 'Полдник', 'Смузи боул из облепихи с клубникой', '238', '3', '7', '39', '230', '150 г.')
+                +gridItem('change-meal__item second', 'breakfast-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '238', '3', '7', '39', '230', '150 г.')
+                +gridItem('change-meal__item second', 'lunch-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '238', '3', '7', '39', '230', '150 г.')
+                +gridItem('change-meal__item second', 'breakfast-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '238', '3', '7', '39', '230', '150 г.')
+                +gridItem('change-meal__item second', 'lunch-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '238', '3', '7', '39', '230', '150 г.')
+                +gridItem('change-meal__item soups', 'breakfast-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '238', '3', '7', '39', '230', '150 г.')
+                +gridItem('change-meal__item dessert', 'lunch-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '238', '3', '7', '39', '230', '150 г.')
+                +gridItem('change-meal__item soup', 'breakfast-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '238', '3', '7', '39', '230', '150 г.')

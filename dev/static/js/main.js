@@ -84,3 +84,24 @@ if (qCloser) {
         qPopup.classList.remove('active');
     });
 };
+
+// Открытие смены еды
+var upperItem5 = document.getElementsByClassName('js-change');
+var elNodes = document.querySelectorAll(".js-change");
+var changeMeal = document.querySelector('.change-meal');
+var changeMealCloser = document.querySelector('.change-meal__closer');
+
+for (var i = 0; i < upperItem5.length; i++) {
+    var elem = upperItem5[i];
+    elem.addEventListener("click", function() {
+        event.preventDefault();
+        changeMeal.classList.add("active");
+    });
+}
+
+if (changeMealCloser) {
+    changeMealCloser.addEventListener('click', function() {
+        event.preventDefault();
+        changeMeal.classList.remove('active');
+    });
+};

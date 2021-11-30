@@ -19,6 +19,8 @@
 
         @include flex-setting(column, flex-start, center);
 
+        border-top: 1px dashed $lightgray;
+
         &-prev,
         &-next {
             position: absolute;
