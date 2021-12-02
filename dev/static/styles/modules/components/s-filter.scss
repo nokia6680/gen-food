@@ -16,9 +16,6 @@
     &__list {
         position: relative;
         width: 100%;
-
-        @include flex-setting(column, flex-start, center);
-
         max-height: 110px;
         overflow: hidden;
         transition: 0.4s $cubic;
@@ -109,6 +106,8 @@
         order: 1;
 
         transition: 0.4s $cubic;
+        cursor: pointer;
+        outline: none;
 
         &::after {
             position: absolute;

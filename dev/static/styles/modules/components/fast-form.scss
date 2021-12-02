@@ -1,0 +1,113 @@
+.fast-form {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, flex-start);
+
+    &__wrap {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+
+        margin-bottom: 1.25rem;
+
+        .fast-form__input:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &--personal {
+            padding-bottom: 2.5rem;
+            margin-bottom: 2.5rem;
+            border-bottom: 1px dashed $darkgray;
+        }
+
+        &--payment {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            padding-bottom: 2.5rem;
+            margin-bottom: 2.5rem;
+
+            border-bottom: 1px dashed $darkgray;
+
+            .fast-form__legend {
+                margin-bottom: 0;
+            }
+        }
+
+        &--checkout {
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &__legend {
+        width: 100%;
+        @include font-setting($primary-font, 1.125rem, 1.25rem, 700, $black);
+
+        margin-bottom: 1.25rem;
+    }
+
+    &__summary {
+        @include font-setting($secondary-font, 2.5rem, 1, 800, $black);
+        white-space: nowrap;
+    }
+
+    &__input {
+        width: 100%;
+
+        @include font-setting($secondary-font, 1.125rem, 1.25rem, 400, $gray);
+
+        padding: 1.125rem 1.5rem;
+        margin-bottom: 1.25rem;
+
+        border: 2px solid $lightgray;
+        border-radius: 0.9375rem;
+
+        cursor: pointer;
+        outline: none;
+
+        transition: 0.4s $cubic;
+
+        &:valid {
+            border-color: $green;
+            transition: 0.4s $cubic;
+        }
+
+        &:invalid {
+            border-color: $red;
+            transition: 0.4s $cubic;
+        }
+    }
+
+    &__submit {
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, 1rem, 1.625rem, 800, $white);
+
+        text-transform: uppercase;
+
+        width: 100%;
+        padding: 0.9375rem 0;
+        margin-bottom: 0.625rem;
+
+        background: linear-gradient(93.13deg, #92C64E 0%, #4BAF50 100%);
+        border: none;
+        border-radius: 40px;
+
+        cursor: pointer;
+        outline: none;
+    }
+
+    &__cart {
+        align-self: center;
+        @include font-setting($primary-font, 0.875rem, 1.25rem, 500, $green);
+        text-align: center;
+        text-decoration: underline;
+        text-decoration-style: dashed;
+        text-decoration-color: $green;
+
+        background-color: transparent;
+        border: none;
+
+        margin-bottom: 2.5rem;
+    }
+}

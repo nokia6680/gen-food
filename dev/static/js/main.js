@@ -105,3 +105,21 @@ if (changeMealCloser) {
         changeMeal.classList.remove('active');
     });
 };
+
+var fastOrderCloser = document.querySelector('.fast-order__closer');
+var fastOrder = document.querySelector('.fast-order');
+var fastOrderOpener = document.querySelector('.select__order');
+
+if (fastOrderOpener) {
+    fastOrderOpener.addEventListener('click', function() {
+        event.preventDefault();
+        fastOrder.classList.add('active');
+    });
+};
+
+if (fastOrderCloser) {
+    fastOrderCloser.addEventListener('click', function() {
+        event.preventDefault();
+        fastOrder.classList.remove('active');
+    });
+};
