@@ -237,3 +237,73 @@
         }
     }
 }
+
+@include min-screen(720px) {
+    .nav {
+        padding: 0 2.5rem;
+
+        &__logo {
+            width: 220px;
+            height: 116px;
+
+            margin-top: -1.75rem;
+            margin-bottom: -1.75rem;
+        }
+
+        &__toggle {
+            margin-right: 1.875rem;
+
+            width: 23px;
+            height: 23px;
+            background-image: url("data:image/svg+xml,%3Csvg width='23' height='2' viewBox='0 0 23 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='23' height='2' fill='%23ffffff'/%3E%3C/svg%3E");
+            background-size: 23px 2px;;
+
+            &.opened {
+                &::after,
+                &::before {
+                    width: 23px;
+                }
+
+                &::after {
+                    top: 11px;
+                }
+
+                &::before {
+                    bottom: 10px;
+                }
+            }
+        }
+
+        &__list {
+            top: 120px;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+
+            &.opened {
+                padding: 3.125rem 2.5rem;
+            }
+        }
+
+        &__controls {
+            padding: 1.15625rem 1.5625rem;
+
+            &-item {
+                width: 23px;
+                height: 23px;
+
+                &--login {
+                    margin-right: 1.25rem;
+
+                    &::after {
+                        height: 30px;
+                        right: -1.25rem;
+                    }
+                }
+
+                &--cart {
+                    margin-left: 1.25rem;
+                }
+            }
+        }
+    }
+}

@@ -67,10 +67,15 @@
         }
     }
 
-    &__content {
+    &__body {
         width: 100%;
+        @include flex-setting(column, flex-start, center);
 
         padding: 0 1.25rem;
+    }
+
+    &__content {
+        width: 100%;
 
         @include flex-setting(column, flex-start, center);
 
@@ -246,5 +251,100 @@
         @include font-setting($primary-font, 1rem, 1.25rem, 400, $darkgray);
         text-align: center;
         margin-bottom: 1.875rem;
+    }
+}
+
+@include min-screen(768px) {
+    .faq {
+        margin-bottom: 5rem;
+        
+        &__wrapper {
+            align-items: flex-start;
+        }
+
+        &__title {
+            font-size: 1.875rem;
+            line-height: 2.1875rem;
+            margin-bottom: 2.5rem;
+            margin-left: 2.5rem;
+        }
+
+        &__filter {
+            margin-bottom: 2.5rem;
+
+            &-list {
+                padding-left: 2.5rem;
+                padding-right: 2.5rem;
+            }
+
+            &-item {
+                margin-right: 1.875rem;
+            }
+
+            &-btn {
+                font-size: 1.125rem;
+                line-height: 1.875rem;
+                padding: 0.5625rem 1.5rem;
+            }
+        }
+
+        &__body {
+            padding: 0 2.5rem;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        &__content {
+            margin-right: 2rem;
+            &-list {
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+
+            &-item {
+                padding-left: 3.125rem;
+                min-height: 40px;
+                max-height: 60px;
+
+                &.active {
+                    max-height: 500px;
+                }
+            }
+        }
+
+        &__contacts {
+            padding: 0;
+            width: 100%;
+            max-width: 320px;
+
+            align-items: flex-start;
+
+            &-list {
+                justify-content: flex-start;
+                margin-bottom: 3.75rem;
+            }
+        }
+
+        &__callback {
+            width: 272px;
+            height: 60px;
+            font-size: 1.125rem;
+            line-height: 1.875rem;
+            padding: 0;
+            border-radius: 40px;
+        }
+
+        &__subtitle {
+            text-align: left;
+            font-size: 1.75rem;
+            line-height: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        &__description {
+            font-size: 1.125rem;
+            text-align: left;
+        }
     }
 }

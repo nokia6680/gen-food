@@ -206,3 +206,98 @@
         }
     }
 }
+
+@include min-screen(768px) {
+    .delivery {
+        margin-bottom: 7.5rem;
+
+        &__wrapper {
+            padding: 0 2.5rem;
+        }
+
+        &__info {
+            align-items: flex-start;
+            margin-bottom: 2.5rem;
+        }
+
+        &__title {
+            font-size: 1.875rem;
+            line-height: 2.1875rem;
+            max-width: 100%;
+            margin-bottom: 2.5rem;
+        }
+
+        &__route {
+            font-size: 1.375rem;
+            line-height: 1.5rem;
+        }
+
+        &__freq {
+            font-size: 1.375rem;
+            line-height: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        &__times {
+            max-width: 468px;
+            grid-column-gap: 3.875rem;
+            margin-bottom: 2.5rem;
+
+            &-item {
+                padding-left: 4.375rem;
+
+                &::after {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+
+            &-name {
+                font-size: 1.125rem;
+                line-height: 1.25rem;
+            }
+
+            &-nr {
+                font-size: 1.125rem;
+                line-height: 1.25rem;
+            }
+        }
+
+        &__contacts {
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+
+            &-list {
+                width: auto;
+                justify-content: flex-start;
+                margin-bottom: 0;
+                margin-right: 2.1875rem;
+            }
+        }
+
+        &__subtitle {
+            font-size: 1.125rem;
+            line-height: 1.875rem;
+        }
+
+        &__description {
+            text-align: left;
+            margin-bottom: 1.25rem;
+
+            &:last-of-type {
+                font-size: 0.875rem;
+                line-height: 1.25rem;
+                margin-bottom: 2.5rem;
+                max-width: 70%;
+            }
+        }
+
+        &__map {
+            &-frame {
+                height: calc(89.33333333333333vw * (9 / 16));
+            }
+        }
+    }
+}

@@ -22,6 +22,7 @@
         padding: 1.875rem;
         background-color: $white;
         overflow-y: scroll;
+        animation: fadeIn 2s $cubic 1 forwards;
         // Если форма успешно отправлена
         &.form-sent {
             .fast-order__product {
@@ -332,6 +333,22 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .fast-order {
+        align-items: flex-end;
+
+        &__wrapper {
+            max-width: 490px;
+            animation: fadeInFromSide 2s $cubic 1 forwards;
+        }
+
+        &__title {
+            font-size: 1.5rem;
+            line-height: 2.5rem;
         }
     }
 }

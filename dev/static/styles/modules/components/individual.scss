@@ -66,3 +66,63 @@
         margin-bottom: 1.875rem;
     }
 }
+
+@include min-screen(768px) {
+    .individual {
+        margin-bottom: 5rem;
+
+        &__wrapper {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__frame {
+            display: none;
+        }
+
+        &__info {
+            display: grid;
+            grid-template-areas:
+                'title title'
+                'info info'
+                'link pricing'
+            ;
+
+            padding: 0 2.5rem;
+        }
+
+        &__title {
+            grid-area: title;
+            font-size: 1.875rem;
+            line-height: 2.1875rem;
+            text-align: left;
+            margin-bottom: 2.5rem;
+        }
+
+        &__description {
+            grid-area: info;
+            font-size: 1.25rem;
+            line-height: 1.875rem;
+            text-align: left;
+            margin-bottom: 3rem;
+        }
+
+        &__link {
+            grid-area: link;
+            font-size: 1.25rem;
+            line-height: 1.875rem;
+            padding: 1.1875rem 2.1875rem;
+            margin-right: 4rem;
+        }
+
+        &__pricing {
+            grid-area: pricing;
+            font-size: 1.75rem;
+            line-height: 2.5rem;
+            text-align: left;
+            margin-bottom: 0;
+            white-space: nowrap;
+        }
+    }
+}

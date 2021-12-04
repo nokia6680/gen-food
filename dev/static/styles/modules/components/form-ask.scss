@@ -107,3 +107,21 @@
         }
     }
 }
+
+@include min-screen(768px) {
+    .form-ask {
+        padding-top: 0;
+
+        &__list {
+            margin-bottom: 3.75rem;
+        }
+
+        &__item {
+            align-items: center;
+        }
+
+        &__input {
+            text-align: center;
+        }
+    }
+}

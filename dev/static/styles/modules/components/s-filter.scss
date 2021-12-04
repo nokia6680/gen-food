@@ -1,5 +1,5 @@
 .s-filter {
-    width: calc(100%);
+    width: 100%;
 
     @include flex-setting(column, flex-start, center);
 
@@ -188,5 +188,54 @@
 
     &__type {
         @include font-setting($secondary-font, 1.125rem, 1.25rem, 800, $gray);
+    }
+}
+
+@include min-screen(768px) {
+    .s-filter {
+        position: relative;
+
+        top: auto;
+        left: auto;
+        right: auto;
+
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.05);
+
+        &__list {
+            max-height: 140px;
+
+            &.active {
+                max-height: 900px;
+                box-shadow: 0 0 100px 300px rgba(0, 0, 0, 0.7);
+            }
+        }
+
+        &__item {
+            padding-left: calc(6.25rem + 1.875rem);
+            padding-bottom: 1.875rem;
+
+            &::after {
+                width: 80px;
+                height: 80px;
+            }
+
+            &.active {
+                padding-top: 1.875rem;
+
+                &::after {
+                    top: 1.875rem;
+                }
+            }
+        }
+
+        &__name {
+            font-size: 2rem;
+            line-height: 2.5rem;
+        }
+
+        &__type {
+            font-size: 1.5rem;
+            line-height: 1.875rem;
+        }
     }
 }

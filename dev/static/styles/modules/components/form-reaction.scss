@@ -22,6 +22,8 @@
         height: 100%;
         padding: 5rem 1.875rem 4.375rem 1.875rem;
         background-color: $white;
+
+        animation: fadeIn 2s $cubic 1 forwards;
     }
 
     &__subtitle {
@@ -62,5 +64,35 @@
 
         cursor: pointer;
         outline: none;
+    }
+}
+
+@include min-screen(768px) {
+    .form-reaction {
+        &__wrapper {
+            max-width: 490px;
+            height: auto;
+            padding: 4.375rem 4.375rem;
+            position: relative;
+        }
+
+        &__subtitle {
+            font-size: 1.5rem;
+            line-height: 1.875rem;
+            margin-bottom: 3.125rem;
+        }
+
+        &__icon {
+            margin-bottom: 3.125rem;
+        }
+
+        &__about {
+            margin-bottom: 3.75rem;
+        }
+
+        &__btn {
+            width: 315px;
+            padding: 0.9375rem 0;
+        }
     }
 }

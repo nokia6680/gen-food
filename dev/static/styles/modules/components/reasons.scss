@@ -65,3 +65,36 @@
         margin-bottom: 1.25rem;
     }
 }
+
+@include min-screen(768px) {
+    .reasons {
+        padding-top: 0;
+        margin-bottom: 5rem;
+
+        &__list {
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
+
+        &__item {
+            margin-right: 2.5rem;
+        }
+
+        &__body {
+            max-width: 360px;
+        }
+
+        &__info {
+            align-items: flex-start;
+        }
+
+        &__title {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        &__frame {
+            margin-bottom: 2rem;
+        }
+    }
+}

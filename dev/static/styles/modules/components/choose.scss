@@ -98,3 +98,65 @@
         text-decoration-color: $green;
     }
 }
+
+@include min-screen(768px) {
+    .choose {
+        margin-bottom: 7.5rem;
+
+        &__wrapper {
+            padding: 0 2.5rem;
+            align-items: flex-start;
+        }
+
+        &__info {
+            align-items: flex-start;
+        }
+
+        &__title {
+            font-size: 1.875rem;
+            line-height: 2.1875rem;
+            text-align: left;
+            margin-bottom: 2.5rem;
+            max-width: 70%;
+        }
+
+        &__description {
+            font-size: 1rem;
+            line-height: 1.875rem;
+            text-align: left;
+            margin-bottom: 2.5rem;
+        }
+
+        &__list {
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+            justify-content: space-between;
+            align-items: start;
+        }
+
+        &__item {
+            align-items: flex-start;
+            margin-bottom: 0;
+        }
+
+        &__icon {
+            margin-bottom: 1.5625rem;
+        }
+
+        &__name {
+            text-align: left;
+            margin-bottom: 0.9375rem;
+            max-width: 70%;
+        }
+
+        &__about {
+            font-size: 1rem;
+            text-align: left;
+            margin-bottom: 1.25rem;
+        }
+
+        &__link {
+            font-size: 1.125rem;
+        }
+    }
+}

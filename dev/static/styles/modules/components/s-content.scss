@@ -224,3 +224,31 @@
         display: none;
     }
 }
+
+@include min-screen(768px) {
+    .s-content {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+
+            width: 1px;
+            height: 100%;
+            border-left: 1px dashed $lightgray;
+            left: -32px;
+        }
+
+        &__filter {
+            border-top: none;
+        }
+
+        &__choose {
+            align-self: flex-start;
+        }
+
+        &__note {
+            display: none;
+        }
+    }
+}

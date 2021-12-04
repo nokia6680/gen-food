@@ -31,6 +31,28 @@ const swiper1 = new Swiper('.swiper-container-reviews', {
                 prevEl: '.reviews__prev',
             },
         },
+
+        768: {
+            spaceBetween: 0,
+            slidesPerView: 2.4,
+            speed: 1000,
+            effect: "creative",
+            touchRatio: 0.2,
+            slideToClickedSlide: true,
+            creativeEffect: {
+                prev: {
+                    translate: ["-120%", 0, -500],
+                },
+                next: {
+                    translate: ["120%", 0, -500],
+                },
+            },
+
+            navigation: {
+                nextEl: '.reviews__next',
+                prevEl: '.reviews__prev',
+            },
+        },
     }
 });
 

@@ -203,3 +203,40 @@
         }
     }
 }
+
+@include min-screen(768px) {
+    .footer {
+        &__block {
+            &:last-child {
+                padding: 0;
+                max-width: 284px;
+            }
+        }
+
+        &__link {
+            font-size: 1.5rem;
+            line-height: 1.875rem;
+        }
+        &__address {
+            font-size: 1rem;
+            line-height: 1.25rem;
+        }
+
+        &__name {
+            font-size: 1.5rem;
+            line-height: 1.875rem;
+            font-weight: 800;
+        }
+
+        &__btn {
+            font-size: 1.125rem;
+            padding: 0.875rem 0;
+            margin-bottom: 2rem;
+        }
+
+        &__blog {
+            font-size: 1.125rem;
+            padding: 0.875rem 0;
+        }
+    }
+}
