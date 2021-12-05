@@ -93,9 +93,35 @@
 
     &__link {
         @include font-setting($primary-font, 0.875rem, 1.25rem, 700, $green);
-        text-decoration: underline;
-        text-decoration-style: dashed;
-        text-decoration-color: $green;
+        text-decoration: none;
+        padding: 0.125rem 0;
+        position: relative;
+        transition: 0.4s $cubic;
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: 100%;
+            height: 1px;
+
+            border-bottom: 1px dashed $green;
+
+            bottom: 0;
+            left: 0;
+            transition: 0.4s $cubic;
+        }
+
+        &:hover,
+        &:active {
+            color: $black;
+            transition: 0.4s $cubic;
+
+            &::after {
+                border-color: $black;
+                transition: 0.4s $cubic;
+            }
+        }
     }
 }
 
@@ -157,6 +183,96 @@
 
         &__link {
             font-size: 1.125rem;
+        }
+    }
+}
+
+@include min-screen(1280px) {
+    .choose {
+        margin-bottom: 6.25rem;
+
+        &__wrapper {
+            padding: 0 2.5rem;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__frame {
+            @include flex-setting(column, center, center);
+            min-width: 935px;
+            width: 935px;
+            height: 900px;
+
+            margin-left: -472px;
+
+            &-image {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        &__info {
+            align-items: flex-start;
+            margin-left: 4.375rem;
+        }
+
+        &__title {
+            font-size: 2.875rem;
+            line-height: 3.75rem;
+            margin-bottom: 1.875rem;
+            max-width: 100%;
+        }
+
+        &__description {
+            margin-bottom: 5rem;
+        }
+
+        &__list {
+            grid-template-columns: repeat(3, 224px);
+            align-items: stretch;
+        }
+
+        &__link {
+            font-size: 1.125rem;
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@include min-screen(1680px) {
+    .choose {
+        margin-bottom: 22.375rem;
+
+        &__wrapper {
+            padding: 0;
+            position: relative;
+            max-width: 1440px;
+
+            justify-content: flex-end;
+        }
+
+        &__frame {
+            position: absolute;
+            margin-left: 0;
+
+            --width: calc(100% - 1910px - 368px);
+            left: calc(var(--width) / 2);
+        }
+
+        &__info {
+            margin-left: 0;
+            max-width: 832px;
+        }
+
+        &__title {
+            max-width: 90%;
+        }
+
+        &__name {
+            max-width: 100%;
         }
     }
 }

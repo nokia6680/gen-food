@@ -53,6 +53,50 @@ const swiper1 = new Swiper('.swiper-container-reviews', {
                 prevEl: '.reviews__prev',
             },
         },
+
+        1280: {
+            spaceBetween: 60,
+            slidesPerView: 3.4,
+            speed: 1000,
+            effect: "creative",
+            touchRatio: 0.2,
+            slideToClickedSlide: true,
+            creativeEffect: {
+                prev: {
+                    translate: ["-120%", 0, -500],
+                },
+                next: {
+                    translate: ["120%", 0, -500],
+                },
+            },
+
+            navigation: {
+                nextEl: '.reviews__next',
+                prevEl: '.reviews__prev',
+            },
+        },
+
+        1680: {
+            spaceBetween: 120,
+            slidesPerView: 4,
+            speed: 1000,
+            effect: "creative",
+            touchRatio: 0.2,
+            slideToClickedSlide: true,
+            creativeEffect: {
+                prev: {
+                    translate: ["-120%", 0, -500],
+                },
+                next: {
+                    translate: ["120%", 0, -500],
+                },
+            },
+
+            navigation: {
+                nextEl: '.reviews__next',
+                prevEl: '.reviews__prev',
+            },
+        },
     }
 });
 

@@ -127,6 +127,13 @@
             @include font-setting($primary-font, 1.25rem, 1, 700, $black);
 
             position: relative;
+            transition: 0.4s $cubic;
+
+            &:hover,
+            &:active {
+                color: $lightgreen;
+                transition: 0.4s $cubic;
+            }
 
             &--wa {
                 width: 20px;
@@ -177,6 +184,14 @@
         border: none;
         background: linear-gradient(93.13deg, #92C64E 0%, #4BAF50 100%);
         border-radius: 25px;
+
+        cursor: pointer;
+        outline: none;
+
+        &:hover,
+        &:active {
+            background: linear-gradient(93.13deg, #4BAF50 0%, #92C64E 100%);
+        }
     }
 
     &__subtitle {
@@ -298,6 +313,72 @@
             &-frame {
                 height: calc(89.33333333333333vw * (9 / 16));
             }
+        }
+    }
+}
+
+@include min-screen(1280px) {
+    .delivery {
+        margin-bottom: 6.25rem;
+        padding: 0 2.5rem;
+
+        &__wrapper {
+            display: grid;
+            grid-template-columns: 485px 1fr;
+            grid-column-gap: 3.75rem;
+            justify-content: center;
+            align-items: start;
+            padding: 0;
+            max-width: 1440px;
+        }
+
+        &__info {
+            padding-top: 2.5rem;
+            align-items: flex-start;
+            margin-bottom: 0;
+        }
+
+        &__title {
+            font-size: 3rem;
+            line-height: 3.75rem;
+            margin-bottom: 1.875rem;
+            text-align: left;
+        }
+
+        &__route {
+            font-size: 1.5rem;
+            line-height: 1.875rem;
+        }
+
+        &__freq {
+            font-size: 1.5rem;
+            line-height: 1.875rem;
+            margin-bottom: 3.125rem;
+        }
+
+        &__times {
+            margin-bottom: 3.125rem;
+        }
+
+        &__description {
+            &:last-of-type {
+                margin-bottom: 3.125rem;
+                max-width: 100%;
+            }
+        }
+
+        &__map {
+            max-height: 680px;
+        }
+    }
+}
+
+@include min-screen(1680px) {
+    .delivery {
+        margin-bottom: 20.625rem;
+        
+        &__wrapper {
+            grid-column-gap: 7.5rem;
         }
     }
 }

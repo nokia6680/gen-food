@@ -7,6 +7,7 @@ mixin introBlock(type, image, title, subtitle, listTextFirst, listTextSecond, in
             .intro__bg.intro__bg--2
             .intro__bg.intro__bg--3
             .intro__bg.intro__bg--4
+                
             .intro__details
                 h1.intro__title=title
                 h2.intro__subtitle=subtitle
@@ -20,8 +21,8 @@ mixin introBlock(type, image, title, subtitle, listTextFirst, listTextSecond, in
                     button(type="button").intro__try Попробовать сейчас
                     span.intro__info=infoText
             picture.intro__frame
-                source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".webp" type="image/webp")
-                source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".jpg")
+                source(media="(min-width: 1280px)" srcset="static/images/content/" +image +".webp" type="image/webp")
+                source(media="(min-width: 1280px)" srcset="static/images/content/" +image +".jpg")
                 source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
                 img(src="static/images/content/" +image +"-mb.jpg" alt="" +title).intro__frame-image
                 
@@ -32,8 +33,8 @@ mixin faqItem(type, name, description)
 
 mixin reviewsItem(image)
     picture.reviews__frame.swiper-slide
-        source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".webp" type="image/webp")
-        source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".jpg")
+        source(media="(min-width: 1280px)" srcset="static/images/content/" +image +".webp" type="image/webp")
+        source(media="(min-width: 1280px)" srcset="static/images/content/" +image +".jpg")
         source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
         img(srcset="static/images/content/" +image +"-mb.jpg" alt="Отзыв").reviews__frame-image
 
@@ -44,8 +45,8 @@ mixin reasonItem(name, description, image)
                 h2.reasons__title=name
                 p.reasons__description=description
             picture.reasons__frame
-                source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".webp" type="image/webp")
-                source(media="(min-width: 1440px)" srcset="static/images/content/" +image +".png")
+                source(media="(min-width: 1280px)" srcset="static/images/content/" +image +".webp" type="image/webp")
+                source(media="(min-width: 1280px)" srcset="static/images/content/" +image +".png")
                 source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
                 img(srcset="static/images/content/" +image +"-mb.png" alt="Отзыв").reasons__frame-image
 
