@@ -105,7 +105,6 @@ const swiper2 = new Swiper('.s-content-filter-swiper', {
     spaceBetween: 0,
     grabCursor: true,
     speed: 1000,
-    effect: 'fade',
     navigation: {
         nextEl: '.s-content__filter-next',
         prevEl: '.s-content__filter-prev',
@@ -115,8 +114,29 @@ const swiper2 = new Swiper('.s-content-filter-swiper', {
         375: {
             slidesPerView: 1,
             speed: 1000,
-            effect: 'fade',
             centeredSlides: true,
+            navigation: {
+                nextEl: '.s-content__filter-next',
+                prevEl: '.s-content__filter-prev',
+            },
+        },
+
+        1280: {
+            spaceBetween: 30,
+            slidesPerView: 3,
+            speed: 1000,
+            centeredSlides: false,
+            navigation: {
+                nextEl: '.s-content__filter-next',
+                prevEl: '.s-content__filter-prev',
+            },
+        },
+
+        1680: {
+            spaceBetween: 27,
+            slidesPerView: 5,
+            speed: 1000,
+            centeredSlides: false,
             navigation: {
                 nextEl: '.s-content__filter-next',
                 prevEl: '.s-content__filter-prev',

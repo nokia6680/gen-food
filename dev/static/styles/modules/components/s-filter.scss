@@ -14,6 +14,7 @@
     }
 
     &__list {
+        @include flex-setting(column, flex-start, center);
         position: relative;
         width: 100%;
         max-height: 110px;
@@ -56,14 +57,6 @@
                 transition: 0.4s $cubic;
                 position: relative;
 
-                &.active {
-                    padding-top: 1.875rem;
-
-                    &::after {
-                        top: 1.875rem;
-                    }
-                }
-
                 &::before {
                     position: absolute;
                     content: '';
@@ -79,7 +72,14 @@
                     transform: translateX(-50%);
                 }
 
-                &:nth-of-type(2) {
+                &.selected {
+                    padding-top: 1.875rem;
+                    order: 0;
+
+                    &::after {
+                        top: 1.875rem;
+                    }
+
                     &::before {
                         display: none;
                     }
@@ -95,7 +95,7 @@
 
     &__item {
         width: 100%;
-
+        min-height: 110px;
         @include flex-setting(column, flex-start, flex-start);
 
         padding-left: calc(5.625rem + 1.875rem);
@@ -163,7 +163,7 @@
             }
         }
 
-        &.active {
+        &.selected {
             padding-top: 1.875rem;
             order: 0;
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
@@ -189,6 +189,10 @@
     &__type {
         @include font-setting($secondary-font, 1.125rem, 1.25rem, 800, $gray);
     }
+
+    &__description {
+        display: none;
+    }
 }
 
 @include min-screen(768px) {
@@ -206,20 +210,21 @@
 
             &.active {
                 max-height: 900px;
-                box-shadow: 0 0 100px 300px rgba(0, 0, 0, 0.7);
+                box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.24);
             }
         }
 
         &__item {
             padding-left: calc(6.25rem + 1.875rem);
             padding-bottom: 1.875rem;
+            min-height: 140px;
 
             &::after {
                 width: 80px;
                 height: 80px;
             }
 
-            &.active {
+            &.selected {
                 padding-top: 1.875rem;
 
                 &::after {
@@ -236,6 +241,106 @@
         &__type {
             font-size: 1.5rem;
             line-height: 1.875rem;
+        }
+    }
+}
+
+@include min-screen(1280px) {
+    .s-filter {
+        box-shadow: none;
+
+        &__subtitle {
+            display: inline-flex;
+            align-self: flex-start;
+            @include font-setting($secondary-font, 1.75rem, 1.875rem, 800, $black);
+            margin-bottom: 1.25rem;
+        }
+
+        &__list {
+            border: 1px solid $lightgray;
+            max-height: 370px;
+
+            &.active {
+                .s-filter__item.selected{
+                    min-height: 140px;
+                    
+                    .s-filter__description {
+                        display: none;
+                    }
+
+                    .s-filter__type {
+                        padding-bottom: 0;
+                        margin-bottom: 0;
+
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__item {
+            padding-left: 0;
+            padding-bottom: 1.875rem;
+
+            &::after {
+                width: 80px;
+                height: 80px;
+            }
+
+            &.selected {
+                padding-top: 1.875rem;
+                min-height: 370px;
+
+                &::after {
+                    top: 1.875rem;
+                }
+
+                .s-filter__description {
+                    display: inline-flex;
+                }
+
+                .s-filter__type {
+                    padding-bottom: 1.5625rem;
+                    margin-bottom: 1.5625rem;
+                    width: 100%;
+                    text-align: left;
+                    position: relative;
+
+                    &::after {
+                        position: absolute;
+                        content: '';
+
+                        width: calc(100% - 1.8125rem);
+
+                        height: 1px;
+                        border-bottom: 1px dashed $lightgray;
+
+                        bottom: 0;
+                        right: 0;
+                    }
+                }
+            }
+        }
+
+        &__name {
+            font-size: 2rem;
+            line-height: 2.5rem;
+            padding-left: calc(6.25rem + 1.875rem);
+        }
+
+        &__type {
+            font-size: 1.5rem;
+            line-height: 1.875rem;
+            padding-left: calc(6.25rem + 1.875rem);
+        }
+
+        &__description {
+            @include font-setting($secondary-font, 0.875rem, 1.25rem, 400, $black);
+            text-align: left;
+
+            padding-left: 1.8125rem;
         }
     }
 }

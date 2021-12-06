@@ -64,6 +64,13 @@
                 color: $white;
                 transition: 0.4s $cubic;
             }
+
+            &:hover,
+            &:active {
+                border-color: $lightgreen;
+                color: $lightgreen;
+                transition: 0.4s $cubic;
+            }
         }
     }
 
@@ -100,6 +107,15 @@
             max-height: 60px;
             overflow: hidden;
             transition: 0.4s $cubic;
+
+            cursor: pointer;
+
+            &:hover {
+                .faq__content-name {
+                    color: $lightgreen;
+                    transition: 0.4s $cubic;
+                }
+            }
 
             &:last-child {
                 margin-bottom: 0;
@@ -147,6 +163,7 @@
             @include font-setting($secondary-font, 1rem, 1.25rem, 800, $black);
             text-align: left;
             max-width: 90%;
+            transition: 0.4s $cubic;
         }
 
         &-description {
@@ -189,6 +206,7 @@
             @include font-setting($primary-font, 1.25rem, 1, 700, $black);
 
             position: relative;
+            transition: 0.4s $cubic;
 
             &--wa {
                 width: 20px;
@@ -223,6 +241,12 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+                transition: 0.4s $cubic;
+            }
+
+            &:hover,
+            &:active {
+                color: $lightgreen;
                 transition: 0.4s $cubic;
             }
         }

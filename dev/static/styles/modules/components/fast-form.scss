@@ -63,7 +63,7 @@
         border: 2px solid $lightgray;
         border-radius: 0.9375rem;
 
-        cursor: pointer;
+        cursor: text;
         outline: none;
 
         transition: 0.4s $cubic;
@@ -95,6 +95,11 @@
 
         cursor: pointer;
         outline: none;
+
+        &:hover,
+        &:active {
+            background: linear-gradient(93.13deg, #4BAF50 0%, #92C64E 100%);
+        }
     }
 
     &__cart {
