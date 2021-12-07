@@ -112,6 +112,7 @@ const swiper2 = new Swiper('.s-content-filter-swiper', {
 
     breakpoints: {
         375: {
+            slideToClickedSlide: true,
             slidesPerView: 1,
             speed: 1000,
             centeredSlides: true,

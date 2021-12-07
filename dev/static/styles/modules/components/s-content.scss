@@ -438,10 +438,20 @@
 
             &-list {
                 justify-content: flex-end;
+                gap: 0;
+            }
+
+            &-item {
+                margin-left: 2.5rem;
+
+                &:first-child {
+                    margin-left: 0;
+                }
             }
 
             &-title {
                 white-space: nowrap;
+                margin-bottom: 0;
             }
 
             &-name,

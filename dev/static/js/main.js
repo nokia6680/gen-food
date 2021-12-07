@@ -87,23 +87,29 @@ if (qReactionCloser) {
 };
 
 var qPopup = document.querySelector('.popup-ask');
-var qOpener = document.querySelector('.js-ask');
-var qCloser = document.querySelector('.popup-ask__closer');
 var qSubmit = document.querySelector('.form-ask__submit');
 
-if (qOpener) {
-    qOpener.addEventListener('click', function() {
-        event.preventDefault();
-        qPopup.classList.add('active');
-    });
-};
+var upperAsk = document.getElementsByClassName('js-ask');
+var elNodes = document.querySelectorAll(".js-ask");
 
-if (qCloser) {
-    qCloser.addEventListener('click', function() {
+for (var i = 0; i < upperAsk.length; i++) {
+    var ask = upperAsk[i];
+    ask.addEventListener("click", function() {
         event.preventDefault();
-        qPopup.classList.remove('active');
+        qPopup.classList.add("active");
     });
-};
+}
+
+var upperAskClose = document.getElementsByClassName('popup-ask__closer');
+var elNodes = document.querySelectorAll(".popup-ask__closer");
+
+for (var i = 0; i < upperAskClose.length; i++) {
+    var askClose = upperAskClose[i];
+    askClose.addEventListener("click", function() {
+        event.preventDefault();
+        qPopup.classList.remove("active");
+    });
+}
 
 if (qSubmit) {
     qSubmit.addEventListener('click', function() {
