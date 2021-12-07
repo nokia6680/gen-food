@@ -10,6 +10,7 @@ window.addEventListener('resize', () => {
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
+var body = document.querySelector('.body');
 var menuOpener = document.querySelector('.nav__toggle');
 var menu = document.querySelector('.nav__list');
 
@@ -45,10 +46,12 @@ for (var i = 0; i < upperItem2.length; i++) {
     });
 }
 
-
 var upperItem3 = document.getElementsByClassName('js-callback');
 var elNodes = document.querySelectorAll(".js-callback");
 var callbackPopup = document.querySelector(".popup-callback")
+var callbackSubmit = document.querySelector('.form-callback__submit');
+var qReaction = document.querySelector('.form-reaction');
+var qReactionCloser = document.querySelector('.form-reaction__btn');
 
 for (var i = 0; i < upperItem3.length; i++) {
     var elem = upperItem3[i];
@@ -67,9 +70,26 @@ if (callbackCloser) {
     });
 };
 
+if (callbackSubmit) {
+    callbackSubmit.addEventListener('click', function() {
+        event.preventDefault();
+        callbackPopup.classList.add('hidden');
+        qReaction.classList.add('active');
+    });
+};
+
+if (qReactionCloser) {
+    qReactionCloser.addEventListener('click', function() {
+        callbackPopup.classList.remove('active');
+        callbackPopup.classList.remove('hidden');
+        qReaction.classList.remove('active');
+    });
+};
+
 var qPopup = document.querySelector('.popup-ask');
 var qOpener = document.querySelector('.js-ask');
 var qCloser = document.querySelector('.popup-ask__closer');
+var qSubmit = document.querySelector('.form-ask__submit');
 
 if (qOpener) {
     qOpener.addEventListener('click', function() {
@@ -85,6 +105,22 @@ if (qCloser) {
     });
 };
 
+if (qSubmit) {
+    qSubmit.addEventListener('click', function() {
+        event.preventDefault();
+        qPopup.classList.add('hidden');
+        qReaction.classList.add('active');
+    });
+};
+
+if (qReactionCloser) {
+    qReactionCloser.addEventListener('click', function() {
+        qPopup.classList.remove('active');
+        qPopup.classList.remove('hidden');
+        qReaction.classList.remove('active');
+    });
+};
+
 // Открытие смены еды
 var upperItem5 = document.getElementsByClassName('js-change');
 var elNodes = document.querySelectorAll(".js-change");
@@ -96,6 +132,7 @@ for (var i = 0; i < upperItem5.length; i++) {
     elem.addEventListener("click", function() {
         event.preventDefault();
         changeMeal.classList.add("active");
+        body.classList.add('no-scroll');
     });
 }
 
@@ -103,6 +140,7 @@ if (changeMealCloser) {
     changeMealCloser.addEventListener('click', function() {
         event.preventDefault();
         changeMeal.classList.remove('active');
+        body.classList.remove('no-scroll');
     });
 };
 
@@ -114,6 +152,7 @@ if (fastOrderOpener) {
     fastOrderOpener.addEventListener('click', function() {
         event.preventDefault();
         fastOrder.classList.add('active');
+        body.classList.add('no-scroll');
     });
 };
 
@@ -121,5 +160,46 @@ if (fastOrderCloser) {
     fastOrderCloser.addEventListener('click', function() {
         event.preventDefault();
         fastOrder.classList.remove('active');
+        body.classList.remove('no-scroll');
+    });
+};
+
+
+var btns = document.getElementsByClassName('select__days-btn');
+var elNodes = document.querySelectorAll(".select__days-btn");
+var daysFilter = document.querySelector('.s-content__filter-list');
+
+for (var i = 0; i < btns.length; i++) {
+    var elem = btns[i];
+
+    elem.addEventListener("click", changeActiveClass);
+}
+
+function changeActiveClass(e) {
+    event.preventDefault();
+
+    for (var i = 0; i < btns.length; i++) {
+        var elem = btns[i];
+        elem.classList.remove('active');
+        var daysData = this.getAttribute("data-value");
+        daysFilter.setAttribute("data-days", daysData);
+    }
+
+    e.target.classList.add('active');
+}
+
+var consultForm = document.querySelector('.consult__form');
+var consultSubmit = document.querySelector('.consult__callback');
+var consultTitle = document.querySelector('.consult__title');
+var consultDescription = document.querySelector('.consult__description');
+var consultAfterSending = document.querySelector('.consult__reaction');
+
+if (consultSubmit) {
+    consultSubmit.addEventListener('click', function() {
+        event.preventDefault();
+        consultForm.classList.add('formSent');
+        consultTitle.innerHTML = "Заявка успешно отправлена";
+        consultDescription.innerHTML = "В скором времени мы свяжемся с Вами";
+        consultAfterSending.classList.add('active');
     });
 };

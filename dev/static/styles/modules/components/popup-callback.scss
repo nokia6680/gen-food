@@ -21,6 +21,11 @@
         display: flex;
     }
 
+    &.hidden {
+        .popup-callback__wrapper {
+            animation: fadeOut 2s $cubic 1 forwards;
+        }
+    }
 
     &__wrapper {
         @include flex-setting(column, flex-start, center);

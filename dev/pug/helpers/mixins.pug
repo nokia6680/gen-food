@@ -58,7 +58,7 @@ mixin dateBtn(curDate, curDay, dateTime)
 mixin gridItem(type, image, title, name, suppFirst, suppSecond, suppThird, suppFourth, price, weight)
     li(class="item " +type)
         .item__service
-            button(type="button").item__service-btn
+            button(type="button").item__service-btn.js-change
             b.item__service-about Добавить второй завтрак
         .item__constructor
             a(href="constructor.html" target="_self").item__constructor-link Конструктор рациона

@@ -140,9 +140,10 @@
 
     &__btn {
         width: 100%;
+        max-width: 284px;
 
         @include flex-setting(column, center, center);
-        @include font-setting($primary-font, 1.25rem, 1.875rem, 800, $white);
+        @include font-setting($primary-font, 1rem, 1.875rem, 800, $white);
 
         text-transform: uppercase;
         text-align: center;
@@ -165,8 +166,9 @@
 
     &__blog {
         width: 100%;
+        max-width: 284px;
         @include flex-setting(column, center, center);
-        @include font-setting($primary-font, 1.25rem, 1.875rem, 800, $black);
+        @include font-setting($primary-font, 1rem, 1.875rem, 800, $black);
         text-transform: uppercase;
         text-decoration: none;
         text-align: center;
@@ -282,6 +284,7 @@
         }
 
         &__block {
+            width: auto;
             padding: 0;
             margin-bottom: 0;
 
@@ -349,15 +352,19 @@
                     }
                 }
             }
-
+            &:nth-child(2) {
+                align-items: flex-start;
+            }
             &:last-child {
                 padding: 0;
-                max-width: 100%;
                 align-items: flex-end;
+                width: 100%;
+                max-width: 284px;
             }
         }
 
         &__btn {
+            width: 100%;
             max-width: 284px;
             margin-bottom: 2.5rem;
         }

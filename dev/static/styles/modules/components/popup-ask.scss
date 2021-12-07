@@ -21,6 +21,12 @@
         display: flex;
     }
 
+    &.hidden {
+        .popup-ask__wrapper {
+            animation: fadeOut 2s $cubic 1 forwards;
+        }
+    }
+
     &__wrapper {
         @include flex-setting(column, flex-start, center);
         width: 100%;

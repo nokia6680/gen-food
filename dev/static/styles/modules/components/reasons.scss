@@ -6,6 +6,7 @@
     padding-top: 3.75rem;
     margin-bottom: 3.75rem;
 
+
     &__wrapper {
         width: 100%;
         @include flex-setting(row, flex-start, center);
@@ -27,9 +28,6 @@
     &__item {
         flex: none;
         scroll-snap-align: center;
-
-        margin-bottom: 0;
-
         margin-right: 1.25rem;
         margin-bottom: 0;
     }
@@ -102,6 +100,12 @@
 @include min-screen(1280px) {
     .reasons {
         margin-bottom: 6.25rem;
+
+        &__wrapper {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
 
         &__list {
             padding-left: 2.5rem;

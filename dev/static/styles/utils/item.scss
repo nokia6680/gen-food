@@ -55,6 +55,15 @@
 
                 padding: 0;
                 margin-bottom: 1.25rem;
+
+                cursor: pointer;
+                transition: 0.4s $cubic;
+
+                &:hover,
+                &:active {
+                    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+                    transition: 0.4s $cubic;
+                }
             }
 
             &-about {
@@ -92,6 +101,8 @@
                 padding-top: 4.5rem;
 
                 position: relative;
+                cursor: pointer;
+                transition: 0.4s $cubic;
 
                 &::after {
                     position: absolute;
@@ -109,6 +120,15 @@
                     top: 0;
                     left: 50%;
                     transform: translateX(-50%);
+                    transition: 0.4s $cubic;
+                }
+
+                &:hover,
+                &:active {
+                    &::after {
+                        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+                        transition: 0.4s $cubic;
+                    }
                 }
             }
         }
@@ -166,6 +186,15 @@
 
         cursor: pointer;
         outline: none;
+
+        transition: 0.4s $cubic;
+
+        &:hover,
+        &:active {
+            border-color: $lightgreen;
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.99983 9.99992C5.36002 9.99992 5.65201 9.70793 5.65201 9.34774C5.65201 8.98755 5.36002 8.69556 4.99983 8.69556C4.63965 8.69556 4.34766 8.98755 4.34766 9.34774C4.34766 9.70793 4.63965 9.99992 4.99983 9.99992Z' fill='%2392C64E'/%3E%3Cpath d='M4.99971 0C3.40545 0 2.1084 1.29705 2.1084 2.89131H3.41275C3.41275 2.01627 4.12467 1.30436 4.99971 1.30436C5.87475 1.30436 6.58666 2.01627 6.58666 2.89131C6.58666 3.3152 6.42158 3.71373 6.12186 4.01344C5.73018 4.4051 4.56842 5.48062 4.55672 5.49146L4.34752 5.68508V8.0435H5.65188V6.25463C6.01184 5.92002 6.73596 5.24395 7.04416 4.93578C7.59027 4.38969 7.89102 3.66361 7.89102 2.89133C7.89102 1.29705 6.59398 0 4.99971 0Z' fill='%2392C64E'/%3E%3C/svg%3E");
+            transition: 0.4s $cubic;
+        }
     }
 
     &__name {

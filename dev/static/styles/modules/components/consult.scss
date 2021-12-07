@@ -33,6 +33,10 @@
         width: 100%;
 
         @include flex-setting(column, flex-start, center);
+
+        &.formSent {
+            display: none;
+        }
     }
 
     &__list {
@@ -97,6 +101,117 @@
         @include font-setting($secondary-font, 0.75rem, 1.25rem, 400, $darkgray);
         text-align: center;
     }
+
+    &__reaction {
+        width: 100%;
+        @include flex-setting(column, flex-start, center);
+
+        display: none;
+
+        &.active {
+            display: flex;
+        }
+
+        &-link {
+            @include flex-setting(column, center, center);
+            @include font-setting($primary-font, 0.875rem, 1.875rem, 800, $black);
+            text-transform: uppercase;
+            text-decoration: none;
+
+            height: 60px;
+            width: 275px;
+
+            border: 4px solid $lightgreen;
+            border-radius: 40px;
+
+            transition: 0.4s $cubic;
+
+            &:hover,
+            &:active {
+                background-color: $lightgreen;
+                color: $white;
+                transition: 0.4s $cubic;
+            }
+        }
+
+        &-social {
+            width: auto;
+            @include flex-setting(row, center, center);
+            z-index: 1;
+            margin-bottom: 2.5rem;
+        }
+
+        &-item {
+            @include flex-setting(column, center, center);
+            width: 40px;
+            height: 40px;
+            margin-right: 1.5625rem;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            a {
+                @include flex-setting(column, center, center);
+                width: 40px;
+                height: 40px;
+                border-radius: 1.25rem;
+                background-color: $lightgray;
+                position: relative;
+                transition: 0.4s $cubic;
+
+                .fa-vk::before {
+                    position: absolute;
+                    content: '\f189';
+                    color: $white;
+                    font-size: 1.5rem;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    transition: 0.4s $cubic;
+                    z-index: 1;
+                }
+
+                .fa-facebook-f::before {
+                    position: absolute;
+                    content: '\f39e';
+                    color: $white;
+                    font-size: 2rem;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    transition: 0.4s $cubic;
+                    z-index: 1;
+                }
+
+                .fa-instagram::before {
+                    position: absolute;
+                    content: '\f16d';
+                    color: $white;
+                    font-size: 1.5rem;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    transition: 0.4s $cubic;
+                    z-index: 1;
+                }
+
+                &:active,
+                &:hover {
+                    background-color: $white;
+                    transition: 0.4s $cubic;
+                    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+
+                    .fa-facebook-f::before,
+                    .fa-instagram::before,
+                    .fa-vk::before {
+                        color: $lightgreen;
+                        transition: 0.4s $cubic;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @include min-screen(768px) {
@@ -106,7 +221,7 @@
 
         &__wrapper {
             padding: 3.75rem 3.75rem 3.75rem 15rem;
-
+            align-items: flex-start;
             position: relative;
 
             &::after {
@@ -130,6 +245,7 @@
             font-size: 1.875rem;
             line-height: 2.1875rem;
             text-align: left;
+            max-width: 100%;
         }
 
         &__description {
@@ -142,6 +258,50 @@
         &__list {
             align-items: flex-start;
             margin-bottom: 2rem;
+        }
+
+        &__reaction {
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+
+            &-link {
+                font-size: 1.125rem;
+                width: 284px;
+            }
+
+            &-social {
+                margin-bottom: 0;
+                margin-right: 3.75rem;
+            }
+
+            &-item {
+                width: 60px;
+                height: 60px;
+                margin-right: 1.875rem;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                a {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 1.875rem;
+
+                    .fa-vk::before {
+                        font-size: 2.5rem;
+                    }
+
+                    .fa-facebook-f::before {
+                        font-size: 3rem;
+                    }
+
+                    .fa-instagram::before {
+                        font-size: 2.5rem;
+                    }
+                }
+            }
         }
     }
 }
@@ -175,7 +335,7 @@
 
         &__form {
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: flex-start;
             flex-wrap: wrap;
         }
 
@@ -222,6 +382,7 @@
         padding-right: calc(var(--width) / 2);
 
         &__wrapper {
+            min-height: 470px;
             border-width: 15px;
 
             padding: 5.3125rem 5.3125rem 5.3125rem 18.375rem;

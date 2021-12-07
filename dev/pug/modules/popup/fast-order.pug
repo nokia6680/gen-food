@@ -18,8 +18,8 @@
             .fast-form__wrap.fast-form__wrap--personal
                 p.fast-form__legend Персональные данные
                 input(type="text" name="order-name" id="order-name" placeholder="Имя").fast-form__input
-                input(type="tel" name="order-tel" id="order-tel" placeholder="Телефон").fast-form__input
-                input(type="email" name="order-mail" id="order-email" placeholder="E-mail").fast-form__input
+                input(type="tel" name="order-tel" id="order-tel" placeholder="Телефон" required).fast-form__input.js-phone-input
+                input(type="email" name="order-mail" id="order-email" placeholder="E-mail" required).fast-form__input
             .fast-form__wrap.fast-form__wrap--payment
                 p.fast-form__legend К оплате
                 b.fast-form__summary 5700 ₽
@@ -33,27 +33,3 @@
         span.fast-order__agreement Обращаем Ваше внимание, что без подтверждения заказа с оператором за 24 часа до даты доставки, доставка осуществляться не будет. Спасибо за понимание. 
         span.fast-order__agreement Нажимая кнопку, Вы соглашаетесь с условиями оферты и даёте своё согласие на обработку 
             a(href="#" target="_self") персональных данных.
-        // Успещная реакция на отправку данных
-        .fast-order__reaction
-            .fast-order__reaction-head
-                h3.fast-order__reaction-title Заявка успешно отправлена
-                p.fast-order__reaction-about В скором времени мы свяжемся с вами
-                a(href="blog.html" target="_blank").fast-order__reaction-blog Блог General Food
-                
-            .fast-order__reaction-block
-                a(href="tel:+78007874244" target="_blank").fast-order__reaction-link.fast-order__reaction-link--tel 8 800 787 42 44
-                a(href="mailto:web@general-food.ru" target="_blank").fast-order__reaction-link.fast-order__reaction-link--mail web@general-food.ru
-                span.fast-order__reaction-address Россия, 105318, г.Москва, ул. Мироновская, д.33, стр.1
-                
-            .fast-order__reaction-block
-                h3.fast-order__reaction-name Мы в соцсетях
-                ul.fast-order__reaction-social
-                    li.fast-order__reaction-item
-                        a(href="#" target="_blank")
-                            i.fab.fa-vk
-                    li.fast-order__reaction-item
-                        a(href="#" target="_blank")
-                            i.fab.fa-facebook-f
-                    li.fast-order__reaction-item
-                        a(href="#" target="_blank")
-                            i.fab.fa-instagram

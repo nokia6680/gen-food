@@ -14,8 +14,27 @@
     }
 
     &__frame {
+        @include flex-setting(column, center, center);
+
         &--first {
+            width: 440px;
+            height: 432px;
+            min-width: 440px;
             margin-bottom: 2.375rem;
+
+            img {
+                filter: drop-shadow(0px 30px 40px rgba(0, 0, 0, 0.2))
+            }
+        }
+
+        &--second {
+            width: 452px;
+            height: 446px;
+            min-width: 452px;
+
+            img {
+                filter: drop-shadow(0px 30px 40px rgba(0, 0, 0, 0.2));
+            }
         }
     }
 
@@ -165,7 +184,9 @@
 
         &__link {
             white-space: nowrap;
+            padding: 1.25rem 0;
             margin-right: 2.5rem;
+            width: 355px;
         }
 
         &__pricing {

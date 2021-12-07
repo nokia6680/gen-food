@@ -77,7 +77,7 @@ const swiper1 = new Swiper('.swiper-container-reviews', {
         },
 
         1680: {
-            spaceBetween: 120,
+            spaceBetween: 145,
             slidesPerView: 4,
             speed: 1000,
             effect: "creative",
