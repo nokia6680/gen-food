@@ -330,8 +330,7 @@
                         transition: 0.4s $cubic;
                     }
 
-                    &:hover,
-                    &:active {
+                    &:hover {
                         color: $white;
                         background-color: $lightgreen;
                         border-color: $lightgreen;
@@ -344,12 +343,14 @@
                     }
                 }
 
-
-                &:hover,
-                &:active {
+                &:hover {
                     border-color: $lightgreen;
                     color: $lightgreen;
                     transition: 0.4s $cubic;
+                }
+
+                &-date {
+                    pointer-events: none;
                 }
             }
         }

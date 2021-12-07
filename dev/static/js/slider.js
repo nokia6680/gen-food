@@ -145,3 +145,23 @@ const swiper2 = new Swiper('.s-content-filter-swiper', {
         },
     }
 });
+
+var swiperBtns = document.getElementsByClassName('s-content__filter-btn');
+var elNodes = document.querySelectorAll(".s-content__filter-btn");
+
+for (var i = 0; i < swiperBtns.length; i++) {
+    var elem = swiperBtns[i];
+
+    elem.addEventListener("click", changeActiveClass);
+}
+
+function changeActiveClass(e) {
+    event.preventDefault();
+
+    for (var i = 0; i < swiperBtns.length; i++) {
+        var elem = swiperBtns[i];
+        elem.classList.remove('active');
+    }
+
+    e.target.classList.add('active');
+}
