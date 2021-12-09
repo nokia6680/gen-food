@@ -3,37 +3,43 @@ block variables
 
 doctype html
 html(lang="ru-RU")
-	head
-		meta(charset="utf-8")
-		title #{title}
-		<!--[if IE]>
-		meta(http-equiv='X-UA-Compatible', content="IE = edge")
-		<![endif]-->
-		meta(name="viewport" content="width=device-width,initial-scale=1")
-		meta(name="keywords" content="")
-		link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
-		link(rel="preconnect" href="https://fonts.googleapis.com")
-		link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-		link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet")
-		link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
-		link(rel="stylesheet" type='text/css' href="static/css/styles.css")
-	body.body
-		include ../modules/header/header
-		main.main
-			+introBlock('meals-intro', 'intro-meal-image', 'Готовая еда на неделю с доставкой', 'рационы готового питания от General-food', '', '', 'От 700 руб. в день Бесплатная доставка')
-			include ../modules/blocks/meals
-			include ../modules/blocks/consult
-			include ../modules/blocks/individual
-			include ../modules/blocks/delivery
-		include ../modules/footer/footer
-		include ../modules/popup/popup-ask
-		include ../modules/popup/popup-callback
-		script(src="static/js/vendor/jquery-3.3.1.min.js")
-		script(src="https://unpkg.com/swiper/swiper-bundle.js")
-		script(src="static/js/main.js")
-		script(src="static/js/menu.js")
-		//script(src="static/js/select.js")
-		script(src="static/js/slider.js")
-		//script(src="static/js/tabs-review.js")
-		//script(src="static/js/filter-meal.js")
-		block script
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Nunito+Sans:wght@300;400;700;800&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+    body.body
+        include ../modules/header/header
+        main.main
+            +introBlock('meals-intro', 'meals-intro-image', 'Готовая еда на неделю с доставкой', 'Рационы готового питания от General-food', '', '', 'От 700 руб. в день Бесплатная доставка')
+            include ../modules/blocks/meals
+            include ../modules/blocks/consult
+            include ../modules/blocks/individual
+            section.reasons
+                .reasons__wrapper
+                    ul.reasons__list
+                        +reasonItem('Меню под определенные задачи', 'Готовое меню с просчитанной калорийностью, белками, жирами и углеводами. Полное соответствие выбранной программе питания на каждый день. Заказав готовый рацион на неделю, вы обеспечиваете себя полноценным питанием с определенной калорийностью на шесть дней. Все блюда готовы к употреблению – при необходимости нужно только разогреть. Каждый приём пищи подписан на блюде, при соблюдении меню и небольших физических упражнений вы с легкостью добьетесь результата уже через неделю.', 'reason-4')
+                        +reasonItem('Удобная доставка', 'Доставка рационов правильного питания в Москве – бесплатно (при условии местонахождения в пределах МКАД). Доставка еды на неделю разбивается на 2 раза, это позволяет клиенту потреблять только свежие блюда. Удобные интервалы, возможность доставки на следующий день (если заказ оформлен до 12 дня). В связи с временными обстоятельствами (риск заражения COVID) доставка рационов сбалансированного питания доставляется бесконтактно.', 'reason-5')
+                        +reasonItem('Еда в коробках – упаковка и хранение', 'Качественная вакуумная упаковка блюд рациона позволяет сохранять качество и свежесть блюд на протяжении пяти дней! После доставки еды на неделю рекомендуется хранить каждое блюдо в холодильнике. Упаковки с фольгированной коробкой запрещается разогревать в микроволновке! (на каждой коробке с едой указанны разрешенные методы разогрева). Вскрытые блюда подлежать хранению в течении 3х-х часов.', 'reason-6')
+            include ../modules/blocks/delivery
+        include ../modules/footer/footer
+        include ../modules/popup/popup-ask
+        include ../modules/popup/popup-callback
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="https://unpkg.com/swiper/swiper-bundle.js")
+        script(src="static/js/main.js")
+        script(src="static/js/menu.js")
+        //script(src="static/js/select.js")
+        script(src="static/js/slider.js")
+        //script(src="static/js/tabs-review.js")
+        //script(src="static/js/filter-meal.js")
+        block script

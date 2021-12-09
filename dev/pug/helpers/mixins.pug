@@ -45,15 +45,12 @@ mixin reasonItem(name, description, image)
                 h2.reasons__title=name
                 p.reasons__description=description
             picture.reasons__frame
-                source(media="(min-width: 1280px)" srcset="static/images/content/" +image +".webp" type="image/webp")
-                source(media="(min-width: 1280px)" srcset="static/images/content/" +image +".png")
-                source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
-                img(srcset="static/images/content/" +image +"-mb.png" alt="Отзыв").reasons__frame-image
+                source(srcset="static/images/content/" +image +".webp" type="image/webp")
+                img(srcset="static/images/content/" +image +".png" alt="").reasons__frame-image
 
 mixin dateBtn(curDate, curDay, dateTime)
     button(type="button" class="s-content__filter-btn swiper-slide " +curDay)
         time(datetime="" +dateTime).s-content__filter-btn-date=curDate
-
 
 mixin gridItem(type, image, title, name, suppFirst, suppSecond, suppThird, suppFourth, price, weight)
     li(class="item " +type)
@@ -96,3 +93,41 @@ mixin gridItem(type, image, title, name, suppFirst, suppSecond, suppThird, suppF
                 button(type="button").item__bottom-btn.item__bottom-btn-decrease -
             button(type="button").item__bottom-submit.js-to-cart В корзину
             button(type="button").item__bottom-submit.js-change Заменить
+
+mixin mealsItem(type, name, power, protein, fats, carbohydrates, idealFirst, idealSecond, idealThird, priceFive, priceSix, link)
+    li(class="meals__item swiper-slide " +type data-meal="" +name)
+        .meals__head
+            b.meals__name=name
+            span.meals__type=power
+        .meals__body
+            ul.meals__details
+                li.meals__details-item
+                    b.meals__details-nr=protein
+                    span.meals__details-name Белки
+                li.meals__details-item
+                    b.meals__details-nr=fats
+                    span.meals__details-name Жиры
+                li.meals__details-item
+                    b.meals__details-nr=carbohydrates
+                    span.meals__details-name Углев
+                    
+            .meals__suggestions
+                b.meals__suggestions-title Идеально для:
+                
+                ul.meals__suggestions-list
+                    li.meals__suggestions-item
+                        span=idealFirst
+                    li.meals__suggestions-item
+                        span=idealSecond
+                    li.meals__suggestions-item
+                        span=idealThird
+                        
+            ul.meals__bottom
+                li.meals__bottom-item
+                    span.meals__bottom-title 5 блюд в день
+                    b.meals__bottom-price=priceFive
+                li.meals__bottom-item
+                    span.meals__bottom-title 6 дней
+                    b.meals__bottom-price=priceSix
+                    
+        a(href="" +link target="_self").meals__more Подробнее
