@@ -9,6 +9,9 @@
     left: 0;
     right: 1.875rem;
 
+    border: 1px solid $lightgray;
+    border-bottom: none;
+
     &__subtitle {
         display: none;
     }
@@ -197,13 +200,14 @@
 
 @include min-screen(768px) {
     .s-filter {
-        position: relative;
-
-        top: auto;
-        left: auto;
+        max-width: 345px;
+        top: 0;
+        left: 0;
         right: auto;
 
         box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.05);
+
+        border: none;
 
         &__list {
             max-height: 140px;
@@ -263,7 +267,7 @@
             &.active {
                 .s-filter__item.selected{
                     min-height: 140px;
-                    
+
                     .s-filter__description {
                         display: none;
                     }

@@ -171,8 +171,8 @@ if (fastOrderCloser) {
 };
 
 
-var btns = document.getElementsByClassName('select__days-btn');
-var elNodes = document.querySelectorAll(".select__days-btn");
+var btns = document.getElementsByClassName('s-content__days-btn');
+var elNodes = document.querySelectorAll(".s-content__days-btn");
 var daysFilter = document.querySelector('.s-content__filter-list');
 
 for (var i = 0; i < btns.length; i++) {

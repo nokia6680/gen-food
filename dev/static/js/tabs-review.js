@@ -39,10 +39,28 @@ function openMeal(evt, mealName) {
         tablinks[i].className = tablinks[i].className.replace(" selected", "");
     }
 
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(mealName).style.display = "flex";
-    evt.currentTarget.className += " selected";
+    var breakpoint = window.matchMedia( '(min-width: 768px)' );
+    var breakpointChecker = function() {
+       // if larger viewport
+       if ( breakpoint.matches === true ) {
+          document.getElementById(mealName).style.display = "grid";
+          evt.currentTarget.className += " selected";
+       // else if a small viewport
+       } else {
+          // fire small viewport
+          document.getElementById(mealName).style.display = "flex";
+          evt.currentTarget.className += " selected";
+       }
+    };
+
+    // keep an eye on viewport size changes
+    breakpoint.addListener(breakpointChecker);
+    // kickstart
+    breakpointChecker();
 }
+// Show the current tab, and add an "active" class to the button that opened the tab
+//document.getElementById(mealName).style.display = "grid";
+//evt.currentTarget.className += " selected";
 
 document.getElementById("defaultMealOpen").click();
 filterList.classList.remove('active');
