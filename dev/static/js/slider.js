@@ -187,21 +187,55 @@ const breakpointChecker = function() {
 };
 
 const enableSwiper = function() {
-   mySwiper = new Swiper ('.meals-swiper-container', {
-       loop: false,
-       slidesPerView: 1,
-       spaceBetween: 40,
-       centeredSlides: true,
-       initialSlide: 0,
-       a11y: true,
-       keyboardControl: true,
-       grabCursor: true,
+    mySwiper = new Swiper ('.meals-swiper-container', {
+        loop: false,
+        slidesPerView: 1,
+        spaceBetween: 40,
+        centeredSlides: true,
+        initialSlide: 0,
+        a11y: true,
+        keyboardControl: true,
+        grabCursor: true,
 
-       navigation: {
-           nextEl: '.meals__next',
-           prevEl: '.meals__prev',
+        navigation: {
+            nextEl: '.meals__next',
+            prevEl: '.meals__prev',
         },
-   });
+
+        breakpoints: {
+            375: {
+                loop: false,
+                slidesPerView: 1,
+                spaceBetween: 40,
+                centeredSlides: true,
+                initialSlide: 0,
+                a11y: true,
+                keyboardControl: true,
+                grabCursor: true,
+
+                navigation: {
+                    nextEl: '.meals__next',
+                    prevEl: '.meals__prev',
+                },
+            },
+
+            768: {
+                loop: false,
+                slidesPerView: 2,
+                spaceBetween: 20,
+                centeredSlides: false,
+                initialSlide: 0,
+                a11y: true,
+                keyboardControl: true,
+                grabCursor: true,
+
+                navigation: {
+                    nextEl: '.meals__next',
+                    prevEl: '.meals__prev',
+                },
+            }
+        }
+    });
 };
 
 // keep an eye on viewport size changes
