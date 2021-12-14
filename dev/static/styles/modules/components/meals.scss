@@ -207,11 +207,11 @@
 
         @include flex-setting(column, flex-start, flex-start);
 
-        margin-bottom: 1.875rem;
+        margin-bottom: 1.75rem;
 
         &-title {
             @include font-setting($secondary-font, 1.125rem, 1.25rem, 800, $black);
-            margin-bottom: 0.625rem;
+            margin-bottom: 0.5rem;
         }
 
         &-list {
@@ -221,8 +221,9 @@
 
         &-item {
             width: 100%;
-
-            margin-bottom: 0.625rem;
+            display: inline-block;
+            height: auto;
+            margin-bottom: 0.5rem;
             padding-left: 1.25rem;
             position: relative;
 
@@ -246,6 +247,8 @@
             }
 
             span {
+                display: inline-block;
+                height: auto;
                 @include font-setting($secondary-font, 0.875rem, 1.25rem, 300, $darkgray);
             }
         }
@@ -255,7 +258,7 @@
         width: 100%;
 
         display: grid;
-        grid-template-columns: repeat(2, 43.95604395604396%);
+        grid-template-columns: 38.46153846153846% 43.95604395604396%;
         grid-column-gap: 3rem;
         justify-content: space-between;
         align-items: start;
@@ -271,7 +274,7 @@
 
             border-left: 1px dashed $lightgray;
 
-            left: 50%;
+            left: 47%;
             top: 0;
             transform: translateX(-50%);
         }
@@ -282,7 +285,7 @@
 
         &-title {
             @include font-setting($primary-font, 0.875rem, 1.25rem, 400, $gray);
-            margin-bottom: 0.625rem;
+            margin-bottom: 0;
             white-space: nowrap;
         }
 
@@ -396,7 +399,8 @@
 
         &__item {
             border-width: 2px;
-            padding: 2.6875rem 2.6875rem;
+            padding: 2.875rem 2.6875rem;
+            min-height: 700px;
         }
 
         &__head {
@@ -434,7 +438,7 @@
             &-title {
                 font-size: 1.5rem;
                 line-height: 1.875rem;
-                margin-bottom: 0.9375rem;
+                margin-bottom: 0.68755rem;
             }
 
             &-item {
@@ -446,6 +450,7 @@
         }
 
         &__bottom {
+            align-self: flex-end;
             margin-top: auto;
             margin-bottom: 2.8125rem;
             grid-template-columns: 135px 150px;
@@ -455,6 +460,7 @@
             &-title {
                 font-size: 1.125rem;
                 line-height: 1.25rem;
+                margin-bottom: 0.625rem;
             }
 
             &-price {
@@ -464,7 +470,8 @@
         }
 
         &__more {
-            margin-top: 0;
+            align-self: flex-end;
+            margin-top: auto;
             margin-bottom: 0;
         }
     }
@@ -474,6 +481,8 @@
     .meals {
         padding-left: 0;
         padding-right: 0;
+        padding-bottom: 0;
+        margin-bottom: 13.75rem;
 
         &__wrapper {
             max-width: 1440px;

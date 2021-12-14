@@ -19,7 +19,7 @@ html(lang="ru-RU")
         link(rel="stylesheet" type='text/css' href="static/css/styles.css")
     body.body
         include ../modules/header/header
-        main.main
+        main.main.main--ready
             +introBlock('meals-intro', 'meals-intro-image', 'Готовая еда на неделю с доставкой', 'Рационы готового питания от General-food', '', '', 'От 700 руб. в день Бесплатная доставка')
             include ../modules/blocks/meals
             include ../modules/blocks/consult
@@ -49,4 +49,5 @@ html(lang="ru-RU")
         script(src="static/js/slider.js")
         //script(src="static/js/tabs-review.js")
         //script(src="static/js/filter-meal.js")
+        script(src="static/js/mask.js")
         block script

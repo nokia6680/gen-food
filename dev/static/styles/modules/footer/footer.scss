@@ -421,10 +421,21 @@
     .footer {
         &__heading {
             max-width: 1440px;
-            padding: 5rem 0 4.375rem 0;
+            padding: 4.5rem 0 4.375rem 0;
+            display: grid;
+            grid-template-columns: 301px 214px 284px;
+            grid-column-gap: 264px;
+            justify-content: space-between;
 
             &::after {
+                top: -6px;
                 width: 100%;
+            }
+        }
+
+        &__block {
+            &:last-of-type {
+                justify-self: end;
             }
         }
 

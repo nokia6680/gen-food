@@ -36,7 +36,7 @@
 
     &__freq {
         @include font-setting($primary-font, 1.125rem, 1.25rem, 400, $black);
-        margin-bottom: 1.875rem;
+        margin-bottom: 1.8125rem;
     }
 
     &__times {
@@ -172,7 +172,7 @@
     }
 
     &__subtitle {
-        @include font-setting($secondary-font, 1rem, 1.25rem, 800, $black);
+        @include font-setting($secondary-font, 1.03125rem, 1.25rem, 800, $black);
         text-align: center;
         margin-bottom: 0.625rem;
     }
@@ -183,6 +183,7 @@
         margin-bottom: 1.25rem;
 
         &:last-of-type {
+            font-size: 0.875rem;
             margin-bottom: 1.875rem;
         }
     }
@@ -316,7 +317,7 @@
         }
 
         &__title {
-            font-size: 3rem;
+            font-size: 2.875rem;
             line-height: 3.75rem;
             margin-bottom: 1.875rem;
             text-align: left;
@@ -335,6 +336,10 @@
 
         &__times {
             margin-bottom: 3.125rem;
+
+            &-name {
+                margin-bottom: 0.625rem;
+            }
         }
 
         &__description {

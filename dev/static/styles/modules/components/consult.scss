@@ -3,8 +3,8 @@
 
     @include flex-setting(column, flex-start, center);
 
-    padding: 3.75rem 1.25rem 0 1.25rem;
-    margin-bottom: 6.25rem;
+    padding: 4.375rem 1.25rem 0 1.25rem;
+    margin-bottom: 6rem;
 
     &__wrapper {
         width: 100%;
@@ -48,7 +48,7 @@
 
     &__item {
         width: 100%;
-        margin-bottom: 1.25rem;
+        margin-bottom: 1rem;
 
         &:last-child {
             margin-bottom: 0;

@@ -91,7 +91,7 @@ mixin gridItem(type, image, title, name, suppFirst, suppSecond, suppThird, suppF
     li(class="item " +type)
         .item__service
             button(type="button").item__service-btn.js-change
-            b.item__service-about Добавить второй завтрак
+            b.item__service-about Добавить 2ой завтрак
         .item__constructor
             a(href="constructor.html" target="_self").item__constructor-link Конструктор рациона
             
@@ -156,14 +156,13 @@ mixin mealsItem(type, name, power, protein, fats, carbohydrates, idealFirst, ide
                         span=idealSecond
                     li.meals__suggestions-item
                         span=idealThird
-                        
-            ul.meals__bottom
-                li.meals__bottom-item
-                    span.meals__bottom-title 5 блюд в день
-                    b.meals__bottom-price=priceFive
-                li.meals__bottom-item
-                    span.meals__bottom-title 6 дней
-                    b.meals__bottom-price=priceSix
+        ul.meals__bottom
+            li.meals__bottom-item
+                span.meals__bottom-title 5 блюд в день
+                b.meals__bottom-price=priceFive
+            li.meals__bottom-item
+                span.meals__bottom-title 6 дней
+                b.meals__bottom-price=priceSix
                     
         a(href="" +link target="_self").meals__more Подробнее
         

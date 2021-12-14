@@ -3,7 +3,7 @@
 
     @include flex-setting(column, flex-start, center);
 
-    margin-bottom: 7.5rem;
+    margin-bottom: 7.25rem;
 
     &__wrapper {
         width: 100%;
@@ -47,7 +47,7 @@
 
         @include flex-setting(column, flex-start, center);
 
-        margin-bottom: 2.5rem;
+        margin-bottom: 2.25rem;
 
         &:last-child {
             margin-bottom: 0;
@@ -257,8 +257,9 @@
         &__frame {
             position: absolute;
             margin-left: 0;
-
-            --width: calc(100% - 1910px - 368px);
+            top: 52%;
+            transform: translateY(-50%);
+            --width: calc(100% - 1910px - 462px);
             left: calc(var(--width) / 2);
         }
 
@@ -269,6 +270,7 @@
 
         &__title {
             max-width: 90%;
+            margin-bottom: 2rem;
         }
 
         &__name {

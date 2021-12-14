@@ -89,7 +89,45 @@ button { outline: none; }
 }
 
 .main {
+    &--meals {
+        .reviews {
+            margin-bottom: 7.625rem;
+        }
 
+        @include min-screen(1680px) {
+            .select {
+                margin-bottom: 12.25rem;
+            }
+
+            .delivery {
+                margin-bottom: 12.5rem;
+            }
+
+            .reviews {
+                margin-bottom: 12.5rem;
+            }
+
+            .faq {
+                margin-bottom: 13.25rem;
+            }
+        }
+    }
+
+    &--ready {
+        .consult {
+            margin-bottom: 4.875rem;
+        }
+
+        .individual {
+            margin-bottom: 6.125rem;
+        }
+
+        @include min-screen(1680px) {
+            .reasons {
+                margin-bottom: 12.125rem;
+            }
+        }
+    }
 }
 
 //Модули

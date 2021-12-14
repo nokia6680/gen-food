@@ -192,6 +192,10 @@
                     margin-left: 8.875rem;
                 }
             }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
         }
     }
 }

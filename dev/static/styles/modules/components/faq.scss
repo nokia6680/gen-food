@@ -2,6 +2,7 @@
     width: 100%;
 
     @include flex-setting(column, flex-start, center);
+    margin-bottom: 3.75rem;
 
     &__wrapper {
         width: 100%;
@@ -18,7 +19,7 @@
     &__filter {
         width: 100%;
         @include flex-setting(row, flex-start, center);
-        margin-bottom: 1.875rem;
+        margin-bottom: 0.625rem;
 
         &-list {
             display: flex;
@@ -109,7 +110,7 @@
             @include flex-setting(column, flex-start, flex-start);
 
             padding-left: 2.1875rem;
-            margin-bottom: 1.875rem;
+            margin-bottom: 1.25rem;
             min-height: 40px;
             max-height: 60px;
             overflow: hidden;
@@ -150,6 +151,8 @@
                 max-height: 700px;
                 transition: 0.4s $cubic;
 
+                margin-bottom: 1.875rem;
+
                 &::after {
                     transform: rotate(-90deg);
                     background-image: url("data:image/svg+xml,%3Csvg width='14' height='20' viewBox='0 0 14 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.821289 2.35836L8.46293 10L0.821289 17.6416L3.17957 20L13.1796 10L3.17957 0L0.821289 2.35836Z' fill='%2392C64E'/%3E%3C/svg%3E");
@@ -169,7 +172,7 @@
         &-name {
             @include font-setting($secondary-font, 1rem, 1.25rem, 800, $black);
             text-align: left;
-            max-width: 90%;
+            max-width: 97%;
             transition: 0.4s $cubic;
         }
 
@@ -181,7 +184,7 @@
     }
 
     &__contacts {
-        padding: 3.75rem 1.25rem;
+        padding: 3.75rem 0.625rem;
         width: 100%;
 
         @include flex-setting(column, flex-start, center);
@@ -402,7 +405,7 @@
 
 @include min-screen(1680px) {
     .faq {
-        margin-bottom: 12.5rem;
+        margin-bottom: 12.75rem;
 
         &__wrapper {
             padding: 0;
@@ -438,6 +441,20 @@
 
                 top: 0;
                 right: -8.125rem;
+            }
+
+            &-name {
+                max-width: 100%;
+            }
+
+            &-item {
+                &.active {
+                    margin-bottom: 3rem;
+
+                    .faq__content-name {
+                        padding-bottom: 1.625rem;
+                    }
+                }
             }
         }
 

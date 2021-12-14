@@ -35,6 +35,7 @@
         @include flex-setting(column, flex-start, center);
 
         padding: 0 2.625rem;
+        margin-bottom: 2rem;
     }
 
     &__title {
@@ -63,8 +64,8 @@
         text-decoration: none;
         text-transform: uppercase;
         text-align: center;
-
-        padding: 0.9375rem 2.1875rem;
+        white-space: nowrap;
+        padding: 0.9375rem 3.3125rem;
 
         background: linear-gradient(93.13deg, #92C64E 0%, #4BAF50 100%);
         border-radius: 40px;
@@ -148,11 +149,16 @@
 
 @include min-screen(1366px) {
     .individual {
+        &__wrapper {
+            align-items: flex-start;
+        }
         &__frame {
             display: flex;
             min-width: 914px;
             width: 914px;
             height: 900px;
+
+            margin-bottom: 0;
 
             &-image {
                 object-fit: contain;
@@ -160,7 +166,9 @@
         }
 
         &__info {
+            min-width: 707px;
             padding: 0;
+            padding-top: 223px;
         }
 
         &__title {
@@ -183,6 +191,24 @@
 
         &__pricing {
             font-size: 2rem;
+        }
+    }
+}
+
+@include min-screen(1680px) {
+    .individual {
+        &__info {
+            grid-template-columns: 355px 1fr;
+            grid-column-gap: 2.5rem;
+        }
+
+        &__description {
+            font-size: 1.5rem;
+        }
+
+        &__link {
+            font-size: 1.5rem;
+            margin-right: 0;
         }
     }
 }

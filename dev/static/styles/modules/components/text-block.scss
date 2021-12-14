@@ -70,11 +70,17 @@
             font-size: 2.875rem;
             line-height: 3.75rem;
         }
+
+        &__description {
+            font-family: $secondary-font;
+        }
     }
 }
 
 @include min-screen(1680px) {
     .text-block {
+        margin-bottom: 10rem;
+         
         &__wrapper {
             align-items: flex-start;
             padding-left: 0;
