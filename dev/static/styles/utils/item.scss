@@ -200,7 +200,7 @@
     &__name {
         @include font-setting($secondary-font, 1.125rem, 1.25rem, 800, $black);
         text-align: left;
-
+        text-decoration: none;
         margin-bottom: 1.75rem;
     }
 

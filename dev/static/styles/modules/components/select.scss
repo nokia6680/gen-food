@@ -68,12 +68,14 @@
     }
 }
 
-@include min-screen(1280px) {
+@include min-screen(1366px) {
     .select {
         margin-bottom: 5.625rem;
 
         &__wrapper {
-            max-width: 1200px;
+            max-width: 100%;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
         }
 
         &__title {

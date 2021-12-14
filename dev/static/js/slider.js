@@ -54,7 +54,7 @@ const swiper1 = new Swiper('.swiper-container-reviews', {
             },
         },
 
-        1280: {
+        1366: {
             spaceBetween: 60,
             slidesPerView: 3.4,
             speed: 1000,
@@ -122,9 +122,9 @@ const swiper2 = new Swiper('.s-content-filter-swiper', {
             },
         },
 
-        1280: {
+        1366: {
             spaceBetween: 30,
-            slidesPerView: 3,
+            slidesPerView: 4,
             speed: 1000,
             centeredSlides: false,
             navigation: {
@@ -169,7 +169,7 @@ function changeActiveClass(e) {
 
 // breakpoint where swiper will be destroyed
 // and switches to a dual-column layout
-const breakpoint = window.matchMedia( '(min-width: 1280px)' );
+const breakpoint = window.matchMedia( '(min-width: 1366px)' );
 // keep track of swiper instances to destroy later
 let mySwiper;
 const breakpointChecker = function() {

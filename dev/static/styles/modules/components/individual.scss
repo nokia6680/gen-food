@@ -146,7 +146,7 @@
     }
 }
 
-@include min-screen(1280px) {
+@include min-screen(1366px) {
     .individual {
         &__frame {
             display: flex;

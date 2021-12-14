@@ -259,7 +259,7 @@
     }
 }
 
-@include min-screen(1280px) {
+@include min-screen(1366px) {
     .footer {
         &__heading {
             padding: 5rem 2.5rem 4.375rem 2.5rem;

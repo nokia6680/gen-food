@@ -63,6 +63,7 @@
 
     &__list {
         width: 100%;
+        overflow: hidden;
     }
 
     &__item {
@@ -310,6 +311,177 @@
         &:hover,
         &:active {
             background: linear-gradient(93.13deg, #4BAF50 0%, #92C64E 100%);
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .meals {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        position: relative;
+        margin-bottom: 10rem;
+
+        &__title {
+            align-self: flex-start;
+            font-size: 1.875rem;
+            line-height: 2.1875rem;
+            text-align: left;
+            margin-bottom: 2.5rem;
+        }
+
+        &__controls {
+            position: absolute;
+            top: 2.375rem;
+            right: 2.5rem;
+            margin-bottom: 0;
+        }
+
+        &__prev,
+        &__next {
+            width: 60px;
+            height: 60px;
+        }
+
+        &__prev {
+            margin-right: 1.5625rem;
+        }
+
+        &__next {
+            margin-left: 1.5625rem;
+        }
+
+        &__item {
+            height: auto;
+        }
+
+        &__bottom {
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+
+        &__more {
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@include min-screen(1366px) {
+    .meals {
+        padding-top: 6.25rem;
+        align-items: flex-start;
+
+        &__title {
+            font-size: 2.875rem;
+            line-height: 3.75rem;
+            margin-bottom: 5rem;
+        }
+
+        &__controls {
+            display: none;
+        }
+
+        &__list {
+            max-width: 1440px;
+        }
+
+        &__list .swiper-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 420px);
+            grid-row-gap: 3.75rem;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+
+        &__item {
+            border-width: 2px;
+            padding: 2.6875rem 2.6875rem;
+        }
+
+        &__head {
+            padding-left: 6.875rem;
+            padding-bottom: 2.1875rem;
+
+            &::after {
+                width: 80px;
+                height: 80px;
+
+                left: 2.6875rem;
+                top: 2.6875rem;
+            }
+        }
+
+        &__name {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+        }
+
+        &__type {
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+
+        &__body {
+            height: 100%;
+            margin-bottom: 0;
+        }
+
+        &__suggestions {
+            margin-top: 0;
+            margin-bottom: 0.625rem;;
+
+            &-title {
+                font-size: 1.5rem;
+                line-height: 1.875rem;
+                margin-bottom: 0.9375rem;
+            }
+
+            &-item {
+                span {
+                    font-size: 1rem;
+                    line-height: 1.25rem;
+                }
+            }
+        }
+
+        &__bottom {
+            margin-top: auto;
+            margin-bottom: 2.8125rem;
+            grid-template-columns: 135px 150px;
+
+            justify-content: space-between;
+
+            &-title {
+                font-size: 1.125rem;
+                line-height: 1.25rem;
+            }
+
+            &-price {
+                font-size: 1.25rem;
+                line-height: 1;
+            }
+        }
+
+        &__more {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@include min-screen(1680px) {
+    .meals {
+        padding-left: 0;
+        padding-right: 0;
+
+        &__wrapper {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        &__list .swiper-wrapper {
+            grid-template-columns: repeat(3, 435px);
         }
     }
 }

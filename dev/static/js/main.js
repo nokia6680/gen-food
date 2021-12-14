@@ -152,7 +152,7 @@ if (changeMealCloser) {
 
 var fastOrderCloser = document.querySelector('.fast-order__closer');
 var fastOrder = document.querySelector('.fast-order');
-var fastOrderOpener = document.querySelector('.select__order');
+var fastOrderOpener = document.querySelector('.s-content__order');
 
 if (fastOrderOpener) {
     fastOrderOpener.addEventListener('click', function() {

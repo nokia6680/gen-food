@@ -19,13 +19,48 @@ mixin introBlock(type, image, title, subtitle, listTextFirst, listTextSecond, in
                         span.intro__item-text=listTextSecond
                 .intro__bottom
                     button(type="button").intro__try Попробовать сейчас
+                    a(href="selection.html" target="_self").intro__select Побобрать рацион
                     span.intro__info=infoText
             picture.intro__frame
-                source(media="(min-width: 1280px)" srcset="static/images/content/" +image +".webp" type="image/webp")
-                source(media="(min-width: 1280px)" srcset="static/images/content/" +image +".jpg")
+                source(media="(min-width: 1366px)" srcset="static/images/content/" +image +".webp" type="image/webp")
+                source(media="(min-width: 1366px)" srcset="static/images/content/" +image +".jpg")
                 source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
                 img(src="static/images/content/" +image +"-mb.jpg" alt="" +title).intro__frame-image
                 
+mixin introShort(type, image, title)
+    section(class="intro " +type)
+        .intro__wrapper
+            picture.intro__frame
+                source(media="(min-width: 1366px)" srcset="static/images/content/" +image +".webp" type="image/webp")
+                source(media="(min-width: 1366px)" srcset="static/images/content/" +image +".jpg")
+                source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
+                img(src="static/images/content/" +image +"-mb.jpg" alt="" +title).intro__frame-image
+            h1.intro__title=title
+            
+mixin introBlockMeal(type, image, title, description, subtitle)
+    section(class="intro " +type)
+        // Overall wrapper
+        .intro__wrapper
+            // Rotated bg blocks with shadow
+            .intro__bg.intro__bg--1
+            .intro__bg.intro__bg--2
+            .intro__bg.intro__bg--3
+            .intro__bg.intro__bg--4
+
+            .intro__details(data-type="" +title)
+                h1.intro__title=title
+                b.intro__description=description
+                h2.intro__subtitle=subtitle
+
+                .intro__bottom
+                    button(type="button").intro__try Попробовать сейчас
+                    span.intro__info ОТ 700 руб. в день бесплатная доставка
+            picture.intro__frame
+                source(media="(min-width: 1366px)" srcset="static/images/content/" +image +".webp" type="image/webp")
+                source(media="(min-width: 1366px)" srcset="static/images/content/" +image +".jpg")
+                source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
+                img(src="static/images/content/" +image +"-mb.jpg" alt="" +title).intro__frame-image
+        
 mixin faqItem(type, name, description)
     li(class="faq__content-item " +type)
         b.faq__content-name=name
@@ -67,7 +102,7 @@ mixin gridItem(type, image, title, name, suppFirst, suppSecond, suppThird, suppF
         .item__head
             h3.item__title=title
             button(type="button").item__faq
-        p.item__name=name
+        a(href="itemcard.html" target="_self").item__name=name
         // Только в каталоге
         .item__info
             ul.item__supplements
@@ -131,3 +166,15 @@ mixin mealsItem(type, name, power, protein, fats, carbohydrates, idealFirst, ide
                     b.meals__bottom-price=priceSix
                     
         a(href="" +link target="_self").meals__more Подробнее
+        
+mixin mealsListItem(type, name, info, link)
+    li(class="meals-list__item " +type)
+        a(href="" +link target="_self" data-type="" +name class="meals-list__link " +type) 
+            h3.meals-list__name=name
+            span.meals-list__info=info
+            
+mixin mealsTypeItem(title, description1, description2)
+    .meals-about__info
+        h3.meals-about__title=title
+        p.meals-about__description=description1
+        p.meals-about__description=description2
