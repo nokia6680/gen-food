@@ -127,6 +127,8 @@
     }
 
     &.short {
+        margin-bottom: 3.125rem;
+
         .intro__wrapper {
             &::after {
                 background: linear-gradient(0deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
@@ -696,6 +698,8 @@
         }
 
         &.short {
+            margin-bottom: 0.9375rem;
+            
             .intro__wrapper {
                 &::after {
                     z-index: 1;

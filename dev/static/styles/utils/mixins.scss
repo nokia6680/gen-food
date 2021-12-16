@@ -52,6 +52,14 @@ $units: 1px !default;
   align-items: $align;
 }
 
+@mixin font-setting($family, $size, $line-height, $font-width, $color) {
+  font-family: $family;
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $font-width;
+  color: $color;
+}
+
 @mixin ul-nostyle {
   margin: 0;
   padding: 0;
@@ -76,7 +84,7 @@ $units: 1px !default;
   width: 16px;
   height: 16px;
   border-radius: 4px;
-  background-color: $olive;
+  background-color: $black;
   box-shadow: inset 0px 0px 8px rgba(96, 0, 43, 0.15);
 
   top: 0.125rem;
@@ -92,7 +100,7 @@ $units: 1px !default;
   height: 16px;
 
   border-radius: 4px;
-  background-color: $olive;
+  background-color: $black;
   box-shadow: inset 0px 0px 8px rgba(96, 0, 43, 0.15);
 
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath d='M0 0h60v60H0z' fill='%2360002B'/%3E%3C/svg%3E");

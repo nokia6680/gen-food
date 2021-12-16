@@ -21,18 +21,106 @@ html(lang="ru-RU")
         include ../modules/header/header
         main.main
             +introShort('short', 'shop-bg', 'Интернет-магазин')
+            .breadcrumbs
+                ul.breadcrumbs__list
+                    for i in breadCrumbs
+                        li.breadcrumbs__item
+                            a(href="" +i.link target="_self").breadcrumbs__link=i.name
+            section.shop
+                .shop__wrapper
+                    .shop__head
+                        form(method="get" action="" id="shop-search").shop__form
+                            input(type="search" name="shop-search" id="shop-search" placeholder="Поиск по названию").shop__form-input
+                            button(type="submit").shop__form-submit
+                        .shop__filter
+                            ul.shop__filter-list#shopFilter
+                                li.shop__filter-item
+                                    button(type='button').shop__filter-btn.shop__filter-btn--filters.active Фильтры
+                                li.shop__filter-item
+                                    button(type='button').shop__filter-btn.shop__filter-btn--direction Сортировать
+                                li.shop__filter-item
+                                    button(type='button').shop__filter-btn.shop__filter-btn--spec Специальное
+                                li.shop__filter-item
+                                    button(type='button' onclick="filterSelection('breakfast')").shop__filter-btn Завтраки
+                                li.shop__filter-item
+                                    button(type='button' onclick="filterSelection('salads')").shop__filter-btn Салаты и закуски
+                                li.shop__filter-item
+                                    button(type='button' onclick="filterSelection('soups')").shop__filter-btn Супы
+                                li.shop__filter-item 
+                                    button(type='button' onclick="filterSelection('second')").shop__filter-btn Гарниры
+                                li.shop__filter-item
+                                    button(type='button' onclick="filterSelection('dessert')").shop__filter-btn Десерты
+                    .shop__content
+                        ul.shop__content-list
+                            +gridItem('shop__content-item breakfast dessert', 'breakfast-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '238', '3', '7', '39', '230', '150 г.')
+                            +gridItem('shop__content-item salads', 'dinner-1', 'Обед', 'Курица в соусе Терияки с овощами и розовой чечевицей', '238', '3', '7', '39', '230', '150 г.')
+                            +gridItem('shop__content-item soup dessert', 'lunch-1', 'Полдник', 'Смузи боул из облепихи с клубникой', '238', '3', '7', '39', '230', '150 г.')
+                            +gridItem('shop__content-item second', 'breakfast-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '238', '3', '7', '39', '230', '150 г.')
+                            +gridItem('shop__content-item second', 'lunch-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '238', '3', '7', '39', '230', '150 г.')
+                            +gridItem('shop__content-item second', 'breakfast-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '238', '3', '7', '39', '230', '150 г.')
+                            +gridItem('shop__content-item second', 'lunch-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '238', '3', '7', '39', '230', '150 г.')
+                            +gridItem('shop__content-item soups', 'breakfast-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '238', '3', '7', '39', '230', '150 г.')
+                            +gridItem('shop__content-item dessert', 'lunch-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '238', '3', '7', '39', '230', '150 г.')
+                            +gridItem('shop__content-item soup', 'breakfast-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '238', '3', '7', '39', '230', '150 г.')
+                            li.shop__content-load
+                                button(type="button").shop__content-load-btn
+                                b.shop__content-load-text Показать еще
+                        <!--Pagination-->
+                        .shop__pagination
+                            ul.shop__pagination-list
+                                li.shop__pagination-item
+                                    button(type="button").shop__pagination-prev
+                                li.shop__pagination-item
+                                    a(href="#" target="_self").shop__pagination-link.active 1
+                                li.shop__pagination-item
+                                    a(href="#" target="_self").shop__pagination-link 2 
+                                li.shop__pagination-item
+                                    a(href="#" target="_self").shop__pagination-link 3
+                                li.shop__pagination-item
+                                    a(href="#" target="_self").shop__pagination-link 4
+                                li.shop__pagination-item
+                                    a(href="#" target="_self").shop__pagination-link 5
+                                li.shop__pagination-item
+                                    a(href="#" target="_self").shop__pagination-link 6
+                                li.shop__pagination-item
+                                    a(href="#" target="_self").shop__pagination-link 7
+                                li.shop__pagination-item
+                                    button(type="button").shop__pagination-next
             include ../modules/blocks/delivery
+            
+            section.choose.choose--shop
+                .choose__wrapper
+                    picture.choose__frame
+                        source(srcset="static/images/content/choose-bg.webp" type="image/webp")
+                        img(src="static/images/content/choose-bg.png" alt="Выберите то, что подходит именно вам").choose__frame-image
+                    .choose__info
+                        h2.choose__title Интернет-магазин здорового питания
+                        p.choose__description Попробовав один раз - вы больше не вспомните о пицце, суши и фастфуде! Натуральное, здоровое питание с доставкой на дом! Блюда ресторанного качества, удобная доставка, большие сроки хранения продуктов - все это для Вас!
+                        p.choose__description Заказать еду в интернете очень просто, но задумывались ли вы что именно Вам привозят? Огромное количество красителей, консервантов, еще большее количества СОИ названной мясом - хватит! Пора питаться полезно! Именно у нас вы можете заказать отличные блюда по самым низким ценам - устроить ужин любимому человеку, удивить родителей или друзей - быть уверенным что на вашем столе самые вкусные и качественные продукты.
+                        p.choose__description Если вы не умеете готовить то мы поможем Вам! Доставка еды от шеф повара наполнит Ваш холодильник уникальными блюдами!
+                        p.choose__description Вам больше не нужно думать, что купить и что приготовить! Магазин General Food обеспечит вас едой на неделю. Наши блюда пастеризованы, упакованы под вакуумом, хранятся в холодильнике до пяти дней.
+                        p.choose__description Список продуктов для правильного питания:
+                        
+                        ul.choose__list
+                            li.choose__item
+                                p.choose__about свежие фрукты и овощи;
+                            li.choose__item
+                                p.choose__about мясо и птица высшего сорта;
+                            li.choose__item
+                                p.choose__about фермерское молоко, сметана, сливки, творог;
+                            li.choose__item
+                                p.choose__about полезные крупы и спагетти.
         include ../modules/footer/footer
 
         include ../modules/popup/popup-ask
         include ../modules/popup/popup-callback
         include ../modules/popup/form-reaction
         script(src="static/js/vendor/jquery-3.3.1.min.js")
-        script(src="https://unpkg.com/swiper/swiper-bundle.js")
+        //script(src="https://unpkg.com/swiper/swiper-bundle.js")
         script(src="static/js/main.js")
         script(src="static/js/menu.js")
         //script(src="static/js/select.js")
-        script(src="static/js/slider.js")
+        //script(src="static/js/slider.js")
         //script(src="static/js/tabs-review.js")
         //script(src="static/js/filter-meal.js")
         block script
