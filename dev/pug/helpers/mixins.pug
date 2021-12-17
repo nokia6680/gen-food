@@ -177,3 +177,10 @@ mixin mealsTypeItem(title, description1, description2)
         h3.meals-about__title=title
         p.meals-about__description=description1
         p.meals-about__description=description2
+
+mixin feedbackItem(name, date, datetime, rate, text)
+    li.itemcard__feedback-item
+        .itemcard__feedback-head
+            h3.itemcard__feedback-name=name
+            time(datetime="" +datetime).itemcard__feedback-date=date
+            ul(class="itemcard__feedback-rate " +rate)

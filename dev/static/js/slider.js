@@ -242,3 +242,11 @@ const enableSwiper = function() {
 breakpoint.addListener(breakpointChecker);
 // kickstart
 breakpointChecker();
+
+const swiper3 = new Swiper('.shop__filter-list', {
+    slidesPerView: 'auto',
+    variableWidth: true,
+    spaceBetween: 0,
+    grabCursor: true,
+    speed: 1000,
+});

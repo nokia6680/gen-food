@@ -1,0 +1,70 @@
+.filter {
+    position: relative;
+
+    &-head {
+        cursor: pointer;
+    }
+
+    &-dropdown {
+        @include flex-setting(column, flex-start, flex-start);
+        width: 200%;
+        left: 0;
+        position: absolute;
+        height: 0;
+        overflow: hidden;
+        max-height: 0;
+        transition: 0.4s linear;
+
+        background-color: $white;
+
+        padding-left: 1.875rem;
+        padding-right: 1.875rem;
+
+        border-radius: 0 25px 25px 25px;
+    }
+
+    &-head {
+        &.active {
+            z-index: 8;
+
+            & + .filter-dropdown {
+                height: auto;
+                max-height: 520px;
+                transition: 0.4s linear;
+                z-index: 10;
+                overflow: visible;
+
+                padding: 1.875rem 1.875rem;
+
+                .filter-dropdown__block {
+                    pointer-events: auto;
+                    transform: scale(1) translateY(0px);
+                    will-change: transform;
+                    opacity: 1;
+
+                    @for $i from 1 through $filterItems {
+                        &:nth-child(#{$i}) {
+                            transition-delay: #{0.06 * $i+0.2}s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .filter-dropdown__block {
+        width: 100%;
+        position: relative;
+        transform: scale(1.15) translateY(-30px);
+        opacity: 0;
+        transition: transform 0.5s $cubic, opacity 0.6s $cubic;
+        margin-bottom: 0.9375rem;
+        background-color: $white;
+
+        @for $i from 1 through $filterItems {
+            &:nth-child(#{$i}) {
+                transition-delay: #{0.56 - ($i * 0.07)}s;
+            }
+        }
+    }
+}

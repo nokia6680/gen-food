@@ -6,6 +6,7 @@
 @import "utils/breadcrumbs";
 @import "utils/fluid-font";
 @import "utils/item";
+@import "utils/filter";
 //@include sprites($spritesheet-sprites);
 
 
@@ -28,6 +29,27 @@ body {
   line-height: 1.5;
   background-color: $white;
   overflow-x: hidden;
+}
+
+.body {
+    &.dimmed {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: 100vw;
+            height: 100vh;
+
+            background-color: rgba(0, 0, 0, 0.7);
+
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+    }
 }
 
 *,

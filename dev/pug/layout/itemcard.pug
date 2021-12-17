@@ -21,7 +21,77 @@ html(lang="ru-RU")
         include ../modules/header/header
         main.main
             +introShort('short', 'shop-bg', 'Интернет-магазин')
-            
+            .breadcrumbs
+                ul.breadcrumbs__list
+                    for i in breadCrumbs
+                        li.breadcrumbs__item
+                            a(href="" +i.link target="_self").breadcrumbs__link=i.name
+            section.itemcard
+                .itemcard__wrapper
+                    .itemcard__main
+                        picture.itemcard__frame
+                            source(media="(min-screen: 1366px)" srcset="static/images/content/itemcard.webp" type="image/webp")
+                            source(media="(min-screen: 1366px)" srcset="static/images/content/itemcard.jpg")
+                            source(srcset="static/images/content/itemcard-mb.webp" type="image/webp")
+                            img(src="static/images/content/itemcard-mb.jpg" alt="itemcard-name").itemcard__frame-image
+                        .itemcard__info
+                            h1.itemcard__title Котлеты соевые с соусом барбекю
+                            b.itemcard__articul Артикул: 
+                                span.itemcard__articul-nr Б0859
+                            p.itemcard__contains Соя, специи, соевый соус, манка, масло оливковое, сухари панировочные, томаты в с/с, лук, чеснок, морковь, перец болгарский, кабачки, масло кунжутное
+                            
+                            ul.itemcard__data
+                                li.itemcard__data-item
+                                    b.itemcard__data-name Вес
+                                    span.itemcard__data-nr 270 г.
+                                li.itemcard__data-item
+                                    b.itemcard__data-name Калории
+                                    span.itemcard__data-nr 338.8 кКал
+                                li.itemcard__data-item
+                                    b.itemcard__data-name Белки
+                                    span.itemcard__data-nr 5.1 г.
+                                li.itemcard__data-item
+                                    b.itemcard__data-name Жиры
+                                    span.itemcard__data-nr 24.8 г.
+                                li.itemcard__data-item
+                                    b.itemcard__data-name Углеводы
+                                    span.itemcard__data-nr 23.7 г.
+                            .itemcard__checkout
+                                b.itemcard__price 320 руб.
+                                .itemcard__checkout-count
+                                    button(type="button").itemcard__checkout-btn.itemcard__checkout-btn-increase +
+                                    input(type="number" name="item-counter" id="item-counter" placeholder="1").itemcard__checkout-input
+                                    button(type="button").itemcard__checkout-btn.itemcard__checkout-btn-decrease -
+                                button(type="button").itemcard__btn В корзину
+                    
+                    .itemcard__details
+                        ul.itemcard__tabs
+                            li.itemcard__tabs-item
+                                button(type="button" data-sort="itemAbout" onclick="openCard(event, 'itemAbout')" id="defaultOpen").itemcard__tabs-btn.active Описание
+                            li.itemcard__tabs-item
+                                button(type="button" data-sort="itemDel" onclick="openCard(event, 'itemDel')").itemcard__tabs-btn Доставка
+                            li.itemcard__tabs-item
+                                button(type="button" data-sort="itemBack" onclick="openCard(event, 'itemBack')").itemcard__tabs-btn Отзывы
+                        .itemcard__content
+                            .itemcard__content-item#itemAbout
+                                p.itemcard__content-description ПП еда с строгим разделением меню дня на пять приёмов пищи способствует правильному усвоению потребляемых продуктов, с учетом распределения КБЖУ в течение дня. Мы разработали рационы, качество которых проверяется ежедневно, совместно с роспотребнадзором, институтом питания Москвы и лучшими нутрициологами и диетологами столицы. Все блюда в рационах сбалансированы по КБЖУ и полностью соответствуют целям достигаемым при выборе линеек питания.
+                            .itemcard__content-item#itemDel
+                                include ../modules/blocks/delivery
+                            .itemcard__content-item#itemBack
+                                ul.itemcard__feedback
+                                .itemcard__ratings
+                                    h3.itemcard__ratings-title Общий рейтинг
+                                    ul.itemcard__stars
+                                    
+                                    .itemcard__ratings-list
+                                        p.itemcard__ratings-note Посмотреть отзывы на других площадках
+                                        
+                                        a(href="#" target="_blank" title="Яндекс лавка").itemcard__ratings-link
+                                            img(src="static/images/content/yl.svg" alt="Яндекс лавка")
+                                        a(href="#" target="_blank" title="delivery Club").itemcard__ratings-link
+                                            img(src="static/images/content/dc.svg" alt="delivery Club")
+                                        button(type="button").itemcard__ratings-new Написать отзыв
+            include ../modules/blocks/similar
             include ../modules/blocks/consult
             section.reasons
                 .reasons__wrapper

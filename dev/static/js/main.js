@@ -209,3 +209,16 @@ if (consultSubmit) {
         consultAfterSending.classList.add('active');
     });
 };
+
+var allFilters = document.getElementsByClassName('filter-head');
+var elNodes = document.querySelectorAll(".filter-head");
+var body = document.querySelector('.body');
+
+for (var i = 0; i < allFilters.length; i++) {
+    var elemFilter = allFilters[i];
+    elemFilter.addEventListener("click", function() {
+        event.preventDefault();
+        this.classList.toggle("active");
+        body.classList.toggle("dimmed");
+    });
+}
