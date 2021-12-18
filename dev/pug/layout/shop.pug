@@ -36,10 +36,10 @@ html(lang="ru-RU")
                         .shop__filter
                             ul.shop__filter-list#shopFilter
                                 .swiper-wrapper
-                                    li.swiper-slide.shop__filter-item.filter
+                                    li.swiper-slide.shop__filter-item.filter.is-collapsed
                                         button(type='button').shop__filter-btn.shop__filter-btn--filters.filter-head Фильтры
 
-                                        .filter-dropdown
+                                        .filter-dropdown.swiper-no-swiping
                                             .filter-dropdown__block#contains
                                                 b.filter-dropdown__name Состав
                                                 ul.filter-dropdown__list
@@ -67,19 +67,39 @@ html(lang="ru-RU")
                                                         input(type="checkbox" name="noodles" id="filter-6").filter-dropdown__checkbox
                                                         label(for="filter-6").filter-dropdown__label Макароны
                                                         span.filter-dropdown__counter 24
-                                            .filter-dropdown__block#fats-filter
+                                            .filter-dropdown__block.subfilter-item.is-collapsed#fats-filter
                                                 b.filter-dropdown__name Жиры
-                                                input(type="text" class="js-range-slider" name="fats-range" value="" data-type="double" data-min="90" data-max="560")
-                                            .filter-dropdown__block#protein-filter
+                                                .filter-dropdown__range
+                                                    .filter-dropdown__controls
+                                                        input(type="text" class="js-input-from" value="0")
+                                                        input(type="text" class="js-input-to" value="0")
+                                                    label.filter-dropdown__input
+                                                        input(type="text" class="filter-dropdown__slider" name="fats-range" value="" data-type="double" data-min="90" data-max="560" data-from="90" data-to="560")
+                                            .filter-dropdown__block.subfilter-item.is-collapsed#protein-filter
                                                 b.filter-dropdown__name Белки
-                                                input(type="text" class="js-range-slider" name="protein-range" value="" data-type="double" data-min="90" data-max="560")
-                                            .filter-dropdown__block#carbon-filter
+                                                .filter-dropdown__range
+                                                    .filter-dropdown__controls
+                                                        input(type="text" class="js-input-from" value="0")
+                                                        input(type="text" class="js-input-to" value="0")
+                                                    label.filter-dropdown__input
+                                                        input(type="text" class="filter-dropdown__slider" name="protein-range" value="" data-type="double" data-min="90" data-max="560")
+                                            .filter-dropdown__block.subfilter-item.is-collapsed#carbon-filter
                                                 b.filter-dropdown__name Углеводы
-                                                input(type="text" class="js-range-slider" name="carbon-range" value="" data-type="double" data-min="90" data-max="560")
-                                            .filter-dropdown__block#carbon-filter
+                                                .filter-dropdown__range
+                                                    .filter-dropdown__controls
+                                                        input(type="text" class="js-input-from" value="0")
+                                                        input(type="text" class="js-input-to" value="0")
+                                                    label.filter-dropdown__input
+                                                        input(type="text" class="filter-dropdown__slider" name="carbon-range" value="" data-type="double" data-min="90" data-max="560")
+                                            .filter-dropdown__block.subfilter-item.is-collapsed#carbon-filter
                                                 b.filter-dropdown__name Цена
-                                                input(type="text" class="js-range-slider" name="price-range" value="" data-type="double" data-min="90" data-max="560")
-                                    li.swiper-slide.shop__filter-item.filter
+                                                .filter-dropdown__range
+                                                    .filter-dropdown__controls
+                                                        input(type="text" class="js-input-from" value="0")
+                                                        input(type="text" class="js-input-to" value="0")
+                                                    label.filter-dropdown__input
+                                                        input(type="text" class="filter-dropdown__slider" name="price-range" value="" data-type="double" data-min="90" data-max="560")
+                                    li.swiper-slide.shop__filter-item.filter.is-collapsed
                                         button(type='button').shop__filter-btn.shop__filter-btn--direction.filter-head Сортировать
                                         
                                         .filter-dropdown
@@ -94,7 +114,7 @@ html(lang="ru-RU")
                                                     li.filter-dropdown__item
                                                         input(type="checkbox" name="cheapFirst" id="sort-3").filter-dropdown__checkbox
                                                         label(for="sort-3").filter-dropdown__label Сначала дешевые
-                                    li.swiper-slide.shop__filter-item.filter
+                                    li.swiper-slide.shop__filter-item.filter.is-collapsed
                                         button(type='button').shop__filter-btn.shop__filter-btn--spec.filter-head Специальное
                                         
                                         .filter-dropdown
@@ -120,15 +140,17 @@ html(lang="ru-RU")
                                                         input(type="checkbox" name="weekOffer" id="spec-5").filter-dropdown__checkbox
                                                         label(for="spec-5").filter-dropdown__label Предложения недели
                                                         span.filter-dropdown__counter 24
-                                    li.swiper-slide.shop__filter-item
+                                    li.swiper-slide.shop__filter-item.filter
+                                        button(type='button' onclick="filterSelection('all')").shop__filter-btn.checked Все
+                                    li.swiper-slide.shop__filter-item.filter
                                         button(type='button' onclick="filterSelection('breakfast')").shop__filter-btn Завтраки
-                                    li.swiper-slide.shop__filter-item
-                                        button(type='button' onclick="filterSelection('salads')").shop__filter-btn Салаты и закуски
-                                    li.swiper-slide.shop__filter-item
+                                    li.swiper-slide.shop__filter-item.filter
+                                        button(type='button' onclick="filterSelection('salads')").shop__filter-btnСалаты и закуски
+                                    li.swiper-slide.shop__filter-item.filter
                                         button(type='button' onclick="filterSelection('soups')").shop__filter-btn Супы
-                                    li.swiper-slide.shop__filter-item 
+                                    li.swiper-slide.shop__filter-item.filter
                                         button(type='button' onclick="filterSelection('second')").shop__filter-btn Гарниры
-                                    li.swiper-slide.shop__filter-item
+                                    li.swiper-slide.shop__filter-item.filter
                                         button(type='button' onclick="filterSelection('dessert')").shop__filter-btn Десерты
                     .shop__content
                         ul.shop__content-list
@@ -204,5 +226,5 @@ html(lang="ru-RU")
         //script(src="static/js/select.js")
         script(src="static/js/slider.js")
         //script(src="static/js/tabs-review.js")
-        //script(src="static/js/filter-meal.js")
+        //script(src="static/js/filter-meal-shop.js")
         block script

@@ -20,7 +20,7 @@ html(lang="ru-RU")
     body.body
         include ../modules/header/header
         main.main
-            +introShort('short', 'shop-bg', 'Интернет-магазин')
+            +introShort('short short-itemcard', 'shop-bg', 'Интернет-магазин')
             .breadcrumbs
                 ul.breadcrumbs__list
                     for i in breadCrumbs
@@ -58,20 +58,21 @@ html(lang="ru-RU")
                                     span.itemcard__data-nr 23.7 г.
                             .itemcard__checkout
                                 b.itemcard__price 320 руб.
-                                .itemcard__checkout-count
-                                    button(type="button").itemcard__checkout-btn.itemcard__checkout-btn-increase +
-                                    input(type="number" name="item-counter" id="item-counter" placeholder="1").itemcard__checkout-input
-                                    button(type="button").itemcard__checkout-btn.itemcard__checkout-btn-decrease -
-                                button(type="button").itemcard__btn В корзину
+                                .itemcard__count
+                                    button(type="button").itemcard__count-btn.itemcard__count-btn-increase +
+                                    input(type="number" name="item-counter" id="item-counter" placeholder="1").itemcard__count-input
+                                    button(type="button").itemcard__count-btn.itemcard__count-btn-decrease -
+                                button(type="button").itemcard__cart В корзину
                     
                     .itemcard__details
-                        ul.itemcard__tabs
-                            li.itemcard__tabs-item
-                                button(type="button" data-sort="itemAbout" onclick="openCard(event, 'itemAbout')" id="defaultOpen").itemcard__tabs-btn.active Описание
-                            li.itemcard__tabs-item
-                                button(type="button" data-sort="itemDel" onclick="openCard(event, 'itemDel')").itemcard__tabs-btn Доставка
-                            li.itemcard__tabs-item
-                                button(type="button" data-sort="itemBack" onclick="openCard(event, 'itemBack')").itemcard__tabs-btn Отзывы
+                        .itemcard__details-head
+                            ul.itemcard__tabs
+                                li.itemcard__tabs-item
+                                    button(type="button" data-sort="itemAbout" onclick="openCard(event, 'itemAbout')" id="defaultOpen").itemcard__tabs-btn.active Описание
+                                li.itemcard__tabs-item
+                                    button(type="button" data-sort="itemDel" onclick="openCard(event, 'itemDel')").itemcard__tabs-btn Доставка
+                                li.itemcard__tabs-item
+                                    button(type="button" data-sort="itemBack" onclick="openCard(event, 'itemBack')").itemcard__tabs-btn Отзывы
                         .itemcard__content
                             .itemcard__content-item#itemAbout
                                 p.itemcard__content-description ПП еда с строгим разделением меню дня на пять приёмов пищи способствует правильному усвоению потребляемых продуктов, с учетом распределения КБЖУ в течение дня. Мы разработали рационы, качество которых проверяется ежедневно, совместно с роспотребнадзором, институтом питания Москвы и лучшими нутрициологами и диетологами столицы. Все блюда в рационах сбалансированы по КБЖУ и полностью соответствуют целям достигаемым при выборе линеек питания.

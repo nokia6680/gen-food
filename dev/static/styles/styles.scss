@@ -111,6 +111,8 @@ button { outline: none; }
 }
 
 .main {
+    position: relative;
+
     &--meals {
         .reviews {
             margin-bottom: 7.625rem;

@@ -290,6 +290,37 @@
     .choose {
         margin-bottom: 6.25rem;
 
+        &--shop {
+            .choose__info {
+                max-width: 710px;
+            }
+
+            .choose__frame {
+                min-width: 1020px;
+                height: 970px;
+                width: 1020px;
+                position: absolute;
+                margin-left: 0;
+                top: 52%;
+                transform: translateY(-50%);
+                --width: calc(100% - 1920px - 382px);
+                left: calc(var(--width) / 2);
+            }
+
+            .choose__description {
+                font-family: $secondary-font;
+                margin-bottom: 1.875rem;
+            }
+
+            .choose__item::after {
+                top: 12px;
+            }
+
+            .choose__about {
+                line-height: 1.875rem;
+            }
+        }
+
         &__wrapper {
             padding: 0 2.5rem;
             flex-direction: row;
@@ -344,7 +375,10 @@
 @include min-screen(1680px) {
     .choose {
         margin-bottom: 22.375rem;
-
+        &--shop {
+            margin-bottom: 13.125rem;
+        }
+        
         &__wrapper {
             padding: 0;
             position: relative;

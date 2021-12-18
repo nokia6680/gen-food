@@ -152,7 +152,10 @@
             padding-bottom: 29.333333333333332%
         }
     }
-
+    &.short-itemcard {
+        margin-bottom: 2.5rem;
+    }
+    
     &__bg {
         display: none;
     }
@@ -699,7 +702,7 @@
 
         &.short {
             margin-bottom: 0.9375rem;
-            
+
             .intro__wrapper {
                 &::after {
                     z-index: 1;

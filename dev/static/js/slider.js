@@ -249,4 +249,5 @@ const swiper3 = new Swiper('.shop__filter-list', {
     spaceBetween: 0,
     grabCursor: true,
     speed: 1000,
+    focusableElements: 'label',
 });

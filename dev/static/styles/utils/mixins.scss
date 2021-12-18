@@ -73,7 +73,7 @@ $units: 1px !default;
 
   position: relative;
 
-  padding-left: 2rem;
+  padding-left: 1.25rem;
 }
 
 @mixin custom-checkbox {
@@ -81,13 +81,12 @@ $units: 1px !default;
   content: "";
   display: block;
 
-  width: 16px;
-  height: 16px;
-  border-radius: 4px;
-  background-color: $black;
-  box-shadow: inset 0px 0px 8px rgba(96, 0, 43, 0.15);
+  width: 10px;
+  height: 10px;
+  background-color: $white;
+  border: 1px solid $lightgray;
 
-  top: 0.125rem;
+  top: 0.25rem;
   left: 0;
 }
 
@@ -96,18 +95,24 @@ $units: 1px !default;
   content: "";
   display: block;
 
-  width: 16px;
-  height: 16px;
+  width: 10px;
+  height: 10px;
 
-  border-radius: 4px;
-  background-color: $black;
-  box-shadow: inset 0px 0px 8px rgba(96, 0, 43, 0.15);
-
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath d='M0 0h60v60H0z' fill='%2360002B'/%3E%3C/svg%3E");
-  background-size: 10px 10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath d='M0 0h60v60H0z' fill='%2392C64E'/%3E%3C/svg%3E");
+  background-size: 5px 5px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
 
-  top: 0.125rem;
+  top: 0.25rem;
   left: 0;
+}
+
+@mixin gapFallback($gap) {
+    @supports not (aspect-ratio: 1 / 1) {
+        margin-right: $gap;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
 }
