@@ -251,3 +251,12 @@ const swiper3 = new Swiper('.shop__filter-list', {
     speed: 1000,
     focusableElements: 'label',
 });
+
+const swiper4 = new Swiper('.change-meal__filter-list', {
+    slidesPerView: 'auto',
+    variableWidth: true,
+    spaceBetween: 0,
+    grabCursor: true,
+    speed: 1000,
+    focusableElements: 'label',
+});

@@ -295,6 +295,10 @@
                 max-width: 710px;
             }
 
+            .choose__wrapper {
+                justify-content: flex-end;
+            }
+
             .choose__frame {
                 min-width: 1020px;
                 height: 970px;
@@ -378,7 +382,7 @@
         &--shop {
             margin-bottom: 13.125rem;
         }
-        
+
         &__wrapper {
             padding: 0;
             position: relative;
