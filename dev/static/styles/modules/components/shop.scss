@@ -81,12 +81,9 @@
         }
 
         &-item {
-            width: auto;
-            flex: none;
-            scroll-snap-align: center;
-            margin-bottom: 0;
+            @include flex-setting(column, center, center);
             margin-right: 0.625rem;
-            margin-bottom: 0;
+            width: auto;
         }
 
         &-btn {
@@ -150,6 +147,13 @@
             &.checked {
                 background: linear-gradient(93.13deg, #92C64E 0%, #4BAF50 100%);
                 color: $white;
+                transition: 0.4s $cubic;
+            }
+
+            &:active {
+                color: $lightgreen;
+                background-color: $white;
+                box-shadow: inset 0 0 5px 0 rgba(146, 198, 78, 0.25);
                 transition: 0.4s $cubic;
             }
         }

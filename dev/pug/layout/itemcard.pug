@@ -68,7 +68,7 @@ html(lang="ru-RU")
                         .itemcard__details-head
                             ul.itemcard__tabs
                                 li.itemcard__tabs-item
-                                    button(type="button" data-sort="itemAbout" onclick="openCard(event, 'itemAbout')" id="defaultOpen").itemcard__tabs-btn.active Описание
+                                    button(type="button" data-sort="itemAbout" onclick="openCard(event, 'itemAbout')").itemcard__tabs-btn.active#defaultTab Описание
                                 li.itemcard__tabs-item
                                     button(type="button" data-sort="itemDel" onclick="openCard(event, 'itemDel')").itemcard__tabs-btn Доставка
                                 li.itemcard__tabs-item
@@ -110,6 +110,6 @@ html(lang="ru-RU")
         script(src="static/js/menu.js")
         //script(src="static/js/select.js")
         script(src="static/js/slider.js")
-        //script(src="static/js/tabs-review.js")
+        script(src="static/js/tabs-review.js")
         //script(src="static/js/filter-meal.js")
         block script

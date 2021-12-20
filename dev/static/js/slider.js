@@ -260,3 +260,105 @@ const swiper4 = new Swiper('.change-meal__filter-list', {
     speed: 1000,
     focusableElements: 'label',
 });
+
+const swiper5 = new Swiper('.swiper-container-similar', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    grabCursor: true,
+    speed: 1000,
+
+    navigation: {
+        nextEl: '.similar__next',
+        prevEl: '.similar__prev',
+    },
+
+    breakpoints: {
+        375: {
+            spaceBetween: 20,
+            slidesPerView: 1,
+            speed: 1000,
+            effect: "creative",
+            touchRatio: 0.2,
+            slideToClickedSlide: true,
+            creativeEffect: {
+                prev: {
+                    translate: ["-120%", 0, -500],
+                },
+                next: {
+                    translate: ["120%", 0, -500],
+                },
+            },
+
+            navigation: {
+                nextEl: '.similar__next',
+                prevEl: '.similar__prev',
+            },
+        },
+
+        768: {
+            spaceBetween: 20,
+            slidesPerView: 2.4,
+            speed: 1000,
+            effect: "creative",
+            touchRatio: 0.2,
+            slideToClickedSlide: true,
+            creativeEffect: {
+                prev: {
+                    translate: ["-120%", 0, -500],
+                },
+                next: {
+                    translate: ["120%", 0, -500],
+                },
+            },
+
+            navigation: {
+                nextEl: '.similar__next',
+                prevEl: '.similar__prev',
+            },
+        },
+
+        1366: {
+            spaceBetween: 60,
+            slidesPerView: 3.4,
+            speed: 1000,
+            effect: "creative",
+            touchRatio: 0.2,
+            slideToClickedSlide: true,
+            creativeEffect: {
+                prev: {
+                    translate: ["-120%", 0, -500],
+                },
+                next: {
+                    translate: ["120%", 0, -500],
+                },
+            },
+
+            navigation: {
+                nextEl: '.similar__next',
+                prevEl: '.similar__prev',
+            },
+        },
+
+        1680: {
+            spaceBetween: 145,
+            slidesPerView: 4,
+            speed: 1000,
+            effect: "creative",
+            touchRatio: 0.2,
+            slideToClickedSlide: true,
+            creativeEffect: {
+                prev: {
+                    translate: ["-120%", 0, -500],
+                },
+                next: {
+                    translate: ["120%", 0, -500],
+                },
+            },
+
+            navigation: {
+                nextEl: '.similar__next',
+                prevEl: '.similar__prev',
+            },
+        },
+    }
+});
