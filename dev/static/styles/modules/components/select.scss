@@ -27,6 +27,48 @@
         @include flex-setting(column, flex-start, center);
         position: relative;
     }
+
+    &--create {
+        .select__body {
+            .select__dates {
+                order: 1;
+
+                .s-content__days-title {
+                    font-size: 1.75rem;
+                    font-weight: 700;
+                }
+
+                .s-content__days {
+                    margin-bottom: 3.75rem;
+                    padding-bottom: 0;
+                    border-bottom: none;
+                }
+
+                .s-content__calendar {
+                    margin-bottom: 3.75rem;
+                }
+            }
+
+            .select__subtitle {
+                @include font-setting($secondary-font, 1.75rem, 1.875rem, 700, $black);
+                margin-bottom: 1.25rem;
+                text-align: center;
+                order: 2;
+            }
+
+            .select__content {
+                order: 3;
+            }
+
+            .select__pricing {
+                order: 4;
+
+                .s-content__pricing-list {
+                    margin-bottom: 1.25rem;
+                }
+            }
+        }
+    }
 }
 
 @include min-screen(414px) {

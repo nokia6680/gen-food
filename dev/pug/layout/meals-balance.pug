@@ -17,6 +17,7 @@ html(lang="ru-RU")
         link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Nunito+Sans:wght@300;400;700;800&display=swap" rel="stylesheet")
         link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
         link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css")
     body.body
         include ../modules/header/header
         main.main.main--meals
@@ -82,14 +83,14 @@ html(lang="ru-RU")
                                 <!--Наборы для приемов пищи-->
                                 .s-content__grid
                                     ul.s-content__grid-list
-                                        +gridItem('s-content__grid-item noCatalog', 'breakfast-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '', '', '', '', '', '')
+                                        +gridItem('s-content__grid-item noCatalog', '', 'breakfast-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '', '', '', '', '', '')
                                         // Блок добавления второго завтрака
-                                        +gridItem('s-content__grid-item addBreakfast', '', '', '', '', '', '', '', '', '')
-                                        +gridItem('s-content__grid-item noCatalog', 'dinner-1', 'Обед', 'Курица в соусе Терияки с овощами и розовой чечевицей', '', '', '', '', '', '')
-                                        +gridItem('s-content__grid-item noCatalog', 'lunch-1', 'Полдник', 'Смузи боул из облепихи с клубникой', '', '', '', '', '', '')
-                                        +gridItem('s-content__grid-item noCatalog', 'supper-1', 'Ужин', 'Томлёные телячьи щёчки с соусом Наршараб', '', '', '', '', '', '')
+                                        +gridItem('s-content__grid-item addBreakfast', 'Добавить 2ой завтрак', '', '', '', '', '', '', '', '', '')
+                                        +gridItem('s-content__grid-item noCatalog', '', 'dinner-1', 'Обед', 'Курица в соусе Терияки с овощами и розовой чечевицей', '', '', '', '', '', '')
+                                        +gridItem('s-content__grid-item noCatalog', '', 'lunch-1', 'Полдник', 'Смузи боул из облепихи с клубникой', '', '', '', '', '', '')
+                                        +gridItem('s-content__grid-item noCatalog', '', 'supper-1', 'Ужин', 'Томлёные телячьи щёчки с соусом Наршараб', '', '', '', '', '', '')
                                         // Блок перехода на конструктор рациона
-                                        +gridItem('s-content__grid-item makeOwnMeal', '', '', '', '', '', '', '', '', '')
+                                        +gridItem('s-content__grid-item makeOwnMeal', '', '', '', '', '', '', '', '', '', '')
                                 <!--Блок выбора дней и финальной стоимости, кешбека-->
                                 .s-content__checkout
                                     <!--Выбор дней-->
@@ -147,4 +148,6 @@ html(lang="ru-RU")
         script(src="static/js/slider.js")
         script(src="static/js/tabs-review.js")
         script(src="static/js/filter-meal.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js")
+        script(src="static/js/range.js")
         block script
