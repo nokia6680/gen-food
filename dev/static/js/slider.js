@@ -296,8 +296,8 @@ const swiper5 = new Swiper('.swiper-container-similar', {
         },
 
         768: {
-            spaceBetween: 20,
-            slidesPerView: 2.4,
+            spaceBetween: 128,
+            slidesPerView: 2,
             speed: 1000,
             effect: "creative",
             touchRatio: 0.2,
@@ -318,8 +318,8 @@ const swiper5 = new Swiper('.swiper-container-similar', {
         },
 
         1366: {
-            spaceBetween: 60,
-            slidesPerView: 3.4,
+            spaceBetween: 55.33333333333333,
+            slidesPerView: 4,
             speed: 1000,
             effect: "creative",
             touchRatio: 0.2,
@@ -340,7 +340,7 @@ const swiper5 = new Swiper('.swiper-container-similar', {
         },
 
         1680: {
-            spaceBetween: 145,
+            spaceBetween: 106,
             slidesPerView: 4,
             speed: 1000,
             effect: "creative",

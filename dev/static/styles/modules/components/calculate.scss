@@ -1,0 +1,394 @@
+.calculate {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    margin-bottom: 7.5rem;
+
+    &__wrapper {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+    }
+
+    &__body {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+
+        margin-bottom: 7.5rem;
+    }
+
+    &__title {
+        @include font-setting($primary-font, 1.5rem, 1.875rem, 800, $black);
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 1.875rem;
+    }
+
+    &__form {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+    }
+
+    &__block {
+        width: 100%;
+        @include flex-setting(column, flex-start, center);
+
+        margin-bottom: 2.5rem;
+
+        &--gender {
+            .calculate__item {
+                width: 50%;
+
+                &:first-of-type {
+                    .calculate__button {
+                        padding-left: 4.125rem;
+                        align-items: flex-start;
+
+                        &::after {
+                            position: absolute;
+                            content: '';
+
+                            width: 20px;
+                            height: 20px;
+
+                            background-position: 50% 50%;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.1702 0H12.5091C12.0495 0 11.6783 0.373468 11.6783 0.830888C11.6783 1.29043 12.0495 1.66299 12.5091 1.66299H17.1624L11.4295 7.39525C11.3392 7.48601 11.2808 7.58856 11.2412 7.70005C10.0153 6.71366 8.52131 6.14945 6.92548 6.14945C5.07463 6.14945 3.33571 6.86916 2.02728 8.17622C-0.671855 10.8769 -0.671855 15.2694 2.02728 17.9719C3.3348 19.2797 5.07463 20 6.92412 20C8.77498 20 10.5139 19.2779 11.8219 17.9719C14.3399 15.4499 14.4773 11.4747 12.2971 8.75753C12.4095 8.71789 12.5136 8.65845 12.6048 8.5686L18.3357 2.83588V7.49055C18.3357 7.94918 18.7078 8.32128 19.1683 8.32128C19.626 8.32128 19.999 7.94918 19.999 7.49055V0.829829C20.001 0.372561 19.627 0 19.1702 0ZM10.647 16.7984C8.65714 18.7869 5.19065 18.7869 3.2035 16.7984C1.15132 14.7463 1.15132 11.4064 3.2035 9.35335C4.19685 8.3591 5.51904 7.81228 6.92639 7.81228C8.33057 7.81228 9.65366 8.35804 10.647 9.35335C12.6989 11.4064 12.6989 14.7463 10.647 16.7984Z' fill='%23BDBDBD'/%3E%3C/svg%3E");
+                            left: 1.875rem;
+                            top: 50%;
+                            transform: translateY(-50%);
+
+                        }
+                    }
+
+                    .calculate__radio:checked + label {
+                        background: linear-gradient(93.13deg, #92C64E 0%, #4BAF50 100%);
+                        color: $white;
+                        border: none;
+
+                        &::after {
+                            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.1702 0H12.5091C12.0495 0 11.6783 0.373468 11.6783 0.830888C11.6783 1.29043 12.0495 1.66299 12.5091 1.66299H17.1624L11.4295 7.39525C11.3392 7.48601 11.2808 7.58856 11.2412 7.70005C10.0153 6.71366 8.52131 6.14945 6.92548 6.14945C5.07463 6.14945 3.33571 6.86916 2.02728 8.17622C-0.671855 10.8769 -0.671855 15.2694 2.02728 17.9719C3.3348 19.2797 5.07463 20 6.92412 20C8.77498 20 10.5139 19.2779 11.8219 17.9719C14.3399 15.4499 14.4773 11.4747 12.2971 8.75753C12.4095 8.71789 12.5136 8.65845 12.6048 8.5686L18.3357 2.83588V7.49055C18.3357 7.94918 18.7078 8.32128 19.1683 8.32128C19.626 8.32128 19.999 7.94918 19.999 7.49055V0.829829C20.001 0.372561 19.627 0 19.1702 0ZM10.647 16.7984C8.65714 18.7869 5.19065 18.7869 3.2035 16.7984C1.15132 14.7463 1.15132 11.4064 3.2035 9.35335C4.19685 8.3591 5.51904 7.81228 6.92639 7.81228C8.33057 7.81228 9.65366 8.35804 10.647 9.35335C12.6989 11.4064 12.6989 14.7463 10.647 16.7984Z' fill='%23ffffff'/%3E%3C/svg%3E");
+
+                        }
+                    }
+                }
+
+                &:last-of-type {
+                    .calculate__button {
+                        padding-left: 4rem;
+                        align-items: flex-start;
+
+                        &::after {
+                            position: absolute;
+                            content: '';
+
+                            width: 20px;
+                            height: 20px;
+
+                            background-position: 50% 50%;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-image: url("data:image/svg+xml,%3Csvg width='13' height='20' viewBox='0 0 13 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.1332 5.88289C12.1332 2.63901 9.49334 0 6.25033 0C3.00717 0 0.368164 2.63901 0.368164 5.88289C0.368164 8.90826 2.67449 11.3772 5.61492 11.6989C5.5718 11.7914 5.54358 11.8899 5.54358 11.9975V14.9424H3.19052C2.79966 14.9424 2.48435 15.2587 2.48435 15.6472C2.48435 16.0366 2.79981 16.353 3.19052 16.353H5.54358V19.2943C5.54358 19.6845 5.85948 20 6.24932 20C6.63915 20 6.95476 19.6845 6.95476 19.2943V16.353H9.30739C9.69767 16.353 10.0114 16.0366 10.0114 15.6472C10.0114 15.2586 9.69593 14.9424 9.30739 14.9424H6.95476V11.9976C6.95476 11.8901 6.92698 11.7914 6.88385 11.6991C9.82631 11.3774 12.1332 8.90653 12.1332 5.88289ZM6.25105 10.3517C3.78598 10.3517 1.78093 8.34709 1.78093 5.88303C1.78093 3.41796 3.78598 1.41219 6.25105 1.41219C8.71511 1.41219 10.7216 3.41811 10.7216 5.88303C10.7216 8.34709 8.71526 10.3517 6.25105 10.3517Z' fill='%23BDBDBD'/%3E%3C/svg%3E%0A");
+
+                            left: 2rem;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+                    }
+
+                    .calculate__radio:checked + label {
+                        background: linear-gradient(93.13deg, #92C64E 0%, #4BAF50 100%);
+                        color: $white;
+                        border: none;
+
+                        &::after {
+                            background-image: url("data:image/svg+xml,%3Csvg width='13' height='20' viewBox='0 0 13 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.1332 5.88289C12.1332 2.63901 9.49334 0 6.25033 0C3.00717 0 0.368164 2.63901 0.368164 5.88289C0.368164 8.90826 2.67449 11.3772 5.61492 11.6989C5.5718 11.7914 5.54358 11.8899 5.54358 11.9975V14.9424H3.19052C2.79966 14.9424 2.48435 15.2587 2.48435 15.6472C2.48435 16.0366 2.79981 16.353 3.19052 16.353H5.54358V19.2943C5.54358 19.6845 5.85948 20 6.24932 20C6.63915 20 6.95476 19.6845 6.95476 19.2943V16.353H9.30739C9.69767 16.353 10.0114 16.0366 10.0114 15.6472C10.0114 15.2586 9.69593 14.9424 9.30739 14.9424H6.95476V11.9976C6.95476 11.8901 6.92698 11.7914 6.88385 11.6991C9.82631 11.3774 12.1332 8.90653 12.1332 5.88289ZM6.25105 10.3517C3.78598 10.3517 1.78093 8.34709 1.78093 5.88303C1.78093 3.41796 3.78598 1.41219 6.25105 1.41219C8.71511 1.41219 10.7216 3.41811 10.7216 5.88303C10.7216 8.34709 8.71526 10.3517 6.25105 10.3517Z' fill='%23ffffff'/%3E%3C/svg%3E%0A");
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__name {
+        @include font-setting($primary-font, 1.125rem, 1.25rem, 700, $black);
+        margin-bottom: 0.625rem;
+    }
+
+    &__list {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+
+        &::-webkit-scrollbar { width: 0; }
+
+        &--data {
+            overflow: visible;
+            scroll-snap-type: none;
+
+            @include flex-setting(row, space-between, flex-start);
+
+            gap: 1.25rem;
+            margin-bottom: 5rem;
+
+            .calculate__item {
+                width: calc((100% - 40px) / 3);
+                @include flex-setting(column, flex-start, center);
+                @include gapFallback(1.25rem);
+            }
+        }
+    }
+
+    &__item {
+        flex: none;
+        scroll-snap-align: center;
+        scroll-margin-left: 1.25rem;
+        scroll-margin-right: 1.25rem;
+
+        &:first-of-type {
+            .calculate__button {
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+
+                padding-left: 1.875rem;
+                padding-right: 1.875rem;
+            }
+        }
+
+        &:last-of-type {
+            .calculate__button {
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
+        }
+    }
+
+    &__radio {
+        display: none;
+    }
+
+    &__button {
+        position: relative;
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, 0.875rem, 1.25rem, 700, $darkgray);
+        width: auto;
+        height: 50px;
+        border: 1px solid $lightgray;
+
+
+        padding-left: 1.6875rem;
+        padding-right: 1.6875rem;
+    }
+
+    &__radio:checked + label {
+        background: linear-gradient(93.13deg, #92C64E 0%, #4BAF50 100%);
+        color: $white;
+        border: none;
+    }
+
+    &__label {
+        @include font-setting($primary-font, 1.125rem, 1.25rem, 700, $black);
+        margin-bottom: 0.625rem;
+    }
+
+    &__input {
+        width: 100%;
+        border: 1px solid #C4C4C4;
+        border-radius: 8px;
+        height: 50px;
+        text-align: center;
+
+        @include font-setting($primary-font, 1.125rem, 1.25rem, 700, $darkgray);
+        cursor: text;
+        transition: 0.4s $cubic;
+
+        &:hover,
+        &:active {
+            border-color: $lightgreen;
+            transition: 0.4s $cubic;
+        }
+    }
+
+    &__submit {
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, 1.125rem, 1.25rem, 800, $white);
+        text-align: center;
+        text-transform: uppercase;
+
+        height: 60px;
+        width: 100%;
+        max-width: 335px;
+
+        border: none;
+        background: linear-gradient(93.13deg, #92C64E 0%, #4BAF50 100%);
+        border-radius: 50px;
+
+        cursor: pointer;
+
+        &:hover,
+        &:active {
+            background: linear-gradient(93.13deg, #4BAF50 0%, #92C64E 100%);
+
+        }
+    }
+
+    &__result {
+        width: calc(100% - 2.5rem);
+
+        @include flex-setting(column, flex-start, center);
+
+        border: 4px solid #E0E0E0;
+
+        padding: 2.25rem 2.125rem;
+
+        &-list {
+            width: 100%;
+
+            @include flex-setting(column, flex-start, center);
+
+            margin-bottom: 3.125rem;
+        }
+
+        &-item {
+            width: auto;
+            @include flex-setting(column, flex-start, center);
+            margin-bottom: 1.25rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &-name {
+            @include font-setting($primary-font, 1.125rem, 1.875rem, 500, $gray);
+            text-align: center;
+        }
+
+        &-data {
+            @include font-setting($primary-font, 1.5rem, 1.875rem, 700, $black);
+            text-align: center;
+        }
+    }
+
+    &__subtitle {
+        @include font-setting($primary-font, 1.5rem, 1.875rem, 800, $black);
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 1.875rem;
+    }
+
+    &__advice {
+        width: 100%;
+        @include flex-setting(column, flex-start, center);
+        margin-bottom: 1.875rem;
+    }
+
+    &__description {
+        @include font-setting($secondary-font, 1.125rem, 1.25rem, 400, $darkgray);
+        text-align: center;
+        margin-bottom: 1.25rem;
+    }
+
+    &__summary {
+        width: 100%;
+        @include flex-setting(column, flex-start, center);
+
+        &-nr {
+            @include font-setting($primary-font, 3rem, 3.125rem, 800, $green);
+            background: -webkit-linear-gradient(0deg, #92C64E 0%, #4BAF50 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        span {
+            @include font-setting($primary-font, 1.5rem, 1.875rem, 400, $gray);
+        }
+    }
+
+    &__link {
+        @include font-setting($primary-font, 1.25rem, 1.875rem, 800, $black);
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 0;
+        margin-bottom: 1.25rem;
+        position: relative;
+        transition: 0.4s $cubic;
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: 100%;
+            height: 2px;
+
+            border-bottom: 2px dashed $black;
+
+            bottom: 0.125rem;
+            left: 0;
+            transition: 0.4s $cubic;
+        }
+
+        &:hover,
+        &:active {
+            color: $lightgreen;
+            transition: 0.4s $cubic;
+
+            &::after {
+                border-color: $lightgreen;
+                transition: 0.4s $cubic;
+            }
+        }
+    }
+
+    &__save {
+        @include font-setting($primary-font, 1.125rem, 1.25rem, 400, $darkgray);
+        border: none;
+        background-color: transparent;
+        padding: 0;
+
+        position: relative;
+        transition: 0.4s $cubic;
+
+        cursor: pointer;
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: 100%;
+            height: 1px;
+
+            border-bottom: 1px dashed $darkgray;
+
+            bottom: 0;
+            left: 0;
+            transition: 0.4s $cubic;
+        }
+
+        &:hover,
+        &:active {
+            color: $lightgreen;
+            transition: 0.4s $cubic;
+
+            &::after {
+                border-color: $lightgreen;
+                transition: 0.4s $cubic;
+            }
+        }
+    }
+
+    &__warning {
+        display: none;
+    }
+}

@@ -29,9 +29,9 @@ html(lang="ru-RU")
             section.itemcard
                 .itemcard__wrapper
                     .itemcard__main
-                        picture.itemcard__frame
-                            source(media="(min-screen: 1366px)" srcset="static/images/content/itemcard.webp" type="image/webp")
-                            source(media="(min-screen: 1366px)" srcset="static/images/content/itemcard.jpg")
+                        picture.itemcard__frame.special
+                            source(media="(min-screen: 768px)" srcset="static/images/content/itemcard.webp" type="image/webp")
+                            source(media="(min-screen: 768px)" srcset="static/images/content/itemcard.jpg")
                             source(srcset="static/images/content/itemcard-mb.webp" type="image/webp")
                             img(src="static/images/content/itemcard-mb.jpg" alt="itemcard-name").itemcard__frame-image
                         .itemcard__info
@@ -63,7 +63,6 @@ html(lang="ru-RU")
                                     input(type="number" name="item-counter" id="item-counter" placeholder="1").itemcard__count-input
                                     button(type="button").itemcard__count-btn.itemcard__count-btn-decrease -
                                 button(type="button").itemcard__cart В корзину
-                    
                     .itemcard__details
                         .itemcard__details-head
                             ul.itemcard__tabs
@@ -80,20 +79,26 @@ html(lang="ru-RU")
                                 include ../modules/blocks/delivery
                             .itemcard__content-item#itemBack
                                 ul.itemcard__feedback
+                                    +feedbackItem('Сергей В.', 'от 27.07.2020', '2020-07-27', 'medium', 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.')
+                                    +feedbackItem('Марина М.', 'от 27.07.2021', '2021-07-27', 'good', 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.')
                                 .itemcard__ratings
                                     h3.itemcard__ratings-title Общий рейтинг
-                                    ul.itemcard__stars
-                                    
-                                    .itemcard__ratings-list
+                                    ul.itemcard__ratings-list.rate-list.excellent
+                                        span.itemcard__star
+                                        span.itemcard__star 
+                                        span.itemcard__star
+                                        span.itemcard__star
+                                        span.itemcard__star
+                                    .itemcard__ratings-summary
                                         p.itemcard__ratings-note Посмотреть отзывы на других площадках
                                         
                                         a(href="#" target="_blank" title="Яндекс лавка").itemcard__ratings-link
-                                            img(src="static/images/content/yl.svg" alt="Яндекс лавка")
+                                            img(src="static/images/content/yl.png" alt="Яндекс лавка")
                                         a(href="#" target="_blank" title="delivery Club").itemcard__ratings-link
                                             img(src="static/images/content/dc.svg" alt="delivery Club")
-                                        button(type="button").itemcard__ratings-new Написать отзыв
+                                        button(type="button").itemcard__ratings-new.js-new-feedback Написать отзыв
             include ../modules/blocks/similar
-            include ../modules/blocks/consult
+
             section.reasons
                 .reasons__wrapper
                     ul.reasons__list
@@ -104,12 +109,13 @@ html(lang="ru-RU")
         include ../modules/popup/popup-ask
         include ../modules/popup/popup-callback
         include ../modules/popup/form-reaction
+        include ../modules/popup/feedback
         script(src="static/js/vendor/jquery-3.3.1.min.js")
         script(src="https://unpkg.com/swiper/swiper-bundle.js")
         script(src="static/js/main.js")
         script(src="static/js/menu.js")
         //script(src="static/js/select.js")
         script(src="static/js/slider.js")
-        script(src="static/js/tabs-review.js")
+        script(src="static/js/tabs-review-itemcard.js")
         //script(src="static/js/filter-meal.js")
         block script
