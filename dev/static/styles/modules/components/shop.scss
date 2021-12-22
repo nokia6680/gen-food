@@ -418,6 +418,10 @@
                 justify-content: space-between;
                 padding: 0 2.5rem;
             }
+
+            &-item {
+                max-width: 280px;
+            }
         }
 
         &__pagination {

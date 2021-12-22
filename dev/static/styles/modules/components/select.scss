@@ -83,6 +83,63 @@
     .select {
         margin-bottom: 5rem;
 
+        &--create {
+            .select__wrapper {
+                padding: 0;
+            }
+            .select__body {
+                grid-template-areas:
+                    'dates list'
+                    'pricing ...'
+                ;
+
+                grid-template-columns: 345px 1fr;
+                grid-template-rows: minmax(10px, 1fr);
+                grid-column-gap: 7rem;
+                justify-content: space-between;
+
+                .select__dates {
+                    grid-area: dates;
+                    order: 1;
+                    max-width: 345px;
+
+                    .s-content__days-title {
+                        font-weight: 800;
+                    }
+
+                    .s-content__days {
+                        margin-bottom: 2.5rem;
+                    }
+
+                    .s-content__calendar {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .select__subtitle {
+                    display: none;
+                }
+
+                .select__content {
+                    order: 3;
+                    grid-area: list;
+                }
+
+                .select__pricing {
+                    grid-area: pricing;
+                    order: 4;
+
+                    .s-content__pricing-list {
+                        margin-bottom: 1.25rem;
+                    }
+                }
+            }
+
+            .s-content__days {
+                margin-bottom: 2.5rem;
+            }
+        }
+
         &__wrapper {
             align-items: center;
             padding: 0 2.5rem;
@@ -113,6 +170,40 @@
 @include min-screen(1366px) {
     .select {
         margin-bottom: 4.625rem;
+
+        &--create {
+            margin-bottom: 12.5rem;
+            .select__wrapper {
+                padding: 0 2.5rem;
+            }
+            .select__body {
+                grid-template-areas:
+                    'dates list'
+                    'pricing list'
+                ;
+
+                grid-column-gap: 2.5rem;
+                justify-content: center;
+                align-items: start;
+                height: 100%;
+
+                .select__dates {
+                    .s-content__days {
+                        margin-bottom: 2.5rem;
+                    }
+
+                    .s-content__calendar {
+                        margin-bottom: 2.1875rem;
+                    }
+                }
+
+                .select__pricing {
+                    .s-content__pricing-list {
+                        margin-bottom: 4.375rem;
+                    }
+                }
+            }
+        }
 
         &__wrapper {
             max-width: 100%;
@@ -206,6 +297,32 @@
 
 @include min-screen(1680px) {
     .select {
+        &--create {
+            .select__content {
+                margin-bottom: 0;
+            }
+            .select__wrapper {
+                padding: 0;
+                max-width: 1440px;
+            }
+
+            .select__body {
+                grid-template-areas:
+                    'dates list'
+                    'pricing list'
+                ;
+
+                grid-template-columns: 345px 960px;
+
+                grid-column-gap: 8.4375rem;
+                justify-content: space-between;
+            }
+
+            .s-content__pricing {
+                margin-bottom: 0;
+            }
+        }
+
         &__wrapper {
             max-width: 1440px;
             padding-left: 0;
