@@ -209,3 +209,13 @@ if (consultSubmit) {
         consultAfterSending.classList.add('active');
     });
 };
+
+var cartOpener = document.querySelector('.nav__controls-item--cart');
+var cartSlidedown = document.querySelector('.nav-cart');
+
+if (cartOpener) {
+    cartOpener.addEventListener('click', function() {
+        event.preventDefault();
+        cartSlidedown.classList.toggle('cartOpened');
+    });
+};

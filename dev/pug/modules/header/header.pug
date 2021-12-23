@@ -40,3 +40,17 @@ header.header
                 a(href="cabinet.html" target="_self").nav__controls-link
             li.nav__controls-item.nav__controls-item--cart
                 a(href="cart.html" target="_self").nav__controls-link
+                span.nav__controls-nr 7
+        .nav__cart.nav-cart
+            ul.nav-cart__list
+                +navCartItem('cart-1', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '320 руб.')
+                +navCartItem('cart-1', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '320 руб.')
+                +navCartItem('cart-1', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '320 руб.')
+            .nav-cart__summary
+                .nav-cart__block
+                    span.nav-cart__title Товаров на сумму:
+                    b.nav-cart__nr#cartPriceTotal 960 руб.
+                .nav-cart__block
+                    span.nav-cart__title Скидка:
+                    b.nav-cart__nr#cartPriceDiscount 15%
+            a(href="cart.html" target="_self").nav-cart__link Перейти в корзину

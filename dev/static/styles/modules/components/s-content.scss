@@ -674,6 +674,10 @@
                 }
             }
         }
+
+        &-start {
+            display: none;
+        }
     }
 }
 @include min-screen(768px) {
@@ -758,6 +762,7 @@
                     }
                 }
             }
+
         }
 
         &--create {
@@ -945,6 +950,10 @@
                 font-size: 1.125rem;
                 line-height: 1.25rem;
             }
+
+            &-choose {
+                display: none;
+            }
         }
 
         &__order {
@@ -963,9 +972,43 @@
 
             border-bottom: 1px dashed $lightgray;
 
+            position: relative;
+
             &-title {
                 font-weight: 800;
                 margin-bottom: 0.625rem;
+            }
+
+            &-start {
+                position: absolute;
+                top: 0;
+                right: -95%;
+                @include flex-setting(column, center, center);
+                @include font-setting($primary-font, 1rem, 1.25rem, 500, $black);
+
+                padding: 0.875rem 1rem;
+                width: max-content;
+                background-color: $white;
+                filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
+
+                display: none;
+
+                &::after {
+                    position: absolute;
+                    content: '';
+
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 14px 18px 14px 0;
+                    border-color: transparent #ffffff transparent transparent;
+
+                    left: -1rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    z-index: 0;
+                }
             }
         }
     }
@@ -1400,6 +1443,19 @@
             &-title {
                 font-weight: 800;
                 margin-bottom: 0.625rem;
+            }
+
+            &-start {
+                top: 3.125rem;
+                right: -154%;
+                font-size: 1.5rem;
+                line-height: 1.875rem;
+                padding: 2.5rem 2.5rem;
+
+                &::after {
+                    border-width: 27px 36px 27px 0;
+                    left: -2rem;
+                }
             }
         }
     }

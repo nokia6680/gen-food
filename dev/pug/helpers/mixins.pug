@@ -190,3 +190,51 @@ mixin feedbackItem(name, date, datetime, rate, text)
                 span.itemcard__star
                 span.itemcard__star
         p.itemcard__feedback-description=text
+
+mixin navCartItem(image, name, articul, price)
+    li.nav-cart__item
+        picture.nav-cart__frame
+            source(srcset="static/images/content/" +image +'.webp' type="image/webp")
+            img(src="static/images/content/" +image +'.jpg' alt="" +name).nav-cart__frame-image
+        .nav-cart__info
+            b.nav-cart__name=name
+            span.nav-cart__articul=articul
+        .nav-cart__bottom
+            b.nav-cart__price=price
+            .nav-cart__count
+                button(type="button").nav-cart__count-btn.nav-cart__count-btn-increase +
+                input(type="number" name="item-counter" id="item-counter" placeholder="1").nav-cart__count-input
+                button(type="button").nav-cart__count-btn.nav-cart__count-btn-decrease -
+            button(type="button").nav-cart__delete
+
+mixin navCart(image, name, articul, price, suppNull, suppFirst, suppSecond, suppThird, suppFourth)
+    li.cart-data__item
+        picture.cart-data__frame
+            source(srcset="static/images/content/" +image +'.webp' type="image/webp")
+            img(src="static/images/content/" +image +'.jpg' alt="" +name).cart-data__frame-image
+        .cart-data__info
+            b.cart-data__name=name
+            span.cart-data__articul=articul
+        ul.cart-data__supplements
+            li.cart-data__supplements-fact#cart-weight-item
+                b.cart-data__supplements-name Вес
+                span.cart-data__supplements-nr=suppNull
+            li.cart-data__supplements-fact#power-weight-item
+                b.cart-data__supplements-name кКал
+                span.cart-data__supplements-nr=suppFirst
+            li.cart-data__supplements-fact#cart-protein-item
+                b.cart-data__supplements-name Белки
+                span.cart-data__supplements-nr=suppSecond
+            li.cart-data__supplements-fact#cart-fats-item
+                b.cart-data__supplements-name Жиры
+                span.cart-data__supplements-nr=suppThird
+            li.cart-data__supplements-fact#cart-carbohydrates-item
+                b.cart-data__supplements-name Углев.
+                span.cart-data__supplements-nr=suppFourth
+        .cart-data__bottom
+            b.cart-data__price=price
+            .cart-data__count
+                button(type="button").cart-data__count-btn.cart-data__count-btn-increase +
+                input(type="number" name="item-counter" id="item-counter" placeholder="1").cart-data__count-input
+                button(type="button").cart-data__count-btn.cart-data__count-btn-decrease -
+            button(type="button").cart-data__delete

@@ -1,0 +1,509 @@
+.cart-data {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    &__list {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+
+        margin-bottom: 6.25rem;
+    }
+
+    &__item {
+        width: 100%;
+
+        display: grid;
+        grid-template-areas:
+            'frame name'
+            'controls controls'
+        ;
+
+        grid-template-columns: 29.25373134328358% 1fr;
+        grid-column-gap: 1.25rem;
+        grid-row-gap: 0.625rem;
+
+        justify-content: flex-start;
+        align-items: start;
+
+        margin-bottom: 2.5rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__frame {
+        grid-area: frame;
+        width: 100%;
+        padding-bottom: 71.42857142857143%;
+        height: 0;
+        overflow: hidden;
+        position: relative;
+
+        &-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__info {
+        grid-area: name;
+        @include flex-setting(column, flex-start, flex-start);
+    }
+
+    &__name {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        @include font-setting($primary-font, 0.75rem, 0.9375rem, 700, $black);
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+
+        margin-bottom: 0.3125rem;
+    }
+
+    &__articul {
+        @include font-setting($secondary-font, 0.75rem, 1.25rem, 400, $gray);
+    }
+
+    &__supplements {
+        display: none;
+    }
+
+    &__bottom {
+        grid-area: controls;
+        width: 100%;
+
+        @include flex-setting(row, flex-start, center);
+    }
+
+    &__price {
+        order: 2;
+        @include font-setting($primary-font, 1rem, 1.875rem, 700, $black);
+    }
+
+    &__count {
+        order: 1;
+        width: auto;
+        position: relative;
+
+        @include flex-setting(row, center, center);
+
+        margin-left: 0;
+        margin-right: 1.25rem;
+
+        &-input {
+            display: block;
+            width: 36px;
+            height: 30px;
+            text-align: center;
+            cursor: text;
+            @include font-setting($primary-font, 0.875rem, 1.25rem, 400, #222);
+
+            border: 1px solid $lightgray;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+
+        &-btn {
+            display: block;
+            padding: 0;
+            width: 31px;
+            height: 30px;
+            border: 1px solid $lightgray;
+            @include font-setting($secondary-font, 1rem, 1.25rem, 800, #222);
+            background-color: $white;
+
+            cursor: pointer;
+            outline: none;
+
+            transition: 0.4s $cubic;
+
+            &-increase {
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                border-right: none;
+            }
+
+            &-decrease {
+                border-left: none;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+
+            &:hover,
+            &:active {
+                background-color: $lightgreen;
+                border-color: $lightgreen;
+                color: $white;
+                transition: 0.4s $cubic;
+            }
+        }
+    }
+
+    &__delete {
+        order: 3;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border: none;
+        margin-left: auto;
+        margin-right: 0;
+
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.0312 2.34375H13.5156V1.75781C13.5156 0.788555 12.7271 0 11.7578 0H8.24219C7.27293 0 6.48438 0.788555 6.48438 1.75781V2.34375H2.96875C1.99949 2.34375 1.21094 3.1323 1.21094 4.10156V5.27344C1.21094 5.59703 1.47328 5.85938 1.79688 5.85938H2.42902L3.45977 18.3963C3.45988 18.398 3.46004 18.3996 3.4602 18.4013C3.54309 19.3127 4.2957 20 5.21078 20H14.7892C15.7043 20 16.4569 19.3127 16.5398 18.4013C16.5399 18.3996 16.5401 18.398 16.5402 18.3963L17.571 5.85938H18.2031C18.5267 5.85938 18.7891 5.59703 18.7891 5.27344V4.10156C18.7891 3.1323 18.0005 2.34375 17.0312 2.34375ZM7.65625 1.75781C7.65625 1.43473 7.9191 1.17188 8.24219 1.17188H11.7578C12.0809 1.17188 12.3438 1.43473 12.3438 1.75781V2.34375H7.65625V1.75781ZM15.3725 18.2972C15.3441 18.6 15.0936 18.8281 14.7892 18.8281H5.21078C4.90641 18.8281 4.65594 18.6 4.62742 18.2972L3.60484 5.85938H16.3952L15.3725 18.2972ZM17.6172 4.6875H17.0312H2.96875H2.38281V4.10156C2.38281 3.77848 2.64566 3.51562 2.96875 3.51562H7.07031H12.9297H17.0312C17.3543 3.51562 17.6172 3.77848 17.6172 4.10156V4.6875Z' fill='%23FF2424'/%3E%3Cpath d='M10 7.03125C9.67641 7.03125 9.41406 7.29359 9.41406 7.61719V15.8984C9.41406 16.222 9.67641 16.4844 10 16.4844C10.3236 16.4844 10.5859 16.222 10.5859 15.8984V7.61719C10.5859 7.29359 10.3236 7.03125 10 7.03125Z' fill='%23FF2424'/%3E%3Cpath d='M13.5156 7.03125C13.192 7.03125 12.9297 7.29359 12.9297 7.61719V15.8984C12.9297 16.222 13.192 16.4844 13.5156 16.4844C13.8392 16.4844 14.1016 16.222 14.1016 15.8984V7.61719C14.1016 7.29359 13.8392 7.03125 13.5156 7.03125Z' fill='%23FF2424'/%3E%3Cpath d='M6.48438 7.03125C6.16078 7.03125 5.89844 7.29359 5.89844 7.61719V15.8984C5.89844 16.222 6.16078 16.4844 6.48438 16.4844C6.80797 16.4844 7.07031 16.222 7.07031 15.8984V7.61719C7.07031 7.29359 6.80797 7.03125 6.48438 7.03125Z' fill='%23FF2424'/%3E%3C/svg%3E");
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        cursor: pointer;
+        transition: 0.4s $cubic;
+
+        &:hover,
+        &:active {
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.0312 2.34375H13.5156V1.75781C13.5156 0.788555 12.7271 0 11.7578 0H8.24219C7.27293 0 6.48438 0.788555 6.48438 1.75781V2.34375H2.96875C1.99949 2.34375 1.21094 3.1323 1.21094 4.10156V5.27344C1.21094 5.59703 1.47328 5.85938 1.79688 5.85938H2.42902L3.45977 18.3963C3.45988 18.398 3.46004 18.3996 3.4602 18.4013C3.54309 19.3127 4.2957 20 5.21078 20H14.7892C15.7043 20 16.4569 19.3127 16.5398 18.4013C16.5399 18.3996 16.5401 18.398 16.5402 18.3963L17.571 5.85938H18.2031C18.5267 5.85938 18.7891 5.59703 18.7891 5.27344V4.10156C18.7891 3.1323 18.0005 2.34375 17.0312 2.34375ZM7.65625 1.75781C7.65625 1.43473 7.9191 1.17188 8.24219 1.17188H11.7578C12.0809 1.17188 12.3438 1.43473 12.3438 1.75781V2.34375H7.65625V1.75781ZM15.3725 18.2972C15.3441 18.6 15.0936 18.8281 14.7892 18.8281H5.21078C4.90641 18.8281 4.65594 18.6 4.62742 18.2972L3.60484 5.85938H16.3952L15.3725 18.2972ZM17.6172 4.6875H17.0312H2.96875H2.38281V4.10156C2.38281 3.77848 2.64566 3.51562 2.96875 3.51562H7.07031H12.9297H17.0312C17.3543 3.51562 17.6172 3.77848 17.6172 4.10156V4.6875Z' fill='%2392C64E'/%3E%3Cpath d='M10 7.03125C9.67641 7.03125 9.41406 7.29359 9.41406 7.61719V15.8984C9.41406 16.222 9.67641 16.4844 10 16.4844C10.3236 16.4844 10.5859 16.222 10.5859 15.8984V7.61719C10.5859 7.29359 10.3236 7.03125 10 7.03125Z' fill='%2392C64E'/%3E%3Cpath d='M13.5156 7.03125C13.192 7.03125 12.9297 7.29359 12.9297 7.61719V15.8984C12.9297 16.222 13.192 16.4844 13.5156 16.4844C13.8392 16.4844 14.1016 16.222 14.1016 15.8984V7.61719C14.1016 7.29359 13.8392 7.03125 13.5156 7.03125Z' fill='%2392C64E'/%3E%3Cpath d='M6.48438 7.03125C6.16078 7.03125 5.89844 7.29359 5.89844 7.61719V15.8984C5.89844 16.222 6.16078 16.4844 6.48438 16.4844C6.80797 16.4844 7.07031 16.222 7.07031 15.8984V7.61719C7.07031 7.29359 6.80797 7.03125 6.48438 7.03125Z' fill='%2392C64E'/%3E%3C/svg%3E");
+            transition: 0.4s $cubic;
+        }
+    }
+
+    &__calc {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+
+        padding: 1.75rem 1.75rem;
+
+        border: 2px solid #E0E0E0;
+    }
+
+    &__subtitle {
+        @include font-setting($primary-font, 1.5rem, 1.875rem, 700, $black);
+        text-align: left;
+
+        margin-bottom: 1.25rem;
+    }
+
+    &__block {
+        width: 100%;
+
+        @include flex-setting(row, space-between, center);
+        flex-wrap: wrap;
+
+        padding-bottom: 1.25rem;
+        margin-bottom: 1.25rem;
+
+        border-bottom: 1px dashed $lightgray;
+    }
+
+    &__heading {
+        @include font-setting($primary-font, 1rem, 1.25rem, 500, $darkgray);
+    }
+
+    &__nr {
+        @include font-setting($primary-font, 1rem, 1.25rem, 700, $lightgreen);
+    }
+
+    &__bonus {
+        width: 100%;
+
+        @include flex-setting(row, space-between, center);
+
+        margin-top: 0.625rem;
+    }
+
+    &__label {
+        @include font-setting($primary-font, 0.875rem, 1.25rem, 500, $gray);
+    }
+
+    &__quantity {
+        width: 80px;
+        height: 30px;
+        @include font-setting($secondary-font, 0.875rem, 1.25rem, 400, $darkgray);
+        cursor: text;
+        text-align: center;
+        border: 1px solid $lightgray;
+        border-radius: 5px;
+        transition: 0.4s $cubic;
+
+        padding: 0 0.625rem;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &:hover,
+        &:active {
+            border-color: $lightgreen;
+            transition: 0.4s $cubic;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        height: 40px;
+
+        @include font-setting($secondary-font, 0.875rem, 1.25rem, 400, $darkgray);
+        cursor: text;
+        text-align: center;
+        border: 1px solid $lightgray;
+        border-radius: 5px;
+        transition: 0.4s $cubic;
+
+        padding: 0 0.625rem;
+        margin-top: 0.625rem;
+
+        &:hover,
+        &:active {
+            border-color: $lightgreen;
+            transition: 0.4s $cubic;
+        }
+    }
+
+    &__summary {
+        width: 100%;
+        @include flex-setting(row, flex-start, center);
+        margin-bottom: 0.9375rem;
+
+        &-title {
+            @include font-setting($primary-font, 1rem, 1.25rem, 700, $black);
+        }
+
+        &-old {
+            @include font-setting($primary-font, 1rem, 1.25rem, 500, $gray);
+            text-decoration-line: line-through;
+            margin-right: 1.5625rem;
+            margin-left: auto;
+        }
+
+        &-new {
+            @include font-setting($primary-font, 1rem, 1.25rem, 700, $lightgreen);
+        }
+    }
+
+    &__discount {
+        width: 100%;
+
+        @include flex-setting(row, space-between, center);
+
+        margin-bottom: 2.5rem;
+
+        &-title {
+            @include font-setting($primary-font, 1rem, 1.25rem, 500, $gray)
+        }
+
+        &-nr {
+            @include font-setting($primary-font, 1rem, 1.25rem, 500, $gray)
+        }
+    }
+
+    &__btn {
+        width: 100%;
+
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, 0.9375rem, 1.25rem, 800, $white);
+
+        text-transform: uppercase;
+        text-align: center;
+
+        border: none;
+        border-radius: 40px;
+
+        background: linear-gradient(93.13deg, #92C64E 0%, #4BAF50 100%);
+
+        cursor: pointer;
+
+        padding: 0.9375rem 0;
+
+        &:hover,
+        &:active {
+            background: linear-gradient(93.13deg, #4BAF50 0%, #92C64E 100%);
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .cart-data {
+        display: grid;
+        grid-template-columns: 1fr 346px;
+        grid-column-gap: 1.25rem;
+
+        justify-content: space-between;
+        align-items: start;
+
+        &__list {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@include min-screen(1366px) {
+    .cart-data {
+        display: grid;
+        grid-template-columns: 1fr 346px;
+        grid-column-gap: 8.875rem;
+
+        justify-content: space-between;
+        align-items: start;
+
+        margin-bottom: 6.875rem;
+
+        &__list {
+            margin-bottom: 0;
+        }
+
+        &__item {
+            grid-template-areas:
+                'frame name'
+                'frame list'
+                'frame controls'
+            ;
+
+            grid-template-columns: 315px 1fr;
+            grid-template-rows: repeat(auto-fit, 100px);
+            grid-column-gap: 3.125rem;
+            grid-row-gap: 0;
+
+            margin-bottom: 5rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &__frame {
+            padding-bottom: 79.36507936507937%;
+        }
+
+        &__info {
+            margin-bottom: 1.25rem;
+        }
+
+        &__name {
+            font-size: 1.5rem;
+            line-height: 1.875rem;
+            -webkit-line-clamp: 2;
+
+            margin-bottom: 0.625rem;
+        }
+
+        &__articul {
+            font-size: 1rem;
+        }
+
+        &__supplements {
+            width: 100%;
+            grid-area: list;
+            @include flex-setting(row, flex-start, flex-start);
+
+            padding-bottom: 1.25rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px dashed $lightgray;
+
+            &-fact {
+                @include flex-setting(column, flex-start, flex-start);
+                margin-right: 1.5rem;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &__price {
+            order: 1;
+            font-size: 1.5rem;
+        }
+
+        &__count {
+            order: 2;
+            margin-left: auto;
+            margin-right: 2.5rem;
+
+            &-input {
+                width: 46px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            &-btn {
+                width: 42px;
+                height: 40px
+            }
+        }
+
+        &__delete {
+            margin-left: 0;
+        }
+
+        &__calc {
+            padding: 2.0625rem 2.0625rem;
+        }
+
+        &__subtitle {
+            margin-bottom: 1.875rem;
+        }
+
+        &__block {
+            padding-bottom: 1.875rem;
+            margin-bottom: 1.875rem;
+        }
+
+        &__heading {
+            font-size: 1.125rem;
+        }
+
+        &__nr {
+            font-size: 1.125rem;
+        }
+
+        &__label {
+            font-size: 1rem;
+        }
+
+        &__summary {
+            &-title {
+                font-size: 1.125rem;
+            }
+
+            &-old {
+                font-size: 1.125rem;
+                margin-right: 0.9375rem;
+            }
+
+            &-new {
+                font-size: 1.125rem;
+            }
+        }
+
+        &__discount {
+            margin-bottom: 3.125rem;
+
+            &-title {
+                font-size: 1.125rem;
+            }
+
+            &-nr {
+                font-size: 1.125rem;
+            }
+        }
+
+        &__btn {
+            font-size: 1.125rem;
+
+            padding: 1.5625rem 0;
+        }
+    }
+}

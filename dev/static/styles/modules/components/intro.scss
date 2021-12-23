@@ -155,7 +155,7 @@
     &.short-itemcard {
         margin-bottom: 2.5rem;
     }
-    
+
     &__bg {
         display: none;
     }
@@ -189,7 +189,7 @@
         @include flex-setting(column, flex-start, center);
         padding: 0 1.25rem 2.5rem 1.25rem;
 
-        z-index: 3;
+        z-index: 1;
 
         &[data-type="fit"] {
             &::after {

@@ -42,6 +42,10 @@
                     margin-bottom: 3.75rem;
                     padding-bottom: 0;
                     border-bottom: none;
+
+                    &-start {
+                        display: none;
+                    }
                 }
 
                 .s-content__calendar {
@@ -85,7 +89,7 @@
 
         &--create {
             .select__wrapper {
-                padding: 0;
+                padding: 0 2.5rem;
             }
             .select__body {
                 grid-template-areas:
@@ -95,7 +99,7 @@
 
                 grid-template-columns: 345px 1fr;
                 grid-template-rows: minmax(10px, 1fr);
-                grid-column-gap: 7rem;
+                grid-column-gap: 3.9375rem;
                 justify-content: space-between;
 
                 .select__dates {
@@ -109,6 +113,39 @@
 
                     .s-content__days {
                         margin-bottom: 2.5rem;
+                        position: relative;
+
+                        &-start {
+                            position: absolute;
+                            top: 2.75rem;
+                            right: -85%;
+                            z-index: 10;
+                            @include flex-setting(column, center, center);
+                            @include font-setting($primary-font, 1rem, 1.25rem, 500, $black);
+
+                            padding: 0.875rem 1rem;
+                            width: max-content;
+                            background-color: $white;
+                            filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
+                            display: none;
+                            
+                            &::after {
+                                position: absolute;
+                                content: '';
+
+                                width: 0;
+                                height: 0;
+                                border-style: solid;
+                                border-width: 14px 18px 14px 0;
+                                border-color: transparent #ffffff transparent transparent;
+
+                                left: -1rem;
+                                top: 50%;
+                                transform: translateY(-50%);
+
+                                z-index: 0;
+                            }
+                        }
                     }
 
                     .s-content__calendar {
@@ -131,6 +168,26 @@
 
                     .s-content__pricing-list {
                         margin-bottom: 1.25rem;
+                    }
+                }
+
+                &.--idle {
+                    .select__content {
+                        opacity: 0.2;
+                        pointer-events: none;
+                    }
+
+                    .select__pricing {
+                        opacity: 0.2;
+                        pointer-events: none;
+                    }
+
+                    .s-content__days-start {
+                        display: flex;
+                    }
+
+                    .s-content__calendar-start {
+                        display: flex;
                     }
                 }
             }
@@ -190,6 +247,19 @@
                 .select__dates {
                     .s-content__days {
                         margin-bottom: 2.5rem;
+
+                        &-start {;
+                            top: 1rem;
+                            right: -140%;
+                            font-size: 1.5rem;
+                            line-height: 1.875rem;
+                            padding: 2.5rem 2.5rem;
+
+                            &::after {
+                                border-width: 27px 36px 27px 0;
+                                left: -2rem;
+                            }
+                        }
                     }
 
                     .s-content__calendar {

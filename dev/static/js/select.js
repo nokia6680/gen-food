@@ -1,4 +1,4 @@
-$('.s-filter__select').each(function(){
+$('select').each(function(){
     var $this = $(this), numberOfOptions = $(this).children('option').length;
 
     $this.addClass('select-hidden');
@@ -13,13 +13,9 @@ $('.s-filter__select').each(function(){
     }).insertAfter($styledSelect);
 
     for (var i = 0; i < numberOfOptions; i++) {
-        var text = $this.children('option').eq(i).text();
-
         $('<li />', {
-            'class': 'select-options__item',
             text: $this.children('option').eq(i).text(),
-            rel: $this.children('option').eq(i).val(),
-            html: "<span class='s-filter__icon' /><b class='s-filter__name' />",
+            rel: $this.children('option').eq(i).val()
         }).appendTo($list);
     }
 

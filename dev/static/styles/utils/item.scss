@@ -281,17 +281,33 @@
                 top: 0;
                 left: 50%;
                 transform: translateX(-50%);
+
+                display: none;
             }
         }
 
         &-input {
-            display: none;
+            display: block;
+            width: 46px;
+            height: 40px;
+            text-align: center;
+            cursor: text;
+            @include font-setting($primary-font, 1rem, 1.25rem, 400, #222);
+            border: none;
+            border-top: 1px solid $lightgray;
+            border-bottom: 1px solid $lightgray;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
         }
 
         &-btn {
             display: block;
             padding: 0;
-            width: 50px;
+            width: 40px;
             height: 40px;
             border: 1px solid $lightgray;
             @include font-setting($secondary-font, 1.25rem, 1.25rem, 800, #000);
@@ -305,11 +321,9 @@
             &-increase {
                 border-top-left-radius: 20px;
                 border-bottom-left-radius: 20px;
-                border-right: none;
             }
 
             &-decrease {
-                border-left: none;
                 border-top-right-radius: 20px;
                 border-bottom-right-radius: 20px;
             }
@@ -578,94 +592,10 @@
         &__weight {
             @include font-setting($primary-font, 1.5rem, 1.875rem, 400, $darkgray);
         }
-
-        &__bottom {
-            width: 100%;
-
-            @include flex-setting(row, space-between, center);
-
-            margin-top: auto;
-            margin-bottom: 0;
-
-            &-count {
-                width: auto;
-                position: relative;
-
-                @include flex-setting(row, center, center);
-
-                &::after {
-                    position: absolute;
-                    content: '';
-
-                    width: 1px;
-                    height: 100%;
-
-                    background-color: $lightgray;
-                    top: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
-                }
-            }
-
-            &-input {
-                display: none;
-            }
-
-            &-btn {
-                display: block;
-                padding: 0;
-                width: 50px;
-                height: 40px;
-                border: 1px solid $lightgray;
-                @include font-setting($secondary-font, 1.25rem, 1.25rem, 800, #000);
-                background-color: $white;
-
-                cursor: pointer;
-                outline: none;
-
-                transition: 0.4s $cubic;
-
-                &-increase {
-                    border-top-left-radius: 20px;
-                    border-bottom-left-radius: 20px;
-                    border-right: none;
-                }
-
-                &-decrease {
-                    border-left: none;
-                    border-top-right-radius: 20px;
-                    border-bottom-right-radius: 20px;
-                }
-
-                &:hover,
-                &:active {
-                    background-color: $lightgreen;
-                    border-color: $lightgreen;
-                    color: $white;
-                    transition: 0.4s $cubic;
-                }
-            }
-
-            &-submit {
-                @include flex-setting(column, center, center);
-                @include font-setting($primary-font, 0.875rem, 1.25rem, 700, $white);
-                text-transform: uppercase;
-                text-align: center;
-
-                background-color: $gold;
-                border-radius: 30px;
-                border: none;
-
-                padding: 0.625rem 1.5625rem;
-
-                cursor: pointer;
-                outline: none;
-            }
-        }
     }
 }
 
-@include min-screen(768px) {
+@include min-screen(1366px) {
     .item {
         width: 100%;
 
@@ -831,90 +761,6 @@
 
         &__weight {
             @include font-setting($primary-font, 1.5rem, 1.875rem, 400, $darkgray);
-        }
-
-        &__bottom {
-            width: 100%;
-
-            @include flex-setting(row, space-between, center);
-
-            margin-top: auto;
-            margin-bottom: 0;
-
-            &-count {
-                width: auto;
-                position: relative;
-
-                @include flex-setting(row, center, center);
-
-                &::after {
-                    position: absolute;
-                    content: '';
-
-                    width: 1px;
-                    height: 100%;
-
-                    background-color: $lightgray;
-                    top: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
-                }
-            }
-
-            &-input {
-                display: none;
-            }
-
-            &-btn {
-                display: block;
-                padding: 0;
-                width: 50px;
-                height: 40px;
-                border: 1px solid $lightgray;
-                @include font-setting($secondary-font, 1.25rem, 1.25rem, 800, #000);
-                background-color: $white;
-
-                cursor: pointer;
-                outline: none;
-
-                transition: 0.4s $cubic;
-
-                &-increase {
-                    border-top-left-radius: 20px;
-                    border-bottom-left-radius: 20px;
-                    border-right: none;
-                }
-
-                &-decrease {
-                    border-left: none;
-                    border-top-right-radius: 20px;
-                    border-bottom-right-radius: 20px;
-                }
-
-                &:hover,
-                &:active {
-                    background-color: $lightgreen;
-                    border-color: $lightgreen;
-                    color: $white;
-                    transition: 0.4s $cubic;
-                }
-            }
-
-            &-submit {
-                @include flex-setting(column, center, center);
-                @include font-setting($primary-font, 0.875rem, 1.25rem, 700, $white);
-                text-transform: uppercase;
-                text-align: center;
-
-                background-color: $gold;
-                border-radius: 30px;
-                border: none;
-
-                padding: 0.625rem 1.5625rem;
-
-                cursor: pointer;
-                outline: none;
-            }
         }
     }
 }

@@ -1,6 +1,7 @@
 @import "footer/footer";
 @import "header/header";
 @import "header/nav";
+@import "header/nav-cart";
 @import "components/popup-ask";
 @import "components/form-ask";
 @import "components/popup-callback";
@@ -29,3 +30,8 @@
 @import "components/similar";
 @import "components/calculate";
 @import "components/calc-about";
+@import "components/cart";
+@import "components/cart-data";
+@import "components/cart-info";
+@import "components/cart-form";
+@import "components/cart-final";
