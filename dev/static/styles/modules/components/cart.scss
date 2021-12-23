@@ -43,6 +43,7 @@
         }
 
         &-item {
+            width: auto;
             flex: none;
             scroll-snap-align: start;
             scroll-margin-left: 1.25rem;
@@ -52,12 +53,32 @@
             &:last-of-type {
                 margin-right: 0;
             }
+
+            &.cart-tab-1 {
+                &.right {
+                    scroll-margin-left: -5.75rem;
+                }
+
+                &.right2 {
+                    scroll-margin-left: -18.25rem;
+                }
+
+                &.right3 {
+                    scroll-margin-left: -22rem;
+                }
+            }
+
+            &.cart-tab-2 {
+                &.left {
+                    scroll-margin-left: 9.25rem;
+                }
+            }
         }
 
         &-btn {
             width: 100%;
             @include flex-setting(column, center, center);
-            @include font-setting($primary-font, 1rem, 1.25rem, 700, $lightgray);
+            @include font-setting($primary-font, 1rem, 1.25rem, 700, $darkgray);
             background-color: transparent;
             border: none;
             position: relative;
@@ -96,6 +117,11 @@
                     transform-origin: left;
                     transition: 0.4s $cubic;
                 }
+            }
+
+            &.inactive {
+                pointer-events: none;
+                color: $lightgray;
             }
         }
     }

@@ -147,12 +147,18 @@
             height: 40px;
             text-align: center;
             cursor: text;
-            @include font-setting($secondary-font, 1rem, 1.25rem, 800, #222);
+            @include font-setting($secondary-font, 1rem, 1.25rem, 400, #222);
 
             border-top: 1px solid $lightgray;
             border-bottom: 1px solid $lightgray;
             border-left: none;
             border-right: none;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
         }
 
         &-btn {

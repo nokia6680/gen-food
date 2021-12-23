@@ -27,14 +27,14 @@ html(lang="ru-RU")
                 .cart__wrapper
                     .cart__filter
                         ul.cart__filter-list
-                            li.cart__filter-item
-                                button(type="button" onclick="changeTabCart(event, 'cartFirst')").cart__filter-btn.active Корзина
-                            li.cart__filter-item
-                                button(type="button" onclick="changeTabCart(event, 'cartSecond')").cart__filter-btn Доставка и оплата
-                            li.cart__filter-item
-                                button(type="button" onclick="changeTabCart(event, 'cartThird')").cart__filter-btn Данные клиента
-                            li.cart__filter-item
-                                button(type="button" onclick="changeTabCart(event, 'cartFourth')" id="defaultFilterOpen").cart__filter-btn Подтверждение заказа
+                            li.cart__filter-item.cart-tab-1
+                                button(type="button" onclick="changeTabCart(event, 'cartFirst')" id="defaultFilterOpen").cart__filter-btn.step-1.active Корзина
+                            li.cart__filter-item.cart-tab-2
+                                button(type="button" onclick="changeTabCart(event, 'cartSecond')").cart__filter-btn.step-2.inactive Доставка и оплата
+                            li.cart__filter-item.cart-tab-3
+                                button(type="button" onclick="changeTabCart(event, 'cartThird')" id="sect-2-test").cart__filter-btn.step-3.inactive Данные клиента
+                            li.cart__filter-item.cart-tab-4
+                                button(type="button" onclick="changeTabCart(event, 'cartFourth')").cart__filter-btn.step-4.inactive Подтверждение заказа
                     .cart__body
                         .cart__content
                             <!--Корзина-->
@@ -111,16 +111,16 @@ html(lang="ru-RU")
                                         ul.cart-form__list.cart-form__list--address
                                             li.cart-form__item
                                                 label(for="cart-street").cart-form__label Улица
-                                                input(type="text" name="cart-street" id="cart-street" placeholder="Название улицы").cart-form__input
+                                                input(type="text" name="cart-street" id="cart-street" placeholder="Название улицы" required).cart-form__input
                                             li.cart-form__item
                                                 label(for="cart-house").cart-form__label Дом/Корпус
-                                                input(type="number" name="cart-house" id="cart-house" placeholder="Номер").cart-form__input
+                                                input(type="number" name="cart-house" id="cart-house" placeholder="Номер" required).cart-form__input
                                             li.cart-form__item
                                                 label(for="cart-office").cart-form__label Квартира/Офис
-                                                input(type="number" name="cart-office" id="cart-office" placeholder="Номер").cart-form__input
+                                                input(type="number" name="cart-office" id="cart-office" placeholder="Номер" required).cart-form__input
                                             li.cart-form__item
                                                 label(for="cart-date").cart-form__label Дата доставки
-                                                input(type="date" id="cart-date" name="cart-date" placeholder="__.__.____").cart-form__input
+                                                input(type="date" id="cart-date" name="cart-date" placeholder="__.__.____"  required).cart-form__input
                                             li.cart-form__item
                                                 label(for="cart-deltime").cart-form__label Время доставки
                                                 .cart-form__select
@@ -144,13 +144,13 @@ html(lang="ru-RU")
                                         ul.cart-form__list.cart-form__list--personal
                                             li.cart-form__item
                                                 label(for="cart-name").cart-form__label Имя
-                                                input(type="text" name="cart-name" id="cart-name" placeholder="Ваше имя").cart-form__input
+                                                input(type="text" name="cart-name" id="cart-name" placeholder="Ваше имя" required).cart-form__input
                                             li.cart-form__item
                                                 label(for="cart-second").cart-form__label Фамилия
                                                 input(type="text" name="cart-second" id="cart-second" placeholder="Ваша фамилия").cart-form__input
                                             li.cart-form__item
                                                 label(for="cart-tel").cart-form__label Телефон
-                                                input(type="tel" name="cart-tel" id="cart-tel" placeholder="+7 (___) ___-__-__").cart-form__input.js-phone-input
+                                                input(type="tel" name="cart-tel" id="cart-tel" placeholder="+7 (___) ___-__-__" required).cart-form__input.js-phone-input
                                             li.cart-form__item
                                                 label(for="cart-mail").cart-form__label E-mail
                                                 input(type="mail" name="cart-mail" id="cart-mail" placeholder="___@___").cart-form__input
