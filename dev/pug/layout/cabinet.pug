@@ -23,7 +23,49 @@ html(lang="ru-RU")
         include ../modules/header/header
         main.main
             +introShort('short', 'cabinet-bg', 'Личный кабинет')
-
+            section.cabinet
+                .cabinet__wrapper
+                    include ../modules/blocks/bio
+                    
+                    .cabinet__content
+                        <!--Блок истории заказов-->
+                        .cabinet__block
+                            .cabinet__block-head
+                                h3.cabinet__name История заказов
+                                a(href="cabinet-orders.html" target="_self").cabinet__link Перейти
+                            ul.cabinet__list
+                                +cabHistory('№ 1171', 'от 01.07.2021', '2021-07-01', '6 960 руб.', '#')
+                                +cabHistory('№ 2571', 'от 01.07.2021', '2021-07-01', '9 120 руб.', '#')
+                                +cabHistory('№ 1341', 'от 01.07.2021', '2021-07-01', '3 430 руб.', '#')
+                                +cabHistory('№ 3245', 'от 01.07.2021', '2021-07-01', '3 430 руб.', '#')
+                        <!--Блок результатов расчетов-->
+                        .cabinet__block
+                            .cabinet__block-head
+                                h3.cabinet__name Результаты расчётов
+                                a(href="cabinet-results.html" target="_self").cabinet__link Перейти
+                            ul.cabinet__list
+                                +cabResults('01.07.2021', '2021-07-01', '80кг', 'Снижение веса', '#')
+                                +cabResults('01.07.2021', '2021-07-01', '80кг', 'Снижение веса', '#')
+                                +cabResults('01.07.2021', '2021-07-01', '80кг', 'Набор массы', '#')
+                                +cabResults('01.07.2021', '2021-07-01', '80кг', 'Набор массы', '#')
+                        <!--Блок Баллов-->
+                        .cabinet__block
+                            .cabinet__block-head
+                                h3.cabinet__name Баллы
+                                a(href="cabinet-points.html" target="_self").cabinet__link Перейти
+                            ul.cabinet__list
+                                +cabPoints('+10', '01.07.2021', '2021-07-01', '#')
+                                +cabPoints('+32', '01.07.2021', '2021-07-01', '#')
+                                +cabPoints('-350', '01.07.2021', '2021-07-01', '#')
+                                +cabPoints('+15', '01.07.2021', '2021-07-01', '#')
+                        <!--Блок приглашения друга-->
+                        .cabinet__block
+                            .cabinet__block-head
+                                h3.cabinet__name Пригласить друга
+                                form(method="post" action="#" name="invitation").cabinet__invite
+                                    input(type="email" id="friend-mail" name="friend-name" placeholder="Е-mail вашего друга").cabinet__invite-input
+                                    button(type="submit").cabinet__invite-submit
+                                p.cabinet__note При регистрации друга Вы получаете 100 р. на свой счет, а друг получает 300 р. на свой счёт. Баллы начислятся только после первого оплаченного заказа нового пользователя.
         include ../modules/footer/footer
         include ../modules/popup/popup-ask
         include ../modules/popup/popup-callback

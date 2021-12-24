@@ -7,11 +7,11 @@ mixin introBlock(type, image, title, subtitle, listTextFirst, listTextSecond, in
             .intro__bg.intro__bg--2
             .intro__bg.intro__bg--3
             .intro__bg.intro__bg--4
-                
+
             .intro__details
                 h1.intro__title=title
                 h2.intro__subtitle=subtitle
-                
+
                 ul.intro__list
                     li.intro__item
                         span.intro__item-text=listTextFirst
@@ -26,7 +26,7 @@ mixin introBlock(type, image, title, subtitle, listTextFirst, listTextSecond, in
                 source(media="(min-width: 1366px)" srcset="static/images/content/" +image +".jpg")
                 source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
                 img(src="static/images/content/" +image +"-mb.jpg" alt="" +title).intro__frame-image
-                
+
 mixin introShort(type, image, title)
     section(class="intro " +type)
         .intro__wrapper
@@ -36,7 +36,7 @@ mixin introShort(type, image, title)
                 source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
                 img(src="static/images/content/" +image +"-mb.jpg" alt="" +title).intro__frame-image
             h1.intro__title=title
-            
+
 mixin introBlockMeal(type, image, title, description, subtitle)
     section(class="intro " +type)
         // Overall wrapper
@@ -60,7 +60,7 @@ mixin introBlockMeal(type, image, title, description, subtitle)
                 source(media="(min-width: 1366px)" srcset="static/images/content/" +image +".jpg")
                 source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
                 img(src="static/images/content/" +image +"-mb.jpg" alt="" +title).intro__frame-image
-        
+
 mixin faqItem(type, name, description)
     li(class="faq__content-item " +type)
         b.faq__content-name=name
@@ -94,7 +94,7 @@ mixin gridItem(type, itemServiceText, image, title, name, suppFirst, suppSecond,
             b.item__service-about=itemServiceText
         .item__constructor
             a(href="constructor.html" target="_self").item__constructor-link Конструктор рациона
-            
+
         picture.item__frame
             source(srcset="static/images/content/" +image +".webp" type="image/webp")
             img(src="static/images/content/" +image +".jpg" alt="" +name).item__frame-image
@@ -145,10 +145,10 @@ mixin mealsItem(type, name, power, protein, fats, carbohydrates, idealFirst, ide
                 li.meals__details-item
                     b.meals__details-nr=carbohydrates
                     span.meals__details-name Углев
-                    
+
             .meals__suggestions
                 b.meals__suggestions-title Идеально для:
-                
+
                 ul.meals__suggestions-list
                     li.meals__suggestions-item
                         span=idealFirst
@@ -163,15 +163,15 @@ mixin mealsItem(type, name, power, protein, fats, carbohydrates, idealFirst, ide
             li.meals__bottom-item
                 span.meals__bottom-title 6 дней
                 b.meals__bottom-price=priceSix
-                    
+
         a(href="" +link target="_self").meals__more Подробнее
-        
+
 mixin mealsListItem(type, name, info, link)
     li(class="meals-list__item " +type)
         a(href="" +link target="_self" data-type="" +name class="meals-list__link " +type) 
             h3.meals-list__name=name
             span.meals-list__info=info
-            
+
 mixin mealsTypeItem(title, description1, description2)
     .meals-about__info
         h3.meals-about__title=title
@@ -238,3 +238,77 @@ mixin navCart(image, name, articul, price, suppNull, suppFirst, suppSecond, supp
                 input(type="number" name="item-counter" id="item-counter" placeholder="1").cart-data__count-input
                 button(type="button").cart-data__count-btn.cart-data__count-btn-decrease -
             button(type="button").cart-data__delete
+
+mixin cabHistory(number, date, datetime, price, link)
+    li.cabinet__line
+        b.cabinet__nr=number
+        time(datetime="" +datetime).cabinet__date=date
+        b.cabinet__price=price
+        a(href="" +link target="_self").cabinet__show Смотреть
+
+mixin cabResults(date, datetime, weight, type, link)
+    li.cabinet__line
+        time(datetime="" +datetime).cabinet__date=date
+        span.cabinet__weight=weight
+        b.cabinet__type=type
+        a(href="" +link target="_self").cabinet__show Смотреть
+
+mixin cabPoints(number, date, datetime, link)
+    li.cabinet__line
+        b.cabinet__nr=number
+        time(datetime="" +datetime).cabinet__date=date
+        a(href="" +link target="_self").cabinet__show Смотреть
+
+mixin cabOrderContent(image, name, articul, price, suppNull, suppFirst, suppSecond, suppThird, suppFourth, quan, overall)
+    li.order-content
+        picture.order-content__frame
+            source(srcset="static/images/content/" +image +'.webp' type="image/webp")
+            img(src="static/images/content/" +image +'.jpg' alt="" +name).order-content__frame-image
+        .order-content__info
+            b.order-content__name=name
+            span.order-content__articul=articul
+        ul.order-content__supplements
+            li.order-content__supplements-fact#cart-weight-item
+                b.order-content__supplements-name Вес
+                span.order-content__supplements-nr=suppNull
+            li.order-content__supplements-fact#power-weight-item
+                b.order-content__supplements-name кКал
+                span.order-content__supplements-nr=suppFirst
+            li.order-content__supplements-fact#cart-protein-item
+                b.order-content__supplements-name Белки
+                span.order-content__supplements-nr=suppSecond
+            li.order-content__supplements-fact#cart-fats-item
+                b.order-content__supplements-name Жиры
+                span.order-content__supplements-nr=suppThird
+            li.order-content__supplements-fact#cart-carbohydrates-item
+                b.order-content__supplements-name Углев.
+                span.order-content__supplements-nr=suppFourth
+        .order-content__bottom
+            span.order-content__price=price
+            span.order-content__quantity=quan
+            b.order-content__total=overall
+
+mixin cabOrderItem(number, date, datetime, price, stats)
+    li.cabinet__order-item
+        .cabinet__order-line
+            span.cabinet__order-nr=number
+            time(datetime="" +datetime).cabinet__order-date=date
+            span.cabinet__order-price=price
+            span.cabinet__order-status=stats
+            button.cabinet__order-expand.js-order-toggle Подробнее
+        .cabinet__order-body
+            ul.cabinet__order-list
+                +cabOrderItem('cart-2', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '1320 руб.', '270 г.', '338.8 кКал', '5.1 г.', '24.8 г.', '23.7 г.', '1', '1320 руб.')
+                +cabOrderItem('cart-2', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '1320 руб.', '270 г.', '338.8 кКал', '5.1 г.', '24.8 г.', '23.7 г.', '1', '1320 руб.')
+            .cabinet__order-bottom
+                ul.cabinet__order-bottom-list
+                    li.cabinet__order-bottom-item
+                        b.cabinet__order-bottom-name
+                        span.cabinet__order-bottom-data#orderAddress
+                    li.cabinet__order-bottom-item
+                        b.cabinet__order-bottom-name
+                        span.cabinet__order-bottom-data#orderType
+                    li.cabinet__order-bottom-item
+                        b.cabinet__order-bottom-name
+                        span.cabinet__order-bottom-data#paymentType
+                button(type="button").cabinet__order-bottom-repeat Повторить заказ
