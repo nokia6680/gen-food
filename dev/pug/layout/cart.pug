@@ -23,6 +23,11 @@ html(lang="ru-RU")
         include ../modules/header/header
         main.main
             +introShort('short', 'cart-bg', 'Корзина')
+            .breadcrumbs
+                ul.breadcrumbs__list
+                    for i in breadCrumbs
+                        li.breadcrumbs__item
+                            a(href="" +i.link target="_self").breadcrumbs__link=i.name
             section.cart
                 .cart__wrapper
                     .cart__filter

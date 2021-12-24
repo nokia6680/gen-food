@@ -23,6 +23,11 @@ html(lang="ru-RU")
         include ../modules/header/header
         main.main
             +introShort('short', 'cabinet-bg', 'Личный кабинет')
+            .breadcrumbs
+                ul.breadcrumbs__list
+                    for i in breadCrumbs
+                        li.breadcrumbs__item
+                            a(href="" +i.link target="_self").breadcrumbs__link=i.name
             section.cabinet
                 .cabinet__wrapper
                     include ../modules/blocks/bio
@@ -30,14 +35,17 @@ html(lang="ru-RU")
                     .cabinet__content.cabinet__content--orders
                         h2.cabinet__title История заказов
                         
-                        .cabinet__order
-                            ul.cabinet__order-table
-                                li.cabinet__order-item.cabinet__order-item--heading
-                                    span.cabinet__order-nr № заказа
-                                    span.cabinet__order-date Дата заказа
-                                    span.cabinet__order-price Сумма заказа
-                                    span.cabinet__order-status Статус
-                                    button(type="button").cabinet__order-expand.js-order-toggle Подробнее
+                        .cabinet__order.order
+                            ul.order__table
+                                li.order__item.order__item--heading
+                                    span.order__heading.order__heading--nr № заказа
+                                    span.order__heading.order__heading--date Дата заказа
+                                    span.order__heading.order__heading--price Сумма заказа
+                                    span.order__heading.order__heading--status Статус
+                                +cabOrderItem('№ 1171', '01.07.2021', '2021-07-01', '6 960 руб.', 'Принят')
+                                +cabOrderItem('№ 1173', '02.07.2021', '2021-07-02', '6 160 руб.', 'Доставлен')
+                                +cabOrderItem('№ 1174', '03.07.2021', '2021-07-03', '6 260 руб.', 'Отменен')
+                                +cabOrderItem('№ 1175', '01.07.2021', '2021-07-01', '6 960 руб.', 'Доставлен')
                                 
         include ../modules/footer/footer
         include ../modules/popup/popup-ask

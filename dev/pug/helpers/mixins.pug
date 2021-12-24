@@ -260,55 +260,150 @@ mixin cabPoints(number, date, datetime, link)
         a(href="" +link target="_self").cabinet__show Смотреть
 
 mixin cabOrderContent(image, name, articul, price, suppNull, suppFirst, suppSecond, suppThird, suppFourth, quan, overall)
-    li.order-content
-        picture.order-content__frame
+    li.order__card.order-card
+        picture.order-card__frame
             source(srcset="static/images/content/" +image +'.webp' type="image/webp")
-            img(src="static/images/content/" +image +'.jpg' alt="" +name).order-content__frame-image
-        .order-content__info
-            b.order-content__name=name
-            span.order-content__articul=articul
-        ul.order-content__supplements
-            li.order-content__supplements-fact#cart-weight-item
-                b.order-content__supplements-name Вес
-                span.order-content__supplements-nr=suppNull
-            li.order-content__supplements-fact#power-weight-item
-                b.order-content__supplements-name кКал
-                span.order-content__supplements-nr=suppFirst
-            li.order-content__supplements-fact#cart-protein-item
-                b.order-content__supplements-name Белки
-                span.order-content__supplements-nr=suppSecond
-            li.order-content__supplements-fact#cart-fats-item
-                b.order-content__supplements-name Жиры
-                span.order-content__supplements-nr=suppThird
-            li.order-content__supplements-fact#cart-carbohydrates-item
-                b.order-content__supplements-name Углев.
-                span.order-content__supplements-nr=suppFourth
-        .order-content__bottom
-            span.order-content__price=price
-            span.order-content__quantity=quan
-            b.order-content__total=overall
+            img(src="static/images/content/" +image +'.jpg' alt="" +name).order-card__frame-image
+        .order-card__info
+            b.order-card__name=name
+            span.order-card__articul=articul
+        ul.order-card__supplements
+            li.order-card__supplements-fact#cart-weight-item
+                b.order-card__supplements-name Вес
+                span.order-card__supplements-nr=suppNull
+            li.order-card__supplements-fact#power-weight-item
+                b.order-card__supplements-name кКал
+                span.order-card__supplements-nr=suppFirst
+            li.order-card__supplements-fact#cart-protein-item
+                b.order-card__supplements-name Белки
+                span.order-card__supplements-nr=suppSecond
+            li.order-card__supplements-fact#cart-fats-item
+                b.order-card__supplements-name Жиры
+                span.order-card__supplements-nr=suppThird
+            li.order-card__supplements-fact#cart-carbohydrates-item
+                b.order-card__supplements-name Углев.
+                span.order-card__supplements-nr=suppFourth
+        .order-card__bottom
+            span.order-card__price=price
+            span.order-card__quantity=quan
+            b.order-card__total=overall
 
 mixin cabOrderItem(number, date, datetime, price, stats)
-    li.cabinet__order-item
-        .cabinet__order-line
-            span.cabinet__order-nr=number
-            time(datetime="" +datetime).cabinet__order-date=date
-            span.cabinet__order-price=price
-            span.cabinet__order-status=stats
-            button.cabinet__order-expand.js-order-toggle Подробнее
-        .cabinet__order-body
-            ul.cabinet__order-list
-                +cabOrderItem('cart-2', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '1320 руб.', '270 г.', '338.8 кКал', '5.1 г.', '24.8 г.', '23.7 г.', '1', '1320 руб.')
-                +cabOrderItem('cart-2', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '1320 руб.', '270 г.', '338.8 кКал', '5.1 г.', '24.8 г.', '23.7 г.', '1', '1320 руб.')
-            .cabinet__order-bottom
-                ul.cabinet__order-bottom-list
-                    li.cabinet__order-bottom-item
-                        b.cabinet__order-bottom-name
-                        span.cabinet__order-bottom-data#orderAddress
-                    li.cabinet__order-bottom-item
-                        b.cabinet__order-bottom-name
-                        span.cabinet__order-bottom-data#orderType
-                    li.cabinet__order-bottom-item
-                        b.cabinet__order-bottom-name
-                        span.cabinet__order-bottom-data#paymentType
-                button(type="button").cabinet__order-bottom-repeat Повторить заказ
+    li.order__item
+        .order__line
+            span.order__line-nr=number
+            time(datetime="" +datetime).order__line-date=date
+            span.order__line-price=price
+            span.order__line-status=stats
+            button.order__line-expand.js-order-toggle Подробнее
+        .order__body
+            ul.order__list
+                +cabOrderContent('cart-3', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '1320 руб.', '270 г.', '338.8 кКал', '5.1 г.', '24.8 г.', '23.7 г.', '1 шт.', '1320 руб.')
+                +cabOrderContent('cart-4', 'Котлетка говяжья паровая с овощами Гриль и горчично-укропным соусом', 'Артикул: Б0859', '1320 руб.', '270 г.', '338.8 кКал', '5.1 г.', '24.8 г.', '23.7 г.', '1 шт.', '1320 руб.')
+            .order__bottom
+                ul.order__bottom-list
+                    li.order__bottom-item
+                        b.order__bottom-name Адрес доставки
+                        span.order__bottom-data#orderAddress г. Москва, ул. Маршала Катукова, 20к2, кв. 144
+                    li.order__bottom-item
+                        b.order__bottom-name Способ доставки
+                        span.order__bottom-data#orderType Курьер
+                    li.order__bottom-item
+                        b.order__bottom-name Способ оплаты
+                        span.order__bottom-data#paymentType Наличные
+                button(type="button").order__bottom-repeat Повторить заказ
+
+mixin cabCalcContent(gender, age, height, weight, goal, activity, bwi, ow, saveLoss, calQ)
+    .result__card.result-card
+        .result-card__left
+            h3.result-card__title Ваш результат
+            
+            .result-card__info.--personal
+                ul.result-card__list
+                    li.result-card__item
+                        b.result-card__name Пол:
+                        span.result-card__data#r-gender=gender
+                    li.result-card__item
+                        b.result-card__name Возраст:
+                        span.result-card__data#r-age=age
+                    li.result-card__item
+                        b.result-card__name Рост:
+                        span.result-card__data#r-height=height
+                    li.result-card__item
+                        b.result-card__name Вес:
+                        span.result-card__data#r-weight=weight
+                        
+                ul.result-card__list
+                    li.result-card__item
+                        b.result-card__name Цель:
+                        span.result-card__data#r-goal=goal
+                    li.result-card__item
+                        b.result-card__name Активность:
+                        span.result-card__data#r-age=activity
+            .result-card__info.--data
+                ul.result-card__list
+                    li.result-card__item
+                        b.result-card__name Индекс массы тела:
+                        span.result-card__data#bwi=bwi
+                    li.result-card__item
+                        b.result-card__name Оптимальный вес:
+                        span.result-card__data#ow=ow
+                    li.result-card__item
+                        b.result-card__name Похудение без вреда:
+                        span.result-card__data#saveLoss=saveLoss
+            .result-card__summary
+                p.result-card__description Чтобы Снизить вес Вам нужно потреблять:
+                b.result-card__quantity=calQ + ' '
+                    span кКал в день
+        .result-card__right
+            h3.result-card__title Рационы для вас
+            
+            ul.result-card__meal
+                li.result-card__meal-item
+                    a(href="meals-fit.html" target="_self" data-meal="fit").result-card__meal-link
+                        b.result-card__meal-name Fit
+                        span.result-card__meal-power ~ 1300 кКал
+                li.result-card__meal-item
+                    a(href="meals-fit.html" target="_self" data-meal="balance").result-card__meal-link
+                        b.result-card__meal-name Balance
+                        span.result-card__meal-power ~ 1800 кКал
+                li.result-card__meal-item
+                    a(href="meals-fit.html" target="_self" data-meal="power").result-card__meal-link
+                        b.result-card__meal-name Power
+                        span.result-card__meal-power ~ 2500 кКал
+
+mixin cabCalcItem(date, datetime, weight, goal, activity)
+    li.result__item
+        .result__line
+            time(datetime="" +datetime).result__line-time=date
+            span.result__line-weight=weight
+            span.result__line-goal=goal
+            span.result__line-activity=activity
+            button(type="button").result__line-expand.js-result-toggle Подробнее
+        .result__body
+            +cabCalcContent('мужской', '25', '176', '82 кг.', 'набор массы', 'экстримальная активность', '23.15 имт', '66 кг.', '-9 кг.', '1623')
+
+mixin cabPoiContent(image, name, articul, income, price)
+    li.point__card.point-card
+        picture.point-card__frame
+            source(srcset="static/images/content/" +image +".webp" type="image/webp")
+            img(src="static/images/content/" +image +".jpg" alt="" +name).point-card__frame-image
+        .point-card__info
+            b.point-card__name=name
+            span.point-card__articul=articul
+        .point-card__bottom
+            b.point-card__income=income
+            span.point-card__price=price
+
+mixin cabPoiItem(number, date, datetime, price, income, outcome, typeI, typeO)
+    li.point__item
+        .point__line
+            span.point__line-nr=number
+            time(datetime="" +datetime).point__line-date=date
+            span.point__line-price=price
+            span(class="point__line-income " +typeI)=income
+            span(class="point__line-outcome " +typeO)=outcome
+            button(type="button").point__line-expand.js-point-toggle Подробнее
+        .point__body
+            +cabPoiContent('cart-2', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '+56 баллов', '320 руб.')
+            +cabPoiContent('cart-3', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '+52 баллов', '3220 руб.')

@@ -23,11 +23,30 @@ html(lang="ru-RU")
         include ../modules/header/header
         main.main
             +introShort('short', 'cabinet-bg', 'Личный кабинет')
+            .breadcrumbs
+                ul.breadcrumbs__list
+                    for i in breadCrumbs
+                        li.breadcrumbs__item
+                            a(href="" +i.link target="_self").breadcrumbs__link=i.name
             section.cabinet
                 .cabinet__wrapper
                     include ../modules/blocks/bio
                     
-                    .cabinet__content
+                    .cabinet__content.cabinet__content--point
+                        h2.cabinet__title История заказов
+                        
+                        .cabinet__point.point История баллов
+                            ul.point__table
+                                li.point__item.point__item--heading
+                                    span.point__heading.point__heading--nr № заказа
+                                    span.point__heading.point__heading--date Дата заказа
+                                    span.point__heading.point__heading--price Сумма заказа
+                                    span.point__heading.point__heading--income Начислено бонусов
+                                    span.point__heading.point__heading--outcome Списано бонусов
+                                +cabPoiItem('№ 1171', '01.07.2021', '2021-07-01', '6 960 руб.', '+106', '0', '', 'noPoints')
+                                +cabPoiItem('№ 1171', '01.07.2021', '2021-07-01', '6 960 руб.', '0', '-24', 'noPoints', '')
+                                +cabPoiItem('№ 1171', '01.07.2021', '2021-07-01', '6 960 руб.', '+106', '0', '', 'noPoints')
+                                +cabPoiItem('№ 1171', '01.07.2021', '2021-07-01', '6 960 руб.', '0', '-24', 'noPoints', '')
         include ../modules/footer/footer
         include ../modules/popup/popup-ask
         include ../modules/popup/popup-callback
