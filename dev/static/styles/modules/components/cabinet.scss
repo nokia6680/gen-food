@@ -43,7 +43,7 @@
             .cabinet__title {
                 margin-left: 1.25rem;
             }
-            
+
             .cabinet__bio {
                 display: none;
             }
@@ -443,5 +443,198 @@
     &__note {
         @include font-setting($secondary-font, 0.875rem, 1.25rem, 400, $gray);
         text-align: left;
+    }
+}
+
+@include min-screen(768px) {
+    .cabinet {
+        margin-bottom: 7.5rem;
+
+        &__wrapper {
+            padding: 0 2.5rem;
+
+            &--edit {
+                .cabinet__title {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        &__bio {
+            width: 100%;
+
+            &-bd {
+                margin-bottom: 2.5rem;
+            }
+
+            &-info {
+                margin-bottom: 3.125rem;
+            }
+        }
+
+        &__title {
+            margin-bottom: 2.5rem;
+        }
+
+        &__block {
+            margin-bottom: 3.75rem;
+            max-width: 466px;
+
+            &:last-child {
+                .cabinet__block-head {
+                    margin-bottom: 1.875rem;
+                    padding-bottom: 1.25rem;
+                }
+            }
+
+            &-head {
+                padding-bottom: 1.25rem;
+                margin-bottom: 1.875rem;
+            }
+        }
+
+        &__name {
+            font-size: 1.5rem;
+            line-height: 1.875rem;
+        }
+
+        &__link {
+            padding-right: 1.75rem;
+        }
+
+        &__list {
+            max-width: 466px;
+
+            &.--point {
+                .cabinet__show {
+                    margin-left: auto;
+                    margin-right: 0;
+                }
+            }
+        }
+
+
+        &__price {
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        &__show {
+            margin-left: 1.875rem;
+            margin-right: 0;
+        }
+
+        &__type {
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        &__invite {
+            margin-bottom: 2.1875rem;
+        }
+    }
+}
+
+@include min-screen(1366px) {
+    .cabinet {
+        margin-bottom: 9.375rem;
+
+        &__wrapper {
+            padding: 0 2.5rem;
+            max-width: 1480px;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            &--orders {
+                padding-right: 2.5rem;
+
+                .cabinet__bio {
+                    display: flex;
+                }
+            }
+
+            &--results {
+                padding-right: 2.5rem;
+
+                .cabinet__bio {
+                    display: flex;
+                }
+            }
+
+            &--points {
+                padding-right: 2.5rem;
+
+                .cabinet__bio {
+                    display: flex;
+                }
+            }
+
+            &--edit {
+                .cabinet__title {
+
+                    margin-left: 0;
+                }
+
+                .cabinet__bio {
+                    display: flex;
+                }
+            }
+        }
+
+        &__bio {
+            margin-right: 4.875rem;
+        }
+
+        &__content--cabinet {
+            display: grid;
+            grid-template-columns: 466px 345px;
+            grid-row-gap: 3.75rem;
+            justify-content: space-between;
+            align-items: start;
+        }
+
+        &__block {
+            margin-bottom: 0;
+
+            &:nth-of-type(2) {
+                grid-row-start: 2;
+                grid-row-end: 3;
+                grid-column-start: 1;
+                grid-column-end: 2;
+            }
+        }
+
+        &__list {
+            .cabinet__line:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &__title {
+            text-transform: none;
+        }
+
+        &__faq {
+            width: 100%;
+            max-width: 954px;
+        }
+    }
+}
+
+@include min-screen(1680px) {
+    .cabinet {
+        &__wrapper {
+            max-width: 1440px;
+            padding: 0;
+        }
+
+        &__bio {
+            margin-right: 8.875rem;
+        }
+
+        &__content--cabinet {
+            grid-column-gap: 8.875rem;
+        }
     }
 }

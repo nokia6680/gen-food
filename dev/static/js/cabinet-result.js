@@ -1,5 +1,5 @@
-var resultItem = document.getElementsByClassName('result__item');
-var elNodes = document.querySelectorAll(".result__item");
+var resultItem = document.getElementsByClassName('result__line');
+var elNodes = document.querySelectorAll(".result__line");
 var resultBody = document.querySelector('.result');
 //
 for (var i = 0; i < resultItem.length; i++) {

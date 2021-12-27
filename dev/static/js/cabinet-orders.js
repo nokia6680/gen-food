@@ -1,5 +1,5 @@
-var orderItem = document.getElementsByClassName('order__item');
-var elNodes = document.querySelectorAll(".order__item");
+var orderItem = document.getElementsByClassName('order__line');
+var elNodes = document.querySelectorAll(".order__line");
 var ordersBody = document.querySelector('.order');
 var ordersContent = document.querySelector('.order__body');
 //

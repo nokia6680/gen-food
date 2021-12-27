@@ -51,7 +51,7 @@
         &-btn {
             width: 100%;
             @include flex-setting(column, center, center);
-            @include font-setting($primary-font, 1rem, 1.25rem, 700, $darkgray);
+            @include font-setting($primary-font, 1rem, 1.25rem, 700, $gray);
             background-color: transparent;
             border: none;
             position: relative;
@@ -164,6 +164,101 @@
         &:active,
         &:hover {
             background: linear-gradient(93.13deg, #4BAF50 0%, #92C64E 100%);
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .edit {
+        &__filter {
+            margin-bottom: 2.5rem;
+            padding: 0;
+            justify-content: center;
+
+            &-list {
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                overflow-x: visible;
+                scroll-snap-type: none;
+                padding-left: 0;
+                padding-right: 0;
+
+                &::after {
+                    width: 100%;
+                    left: 0;
+                    bottom: 0;
+                }
+            }
+
+            &-item {
+                width: auto;
+                margin-right: 1.875rem;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+
+            &-btn {
+                font-size: 1.375rem;
+                line-height: 1.875rem;
+            }
+        }
+
+        &__form {
+            padding: 0;
+
+            &-list {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 3.125rem;
+                grid-row-gap: 1.875rem;
+
+                margin-bottom: 5rem;
+
+                &:first-of-type {
+                    .edit__form-item:first-of-type {
+                        grid-column-start: 1;
+                        grid-column-end: 3;
+                    }
+                }
+            }
+
+            &-item {
+                align-items: flex-start;
+                margin-bottom: 0;
+            }
+
+            &-label {
+                @include font-setting($primary-font, 1.125rem, 1.25rem, 700, $black);
+                margin-bottom: 0.625rem;
+            }
+
+            &-input {
+                text-align: left;
+                height: 60px;
+            }
+        }
+
+        &__submit {
+            align-self: flex-start;
+            max-width: 273px;
+        }
+    }
+}
+
+@include min-screen(1366px) {
+    .edit {
+        &__filter {
+            &-btn {
+                font-size: 1.5rem;
+            }
+        }
+
+        &__form {
+            max-width: 588px;
         }
     }
 }
