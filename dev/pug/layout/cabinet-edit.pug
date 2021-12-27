@@ -29,13 +29,13 @@ html(lang="ru-RU")
                         li.breadcrumbs__item
                             a(href="" +i.link target="_self").breadcrumbs__link=i.name
             section.cabinet
-                .cabinet__wrapper
+                .cabinet__wrapper.cabinet__wrapper--edit
                     include ../modules/blocks/bio
                     
-                    .cabinet__content.cabinet__content--edit
+                    .cabinet__content
+                        h2.cabinet__title Редактирование профиля
+                        
                         .cabinet__edit.edit
-                            h2.edit__title Редактирование профиля
-                            
                             .edit__filter
                                 ul.edit__filter-list
                                     li.edit__filter-item
@@ -64,7 +64,7 @@ html(lang="ru-RU")
                                         input(type="text" name="edit-surname" id="edit-surname" placeholder="Ваша фамилия").edit__form-input
                                     li.edit__form-item
                                         label(for="edit-tel").edit__form-label Телефон
-                                        input(type="tel" name="edit-tel" id="edit-tel" placeholder="+7 (___) ___-__-__").edit__form-input
+                                        input(type="tel" name="edit-tel" id="edit-tel" placeholder="+7 (___) ___-__-__").edit__form-input.js-phone-input
                                     li.edit__form-item
                                         label(for="edit-email").edit__form-label E-mail
                                         input(type="email" name="edit-email" id="edit-email" placeholder="___@___").edit__form-input
@@ -90,7 +90,7 @@ html(lang="ru-RU")
         //script(src="static/js/menu.js")
         script(src="static/js/select.js")
         //script(src="static/js/slider.js")
-        script(src="static/js/tabs-review-cart.js")
+        script(src="static/js/tabs-review-cabinet.js")
         //script(src="static/js/filter-meal.js")
         script(src="static/js/mask.js")
         //script(src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js")

@@ -288,13 +288,13 @@ mixin cabOrderContent(image, name, articul, price, suppNull, suppFirst, suppSeco
             span.order-card__quantity=quan
             b.order-card__total=overall
 
-mixin cabOrderItem(number, date, datetime, price, stats)
+mixin cabOrderItem(number, date, datetime, price, stats, statsReady)
     li.order__item
         .order__line
             span.order__line-nr=number
             time(datetime="" +datetime).order__line-date=date
             span.order__line-price=price
-            span.order__line-status=stats
+            span(class="order__line-stats " +statsReady)=stats
             button.order__line-expand.js-order-toggle Подробнее
         .order__body
             ul.order__list
@@ -332,7 +332,7 @@ mixin cabCalcContent(gender, age, height, weight, goal, activity, bwi, ow, saveL
                     li.result-card__item
                         b.result-card__name Вес:
                         span.result-card__data#r-weight=weight
-                        
+            .result-card__info.--goals
                 ul.result-card__list
                     li.result-card__item
                         b.result-card__name Цель:
@@ -405,5 +405,6 @@ mixin cabPoiItem(number, date, datetime, price, income, outcome, typeI, typeO)
             span(class="point__line-outcome " +typeO)=outcome
             button(type="button").point__line-expand.js-point-toggle Подробнее
         .point__body
-            +cabPoiContent('cart-2', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '+56 баллов', '320 руб.')
-            +cabPoiContent('cart-3', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '+52 баллов', '3220 руб.')
+            ul.point__list
+                +cabPoiContent('cart-2', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '+56 баллов', '320 руб.')
+                +cabPoiContent('cart-3', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '+52 баллов', '3220 руб.')
