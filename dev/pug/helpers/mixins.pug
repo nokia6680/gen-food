@@ -1,3 +1,26 @@
+mixin blogItem(image, title, description, link, vkLink, inLink, fbLink)
+    li.blog__item
+        picture.blog__frame
+            source(media="(min-width: 1366px)" srcset="static/images/content/" +image +".webp" type="image/webp")
+            source(media="(min-width: 1366px)" srcset="static/images/content/" +image +".jpg")
+            source(srcset="static/images/content/" +image +"-mb.webp" type="image/webp")
+            img(src="static/images/content/" +image +"-mb.jpg" alt="" +title).blog__frame-image
+        .blog__preview
+            h2.blog__name=title
+            p.blog__description=description
+        .blog__bottom
+            a(href="" +link target="_self").blog__show Читать полностью
+            ul.blog__social
+                li.blog__social-item
+                    a(href="" +vkLink target="_self").blog__social-link
+                        i.fab.fa-vk
+                li.blog__social-item
+                    a(href="" +inLink target="_self").blog__social-link
+                        i.fab.fa-instagram
+                li.blog__social-item
+                    a(href="" +fbLink target="_self").blog__social-link
+                        i.fab.fa-facebook-f
+                            
 mixin introBlock(type, image, title, subtitle, listTextFirst, listTextSecond, infoText)
     section(class="intro " +type)
         // Overall wrapper
@@ -130,7 +153,7 @@ mixin gridItem(type, itemServiceText, image, title, name, suppFirst, suppSecond,
             button(type="button").item__bottom-submit.js-change Заменить
 
 mixin mealsItem(type, name, power, protein, fats, carbohydrates, idealFirst, idealSecond, idealThird, priceFive, priceSix, link)
-    li(class="meals__item swiper-slide " +type data-meal="" +name)
+    div(class="meals__item swiper-slide " +type data-meal="" +name)
         .meals__head
             b.meals__name=name
             span.meals__type=power

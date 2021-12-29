@@ -68,7 +68,7 @@
 
     &__item {
         width: 100%;
-
+        height: auto;
         @include flex-setting(column, flex-start, center);
 
         padding: 1.75rem 1.75rem;
@@ -168,8 +168,6 @@
     &__body {
         width: 100%;
         @include flex-setting(column, flex-start, center);
-
-        margin-bottom: 2.5rem;
         padding-top: 1.875rem;
     }
 
@@ -265,6 +263,8 @@
 
         position: relative;
 
+        margin-top: auto;
+
         &::after {
             position: absolute;
             content: '';
@@ -310,6 +310,9 @@
 
         cursor: pointer;
         outline: none;
+
+        margin-top: 2.5rem;
+        margin-bottom: 0;
 
         &:hover,
         &:active {
