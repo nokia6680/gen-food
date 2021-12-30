@@ -1,3 +1,13 @@
+mixin priceLine(program, power, price6, price12, price18, price30)
+    li.pricelist__item
+        .pricelist__line
+            b(data-type="" +program).pricelist__program=program
+            span.pricelist__power=power
+            span.pricelist__price.price-6=price6
+            span.pricelist__price.price-12=price12
+            span.pricelist__price.price-18=price18
+            span.pricelist__price.price-30=price30
+        
 mixin blogItem(image, title, description, link, vkLink, inLink, fbLink)
     li.blog__item
         picture.blog__frame
