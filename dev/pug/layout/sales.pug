@@ -33,7 +33,7 @@ html(lang="ru-RU")
                         b.sales__name +300 баллов
                         p.sales__description Напишите отзыв о нас на своей странице в instagram, с отметкой @gen.food и хештегом #еданадом. 
                         p.sales__description Взамен Вы получаете от нас 300 баллов в Личный кабинет
-                        p.sales__description Чтобы получить баллы нужно зарегитрироваться на сайте
+                        p.sales__description Чтобы получить баллы нужно зарегиcтрироваться на сайте
                             
                         a(href="#" target="_self").sales__link Регистрация
                     .sales__block
@@ -55,9 +55,9 @@ html(lang="ru-RU")
                     
                     .cashback__filter
                         ul.cashback__filter-list
-                            li.cashback__filter-item
+                            li.cashback__filter-item.first
                                 button(type="button" onclick="cashbackTab(event, 'howWorks')" id="defaultEditTab").cashback__filter-btn.active Как работает система кешбэка
-                            li.edit__filter-item
+                            li.cashback__filter-item.second
                                 button(type="button" onclick="cashbackTab(event, 'howConditions')").cashback__filter-btn Условия начисления и использования баллов
                     .cashback__content
                         .cashback__content-item#howWorks
