@@ -19,7 +19,7 @@ html(lang="ru-RU")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css")
         link(rel="stylesheet" type='text/css' href="static/css/styles.css")
         link(rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css")
-    body.body
+    body.body.body--cart
         include ../modules/header/header
         main.main
             +introShort('short', 'cart-bg', 'Корзина')
@@ -79,9 +79,16 @@ html(lang="ru-RU")
                                     h2.cart-info__title Способы оплаты
                                     span.cart-info__subtitle Выберите удобный способ оплаты
                                     
-                                    .cart-info__method
-                                        span.cart-info__method-text Картой на сайте
-                                        img(src="static/images/content/payments.png" alt="Типы оплаты").cart-info__method-img
+                                    ul.cart-info__method
+                                        li.cart-info__method-item.cart-info__method-item--cardOnline
+                                            input(type="radio" name="method-type" value="methodCardOnline" id="methodCardOnline").cart-info__method-radio
+                                            label(for="methodCardOnline").cart-info__method-label Картой на сайте
+                                        li.cart-info__method-item.cart-info__method-item--cardCourier
+                                            input(type="radio" name="method-type" value="methodCardCourier" id="methodCardCourier").cart-info__method-radio
+                                            label(for="methodCardCourier").cart-info__method-label Оплата картой курьеру
+                                        li.cart-info__method-item.cart-info__method-item--cashCourier
+                                            input(type="radio" name="method-type" value="methodCashCourier" id="methodCashCourier").cart-info__method-radio
+                                            label(for="methodCashCourier").cart-info__method-label Оплата наличными курьеру
                                     p.cart-info__description Мы, рады, что Вы хотите стать нашим клиентом!
                                     p.cart-info__description Для новых клиентов оформление первых заказов доступно по предоплате. Если вы уже являетесь нашим клиентом и хотите выбрать иной способы оплаты - авторизуйтесь на сайте.
                                     p.cart-info__description Перенос доставки или отказ от заказа, необходимо осуществить через оператора не менее, чем за 24 часа до дня доставки.
@@ -125,7 +132,7 @@ html(lang="ru-RU")
                                                 input(type="number" name="cart-office" id="cart-office" placeholder="Номер" required).cart-form__input
                                             li.cart-form__item
                                                 label(for="cart-date").cart-form__label Дата доставки
-                                                input(type="date" id="cart-date" name="cart-date" placeholder="__.__.____"  required).cart-form__input
+                                                input(type="text" id="cart-date" name="cart-date" placeholder="__.__.____"  required).cart-form__input
                                             li.cart-form__item
                                                 label(for="cart-deltime").cart-form__label Время доставки
                                                 .cart-form__select
@@ -158,7 +165,8 @@ html(lang="ru-RU")
                                                 input(type="tel" name="cart-tel" id="cart-tel" placeholder="+7 (___) ___-__-__" required).cart-form__input.js-phone-input
                                             li.cart-form__item
                                                 label(for="cart-mail").cart-form__label E-mail
-                                                input(type="mail" name="cart-mail" id="cart-mail" placeholder="___@___").cart-form__input
+                                                input(type="mail" name="cart-mail" id="cart-mail" placeholder="___@___" onkeydown="validationMail()" required).cart-form__input.cart-form__input--mail
+                                                span.cart-form__error.cart-form__error--mail
                                         button(type="submit").cart-form__submit.js-step-three Оформить заказ
                             <!--Подтверждение заказа-->
                             .cart__content-item.cart-final#cartFourth
@@ -184,14 +192,10 @@ html(lang="ru-RU")
         include ../modules/popup/form-reaction
         script(src="static/js/vendor/jquery-3.3.1.min.js")
         script(src="https://code.jquery.com/ui/1.13.0/jquery-ui.js")
-        //script(src="https://unpkg.com/swiper/swiper-bundle.js")
         script(src="static/js/main.js")
-        //script(src="static/js/menu.js")
         script(src="static/js/select.js")
-        //script(src="static/js/slider.js")
         script(src="static/js/tabs-review-cart.js")
-        //script(src="static/js/filter-meal.js")
         script(src="static/js/mask.js")
-        //script(src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js")
-        //script(src="static/js/range.js")
+        script(src="static/js/datepicker.js")
+        script(src="static/js/validation.js")
         block script

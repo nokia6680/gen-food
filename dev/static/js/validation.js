@@ -1,19 +1,21 @@
-function validationTel() {
-    let tel = document.getElementById('tel-callback').value;
-    let patternTel = /^((\+7)[\- ]?)?(\(?\d{3,4}\)?[\- ]?)?[\d\-]{7,10}$/;
-    let callbackForm = document.getElementById("callbackForm");
+function validationMail() {
+    let mailInput = document.querySelector('.cart-form__input--mail');
+    let email = document.getElementById('cart-mail').value;
+    let text = document.querySelector('.cart-form__error--mail');
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{1,3}$/;
 
-    if (tel.match(patternTel)) {
-        callbackForm.classList.remove('active');
+    if (email.match(pattern)) {
+        text.innerHTML = "";
+        mailInput.classList.add('valid-mail');
+        mailInput.classList.remove('invalid-mail');
     } else {
-        callbackForm.classList.add('wrong');
+        text.innerHTML = "Поле email заполнено не верно. Оно должно содержать латинские буквы и @";
+        mailInput.classList.add('invalid-mail');
     }
 
-    if (tel == '+') {
-        textTel.innerHTML = "";
+    if (email == '') {
+        text.innerHTML = "";
+        mailInput.classList.remove('invalid-mail');
+        mailInput.classList.remove('valid-mail');
     }
-
-    if (tel == '+7 (') {
-        textTel.innerHTML = "";
-    }
-};
+}

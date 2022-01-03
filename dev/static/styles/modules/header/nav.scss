@@ -7,6 +7,8 @@
 
     background-color: $black;
 
+    position: relative;
+
     &__logo {
         display: block;
         width: 152px;
@@ -90,7 +92,7 @@
 
     &__list {
         position: absolute;
-        top: 70px;
+        top: 40px;
         left: 0;
         right: 0;
         width: 100%;
@@ -323,7 +325,7 @@
         }
 
         &__list {
-            top: 120px;
+            top: 60px;
             padding-left: 2.5rem;
             padding-right: 2.5rem;
 
@@ -367,7 +369,6 @@
         }
 
         &__list {
-            top: 140px;
             max-width: 335px;
             padding-left: 2.5rem;
             padding-right: 2.5rem;
@@ -521,7 +522,7 @@
             padding-right: 0rem;
 
             &.opened {
-                height: 100%;
+                height: calc(var(--vh, 1vh) * 100);
                 padding: 5.625rem 0rem 2.5rem 2.5rem;
                 padding-left: calc(var(--width) / 2);
                 box-shadow: 10px 10px 100px 1000px rgba(0,0,0,0.6);

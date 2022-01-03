@@ -52,6 +52,8 @@ var callbackPopup = document.querySelector(".popup-callback")
 var callbackSubmit = document.querySelector('.form-callback__submit');
 var qReaction = document.querySelector('.form-reaction');
 var qReactionCloser = document.querySelector('.form-reaction__btn');
+var callbackPopupBg = document.querySelector('.popup-callback__bg');
+var callbackReactionBg = document.querySelector('.form-reaction__bg');
 
 for (var i = 0; i < upperItem3.length; i++) {
     var elem = upperItem3[i];
@@ -86,8 +88,23 @@ if (qReactionCloser) {
     });
 };
 
+if (callbackPopupBg) {
+    callbackPopupBg.addEventListener('click', function() {
+        callbackPopup.classList.remove('active');
+    });
+};
+
+if (callbackReactionBg) {
+    callbackReactionBg.addEventListener('click', function() {
+        qReaction.classList.remove('active');
+        callbackPopup.classList.remove('active');
+        callbackPopup.classList.remove('hidden');
+    });
+};
+
 var qPopup = document.querySelector('.popup-ask');
 var qSubmit = document.querySelector('.form-ask__submit');
+var qBg = document.querySelector('.popup-ask__bg');
 
 var upperAsk = document.getElementsByClassName('js-ask');
 var elNodes = document.querySelectorAll(".js-ask");
@@ -99,6 +116,20 @@ for (var i = 0; i < upperAsk.length; i++) {
         qPopup.classList.add("active");
     });
 }
+
+if (qBg) {
+    qBg.addEventListener('click', function() {
+        qPopup.classList.remove('active');
+    });
+};
+
+if (callbackReactionBg) {
+    callbackReactionBg.addEventListener('click', function() {
+        qReaction.classList.remove('active');
+        qPopup.classList.remove('active');
+        qPopup.classList.remove('hidden');
+    });
+};
 
 var upperAskClose = document.getElementsByClassName('popup-ask__closer');
 var elNodes = document.querySelectorAll(".popup-ask__closer");
@@ -132,6 +163,7 @@ var upperItem5 = document.getElementsByClassName('js-change');
 var elNodes = document.querySelectorAll(".js-change");
 var changeMeal = document.querySelector('.change-meal');
 var changeMealCloser = document.querySelector('.change-meal__closer');
+var changeMealBg = document.querySelector('.change-meal__bg');
 
 for (var i = 0; i < upperItem5.length; i++) {
     var elem = upperItem5[i];
@@ -147,12 +179,23 @@ if (changeMealCloser) {
         event.preventDefault();
         changeMeal.classList.remove('active');
         body.classList.remove('no-scroll');
+        body.classList.remove('dimmed');
+    });
+};
+
+if (changeMealBg) {
+    changeMealBg.addEventListener('click', function() {
+        event.preventDefault();
+        changeMeal.classList.remove('active');
+        body.classList.remove('no-scroll');
+        body.classList.remove('dimmed');
     });
 };
 
 var fastOrderCloser = document.querySelector('.fast-order__closer');
 var fastOrder = document.querySelector('.fast-order');
 var fastOrderOpener = document.querySelector('.s-content__order');
+var fastOrderBg = document.querySelector('.fast-order__bg');
 
 if (fastOrderOpener) {
     fastOrderOpener.addEventListener('click', function() {
@@ -170,6 +213,13 @@ if (fastOrderCloser) {
     });
 };
 
+if (fastOrderBg) {
+    fastOrderBg.addEventListener('click', function() {
+        event.preventDefault();
+        fastOrder.classList.remove('active');
+        body.classList.remove('no-scroll');
+    });
+};
 
 var btns = document.getElementsByClassName('s-content__days-btn');
 var elNodes = document.querySelectorAll(".s-content__days-btn");
@@ -212,10 +262,20 @@ if (consultSubmit) {
 
 var cartOpener = document.querySelector('.nav__controls-item--cart');
 var cartSlidedown = document.querySelector('.nav-cart');
+var bodyOverlay = document.querySelector('.body__overlay');
 
 if (cartOpener) {
     cartOpener.addEventListener('click', function() {
         event.preventDefault();
         cartSlidedown.classList.toggle('cartOpened');
+        body.classList.toggle('cartOpened');
+    });
+};
+
+if (bodyOverlay) {
+    bodyOverlay.addEventListener('click', function() {
+        event.preventDefault();
+        cartSlidedown.classList.remove('cartOpened');
+        body.classList.remove('cartOpened');
     });
 };

@@ -70,6 +70,7 @@ $cell.find('.filter-head').click(function() {
         $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
         $thisCell.removeClass('is-collapsed').addClass('is-expanded').removeClass('is-inactive');
         $body.addClass('dimmed');
+        $body.addClass('dim-no-scroll');
         $shop.addClass('over');
 
         if ($cell.not($thisCell).hasClass('is-inactive')) {
@@ -82,6 +83,7 @@ $cell.find('.filter-head').click(function() {
         $thisCell.removeClass('is-expanded').addClass('is-collapsed');
         $cell.not($thisCell).removeClass('is-inactive');
         $body.removeClass('dimmed');
+        $body.removeClass('dim-no-scroll');
         $shop.removeClass('over');
     }
 });

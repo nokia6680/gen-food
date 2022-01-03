@@ -3,7 +3,6 @@
     width: 100vw;
     height: 100vh;
     @include flex-setting(column, center, center);
-    background-color: rgba(0, 0, 0, 0.7);
     top: 0;
     left: 0;
     right: 0;
@@ -15,6 +14,22 @@
         display: flex;
     }
 
+    &__bg {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        background-color: rgba(0, 0, 0, 0.7);
+
+        z-index: 1;
+    }
+
     &__wrapper {
         @include flex-setting(column, flex-start, center);
         width: 100%;
@@ -23,6 +38,7 @@
         background-color: $white;
         overflow-y: scroll;
         animation: fadeIn 2s $cubic 1 forwards;
+        z-index: 2;
         // Если форма успешно отправлена
         &.form-sent {
             .fast-order__product {

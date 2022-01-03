@@ -43,3 +43,8 @@ $("#datepicker").datepicker({
     showOtherMonths: true,
     selectOtherMonths: true
 });
+
+$("#cart-date").datepicker({
+    showOtherMonths: true,
+    selectOtherMonths: true
+});

@@ -43,6 +43,7 @@
         width: 100%;
         @include flex-setting(column, flex-start, center);
         margin-bottom: 1.875rem;
+        position: relative;
     }
 
     &__label {
@@ -61,16 +62,37 @@
         transition: 0.4s $cubic;
         cursor: text;
 
-        &:active,
-        &:focus,
         &:hover {
+            border-color: $lightgreen;
+            transition: 0.4s $cubic;
+        }
+
+        &[type="number"] {
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+
+        &.valid-mail {
             border-color: $green;
             transition: 0.4s $cubic;
         }
 
-        &[type="date"]::-webkit-calendar-picker-indicator {
-            display: none;
+        &.invalid-mail {
+            border-color: red;
+            transition: 0.4s $cubic;
         }
+    }
+
+    &__error {
+        position: absolute;
+        @include font-setting($primary-font, 0.625rem, 1, 400, red);
+        left: 0;
+        bottom: -1.5rem;
+
+        text-align: center;
     }
 
     &__submit {
@@ -97,6 +119,7 @@
         border: 2px solid $lightgray;
         border-radius: 10px;
         text-align: center;
+        cursor: pointer;
 
         .select-hidden {
             display: none;
@@ -175,6 +198,9 @@
                 margin: 0;
                 padding: 0.625rem 0 0.625rem 1rem;
                 transition: all 0.15s ease-in;
+                @include flex-setting(column, center, flex-start);
+
+                cursor: pointer;
 
                 a {
                     color: #fff;

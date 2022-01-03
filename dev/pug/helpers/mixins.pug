@@ -224,8 +224,8 @@ mixin feedbackItem(name, date, datetime, rate, text)
                 span.itemcard__star
         p.itemcard__feedback-description=text
 
-mixin navCartItem(image, name, articul, price)
-    li.nav-cart__item
+mixin navCartItem(type, image, name, articul, price)
+    li(class="nav-cart__item "+type data-sort="" +type)
         picture.nav-cart__frame
             source(srcset="static/images/content/" +image +'.webp' type="image/webp")
             img(src="static/images/content/" +image +'.jpg' alt="" +name).nav-cart__frame-image

@@ -9,8 +9,6 @@
     right: 0;
     bottom: 0;
 
-    background-color: rgba(0, 0, 0, 0.7);
-
     @include flex-setting(column, center, center);
     z-index: 999;
 
@@ -18,6 +16,22 @@
 
     &.active {
         display: flex;
+    }
+
+    &__bg {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        background-color: rgba(0, 0, 0, 0.7);
+
+        z-index: 1;
     }
 
     &__wrapper {
@@ -30,6 +44,8 @@
 
         padding-top: 1.25rem;
         animation: fadeIn 2s $cubic 1 forwards;
+
+        z-index: 2;
     }
 
     &__head {

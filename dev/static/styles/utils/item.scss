@@ -198,11 +198,19 @@
     }
 
     &__name {
+        align-self: flex-start;
+        
         @include font-setting($secondary-font, 1.125rem, 1.25rem, 800, $black);
         text-align: left;
         text-decoration: none;
         margin-bottom: 1.75rem;
         transition: 0.4s linear;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
 
         &:hover,
         &:focus {

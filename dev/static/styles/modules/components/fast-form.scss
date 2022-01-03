@@ -77,6 +77,14 @@
             border-color: $red;
             transition: 0.4s $cubic;
         }
+
+        &[type="number"] {
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
     }
 
     &__submit {
@@ -112,7 +120,16 @@
 
         background-color: transparent;
         border: none;
-
+        padding: 0;
         margin-bottom: 2.5rem;
+
+        cursor: pointer;
+        transition: 0.4s $cubic;
+
+        &:hover,
+        &:active {
+            text-decoration-style: solid;
+            transition: 0.4s $cubic;
+        }
     }
 }
