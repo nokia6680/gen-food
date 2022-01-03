@@ -403,6 +403,7 @@
 
         &-total {
             @include font-setting($secondary-font, 2.25rem, 2.5rem, 900, $black);
+            white-space: nowrap;
         }
 
         &-cashback {
