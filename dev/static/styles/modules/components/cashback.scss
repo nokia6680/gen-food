@@ -312,3 +312,129 @@
         }
     }
 }
+
+@include min-screen(768px) {
+    .cashback {
+        padding: 0 2.5rem;
+        margin-bottom: 7.5rem;
+
+        &__wrapper {
+            align-items: flex-start;
+        }
+
+        &__title {
+            font-size: 2.25rem;
+            line-height: 3.75rem;
+            text-align: left;
+            margin-bottom: 5rem;
+            padding-top: 0;
+            padding-left: 5.625rem;
+
+            &::after {
+                top: 0;
+                left: 0;
+                transform: none;
+            }
+        }
+
+        &__filter {
+            margin-bottom: 2rem;
+
+            &-list {
+                padding-left: 0;
+                padding-right: 0;
+
+                &::after {
+                    width: 158%;
+                    left: 0;
+                }
+            }
+
+            &-item {
+                margin-right: 5rem;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                &.first {
+                    max-width: 406px;
+                }
+
+                &.second {
+                    max-width: 605px;
+                }
+            }
+
+            &-btn {
+                font-size: 1.5rem;
+                line-height: 1.875rem;
+                padding: 1.25rem 0;
+
+                text-align: left;
+            }
+        }
+
+        &__content {
+            padding: 0;
+        }
+
+        &__steps {
+            &-item {
+                max-width: 406px;
+                height: 400px;
+
+                padding: 3.125rem 3.125rem;
+                margin-bottom: 6.25rem;
+
+                &:first-of-type {
+                    &::before {
+                        top: 3.125rem;
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    &::before {
+                        top: 3.125rem;
+                    }
+                }
+
+                &:last-of-type {
+                    &::before {
+                        top: 3.125rem;
+                    }
+                }
+
+                .cashback__description {
+                    text-align: center;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &__description {
+            font-weight: 1.875rem;
+        }
+
+        &__block {
+            margin-bottom: 2.5rem;
+        }
+
+        &__subtitle {
+            font-size: 1.125rem;
+            margin-bottom: 1.25rem;
+        }
+
+        &__list {
+            margin-bottom: 0;
+
+            &-item {
+                padding-left: 1.25rem;
+
+                span {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
