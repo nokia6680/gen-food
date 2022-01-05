@@ -358,6 +358,7 @@
 @include min-screen(1680px) {
     .delivery {
         margin-bottom: 20.625rem;
+        padding: 0;
 
         &__wrapper {
             grid-column-gap: 7.5rem;

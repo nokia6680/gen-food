@@ -218,11 +218,11 @@
         position: relative;
 
         margin-bottom: 7.5rem;
+    }
 
-        &-head {
-            width: 100%;
-            @include flex-setting(row, flex-start, center);
-        }
+    &__content {
+        width: 100%;
+        @include flex-setting(column, flex-start, center);
     }
 
     &__tabs {
@@ -234,13 +234,24 @@
         overflow: -moz-scrollbars-none;
 
         &::-webkit-scrollbar { width: 0; }
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
 
         &-item {
             width: 50%;
             flex: none;
             scroll-snap-align: center;
+
+            &.active {
+                .itemcard__tabs-btn {
+                    align-items: center;
+                    transition: 0.4s $cubic;
+
+                    &::after {
+                        transform: scaleX(1);
+                        transform-origin: left;
+                        transition: 0.4s $cubic;
+                    }
+                }
+            }
         }
 
         &-btn {
@@ -272,21 +283,10 @@
                 transform-origin: left;
                 transition: 0.4s $cubic;
             }
-
-            &.active {
-                align-items: center;
-                transition: 0.4s $cubic;
-
-                &::after {
-                    transform: scaleX(1);
-                    transform-origin: left;
-                    transition: 0.4s $cubic;
-                }
-            }
         }
     }
 
-    &__content {
+    &__body {
         width: 100%;
 
         &-item {
@@ -296,12 +296,24 @@
 
             padding-top: 2.5rem;
 
+            display: none;
+
             &:first-of-type {
                 padding: 2.5rem 1.25rem;
             }
 
             &:last-of-type {
                 padding: 2.5rem 1.25rem;
+            }
+
+            &:nth-of-type(2) {
+                .delivery {
+                    margin-bottom: 0;
+                }
+            }
+
+            &.active {
+                display: flex;
             }
         }
 
@@ -642,11 +654,6 @@
 
         &__details {
             margin-bottom: 12.5rem;
-
-            &-head {
-                width: 100%;
-                @include flex-setting(row, flex-start, center);
-            }
         }
 
         &__tabs {
@@ -673,7 +680,7 @@
             }
         }
 
-        &__content {
+        &__body {
             width: 100%;
 
             &-item {
@@ -805,10 +812,6 @@
             margin-bottom: 0;
         }
 
-        &__details-head {
-            justify-content: center;
-        }
-
         &__tabs {
             max-width: 1440px;
             justify-content: flex-start;
@@ -838,7 +841,7 @@
             }
         }
 
-        &__content {
+        &__body {
             width: 100%;
             max-width: 1440px;
 
@@ -884,10 +887,7 @@
             }
         }
 
-        &__content {
-            width: 100%;
-            max-width: 1440px;
-
+        &__body {
             &-item {
                 &:first-of-type {
                     padding-left: 0;

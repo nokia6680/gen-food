@@ -35,17 +35,16 @@ html(lang="ru-RU")
                     .cabinet__content
                         h2.cabinet__title Редактирование профиля
                         
-                        .cabinet__edit.edit
-                            .edit__filter
-                                ul.edit__filter-list
-                                    li.edit__filter-item
-                                        button(type="button" onclick="changeTabCab(event, 'editAddress')" id="defaultEditTab").edit__filter-btn.active Адрес доставки
-                                    li.edit__filter-item
-                                        button(type="button" onclick="changeTabCab(event, 'editPersonal')").edit__filter-btn Личные данные
-                                    li.edit__filter-item
-                                        button(type="button" onclick="changeTabCab(event, 'editPass')").edit__filter-btn Сменить пароль
+                        .cabinet__edit.edit.tabs-container
+                            ul.edit__filter
+                                li.edit__filter-item.tab-title.active
+                                    button(type="button").edit__filter-btn Адрес доставки
+                                li.edit__filter-item.tab-title
+                                    button(type="button").edit__filter-btn Личные данные
+                                li.edit__filter-item.tab-title
+                                    button(type="button").edit__filter-btn Сменить пароль
                             form(name="edit-cabinet-data" method="get" action="#" id="edit-cabinet-data").edit__form
-                                ul.edit__form-list#editAddress
+                                ul.edit__form-list.tab-content.active
                                     li.edit__form-item
                                         label(for="edit-street").edit__form-label Улица
                                         input(type="text" name="edit-street" id="edit-street" placeholder="Название улицы").edit__form-input
@@ -55,7 +54,7 @@ html(lang="ru-RU")
                                     li.edit__form-item
                                         label(for="edit-office").edit__form-label Квартира/Офис
                                         input(type="text" name="edit-office" id="edit-office" placeholder="Номер").edit__form-input
-                                ul.edit__form-list#editPersonal
+                                ul.edit__form-list.tab-content
                                     li.edit__form-item
                                         label(for="edit-name").edit__form-label Имя
                                         input(type="text" name="edit-name" id="edit-name" placeholder="Ваше имя").edit__form-input
@@ -68,7 +67,7 @@ html(lang="ru-RU")
                                     li.edit__form-item
                                         label(for="edit-email").edit__form-label E-mail
                                         input(type="email" name="edit-email" id="edit-email" placeholder="___@___").edit__form-input
-                                ul.edit__form-list#editPass
+                                ul.edit__form-list.tab-content
                                     li.edit__form-item
                                         label(for="edit-old-pass").edit__form-label Старый пароль
                                         input(type="password" name="edit-old-pass" id="edit-old-pass").edit__form-input
@@ -85,14 +84,7 @@ html(lang="ru-RU")
         include ../modules/popup/form-reaction
         script(src="static/js/vendor/jquery-3.3.1.min.js")
         script(src="https://code.jquery.com/ui/1.13.0/jquery-ui.js")
-        //script(src="https://unpkg.com/swiper/swiper-bundle.js")
         script(src="static/js/main.js")
-        //script(src="static/js/menu.js")
-        script(src="static/js/select.js")
-        //script(src="static/js/slider.js")
-        script(src="static/js/tabs-review-cabinet.js")
-        //script(src="static/js/filter-meal.js")
+        script(src="static/js/tabs.js")
         script(src="static/js/mask.js")
-        //script(src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js")
-        //script(src="static/js/range.js")
         block script

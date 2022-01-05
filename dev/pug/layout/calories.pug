@@ -157,7 +157,7 @@ html(lang="ru-RU")
                                     a(href="#" target="_blank").faq__contacts-link.faq__contacts-link--tg
                                 li.faq__contacts-item
                                     a(href="tel:+78007874244" target="_self").faq__contacts-link 8 800 787 42 44
-                            button(type="button").faq__callback.js-callback Перезвоните мне
+                            button(type="button" data-modal="#js-popup-callback").faq__callback.js-popup-opener Перезвоните мне
         include ../modules/footer/footer
         include ../modules/popup/popup-ask
         include ../modules/popup/popup-callback
@@ -165,9 +165,5 @@ html(lang="ru-RU")
         script(src="static/js/vendor/jquery-3.3.1.min.js")
         script(src="https://unpkg.com/swiper/swiper-bundle.js")
         script(src="static/js/main.js")
-        script(src="static/js/menu.js")
-        //script(src="static/js/select.js")
         script(src="static/js/slider.js")
-        //script(src="static/js/tabs-review.js")
-        //script(src="static/js/filter-meal.js")
         block script

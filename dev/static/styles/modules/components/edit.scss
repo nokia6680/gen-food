@@ -5,35 +5,31 @@
 
     &__filter {
         width: 100%;
-        @include flex-setting(row, flex-start, center);
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+
+        position: relative;;
         margin-bottom: 1.5rem;
 
-        &-list {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding-left: 1.25rem;
-            padding-right: 1.25rem;
+        &::after {
+            position: absolute;
+            content: '';
 
-            -ms-overflow-style: none;
-            overflow: -moz-scrollbars-none;
+            width: 475px;
+            height: 1px;
+            left: 1.25rem;
+            bottom: 0;
 
-            position: relative;
-
-            &::after {
-                position: absolute;
-                content: '';
-
-                width: 475px;
-                height: 1px;
-                left: 1.25rem;
-                bottom: 0;
-
-                background-color: $lightgray;
-            }
-
-            &::-webkit-scrollbar { width: 0; }
+            background-color: $lightgray;
         }
+
+        &::-webkit-scrollbar { width: 0; }
 
         &-item {
             width: auto;
@@ -45,6 +41,21 @@
 
             &:last-of-type {
                 margin-right: 0;
+            }
+
+            &.active {
+                .edit__filter-btn {
+                    align-items: center;
+                    transition: 0.4s $cubic;
+
+                    color: $black;
+
+                    &::after {
+                        transform: scaleX(1);
+                        transform-origin: left;
+                        transition: 0.4s $cubic;
+                    }
+                }
             }
         }
 
@@ -78,24 +89,6 @@
 
                 z-index: 1;
             }
-
-            &.active {
-                align-items: center;
-                transition: 0.4s $cubic;
-
-                color: $black;
-
-                &::after {
-                    transform: scaleX(1);
-                    transform-origin: left;
-                    transition: 0.4s $cubic;
-                }
-            }
-
-            &.inactive {
-                pointer-events: none;
-                color: $lightgray;
-            }
         }
     }
 
@@ -112,8 +105,14 @@
 
             margin-bottom: 3.125rem;
 
+            display: none;
+
             .edit__form-item:last-of-type {
                 margin-bottom: 0;
+            }
+
+            &.active {
+                display: flex;
             }
         }
 
@@ -171,25 +170,21 @@
 @include min-screen(768px) {
     .edit {
         &__filter {
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            overflow-x: visible;
+            scroll-snap-type: none;
+            padding-left: 0;
+            padding-right: 0;
+
             margin-bottom: 2.5rem;
-            padding: 0;
-            justify-content: center;
 
-            &-list {
+            &::after {
                 width: 100%;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                overflow-x: visible;
-                scroll-snap-type: none;
-                padding-left: 0;
-                padding-right: 0;
-
-                &::after {
-                    width: 100%;
-                    left: 0;
-                    bottom: 0;
-                }
+                left: 0;
+                bottom: 0;
             }
 
             &-item {
@@ -211,7 +206,6 @@
             padding: 0;
 
             &-list {
-                display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-column-gap: 3.125rem;
                 grid-row-gap: 1.875rem;
@@ -223,6 +217,10 @@
                         grid-column-start: 1;
                         grid-column-end: 3;
                     }
+                }
+
+                &.active {
+                    display: grid;
                 }
             }
 

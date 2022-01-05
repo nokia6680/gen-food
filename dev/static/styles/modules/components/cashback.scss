@@ -39,36 +39,40 @@
         }
     }
 
+    &__content {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+
+        padding: 0 1.25rem;
+    }
+
     &__filter {
         width: 100%;
-        @include flex-setting(row, flex-start, center);
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+
+        position: relative;
         margin-bottom: 1.5rem;
 
-        &-list {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding-left: 1.25rem;
-            padding-right: 1.25rem;
+        &::after {
+            position: absolute;
+            content: '';
 
-            -ms-overflow-style: none;
-            overflow: -moz-scrollbars-none;
+            width: 148%;
+            height: 1px;
+            left: 0;
+            bottom: 0;
 
-            position: relative;
+            background-color: $lightgray;
+        }
 
-            &::after {
-                position: absolute;
-                content: '';
-
-                width: 130%;
-                height: 1px;
-                left: 1.25rem;
-                bottom: 0;
-
-                background-color: $lightgray;
-            }
-
-            &::-webkit-scrollbar { width: 0; }
+        &::-webkit-scrollbar {
+            width: 0;
         }
 
         &-item {
@@ -89,6 +93,21 @@
 
             &.second {
                 max-width: 250px;
+            }
+
+            &.active {
+                .cashback__filter-btn {
+                    align-items: center;
+                    transition: 0.4s $cubic;
+
+                    color: $black;
+
+                    &::after {
+                        transform: scaleX(1);
+                        transform-origin: left;
+                        transition: 0.4s $cubic;
+                    }
+                }
             }
         }
 
@@ -122,28 +141,10 @@
 
                 z-index: 1;
             }
-
-            &.active {
-                align-items: center;
-                transition: 0.4s $cubic;
-
-                color: $black;
-
-                &::after {
-                    transform: scaleX(1);
-                    transform-origin: left;
-                    transition: 0.4s $cubic;
-                }
-            }
-
-            &.inactive {
-                pointer-events: none;
-                color: $lightgray;
-            }
         }
     }
 
-    &__content {
+    &__body {
         width: 100%;
 
         @include flex-setting(column, flex-start, center);
@@ -154,6 +155,12 @@
             width: 100%;
 
             @include flex-setting(column, flex-start, center);
+
+            display: none;
+
+            &.active {
+                display: flex;
+            }
         }
     }
 
@@ -338,16 +345,13 @@
         }
 
         &__filter {
+            padding-left: 0;
+            padding-right: 0;
             margin-bottom: 2rem;
 
-            &-list {
-                padding-left: 0;
-                padding-right: 0;
-
-                &::after {
-                    width: 158%;
-                    left: 0;
-                }
+            &::after {
+                width: 158%;
+                left: 0;
             }
 
             &-item {
@@ -455,17 +459,14 @@
 
         &__filter {
             margin-bottom: 2.5rem;
+            width: 100%;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
 
-            &-list {
+            &::after {
                 width: 100%;
-                flex-direction: row;
-                justify-content: flex-start;
-                align-items: center;
-
-                &::after {
-                    width: 100%;
-                    left: 0;
-                }
+                left: 0;
             }
 
             &-item {
@@ -477,6 +478,10 @@
                     max-width: 100%;
                 }
             }
+        }
+
+        &__body {
+            padding: 0;
         }
 
         &__steps {

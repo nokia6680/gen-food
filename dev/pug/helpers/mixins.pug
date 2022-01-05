@@ -125,7 +125,7 @@ mixin dateBtn(curDate, curDay, dateTime)
 mixin gridItem(type, itemServiceText, image, title, name, suppFirst, suppSecond, suppThird, suppFourth, price, weight)
     li(class="item " +type)
         .item__service
-            button(type="button").item__service-btn.js-change
+            button(type="button" data-modal="#js-popup-change").item__service-btn.js-popup-opener
             b.item__service-about=itemServiceText
         .item__constructor
             a(href="constructor.html" target="_self").item__constructor-link Конструктор рациона
@@ -162,7 +162,7 @@ mixin gridItem(type, itemServiceText, image, title, name, suppFirst, suppSecond,
                 input(type="number" name="item-counter" id="item-counter" placeholder="1").item__bottom-input
                 button(type="button").item__bottom-btn.item__bottom-btn-decrease -
             button(type="button").item__bottom-submit.js-to-cart В корзину
-            button(type="button" data-modal="js-popup-change").item__bottom-submit.js-change.js-popup-opener Заменить
+            button(type="button" data-modal="#js-popup-change").item__bottom-submit.js-change.js-popup-opener Заменить
 
 mixin mealsItem(type, name, power, protein, fats, carbohydrates, idealFirst, idealSecond, idealThird, priceFive, priceSix, link)
     div(class="meals__item swiper-slide " +type data-meal="" +name)

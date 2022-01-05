@@ -3,6 +3,12 @@
 
     @include flex-setting(column, flex-start, center);
 
+    display: none;
+
+    &.active {
+        display: flex;
+    }
+
     &__item {
         width: 100%;
 
@@ -260,12 +266,14 @@
 
 @include min-screen(768px) {
     .cart-info {
-        display: grid;
         grid-template-columns: 1fr;
         max-width: 586px;
 
-        &__method {
+        &.active {
+            display: grid;
+        }
 
+        &__method {
             &-item--cardOnline,
             &-item--cardCourier {
                 background-image: url('../images/content/payments.png');
@@ -291,7 +299,6 @@
 
 @include min-screen(1366px) {
     .cart-info {
-        display: grid;
         grid-template-columns: 1fr 1fr;
         max-width: 100%;
         justify-content: space-between;

@@ -64,39 +64,39 @@ html(lang="ru-RU")
                                     button(type="button").itemcard__count-btn.itemcard__count-btn-decrease -
                                 button(type="button").itemcard__cart В корзину
                     .itemcard__details
-                        .itemcard__details-head
+                        .itemcard__content.tabs-container
                             ul.itemcard__tabs
-                                li.itemcard__tabs-item
-                                    button(type="button" data-sort="itemAbout" onclick="openCard(event, 'itemAbout')").itemcard__tabs-btn.active#defaultTab Описание
-                                li.itemcard__tabs-item
-                                    button(type="button" data-sort="itemDel" onclick="openCard(event, 'itemDel')").itemcard__tabs-btn Доставка
-                                li.itemcard__tabs-item
-                                    button(type="button" data-sort="itemBack" onclick="openCard(event, 'itemBack')").itemcard__tabs-btn Отзывы
-                        .itemcard__content
-                            .itemcard__content-item#itemAbout
-                                p.itemcard__content-description ПП еда с строгим разделением меню дня на пять приёмов пищи способствует правильному усвоению потребляемых продуктов, с учетом распределения КБЖУ в течение дня. Мы разработали рационы, качество которых проверяется ежедневно, совместно с роспотребнадзором, институтом питания Москвы и лучшими нутрициологами и диетологами столицы. Все блюда в рационах сбалансированы по КБЖУ и полностью соответствуют целям достигаемым при выборе линеек питания.
-                            .itemcard__content-item#itemDel
-                                include ../modules/blocks/delivery
-                            .itemcard__content-item#itemBack
-                                ul.itemcard__feedback
-                                    +feedbackItem('Сергей В.', 'от 27.07.2020', '2020-07-27', 'medium', 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.')
-                                    +feedbackItem('Марина М.', 'от 27.07.2021', '2021-07-27', 'good', 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.')
-                                .itemcard__ratings
-                                    h3.itemcard__ratings-title Общий рейтинг
-                                    ul.itemcard__ratings-list.rate-list.excellent
-                                        span.itemcard__star
-                                        span.itemcard__star 
-                                        span.itemcard__star
-                                        span.itemcard__star
-                                        span.itemcard__star
-                                    .itemcard__ratings-summary
-                                        p.itemcard__ratings-note Посмотреть отзывы на других площадках
-                                        
-                                        a(href="#" target="_blank" title="Яндекс лавка").itemcard__ratings-link
-                                            img(src="static/images/content/yl.png" alt="Яндекс лавка")
-                                        a(href="#" target="_blank" title="delivery Club").itemcard__ratings-link
-                                            img(src="static/images/content/dc.svg" alt="delivery Club")
-                                        button(type="button").itemcard__ratings-new.js-new-feedback Написать отзыв
+                                li.itemcard__tabs-item.tab-title.active
+                                    button(type="button").itemcard__tabs-btn Описание
+                                li.itemcard__tabs-item.tab-title
+                                    button(type="button").itemcard__tabs-btn Доставка
+                                li.itemcard__tabs-item.tab-title
+                                    button(type="button").itemcard__tabs-btn Отзывы
+                            .itemcard__body
+                                .itemcard__body-item.tab-content.active
+                                    p.itemcard__content-description ПП еда с строгим разделением меню дня на пять приёмов пищи способствует правильному усвоению потребляемых продуктов, с учетом распределения КБЖУ в течение дня. Мы разработали рационы, качество которых проверяется ежедневно, совместно с роспотребнадзором, институтом питания Москвы и лучшими нутрициологами и диетологами столицы. Все блюда в рационах сбалансированы по КБЖУ и полностью соответствуют целям достигаемым при выборе линеек питания.
+                                .itemcard__body-item.tab-content
+                                    include ../modules/blocks/delivery
+                                .itemcard__body-item.tab-content
+                                    ul.itemcard__feedback
+                                        +feedbackItem('Сергей В.', 'от 27.07.2020', '2020-07-27', 'medium', 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.')
+                                        +feedbackItem('Марина М.', 'от 27.07.2021', '2021-07-27', 'good', 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.')
+                                    .itemcard__ratings
+                                        h3.itemcard__ratings-title Общий рейтинг
+                                        ul.itemcard__ratings-list.rate-list.excellent
+                                            span.itemcard__star
+                                            span.itemcard__star 
+                                            span.itemcard__star
+                                            span.itemcard__star
+                                            span.itemcard__star
+                                        .itemcard__ratings-summary
+                                            p.itemcard__ratings-note Посмотреть отзывы на других площадках
+                                            
+                                            a(href="#" target="_blank" title="Яндекс лавка").itemcard__ratings-link
+                                                img(src="static/images/content/yl.png" alt="Яндекс лавка")
+                                            a(href="#" target="_blank" title="delivery Club").itemcard__ratings-link
+                                                img(src="static/images/content/dc.svg" alt="delivery Club")
+                                            button(type="button").itemcard__ratings-new.js-new-feedback Написать отзыв
             include ../modules/blocks/similar
 
             section.reasons
@@ -114,8 +114,6 @@ html(lang="ru-RU")
         script(src="https://unpkg.com/swiper/swiper-bundle.js")
         script(src="static/js/main.js")
         script(src="static/js/menu.js")
-        //script(src="static/js/select.js")
         script(src="static/js/slider.js")
-        script(src="static/js/tabs-review-itemcard.js")
-        //script(src="static/js/filter-meal.js")
+        script(src="static/js/tabs.js")
         block script

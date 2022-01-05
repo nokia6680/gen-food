@@ -12,40 +12,36 @@
 
     &__filter {
         width: 100%;
-        @include flex-setting(row, flex-start, center);
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+
+        position: relative;
         margin-bottom: 1.5rem;
 
-        &-list {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding-left: 1.25rem;
-            padding-right: 1.25rem;
+        &::after {
+            position: absolute;
+            content: '';
 
-            -ms-overflow-style: none;
-            overflow: -moz-scrollbars-none;
+            width: calc(200% - 3rem);
+            height: 1px;
+            left: 1.25rem;
+            bottom: 0;
 
-            position: relative;
-
-            &::after {
-                position: absolute;
-                content: '';
-
-                width: calc(200% - 3rem);
-                height: 1px;
-                left: 1.25rem;
-                bottom: 0;
-
-                background-color: $lightgray;
-            }
-
-            &::-webkit-scrollbar { width: 0; }
+            background-color: $lightgray;
         }
+
+        &::-webkit-scrollbar { width: 0; }
 
         &-item {
             width: auto;
             flex: none;
-            scroll-snap-align: start;
+            scroll-snap-align: center;
             scroll-margin-left: 1.25rem;
             scroll-margin-right: 1.25rem;
             margin-right: 2.5rem;
@@ -71,6 +67,29 @@
             &.cart-tab-2 {
                 &.left {
                     scroll-margin-left: 9.25rem;
+                }
+            }
+
+            &.active {
+                .cart__filter-btn {
+                    align-items: center;
+                    transition: 0.4s $cubic;
+
+                    color: $black;
+
+                    &::after {
+                        transform: scaleX(1);
+                        transform-origin: left;
+                        transition: 0.4s $cubic;
+                    }
+                }
+            }
+
+            &.inactive {
+                pointer-events: none;
+
+                .cart__filter-btn {
+                    color: $lightgray;
                 }
             }
         }
@@ -105,24 +124,6 @@
 
                 z-index: 1;
             }
-
-            &.active {
-                align-items: center;
-                transition: 0.4s $cubic;
-
-                color: $black;
-
-                &::after {
-                    transform: scaleX(1);
-                    transform-origin: left;
-                    transition: 0.4s $cubic;
-                }
-            }
-
-            &.inactive {
-                pointer-events: none;
-                color: $lightgray;
-            }
         }
     }
 
@@ -132,16 +133,25 @@
         padding: 0 1.25rem;
 
         @include flex-setting(column, flex-start, center);
-    }
 
-    &__content {
-        width: 100%;
-        @include flex-setting(column, flex-start, center);
+        &-item {
+            display: none;
+
+            &.active {
+                display: flex;
+            }
+        }
     }
 
     &-checkout {
         width: 100%;
         @include flex-setting(column, flex-start, center);
+
+        display: none;
+
+        &.active {
+            display: flex;
+        }
     }
 }
 
@@ -150,23 +160,17 @@
         &__filter {
             margin-bottom: 2.5rem;
             padding: 0 2.5rem;
-            justify-content: center;
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            overflow-x: visible;
+            scroll-snap-type: none;
 
-            &-list {
-                width: 100%;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                overflow-x: visible;
-                scroll-snap-type: none;
-                padding-left: 0;
-                padding-right: 0;
-
-                &::after {
-                    width: 100%;
-                    left: 0;
-                    bottom: 0;
-                }
+            &::after {
+                width: calc(100% - 5rem);
+                left: 2.5rem;
+                bottom: 0;
             }
 
             &-item {
@@ -187,6 +191,10 @@
             justify-content: center;
             align-items: start;
             grid-template-columns: 1fr;
+
+            &.active {
+                display: grid;
+            }
         }
     }
 }
@@ -198,13 +206,10 @@
         &__filter {
             margin-bottom: 5rem;
             max-width: 1520px;
+            justify-content: flex-start;
 
-            &-list {
-                justify-content: flex-start;
-
-                &::after {
-                    bottom: -2px;
-                }
+            &::after {
+                bottom: -2px;
             }
 
             &-item {
@@ -241,7 +246,6 @@
                 top: 0;
                 left: 50%;
                 transform: translateX(-50%);
-
             }
         }
     }

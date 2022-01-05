@@ -117,7 +117,7 @@ html(lang="ru-RU")
                                 b.s-content__delivery-title Бесплатная доставка
                                 span.s-content__delivery-about 2-3 раза в неделю
                                 a(href="#" target="_self").s-content__delivery-choose Подобрать рацион
-                            button(type="button").s-content__order Заказать
+                            button(type="button" data-modal="#js-popup-order").s-content__order.js-popup-opener Заказать
                     span.s-content__note * Фотографии блюд на сайте являются вариантом сервировки блюда. Внешний вид блюда может отличаться от фотографии на сайте.
             include ../modules/blocks/delivery
             include ../modules/blocks/consult
@@ -132,16 +132,13 @@ html(lang="ru-RU")
         include ../modules/popup/popup-callback
         include ../modules/popup/form-reaction
         include ../modules/popup/change-meal
+        include ../modules/popup/fast-order
         script(src="static/js/vendor/jquery-3.3.1.min.js")
         script(src="https://code.jquery.com/ui/1.13.0/jquery-ui.js")
         script(src="https://unpkg.com/swiper/swiper-bundle.js")
         script(src="static/js/main.js")
-        script(src="static/js/menu.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js")
         script(src="static/js/range.js")
-        //script(src="static/js/select.js")
         script(src="static/js/slider.js")
         script(src="static/js/datepicker.js")
-        //script(src="static/js/tabs-review.js")
-        //script(src="static/js/filter-meal.js")
         block script

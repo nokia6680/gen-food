@@ -3,6 +3,12 @@
 
     @include flex-setting(column, flex-start, center);
 
+    display: none;
+
+    &.active {
+        display: flex;
+    }
+
     &__list {
         width: 100%;
 
@@ -336,13 +342,14 @@
 
 @include min-screen(768px) {
     .cart-data {
-        display: grid;
         grid-template-columns: 1fr 346px;
         grid-column-gap: 1.25rem;
 
         justify-content: space-between;
         align-items: start;
-
+        &.active {
+            display: grid;
+        }
         &__list {
             margin-bottom: 0;
         }
@@ -351,7 +358,6 @@
 
 @include min-screen(1366px) {
     .cart-data {
-        display: grid;
         grid-template-columns: 1fr 346px;
         grid-column-gap: 8.875rem;
 
