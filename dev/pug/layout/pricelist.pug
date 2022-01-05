@@ -43,9 +43,10 @@ html(lang="ru-RU")
                     +priceLine('vegan', '~1300 Ккал', '3 750 Р', '7 500 Р', '15 000 Р', '22 500 Р')
                     +priceLine('sea', '~1350 Ккал', '7 500 Р', '15 000 Р', '22 500 Р', '45 000 Р')
             article.discount
-                .discount__wrapper
+                <!--Ответ на отправку включается при добавлении класса presed к discount__wrapper-->
+                .discount__wrapper 
                     h2.discount__title Хотите скидку?
-                    p.discount__description Заполните форму, что получить скидку!
+                    p.discount__description Заполните форму, чтобы получить скидку!
                     form(action="" method="post").discount__form
                         ul.discount__form-list
                             li.discount__form-item
@@ -58,15 +59,15 @@ html(lang="ru-RU")
                     .discount__reaction
                         ul.discount__reaction-social
                             li.discount__reaction-item
-                                a(href="#" target="_blank")
+                                a(href="#" target="_blank").discount__reaction-link
                                     i.fab.fa-vk
                             li.discount__reaction-item
-                                a(href="#" target="_blank")
+                                a(href="#" target="_blank").discount__reaction-link
                                     i.fab.fa-facebook-f
                             li.discount__reaction-item
-                                a(href="#" target="_blank")
+                                a(href="#" target="_blank").discount__reaction-link
                                     i.fab.fa-instagram
-                        a(href="blog.html" target="_blank").discount__reaction-link Блог General Food
+                        a(href="blog.html" target="_blank").discount__reaction-blog Блог General Food
         include ../modules/footer/footer
 
         include ../modules/popup/popup-ask
@@ -76,7 +77,7 @@ html(lang="ru-RU")
         script(src="https://unpkg.com/swiper/swiper-bundle.js")
         script(src="static/js/main.js")
         script(src="static/js/menu.js")
-        //script(src="static/js/select.js")
+        script(src="static/js/mask.js")
         script(src="static/js/slider.js")
         //script(src="static/js/tabs-review.js")
         //script(src="static/js/filter-meal.js")

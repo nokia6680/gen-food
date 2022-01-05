@@ -231,3 +231,69 @@
         }
     }
 }
+
+@include min-screen(1366px) {
+    .sales {
+        margin-bottom: 12.5rem;
+
+        &__wrapper {
+            max-width: 1440px;
+            grid-column-gap: 16.5rem;
+            justify-content: center;
+
+            position: relative;
+
+            &::after {
+                position: absolute;
+                content: '';
+
+                width: 1px;
+                height: calc(100% - 8.75rem);
+
+                border-left: 1px dashed $lightgray;
+
+                top: 8.75rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        &__title {
+            font-size: 2.875rem;
+            margin-bottom: 5rem;
+        }
+
+        &__name {
+            font-size: 4rem;
+            line-height: 4.625rem;
+            margin-bottom: 3.125rem;
+        }
+
+        &__description {
+            text-align: left;
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        &__list {
+            margin-bottom: 2.5rem;
+
+            &-item {
+                span {
+                    font-size: 1.125rem;
+                    line-height: 1.875rem;
+                }
+
+                &::after {
+                    top: 0.625rem;
+                }
+            }
+        }
+
+        &__note {
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+        }
+    }
+}

@@ -1,7 +1,9 @@
 mixin priceLine(program, power, price6, price12, price18, price30)
     li.pricelist__item
         .pricelist__line
-            b(data-type="" +program).pricelist__program=program
+            .pricelist__type(data-sort="" +program)
+                span.pricelist__icon
+                a(href="meals-" +program +'.html' target="_self").pricelist__program=program
             span.pricelist__power=power
             span.pricelist__price.price-6=price6
             span.pricelist__price.price-12=price12
