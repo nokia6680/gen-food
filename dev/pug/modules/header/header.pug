@@ -5,7 +5,7 @@ header.header
     // Блок дестопных контактов
     .header__contacts
         p.header__contacts-note Принимаем заказы 24 часа
-        button(type="button").header__contacts-ask.js-ask Остались вопросы?
+        button(type="button" data-modal="#js-popup-ask").header__contacts-ask.js-popup-opener Остались вопросы?
         
         ul.header__contacts-list
             li.header__contacts-item
@@ -14,7 +14,7 @@ header.header
                 a(href="#" target="_blank").header__contacts-link.header__contacts-link--tg
             li.header__contacts-item
                 a(href="tel:+78007874244" target="_self").header__contacts-link 8 800 787 42 44
-        button(type="button").header__callback.js-callback Перезвоните мне
+        button(type="button" data-modal="#js-popup-callback").header__callback.js-popup-opener Перезвоните мне
         
     nav.header__nav.nav
         // Logo

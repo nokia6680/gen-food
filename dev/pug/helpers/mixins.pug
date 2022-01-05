@@ -97,9 +97,9 @@ mixin introBlockMeal(type, image, title, description, subtitle)
                 img(src="static/images/content/" +image +"-mb.jpg" alt="" +title).intro__frame-image
 
 mixin faqItem(type, name, description)
-    li(class="faq__content-item " +type)
-        b.faq__content-name=name
-        p.faq__content-description=description
+    li(class="faq__body-item " +type)
+        b.faq__body-name=name
+        p.faq__body-description=description
 
 mixin reviewsItem(image)
     picture.reviews__frame.swiper-slide
@@ -162,7 +162,7 @@ mixin gridItem(type, itemServiceText, image, title, name, suppFirst, suppSecond,
                 input(type="number" name="item-counter" id="item-counter" placeholder="1").item__bottom-input
                 button(type="button").item__bottom-btn.item__bottom-btn-decrease -
             button(type="button").item__bottom-submit.js-to-cart В корзину
-            button(type="button").item__bottom-submit.js-change Заменить
+            button(type="button" data-modal="js-popup-change").item__bottom-submit.js-change.js-popup-opener Заменить
 
 mixin mealsItem(type, name, power, protein, fats, carbohydrates, idealFirst, idealSecond, idealThird, priceFive, priceSix, link)
     div(class="meals__item swiper-slide " +type data-meal="" +name)
