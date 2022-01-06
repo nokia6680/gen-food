@@ -424,7 +424,7 @@
     }
 }
 
-@include min-screen(1280px) {
+@include min-screen(1366px) {
     .change-meal {
         &__wrapper {
             max-width: 1100px;

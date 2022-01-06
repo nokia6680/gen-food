@@ -242,8 +242,8 @@ mixin navCartItem(type, image, name, articul, price)
                 button(type="button").nav-cart__count-btn.nav-cart__count-btn-decrease -
             button(type="button").nav-cart__delete
 
-mixin navCart(image, name, articul, price, suppNull, suppFirst, suppSecond, suppThird, suppFourth)
-    li.cart-data__item
+mixin navCart(type, mealType, image, name, articul, price, suppNull, suppFirst, suppSecond, suppThird, suppFourth)
+    li(class="cart-data__item " +type data-sort="" +mealType)
         picture.cart-data__frame
             source(srcset="static/images/content/" +image +'.webp' type="image/webp")
             img(src="static/images/content/" +image +'.jpg' alt="" +name).cart-data__frame-image
@@ -294,14 +294,15 @@ mixin cabPoints(number, date, datetime, link)
         time(datetime="" +datetime).cabinet__date=date
         a(href="" +link target="_self").cabinet__show Смотреть
 
-mixin cabOrderContent(image, name, articul, price, suppNull, suppFirst, suppSecond, suppThird, suppFourth, quan, overall)
-    li.order__card.order-card
+mixin cabOrderContent(type, meal, image, name, articul, price, suppNull, suppFirst, suppSecond, suppThird, suppFourth, quan, overall)
+    li(class="order__card order-card " +type data-sort="" +meal)
         picture.order-card__frame
             source(srcset="static/images/content/" +image +'.webp' type="image/webp")
             img(src="static/images/content/" +image +'.jpg' alt="" +name).order-card__frame-image
         .order-card__info
             b.order-card__name=name
             span.order-card__articul=articul
+            button(type="button" data-modal="#js-popup-meal").order-card__btn.js-popup-opener Просмотр рациона
         ul.order-card__supplements
             li.order-card__supplements-fact#cart-weight-item
                 b.order-card__supplements-name Вес
@@ -333,8 +334,9 @@ mixin cabOrderItem(number, date, datetime, price, stats, statsReady)
             button.order__line-expand.js-order-toggle Подробнее
         .order__body
             ul.order__list
-                +cabOrderContent('cart-3', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '1320 руб.', '270 г.', '338.8 кКал', '5.1 г.', '24.8 г.', '23.7 г.', '1 шт.', '1320 руб.')
-                +cabOrderContent('cart-4', 'Котлетка говяжья паровая с овощами Гриль и горчично-укропным соусом', 'Артикул: Б0859', '1320 руб.', '270 г.', '338.8 кКал', '5.1 г.', '24.8 г.', '23.7 г.', '1 шт.', '1320 руб.')
+                +cabOrderContent('', '','cart-3', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '1320 руб.', '270 г.', '338.8 кКал', '5.1 г.', '24.8 г.', '23.7 г.', '1 шт.', '1320 руб.')
+                +cabOrderContent('', '','cart-4', 'Котлетка говяжья паровая с овощами Гриль и горчично-укропным соусом', 'Артикул: Б0859', '1320 руб.', '270 г.', '338.8 кКал', '5.1 г.', '24.8 г.', '23.7 г.', '1 шт.', '1320 руб.')
+                +cabOrderContent('mealItem','fit', '', 'Рацион FIT', '~ 3233 кКал', '', '', '', '', '', '', '', '3320 руб.')
             .order__bottom
                 ul.order__bottom-list
                     li.order__bottom-item

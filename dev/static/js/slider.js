@@ -166,6 +166,62 @@ function changeActiveClass(e) {
     e.target.classList.add('active');
 }
 
+const swiper8 = new Swiper('.s-content-cabinet-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    grabCursor: true,
+    speed: 1000,
+    navigation: {
+        nextEl: '.s-content__filter-next',
+        prevEl: '.s-content__filter-prev',
+    },
+
+    breakpoints: {
+        375: {
+            slideToClickedSlide: true,
+            slidesPerView: 1,
+            speed: 1000,
+            centeredSlides: true,
+            navigation: {
+                nextEl: '.s-content__filter-next',
+                prevEl: '.s-content__filter-prev',
+            },
+        },
+
+        768: {
+            spaceBetween: 14.6666,
+            slidesPerView: 4,
+            speed: 1000,
+            centeredSlides: false,
+            navigation: {
+                nextEl: '.s-content__filter-next',
+                prevEl: '.s-content__filter-prev',
+            },
+        },
+
+        1366: {
+            spaceBetween: 30,
+            slidesPerView: 5,
+            speed: 1000,
+            centeredSlides: false,
+            navigation: {
+                nextEl: '.s-content__filter-next',
+                prevEl: '.s-content__filter-prev',
+            },
+        },
+
+        1680: {
+            spaceBetween: 27,
+            slidesPerView: 5,
+            speed: 1000,
+            centeredSlides: false,
+            navigation: {
+                nextEl: '.s-content__filter-next',
+                prevEl: '.s-content__filter-prev',
+            },
+        },
+    }
+});
 
 // breakpoint where swiper will be destroyed
 // and switches to a dual-column layout

@@ -28,71 +28,97 @@ html(lang="ru-RU")
                         li.breadcrumbs__item
                             a(href="" +i.link target="_self").breadcrumbs__link=i.name
             article.calculate
+                <!--noLogged класс для незалогиненых, loggedActive залогиненые и отправившие форму-->
                 .calculate__wrapper
                     .calculate__body
-                        h1.calculate__title Расчет рациона питания
+                        h2.calculate__title Расчет рациона питания
                         form(method="post" action="" name="meal-calculation" id="meal-calculator").calculate__form
-                            <!--Выбор пола-->
-                            .calculate__block.calculate__block--gender
-                                b.calculate__name Пол
+                            .calculate__form-wrap
+                                <!--Выбор пола-->
+                                .calculate__block.calculate__block--gender
+                                    b.calculate__name Пол
+                                    ul.calculate__list
+                                        li.calculate__item
+                                            input(type="radio" name="gender" id="male" value="male" checked).calculate__radio
+                                            label(for="male").calculate__button Мужской
+                                        li.calculate__item
+                                            input(type="radio" name="gender" id="female" value="female").calculate__radio
+                                            label(for="female").calculate__button Женский
+                                <!--Выбор цели-->
+                                .calculate__block.calculate__block--goal
+                                    b.calculate__name Цель
+                                    ul.calculate__list.calculate__list--goal
+                                        li.calculate__item
+                                            input(type="radio" name="goal" id="goal-1" value="reduce-weight" checked).calculate__radio
+                                            label(for="goal-1").calculate__button Снизить вес
+                                        li.calculate__item
+                                            input(type="radio" name="goal" id="goal-2" value="keep-fit").calculate__radio
+                                            label(for="goal-2").calculate__button Поддержать форму
+                                        li.calculate__item
+                                            input(type="radio" name="goal" id="goal-3" value="gain-weight").calculate__radio
+                                            label(for="goal-3").calculate__button Набрать массу
+                                <!--Уровень активности-->
+                                .calculate__block.calculate__block--activity
+                                    b.calculate__name Уровень активности
+                                    ul.calculate__list
+                                        li.calculate__item
+                                            input(type="radio" name="activity" id="activity-1" value="minimum" checked).calculate__radio
+                                            label(for="activity-1" onclick="openNote(event, 'activityMin')" id="defaultActivity").calculate__button Мин
+                                        li.calculate__item
+                                            input(type="radio" name="activity" id="activity-2" value="medium").calculate__radio
+                                            label(for="activity-2" onclick="openNote(event, 'activityMedium')").calculate__button Средняя
+                                        li.calculate__item
+                                            input(type="radio" name="activity" id="activity-3" value="light").calculate__radio
+                                            label(for="activity-3" onclick="openNote(event, 'activityLight')").calculate__button Легкая
+                                        li.calculate__item
+                                            input(type="radio" name="activity" id="activity-4" value="high").calculate__radio
+                                            label(for="activity-4" onclick="openNote(event, 'activityHigh')").calculate__button Высокая
+                                        li.calculate__item
+                                            input(type="radio" name="activity" id="activity-5" value="extreme").calculate__radio
+                                            label(for="activity-5" onclick="openNote(event, 'activityExtreme')").calculate__button Экстрим
+                                    .calculate__info
+                                        span.calculate__info-item#activityMin
+                                        span.calculate__info-item#activityMedium
+                                        span.calculate__info-item#activityLight
+                                        span.calculate__info-item#activityHigh
+                                        span.calculate__info-item#activityExtreme
+                                <!--Выбор возраста/роста/вес-->
+                                ul.calculate__list.calculate__list--data
+                                    li.calculate__item
+                                        label(for="age").calculate__label Возраст:
+                                        input(type="number" name="calc-age" id="age" placeholder="25").calculate__input 
+                                    li.calculate__item
+                                        label(for="height").calculate__label Рост:
+                                        input(type="number" name="calc-height" id="height" placeholder="185").calculate__input
+                                    li.calculate__item
+                                        label(for="weight").calculate__label Вес:
+                                        input(type="number" name="calc-weight" id="weight" placeholder="75").calculate__input
+                            <!--Часть формы для незарегистрированных или незалогиненых пользователей-->
+                            .calculate__form-idle
+                                h2.calculate__subtitle Введите данные
+                                p.calculate__description После расчёта калорий вся информация придёт к Вам на почту
+                                    
                                 ul.calculate__list
                                     li.calculate__item
-                                        input(type="radio" name="gender" id="male" value="male" checked).calculate__radio
-                                        label(for="male").calculate__button Мужской
+                                        label(for="calc-name").calculate__label Ваше имя:
+                                        input(type="text" name="calc-name" id="calc-name").calculate__input
                                     li.calculate__item
-                                        input(type="radio" name="gender" id="female" value="female").calculate__radio
-                                        label(for="female").calculate__button Женский
-                            <!--Выбор цели-->
-                            .calculate__block.calculate__block--goal
-                                b.calculate__name Цель
-                                ul.calculate__list.calculate__list--goal
+                                        label(for="calc-email").calculate__label Ваш E-mail:
+                                        input(type="email" name="calc-email" id="calc-email" onkeydown="validationMail()" required).calculate__input
                                     li.calculate__item
-                                        input(type="radio" name="goal" id="goal-1" value="reduce-weight" checked).calculate__radio
-                                        label(for="goal-1").calculate__button Снизить вес
-                                    li.calculate__item
-                                        input(type="radio" name="goal" id="goal-2" value="keep-fit").calculate__radio
-                                        label(for="goal-2").calculate__button Поддержать форму
-                                    li.calculate__item
-                                        input(type="radio" name="goal" id="goal-3" value="gain-weight").calculate__radio
-                                        label(for="goal-3").calculate__button Набрать массу
-                            <!--Уровень активности-->
-                            .calculate__block.calculate__block--activity
-                                b.calculate__name Уровень активности
-                                ul.calculate__list
-                                    li.calculate__item
-                                        input(type="radio" name="activity" id="activity-1" value="minimum" checked).calculate__radio
-                                        label(for="activity-1" onclick="openNote(event, 'activityMin')" id="defaultActivity").calculate__button Мин
-                                    li.calculate__item
-                                        input(type="radio" name="activity" id="activity-2" value="medium").calculate__radio
-                                        label(for="activity-2" onclick="openNote(event, 'activityMedium')").calculate__button Средняя
-                                    li.calculate__item
-                                        input(type="radio" name="activity" id="activity-3" value="light").calculate__radio
-                                        label(for="activity-3" onclick="openNote(event, 'activityLight')").calculate__button Легкая
-                                    li.calculate__item
-                                        input(type="radio" name="activity" id="activity-4" value="high").calculate__radio
-                                        label(for="activity-4" onclick="openNote(event, 'activityHigh')").calculate__button Высокая
-                                    li.calculate__item
-                                        input(type="radio" name="activity" id="activity-5" value="extreme").calculate__radio
-                                        label(for="activity-5" onclick="openNote(event, 'activityExtreme')").calculate__button Экстрим
-                                .calculate__info
-                                    span.calculate__info-item#activityMin
-                                    span.calculate__info-item#activityMedium
-                                    span.calculate__info-item#activityLight
-                                    span.calculate__info-item#activityHigh
-                                    span.calculate__info-item#activityExtreme
-                            <!--Выбор возраста/роста/вес-->
-                            ul.calculate__list.calculate__list--data
-                                li.calculate__item
-                                    label(for="age").calculate__label Возраст:
-                                    input(type="number" name="calc-age" id="age" placeholder="25").calculate__input 
-                                li.calculate__item
-                                    label(for="height").calculate__label Рост:
-                                    input(type="number" name="calc-height" id="height" placeholder="185").calculate__input
-                                li.calculate__item
-                                    label(for="weight").calculate__label Вес:
-                                    input(type="number" name="calc-weight" id="weight" placeholder="75").calculate__input
-
+                                        label(for="calc-tel").calculate__label Ваш телефон:
+                                        input(type="tel" name="calc-tel" id="calc-tel").calculate__input.js-phone-input
+                                        
+                                .calculate__subscribe
+                                    input(type="checkbox" name="news-subscribe" id="news-subscribe").calculate__subscribe-checkbox
+                                    label(for="news-subscribe").calculate__subscribe-label Я хочу получать новости компании General Food
+                                p.calculate__note Хотите сохранить результаты расчётов в личном кабинете, 
+                                    a(href="#" target="_self").calculate__note-link войдите 
+                                    | или 
+                                    a(href="#" target="_self").calculate__note-link зарегистрируйтесь 
+                                    | на сайте.
                             button(type="submit").calculate__submit Рассчитать
+                    <!--Только для зарегистрированных-->
                     .calculate__result
                         h2.calculate__subtitle Ваш результат
                         ul.calculate__result-list
@@ -165,5 +191,6 @@ html(lang="ru-RU")
         script(src="static/js/vendor/jquery-3.3.1.min.js")
         script(src="https://unpkg.com/swiper/swiper-bundle.js")
         script(src="static/js/main.js")
+        script(src="static/js/mask.js")
         script(src="static/js/slider.js")
         block script
