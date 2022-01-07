@@ -292,7 +292,7 @@
         &-item {
             width: 100%;
 
-            @include flex-setting(column, flex-start, center);
+            @include flex-setting(column, flex-start, flex-start);
 
             padding-top: 2.5rem;
 

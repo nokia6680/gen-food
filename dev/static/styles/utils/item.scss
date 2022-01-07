@@ -3,6 +3,8 @@
 
     @include flex-setting(column, flex-start, center);
 
+    min-height: 340px;
+
     &__service,
     &__constructor {
         display: none;
@@ -199,7 +201,7 @@
 
     &__name {
         align-self: flex-start;
-        
+
         @include font-setting($secondary-font, 1.125rem, 1.25rem, 800, $black);
         text-align: left;
         text-decoration: none;
@@ -378,6 +380,7 @@
         width: 100%;
 
         @include flex-setting(column, flex-start, center);
+        min-height: 355px;
 
         &__service,
         &__constructor {
@@ -608,7 +611,8 @@
         width: 100%;
 
         @include flex-setting(column, flex-start, center);
-
+        min-height: 360px;
+        
         &__service,
         &__constructor {
             display: none;

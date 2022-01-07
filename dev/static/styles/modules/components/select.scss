@@ -91,6 +91,7 @@
             .select__wrapper {
                 padding: 0 2.5rem;
             }
+
             .select__body {
                 grid-template-areas:
                     'dates list'
@@ -128,7 +129,7 @@
                             background-color: $white;
                             filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
                             display: none;
-                            
+
                             &::after {
                                 position: absolute;
                                 content: '';
