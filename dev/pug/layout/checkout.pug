@@ -11,7 +11,6 @@ html(lang="ru-RU")
         <![endif]-->
         meta(name="viewport" content="width=device-width,initial-scale=1")
         meta(name="keywords" content="")
-        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Nunito+Sans:wght@300;400;700;800&display=swap" rel="stylesheet")
@@ -21,18 +20,43 @@ html(lang="ru-RU")
         include ../modules/header/header
         main.main
             +introShort('short', 'pricelist-bg', 'Оплата и доставка')
-        
+            .breadcrumbs
+                ul.breadcrumbs__list
+                    for i in breadCrumbs
+                        li.breadcrumbs__item
+                            a(href="" +i.link target="_self").breadcrumbs__link=i.name
+            section.checkout
+            
+            section.faq
+                .faq__wrapper
+                    h2.faq__title Часто задаваемые вопросы
+                    .faq__body
+                        ul.faq__body-list.tab-content.active
+                            +faqItem('active', 'Нужно ли мне считать КБЖУ и соблюдать диету с General-food?', 'Если вы питаетесь готовыми рационами серии FIT, необходимость подсчета КБЖУ полностью отсутствует. Разработкой рационов питания General-food занимаются ведущие диетологи Москвы, мы полностью учли нужное количество потребления КБЖУ, витаминов и микроэлементов для быстрого и надежного достижения результата. От Вас требуется полностью соблюдать диету рациона, по возможности сократить потребления сахара и немного заниматься спортом. Результат не заставит себя ждать!')
+                            +faqItem('', 'Нужны ли разгрузочные дни и cheat meal?', 'Если вы питаетесь готовыми рационами серии FIT, необходимость подсчета КБЖУ полностью отсутствует. Разработкой рационов питания General-food занимаются ведущие диетологи Москвы, мы полностью учли нужное количество потребления КБЖУ, витаминов и микроэлементов для быстрого и надежного достижения результата.')
+                            +faqItem('', 'Как быстро можно похудеть на рационах General-food?', 'Если вы питаетесь готовыми рационами серии FIT, необходимость подсчета КБЖУ полностью отсутствует. Разработкой рационов питания General-food занимаются ведущие диетологи Москвы, мы полностью учли нужное количество потребления КБЖУ, витаминов и микроэлементов для быстрого и надежного достижения результата222.')
+                            +faqItem('', 'Как рассчитать количество калорий необходимых для похудения?', 'Если вы питаетесь готовыми рационами серии FIT, необходимость подсчета КБЖУ полностью отсутствует. Разработкой рационов питания General-food занимаются ведущие диетологи Москвы, мы полностью учли нужное количество потребления КБЖУ, витаминов и микроэлементов для быстрого и надежного достижения результата333.')
+                            +faqItem('', 'Используете ли вы сахар или сахарозаменитель. Если да, то какой?', 'Если вы питаетесь готовыми рационами серии FIT, необходимость подсчета КБЖУ полностью отсутствует. Разработкой рационов питания General-food занимаются ведущие диетологи Москвы, мы полностью учли нужное количество потребления КБЖУ, витаминов и микроэлементов для быстрого и надежного достижения результата444.')
+                        // Если не помогло, то контакты
+                        .faq__contacts
+                            h3.faq__subtitle Остались вопросы?
+                            p.faq__description Вы можете задать их нашему специалисту, воспользовавшись любым удобным для Вас способом
+
+                            ul.faq__contacts-list
+                                li.faq__contacts-item
+                                    a(href="#" target="_blank").faq__contacts-link.faq__contacts-link--wa
+                                li.faq__contacts-item
+                                    a(href="#" target="_blank").faq__contacts-link.faq__contacts-link--tg
+                                li.faq__contacts-item
+                                    a(href="tel:+78007874244" target="_self").faq__contacts-link 8 800 787 42 44
+                            button(type="button" data-modal="#js-popup-callback").faq__callback.js-popup-opener Перезвоните мне
         include ../modules/footer/footer
 
         include ../modules/popup/popup-ask
         include ../modules/popup/popup-callback
         include ../modules/popup/form-reaction
         script(src="static/js/vendor/jquery-3.3.1.min.js")
-        script(src="https://unpkg.com/swiper/swiper-bundle.js")
         script(src="static/js/main.js")
-        script(src="static/js/menu.js")
-        //script(src="static/js/select.js")
-        script(src="static/js/slider.js")
-        //script(src="static/js/tabs-review.js")
-        //script(src="static/js/filter-meal.js")
+        script(src="static/js/mask.js")
+        script(src="static/js/tabs.js")
         block script
