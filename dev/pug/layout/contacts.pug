@@ -11,7 +11,6 @@ html(lang="ru-RU")
         <![endif]-->
         meta(name="viewport" content="width=device-width,initial-scale=1")
         meta(name="keywords" content="")
-        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Nunito+Sans:wght@300;400;700;800&display=swap" rel="stylesheet")
@@ -83,9 +82,10 @@ html(lang="ru-RU")
                                 |  и даёте своё согласие на 
                                 a(href="#" target="_blank") обработку персональных данных
                                 | .
-                        .feedback__reaction
-                            h3.feedback__subtitle Ваша заявка успешно отправлена
-                            p.feedback__description Мы свяжемся с Вами в ближайшее время
+                    .feedback__reaction
+                        h3.feedback__subtitle Ваша заявка успешно отправлена
+                        img(src="static/images/content/smile.svg" alt="Ваша заявка успешно отправлена").feedback__icon
+                        p.feedback__description Мы свяжемся с Вами в ближайшее время
                 .feedback__faq.faq__contacts
                     h3.faq__subtitle Остались вопросы?
                     p.faq__description Вы можете задать их нашему специалисту, воспользовавшись любым удобным для Вас способом
@@ -97,7 +97,7 @@ html(lang="ru-RU")
                             a(href="#" target="_blank").faq__contacts-link.faq__contacts-link--tg
                         li.faq__contacts-item
                             a(href="tel:+78007874244" target="_self").faq__contacts-link 8 800 787 42 44
-                    button(type="button").faq__callback.js-callback Перезвоните мне
+                    button(type="button" data-modal="#js-popup-callback").faq__callback.js-popup-opener Перезвоните мне
                     
         include ../modules/footer/footer
 
@@ -105,11 +105,6 @@ html(lang="ru-RU")
         include ../modules/popup/popup-callback
         include ../modules/popup/form-reaction
         script(src="static/js/vendor/jquery-3.3.1.min.js")
-        script(src="https://unpkg.com/swiper/swiper-bundle.js")
         script(src="static/js/main.js")
-        script(src="static/js/menu.js")
-        //script(src="static/js/select.js")
-        script(src="static/js/slider.js")
-        //script(src="static/js/tabs-review.js")
-        //script(src="static/js/filter-meal.js")
+        script(src="static/js/mask.js")
         block script
