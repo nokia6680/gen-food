@@ -223,6 +223,9 @@
             position: relative;
             transition: 0.4s $cubic;
 
+            background-repeat: no-repeat;
+            background-size: contain;
+
             &--wa {
                 width: 20px;
                 height: 20px;

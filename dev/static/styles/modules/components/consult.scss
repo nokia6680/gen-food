@@ -6,6 +6,10 @@
     padding: 4.375rem 1.25rem 0 1.25rem;
     margin-bottom: 6rem;
 
+    &--personal {
+        margin-bottom: 8.75rem;
+    }
+
     &__wrapper {
         width: 100%;
 
@@ -241,6 +245,18 @@
             }
         }
 
+        &--personal {
+            margin-bottom: 12.5rem;
+
+            .consult__wrapper {
+                padding-left: 3.75rem;
+
+                &::after {
+                    display: none;
+                }
+            }
+        }
+
         &__title {
             font-size: 1.875rem;
             line-height: 2.1875rem;
@@ -309,6 +325,36 @@
 @include min-screen(1366px) {
     .consult {
         margin-bottom: 8rem;
+
+        &--personal {
+            margin-bottom: 12.5rem;
+
+            .consult__wrapper {
+                padding-left: 3.75rem;
+                min-height: 434px;
+
+                &::after {
+                    display: none;
+                }
+
+                &::before {
+                    position: absolute;
+                    content: '';
+
+                    width: 1066px;
+                    height: 1055px;
+
+                    background-image: url('../images/content/consult-food.png');
+                    background-position: 50% 50%;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: -580px;
+                }
+            }
+        }
 
         &__wrapper {
             align-items: flex-start;
@@ -380,6 +426,15 @@
 
         padding-left: calc(var(--width) / 2);
         padding-right: calc(var(--width) / 2);
+
+        &--personal {
+            margin-bottom: 25rem;
+
+            .consult__wrapper {
+                padding-left: 5.3125rem;
+                min-height: 480px;
+            }
+        }
 
         &__wrapper {
             min-height: 470px;
