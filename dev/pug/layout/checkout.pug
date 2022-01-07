@@ -26,7 +26,7 @@ html(lang="ru-RU")
                         li.breadcrumbs__item
                             a(href="" +i.link target="_self").breadcrumbs__link=i.name
             section.checkout
-                .checkout__content.taba-container
+                .checkout__content.tabs-container
                     ul.checkout__filter
                         li.checkout__filter-item.tab-title.active
                             button(type="button").checkout__filter-btn Доставка
@@ -35,45 +35,21 @@ html(lang="ru-RU")
                     
                     .checkout__body
                         .checkout__body-item.tab-content.active
-                            .delivery
-                                .delivery__wrapper
-                                    .delivery__info
-                                        h2.delivery__title Выберите регион доставки
-                                        span.delivery__route МОСКВА – МКАД +5 км.
-                                        span.delivery__freq 2 – 3 раза в неделю
-                                        
-                                        ul.delivery__times
-                                            li.delivery__times-item
-                                                b.delivery__times-name Утро
-                                                span.delivery__times-nr с 8.00 до 14.00
-                                            li.delivery__times-item
-                                                b.delivery__times-name Вечер
-                                                span.delivery__times-nr с 18.00 до 23.00
-                                        .delivery__contacts
-                                            b.delivery__subtitle Нет Вашего райоа на карте доставок?
-                                            p.delivery__description Не грустите! Позвоните нам, и мы решим этот вопрос по телефону.
-                                            p.delivery__description Экспресс доставка осуществляется на следующий день после заказа при условии подтверждения заказа до 11 утра у оператора.
-                                            
-                                            ul.delivery__contacts-list
-                                                li.delivery__contacts-item
-                                                    a(href="#" target="_blank").delivery__contacts-link.delivery__contacts-link--wa
-                                                li.delivery__contacts-item
-                                                    a(href="#" target="_blank").delivery__contacts-link.delivery__contacts-link--tg
-                                                li.delivery__contacts-item
-                                                    a(href="tel:+78007874244" target="_self").delivery__contacts-link 8 800 787 42 44
-                                            button(type="button" data-modal="#js-popup-callback").delivery__callback.js-popup-opener Перезвоните мне
-                                    .delivery__map
-                                        iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.1212133518793!2d37.72975981639905!3d55.791133096501866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b53510bcf32981%3A0x2c7059d805a4d3f0!2z0JzQuNGA0L7QvdC-0LLRgdC60LDRjyDRg9C7LiwgMzMg0YHRgtGA0L7QtdC90LjQtSAxLCDQnNC-0YHQutCy0LAsIE1vc2NvdyBPYmxhc3QsIDEwNTMxOA!5e0!3m2!1sru!2sru!4v1637536380205!5m2!1sru!2sru" style="border:0;" allowfullscreen="" loading="lazy").delivery__map-frame
+                            include ../modules/blocks/delivery
+                        .checkout__body-item.tab-content
+                            .payment
+                                .payment__wrapper
+                                    h2.payment__title Способы оплаты
+                                    p.payment__description Экспресс доставка осуществляется на следующий день после заказа при условии подтверждения заказа до 15.00 у оператора. Для подтверждения заказа пожалуйста  позвоните оператору. Тел. 8(495)7874244 или 8(925)6004347 - сообщите номер заказа и подтвердите заказ.
             section.faq
                 .faq__wrapper
                     h2.faq__title Часто задаваемые вопросы
                     .faq__body
                         ul.faq__body-list.tab-content.active
-                            +faqItem('active', 'Нужно ли мне считать КБЖУ и соблюдать диету с General-food?', 'Если вы питаетесь готовыми рационами серии FIT, необходимость подсчета КБЖУ полностью отсутствует. Разработкой рационов питания General-food занимаются ведущие диетологи Москвы, мы полностью учли нужное количество потребления КБЖУ, витаминов и микроэлементов для быстрого и надежного достижения результата. От Вас требуется полностью соблюдать диету рациона, по возможности сократить потребления сахара и немного заниматься спортом. Результат не заставит себя ждать!')
-                            +faqItem('', 'Нужны ли разгрузочные дни и cheat meal?', 'Если вы питаетесь готовыми рационами серии FIT, необходимость подсчета КБЖУ полностью отсутствует. Разработкой рационов питания General-food занимаются ведущие диетологи Москвы, мы полностью учли нужное количество потребления КБЖУ, витаминов и микроэлементов для быстрого и надежного достижения результата.')
-                            +faqItem('', 'Как быстро можно похудеть на рационах General-food?', 'Если вы питаетесь готовыми рационами серии FIT, необходимость подсчета КБЖУ полностью отсутствует. Разработкой рационов питания General-food занимаются ведущие диетологи Москвы, мы полностью учли нужное количество потребления КБЖУ, витаминов и микроэлементов для быстрого и надежного достижения результата222.')
-                            +faqItem('', 'Как рассчитать количество калорий необходимых для похудения?', 'Если вы питаетесь готовыми рационами серии FIT, необходимость подсчета КБЖУ полностью отсутствует. Разработкой рационов питания General-food занимаются ведущие диетологи Москвы, мы полностью учли нужное количество потребления КБЖУ, витаминов и микроэлементов для быстрого и надежного достижения результата333.')
-                            +faqItem('', 'Используете ли вы сахар или сахарозаменитель. Если да, то какой?', 'Если вы питаетесь готовыми рационами серии FIT, необходимость подсчета КБЖУ полностью отсутствует. Разработкой рационов питания General-food занимаются ведущие диетологи Москвы, мы полностью учли нужное количество потребления КБЖУ, витаминов и микроэлементов для быстрого и надежного достижения результата444.')
+                            +faqItem('active', 'Когда доставка первого дня?', 'Экспресс доставка осуществляется на следующий день после заказа при условии подтверждения заказа до 15.00 у оператора. Для подтверждения заказа пожалуйста  позвоните оператору. Тел. 8(495)7874244 или 8(925)6004347 - сообщите номер заказа и подтвердите заказ.')
+                            +faqItem('', 'Куда мне могут привезти заказ?', 'Мы привозим заказы в удобное для клиента место (на работу, домой, в фитнес зал и др.). При оформлении заказа Вы указываете удобный для Вас интервал и место первой доставки. Так же вы можете изменить время и адрес доставки, для этого Вам необходимо связаться с нашим оператором.')
+                            +faqItem('', 'Платная доставка?', 'В пределах МКАД доставка бесплатная, за пределы МКАД стоимость доставки согласно тарифам.')
+                            +faqItem('', 'Кто и как мне привезет заказ?', 'Доставка еды осуществляется курьером на брендированном автомобиле, все заказы развозятся в сумке холодильнике.')
                         // Если не помогло, то контакты
                         .faq__contacts
                             h3.faq__subtitle Остались вопросы?
@@ -96,4 +72,5 @@ html(lang="ru-RU")
         script(src="static/js/main.js")
         script(src="static/js/mask.js")
         script(src="static/js/tabs.js")
+        script(src="static/js/tabs-delivery.js")
         block script

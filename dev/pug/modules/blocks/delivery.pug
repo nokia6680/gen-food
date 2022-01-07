@@ -1,21 +1,41 @@
-section.delivery
+article.delivery
     .delivery__wrapper
         .delivery__info
-            h2.delivery__title Бесплатная доставка
-            span.delivery__route МОСКВА – МКАД +5 км.
-            span.delivery__freq 2 – 3 раза в неделю
+            h2.delivery__title Выберите регион доставки
             
-            ul.delivery__times
-                li.delivery__times-item
-                    b.delivery__times-name Утро
-                    span.delivery__times-nr с 8.00 до 14.00
-                li.delivery__times-item
-                    b.delivery__times-name Вечер
-                    span.delivery__times-nr с 18.00 до 23.00
+            ul.delivery__list
+                li(onclick="openZone(event, 'inMcad')" id="defaultZone").delivery__item
+                    span.delivery__item-name Москва (до 5 км от МКАД)
+                li(onclick="openZone(event, 'outMcad')").delivery__item
+                    span.delivery__item-name От 5 до 15 км за МКАД
+                li(onclick="openZone(event, 'outA107')").delivery__item
+                    span.delivery__item-name От 15 км до А-107
+            .delivery__details
+                .delivery__details-item#inMcad
+                    ul.delivery__times
+                        li.delivery__times-item.delivery__times-item--morning
+                            b.delivery__times-name Утро
+                            span.delivery__times-nr с 8.00 до 14.00
+                        li.delivery__times-item.delivery__times-item--evening
+                            b.delivery__times-name Вечер
+                            span.delivery__times-nr с 18.00 до 23.00
+                    b.delivery__price Бесплатно
+                .delivery__details-item#outMcad
+                    ul.delivery__times
+                        li.delivery__times-item.delivery__times-item--morning
+                            b.delivery__times-name Утро и день
+                            span.delivery__times-nr с 9.00 до 18.00
+                    b.delivery__price 350 рублей
+                .delivery__details-item#outA107
+                    ul.delivery__times
+                        li.delivery__times-item.delivery__times-item--morning
+                            b.delivery__times-name Утро и день
+                            span.delivery__times-nr с 9.00 до 18.00
+                    b.delivery__price Тариф рассчитывается индивидуально логистом, при звонке оператору
+
             .delivery__contacts
-                b.delivery__subtitle Нет Вашего райоа на карте доставок?
-                p.delivery__description Не грустите! Позвоните нам, и мы решим этот вопрос по телефону.
                 p.delivery__description Экспресс доставка осуществляется на следующий день после заказа при условии подтверждения заказа до 11 утра у оператора.
+                p.delivery__description Для подтверждения заказа пожалуйста  позвоните оператору, сообщите номер заказа и подтвердите заказ.
                 
                 ul.delivery__contacts-list
                     li.delivery__contacts-item

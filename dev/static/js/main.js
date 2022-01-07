@@ -45,6 +45,18 @@ for (var i = 0; i < upperItem2.length; i++) {
     });
 }
 
+var deliveryItem = document.getElementsByClassName('delivery__item');
+var elNodes = document.querySelectorAll(".delivery__item");
+var zoneList = document.querySelector('.delivery__list');
+
+for (var i = 0; i < deliveryItem.length; i++) {
+    var zone = deliveryItem[i];
+    zone.addEventListener("click", function() {
+        event.preventDefault();
+        zoneList.classList.toggle("active");
+    });
+}
+
 $('.js-popup-opener').on('click', function() {
     const popupId = $(this).attr('data-modal');
     $(popupId).addClass('active');
