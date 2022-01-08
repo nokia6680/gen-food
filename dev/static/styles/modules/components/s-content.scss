@@ -628,6 +628,7 @@
             @include flex-setting(row, flex-start, flex-start);
 
             gap: 0.3125rem;
+            margin-bottom: 1.25rem;
         }
 
         &-item {
@@ -678,6 +679,48 @@
 
         &-start {
             display: none;
+        }
+
+        &-controls {
+            width: 100%;
+
+            @include flex-setting(row, flex-start, center);
+        }
+
+        &-submit {
+            @include flex-setting(column, center, center);
+            @include font-setting($primary-font, 0.875rem, 1.875rem, 800, $white);
+            text-transform: uppercase;
+            border: none;
+            background: linear-gradient(93.13deg, #92C64E 0%, #4BAF50 100%);
+            border-radius: 2.5rem;
+
+            padding: 0 1.25rem;
+            margin-right: 2rem;
+            cursor: pointer;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background: linear-gradient(93.13deg, #4BAF50 0%, #92C64E 100%);
+            }
+        }
+
+        &-reset {
+            @include font-setting($primary-font, 0.875rem, 1.25rem, 700, $black);
+            text-transform: uppercase;
+            padding: 0;
+            border-bottom: 1px dashed $black;
+            transition: 0.4s $cubic;
+            cursor: pointer;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: $green;
+                border-color: $green;
+                transition: 0.4s $cubic;
+            }
         }
     }
 }
@@ -1011,6 +1054,21 @@
                     z-index: 0;
                 }
             }
+
+            &-list {
+                margin-bottom: 2.5rem;
+            }
+
+            &-submit {
+                font-size: 1rem;
+                padding: 0.5rem 1.875rem;
+                margin-right: 3rem;
+            }
+
+            &-reset {
+                font-size: 1rem;
+                line-height: 1.5rem;
+            }
         }
     }
 }
@@ -1200,6 +1258,7 @@
             grid-template-columns: 345px 904px;
             grid-template-areas: '... summary' '... list' 'checkout list';
             justify-content:space-between;
+            grid-row-gap: 1.25rem;
         }
 
         &__summary {

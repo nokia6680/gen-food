@@ -2,6 +2,16 @@
     width: 100%;
     @include flex-setting(column, flex-start, center);
 
+    &.lessPrice {
+        .cart-form__submit {
+            display: none;
+        }
+
+        .cart-form__warn {
+            display: inline-flex;
+        }
+    }
+
     &__block {
         width: 100%;
         @include flex-setting(column, flex-start, center);
@@ -93,6 +103,19 @@
         bottom: -1.5rem;
 
         text-align: center;
+    }
+
+    &__bottom {
+        width: 100%;
+        @include flex-setting(column, flex-start, center);
+    }
+
+    &__warn {
+        @include font-setting($secondary-font, 1rem, 1.25rem, 400, $gold);
+        border-bottom: 1px dashed $gold;
+        text-align: center;
+
+        display: none;
     }
 
     &__submit {
@@ -254,10 +277,13 @@
             height: 60px;
         }
 
+        &__bottom {
+            margin-top: auto;
+        }
+
         &__submit {
             font-size: 1.125rem;
             padding: 1.875rem 0;
-            margin-top: auto;
         }
 
         &__select {
@@ -337,6 +363,15 @@
             text-align: left;
 
             padding: 0 1.4375rem;
+        }
+
+        &__bottom {
+            align-items: flex-start;
+        }
+
+        &__warn {
+            font-size: 1.5rem;
+            line-height: 2.5rem;
         }
 
         &__submit {

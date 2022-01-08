@@ -1,9 +1,11 @@
 .delivery {
     width: 100%;
     margin-bottom: 7.5rem;
+    padding: 0 1.25rem;
 
     &--checkout {
         margin-bottom: 0;
+        padding: 0;
     }
 
     &__wrapper {
@@ -18,6 +20,8 @@
         @include flex-setting(column, flex-start, center);
 
         margin-bottom: 2.5rem;
+
+        position: relative;
     }
 
     &__title {
@@ -25,7 +29,7 @@
         text-align: center;
         text-transform: uppercase;
         max-width: 100%;
-        margin-bottom: 1.875rem;
+        margin-bottom: 6.875rem;
     }
 
     &__list {
@@ -33,7 +37,10 @@
 
         @include flex-setting(column, flex-start, center);
 
-        position: relative;
+        position: absolute;
+        top: 5.625rem;
+        left: 50%;
+        transform: translateX(-50%);
         margin-bottom: 2.5rem;
 
         max-height: 40px;
@@ -42,6 +49,7 @@
         transition: 0.4s $cubic;
 
         background-color: $white;
+        z-index: 10;
 
         &::before {
             position: absolute;
@@ -178,7 +186,7 @@
     }
 
     &__price {
-        @include font-setting($primary-font, 1.5rem, 1.875rem, 400, $darkgray);
+        @include font-setting($primary-font, 1.25rem, 1.5rem, 400, $darkgray);
         text-align: center;
     }
 
@@ -283,7 +291,9 @@
 @include min-screen(768px) {
     .delivery {
         &--checkout {
+            padding: 0 2.5rem;
             margin-bottom: 0;
+            padding: 0;
         }
 
         &__info {
@@ -295,7 +305,7 @@
             font-size: 1.875rem;
             line-height: 2.1875rem;
             max-width: 100%;
-            margin-bottom: 2.5rem;
+            margin-bottom: 9.6875rem;
         }
 
         &__details {
@@ -304,6 +314,10 @@
             &-item {
                 align-items: flex-start;
             }
+        }
+
+        &__list {
+            top: 4.6875rem;
         }
 
         &__times {
@@ -322,8 +336,8 @@
         &__price {
             text-align: left;
 
-            font-size: 2.25rem;
-            line-height: 2.5rem;
+            font-size: 1.5rem;
+            line-height: 1.875rem;
         }
 
         &__contacts {
@@ -358,11 +372,13 @@
     .delivery {
         margin-left: auto;
         margin-right: auto;
-        max-width: 1440px;
+        max-width: 1520px;
         margin-bottom: 6.25rem;
+        padding: 0 2.5rem;
 
         &--checkout {
             margin-bottom: 0;
+            padding: 0;
         }
 
         &__wrapper {
@@ -384,8 +400,12 @@
         &__title {
             font-size: 1.5rem;
             line-height: 1.875rem;
-            margin-bottom: 3.125rem;
+            margin-bottom: 8.125rem;
             text-align: left;
+        }
+
+        &__list {
+            top: 8.125rem;
         }
 
         &__map {
@@ -408,7 +428,7 @@
 @include min-screen(1680px) {
     .delivery {
         margin-bottom: 20.625rem;
-        
+
         &--checkout {
             margin-bottom: 0;
         }

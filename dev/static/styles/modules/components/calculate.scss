@@ -36,7 +36,7 @@
 
         @include flex-setting(column, flex-start, center);
 
-        margin-bottom: 7.5rem;
+        margin-bottom: 0;
     }
 
     &__title {
@@ -857,16 +857,24 @@
         position: relative;
 
         &__wrapper {
+            width: auto;
             display: grid;
-            grid-template-columns: 632px 390px;
-            justify-content: space-between;
-            align-items: start;
+            grid-template-columns: 632px;
+            justify-content: center;
+            align-items: center;
             padding: 4.375rem 4.375rem;
             border: 10px solid #E0E0E0;
 
-            &.noLogged {
-                grid-template-columns: 1fr;
+            .calculate__warning {
+                display: none;
+            }
 
+            &.noLogged {
+                width: 100%;
+                grid-template-columns: 1fr;
+                .calculate__warning {
+                    display:  inline-flex;
+                }
                 .calculate__form {
                     width: 100%;
                     max-width: 100%;
@@ -975,6 +983,13 @@
         max-width: 1440px;
 
         &__wrapper {
+            align-self: flex-start;
+            .calculate__body {
+                &::after {
+                    display: none;
+                }
+            }
+
             &.noLogged {
                 .calculate__body {
                     &::after {

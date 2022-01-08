@@ -182,7 +182,7 @@
         }
 
         &-description {
-            @include font-setting($secondary-font, 0.875rem, 1.25rem, 400, $lightgray);
+            @include font-setting($secondary-font, 0.875rem, 1.25rem, 400, $darkgray);
             text-align: left;
             display: none;
         }

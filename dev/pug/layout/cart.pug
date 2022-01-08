@@ -166,7 +166,9 @@ html(lang="ru-RU")
                                             label(for="cart-mail").cart-form__label E-mail
                                             input(type="mail" name="cart-mail" id="cart-mail" placeholder="___@___" onkeydown="validationMail()" required).cart-form__input.cart-form__input--mail
                                             span.cart-form__error.cart-form__error--mail
-                                    button(type="submit").cart-form__submit.js-step-three Оформить заказ
+                                    .cart-form__bottom
+                                        span.cart-form__warn Минимальная сумма для заказа: 2000 руб.
+                                        button(type="submit").cart-form__submit.js-step-three Оформить заказ
                         <!--Подтверждение заказа-->
                         .cart__body-item.cart-final.tab-content
                             .cart-final__info
