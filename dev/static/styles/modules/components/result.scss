@@ -177,6 +177,7 @@
         &__info {
             width: 100%;
             @include flex-setting(column, flex-start, flex-start);
+            margin-bottom: 1.25rem;
 
             &.--data {
                 margin-bottom: 1.25rem;

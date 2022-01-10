@@ -28,6 +28,10 @@
             .calculate__result {
                 display: flex;
             }
+
+            .calculate__body {
+                margin-bottom: 7.5rem;
+            }
         }
     }
 
@@ -536,6 +540,11 @@
                 transition: 0.4s $cubic;
             }
         }
+    }
+    
+    &__final {
+        @include font-setting($primary-font, 1.125rem, 1.25rem, 400, $darkgray);
+        text-align: center;
     }
 
     &__warning {
