@@ -51,27 +51,37 @@ body {
         }
     }
 
-    &__overlay {
-        display: none;
-
-        position: fixed;
-        background-color: transparent;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-
-        z-index: 1;
+    &.newUser {
+        .nav__item {
+            &.user {
+                display: none;
+            }
+        }
     }
 
-    &.cartOpened {
-        .body__overlay {
-            display: block;
+    &.oldUser {
+        .nav__item {
+            &.guest {
+                display: none;
+            }
         }
     }
 }
 .body--personal {
     overflow-x: hidden;
+}
+
+.body-form {
+    @include min-screen(2560px) {
+        position: relative;
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
 }
 
 .body--cart {
@@ -337,6 +347,16 @@ button { outline: none; }
             .reasons {
                 margin-bottom: 12.125rem;
             }
+        }
+    }
+
+    &--login {
+        width: 100%;
+        @include flex-setting(column, flex-start, center);
+
+        .footer {
+            margin-top: auto;
+            margin-bottom: 0;
         }
     }
 }

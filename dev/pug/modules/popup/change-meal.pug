@@ -64,7 +64,7 @@
                                         input(type="text" class="js-input-to" value="0")
                                     label.filter-dropdown__input
                                         input(type="text" class="filter-dropdown__slider" name="carbon-range" value="" data-type="double" data-min="90" data-max="560")
-                            .filter-dropdown__block.subfilter-item.is-collapsed#carbon-filter
+                            .filter-dropdown__block.subfilter-item.is-collapsed#price-filter
                                 b.filter-dropdown__name Цена
                                 .filter-dropdown__range
                                     .filter-dropdown__controls
@@ -72,6 +72,7 @@
                                         input(type="text" class="js-input-to" value="0")
                                     label.filter-dropdown__input
                                         input(type="text" class="filter-dropdown__slider" name="price-range" value="" data-type="double" data-min="90" data-max="560")
+                            button(type="submit").filter-dropdown__submit Применить
                     li.swiper-slide.change-meal__filter-item.filter.is-collapsed
                         button(type='button').change-meal__filter-btn.change-meal__filter-btn--direction.filter-head Сортировать
                         
@@ -87,6 +88,7 @@
                                     li.filter-dropdown__item
                                         input(type="checkbox" name="cheapFirst" id="change-sort-3").filter-dropdown__checkbox
                                         label(for="change-sort-3").filter-dropdown__label Сначала дешевые
+                            button(type="submit").filter-dropdown__submit Применить
                     li.swiper-slide.change-meal__filter-item.filter.is-collapsed
                         button(type='button').change-meal__filter-btn.change-meal__filter-btn--spec.filter-head Специальное
                         
@@ -113,6 +115,7 @@
                                         input(type="checkbox" name="weekOffer" id="change-spec-5").filter-dropdown__checkbox
                                         label(for="change-spec-5").filter-dropdown__label Предложения недели
                                         span.filter-dropdown__counter 24
+                            button(type="submit").filter-dropdown__submit Применить
                     li.swiper-slide.change-meal__filter-item.filter
                         button(type='button' onclick="filterSelection('all')").change-meal__filter-btn.checked Все
                     li.swiper-slide.change-meal__filter-item.filter

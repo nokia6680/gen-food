@@ -26,8 +26,8 @@ html(lang="ru-RU")
                     for i in breadCrumbs
                         li.breadcrumbs__item
                             a(href="" +i.link target="_self").breadcrumbs__link=i.name
-            section.blog-item
-                .blog-item__wrapper
+            section.blog__part
+                .blog-item
                     .blog-item__body
                         h2.blog-item__title Особенности питания при похудении
                         .blog-item__start
@@ -80,7 +80,7 @@ html(lang="ru-RU")
                             li.blog-item__bottom-line
                                 a(href="#" target="_self").blog-item__bottom-link Как правильно сочетать питание и тренировки
                         a(href="blog.html" target="_self").blog-item__bottom-return К списку статей
-                .blog-item__aside.blog__aside
+                .blog__aside.blog__aside
                     .blog__block
                         h3.blog__subtitle Подписаться на новости
                         form(method="get" action="" id="subscribe-blog").blog__form.blog__form--subscribe

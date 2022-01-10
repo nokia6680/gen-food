@@ -37,11 +37,11 @@ html(lang="ru-RU")
                             <!--Фильтр по датам-->
                             .s-content__filter
                                 button(type="button").s-content__filter-prev
-                                .s-content__filter-list.s-content-filter-swiper
+                                .s-content__filter-list.s-content__filter-list--create.s-content-filter-swiper
                                     .swiper-wrapper
-                                        +dateBtn('29.11 Пн', 'monday', '2021-11-29')
-                                        +dateBtn('30.11 Вт', 'tuesday', '2021-11-30')
-                                        +dateBtn('01.12 Ср', 'wednesday', '2021-12-01')
+                                        +dateBtn('29.11 Пн', 'monday firstDay', '2021-11-29')
+                                        +dateBtn('30.11 Вт', 'tuesday emptyDay', '2021-11-30')
+                                        +dateBtn('01.12 Ср', 'wednesday chosenDay', '2021-12-01')
                                         +dateBtn('02.12 Чт', 'thursday', '2021-12-02')
                                         +dateBtn('03.12 Пт', 'friday', '2021-12-03')
                                         +dateBtn('04.12 Сб', 'saturday', '2021-12-04')

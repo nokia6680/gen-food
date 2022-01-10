@@ -113,6 +113,55 @@
             width: 100%;
             max-width: 114px;
             overflow: hidden;
+
+            &--create {
+                .s-content__filter-btn {
+                    &.firstDay {
+                        background-color: $lightgreen;
+                        color: $white;
+                        border-color: $lightgreen;
+
+                        &::after {
+                            background-color: $white;
+                        }
+
+                        &:hover {
+                            box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.2);
+                            transition: 0.4s $cubic;
+                        }
+                    }
+
+                    &.emptyDay {
+                        background-color: $white;
+                        border-color: $lightgray;
+                        color: $black;
+
+                        &::after {
+                            background-color: $gold;
+                        }
+
+                        &:hover {
+                            box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.2);
+                            transition: 0.4s $cubic;
+                        }
+                    }
+
+                    &.chosenDay {
+                        background-color: $gold;
+                        color: $black;
+                        border-color: $gold;
+
+                        &::after {
+                            background-color: $white;
+                        }
+
+                        &:hover {
+                            box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.2);
+                            transition: 0.4s $cubic;
+                        }
+                    }
+                }
+            }
         }
 
         &-btn {
@@ -1199,6 +1248,18 @@
                 }
             }
 
+            &-list {
+                &:not(.swiper-initialized) {
+                    .s-content__filter-btn {
+                        margin-right: 1.875rem;
+
+                        &:last-of-type {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+
             &-btn {
                 max-width: 140px;
                 padding: 0.5625rem 3.0625rem 0.5625rem 1.5rem;
@@ -1622,6 +1683,18 @@
 
             &-list {
                 max-width: 808px;
+            }
+
+            &-list {
+                &:not(.swiper-initialized) {
+                    .s-content__filter-btn {
+                        margin-right: 1.6875rem;
+
+                        &:last-of-type {
+                            margin-right: 0;
+                        }
+                    }
+                }
             }
         }
 

@@ -3,6 +3,18 @@
 
     @include flex-setting(column, flex-start, center);
 
+    &__part {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+
+        padding: 0 1.25rem;
+
+        .blog__aside {
+            display: none;
+        }
+    }
+
     &__wrapper {
         width: 100%;
         @include flex-setting(column, flex-start, center);
@@ -561,6 +573,10 @@
 
 @include min-screen(768px) {
     .blog {
+        &__part {
+            padding: 0 2.5rem;
+        }
+
         &__list {
             flex-direction: row;
             justify-content: space-between;
@@ -648,7 +664,25 @@
         align-items: flex-start;
 
         padding: 0 2.5rem;
-        max-width: 1480px;
+        max-width: 1520px;
+
+        &__part {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            display: grid;
+            grid-template-columns: 1fr 345px;
+            grid-column-gap: 4rem;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            padding: 0 2.5rem;
+            max-width: 1520px;
+
+            .blog__aside {
+                display: flex;
+            }
+        }
 
         &__wrapper {
             margin-bottom: 9.375rem;
@@ -776,5 +810,11 @@
     .blog {
         padding: 0;
         max-width: 1440px;
+
+        &__part {
+            padding: 0;
+            max-width: 1440px;
+            grid-column-gap: 8.875rem;
+        }
     }
 }

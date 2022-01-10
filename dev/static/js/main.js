@@ -61,17 +61,20 @@ $('.js-popup-opener').on('click', function() {
     const popupId = $(this).attr('data-modal');
     $(popupId).addClass('active');
     $('body').addClass('no-scroll');
+    $('body').removeClass('dimmed');
 });
 
 $('.js-popup-closer').on('click', function() {
     $(this).closest('.js-popup-wrap').removeClass('active');
     $('body').removeClass('no-scroll');
+    $('body').removeClass('dimmed');
 });
 
 $('.js-popup-wrap').on('click', function(event) {
     if (!$(event.target).closest('.js-popup-inner').length) {
         $(this).removeClass('active');
         $('body').removeClass('no-scroll');
+        $('body').removeClass('dimmed');
     }
 });
 

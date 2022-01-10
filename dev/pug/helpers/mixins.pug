@@ -420,14 +420,15 @@ mixin cabCalcItem(date, datetime, weight, goal, activity)
         .result__body
             +cabCalcContent('мужской', '25', '176', '82 кг.', 'набор массы', 'экстримальная активность', '23.15 имт', '66 кг.', '-9 кг.', '1623')
 
-mixin cabPoiContent(image, name, articul, income, price)
-    li.point__card.point-card
+mixin cabPoiContent(type, meal, image, name, articul, income, price)
+    li(class="point__card point-card " +type data-sort="" +meal)
         picture.point-card__frame
             source(srcset="static/images/content/" +image +".webp" type="image/webp")
             img(src="static/images/content/" +image +".jpg" alt="" +name).point-card__frame-image
         .point-card__info
             b.point-card__name=name
             span.point-card__articul=articul
+            button(type="button" data-modal="#js-popup-meal").point-card__btn.js-popup-opener Просмотр рациона
         .point-card__bottom
             b.point-card__income=income
             span.point-card__price=price
@@ -443,5 +444,5 @@ mixin cabPoiItem(number, date, datetime, price, income, outcome, typeI, typeO)
             button(type="button").point__line-expand.js-point-toggle Подробнее
         .point__body
             ul.point__list
-                +cabPoiContent('cart-2', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '+56 баллов', '320 руб.')
-                +cabPoiContent('cart-3', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '+52 баллов', '3220 руб.')
+                +cabPoiContent('mealItem', 'fit', 'cart-2', 'Рацион FIT', '~ 1345 кКал', '+56 баллов', '320 руб.')
+                +cabPoiContent('', '', 'cart-3', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '+52 баллов', '3220 руб.')

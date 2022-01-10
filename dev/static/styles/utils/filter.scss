@@ -42,7 +42,7 @@
 
         .filter-dropdown {
             height: auto;
-            max-height: 860px;
+            max-height: 1000px;
             top: 39px;
             transition: 0.4s linear;
             z-index: 1;
@@ -219,6 +219,27 @@
         }
     }
 
+    &-dropdown__submit {
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, 0.875rem, 1.875rem, 800, $green);
+
+        background-color: $white;
+        border: 2px solid $green;
+        border-radius: 2.5rem;
+        white-space: nowrap;
+        padding: 0 1.5rem;
+
+        cursor: pointer;
+        transition: 0.4s $cubic;
+
+        &:hover,
+        &:active {
+            background-color: $green;
+            color: $white;
+            transition: 0.4s $cubic;
+        }
+    }
+
     &-dropdown__range,
     .irs,
     .irs--flat {
@@ -305,7 +326,7 @@
     .filter {
         &.is-expanded {
             z-index: 10;
-            
+
             .filter-head {
                 background-position: left 15px center;
                 border-radius: 25px 25px 0 0;

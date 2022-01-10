@@ -5,18 +5,6 @@
 
     margin-bottom: 6.25rem;
 
-    &__aside {
-        display: none;
-    }
-
-    &__wrapper {
-        width: 100%;
-
-        @include flex-setting(column, flex-start, center);
-
-        padding: 0 1.25rem;
-    }
-
     &__body {
         width: 100%;
 
@@ -28,7 +16,8 @@
         border-bottom: 1px dashed $lightgray;
     }
 
-    &__title {
+    &__title,
+    h2 {
         @include font-setting($primary-font, 1.5rem, 1.875rem, 800, $black);
         text-align: center;
         text-transform: uppercase;
@@ -43,7 +32,8 @@
         margin-bottom: 3.75rem;
     }
 
-    &__frame {
+    &__frame,
+    picture {
         width: 100%;
         height: 0;
         position: relative;
@@ -51,7 +41,8 @@
         margin-bottom: 1.875rem;
         padding-bottom: 59.701492537313435%;
 
-        &-image {
+        &-image,
+        img {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -64,7 +55,8 @@
         }
     }
 
-    &__description {
+    &__description,
+    p {
         @include font-setting($secondary-font, 0.875rem, 1.25rem, 400, $darkgray);
         text-align: left;
 
@@ -78,16 +70,20 @@
 
         margin-bottom: 1.25rem;
 
-        &-title {
+        &-title,
+        h4 {
             @include font-setting($secondary-font, 0.875rem, 1.25rem, 400, $darkgray);
         }
 
-        &-list {
+        &-list,
+        ul,
+        ol {
             width: 100%;
             @include flex-setting(column, flex-start, flex-start);
         }
 
-        &-line {
+        &-line,
+        li {
             width: 100%;
 
             .blog-item__description {
@@ -96,7 +92,8 @@
         }
     }
 
-    &__note {
+    &__note,
+    b {
         @include font-setting($secondary-font, 0.875rem, 1.25rem, 800, $darkgray);
     }
 
@@ -120,7 +117,8 @@
         }
     }
 
-    &__subtitle {
+    &__subtitle,
+    h3 {
         @include font-setting($primary-font, 1.5rem, 1.875rem, 700, $black);
         text-align: center;
         margin-bottom: 1.875rem;
@@ -132,19 +130,38 @@
 
         @include flex-setting(column, flex-start, center);
 
-        &-title {
+        &-title,
+        h3 {
             @include font-setting($primary-font, 1.5rem, 1.875rem, 700, $black);
             margin-bottom: 1.25rem;
         }
 
-        &-list {
+        &-list,
+        ul,
+        ol {
             width: 100%;
             @include flex-setting(column, flex-start, center);
 
             margin-bottom: 2.5rem;
+
+            a {
+                @include font-setting($primary-font, 1rem, 1.25rem, 400, $darkgray);
+                text-decoration: underline;
+                text-decoration-style: dashed;
+                text-decoration-thickness: 1px;
+                text-align: center;
+                transition: 0.4s $cubic;
+
+                &:hover,
+                &:active {
+                    color: $lightgreen;
+                    transition: 0.4s $cubic;
+                }
+            }
         }
 
-        &-line {
+        &-line,
+        li {
             @include flex-setting(column, center, center);
             width: 100%;
             height: auto;
@@ -153,21 +170,6 @@
 
             &:last-of-type {
                 margin-bottom: 0;
-            }
-        }
-
-        &-link {
-            @include font-setting($primary-font, 1rem, 1.25rem, 400, $darkgray);
-            text-decoration: underline;
-            text-decoration-style: dashed;
-            text-decoration-thickness: 1px;
-            text-align: center;
-            transition: 0.4s $cubic;
-
-            &:hover,
-            &:active {
-                color: $lightgreen;
-                transition: 0.4s $cubic;
             }
         }
 
@@ -231,15 +233,12 @@
     .blog-item {
         margin-bottom: 9.875rem;
 
-        &__wrapper {
-            padding: 0 2.5rem;
-        }
-
         &__body {
             padding-bottom: 5rem;
         }
 
-        &__title {
+        &__title,
+        h2 {
             font-size: 2.875rem;
             line-height: 3.75rem;
             margin-bottom: 2.5rem;
@@ -251,12 +250,14 @@
             margin-bottom: 5rem;
         }
 
-        &__frame {
+        &__frame,
+        picture {
             margin-bottom: 5rem;
             padding-bottom: 38.78406708595388%;
         }
 
-        &__description {
+        &__description,
+        p {
             font-size: 1rem;
             line-height: 1.875rem;
             margin-bottom: 1.875rem;
@@ -265,13 +266,15 @@
         &__block {
             margin-bottom: 1.875rem;
 
-            &-title {
+            &-title,
+            h4 {
                 font-size: 1rem;
                 line-height: 1.875rem;
             }
         }
 
-        &__note {
+        &__note,
+        b {
             font-size: 1rem;
             line-height: 1.875rem;
         }
@@ -279,13 +282,15 @@
         &__chapter {
             margin-bottom: 5rem;
 
-            .blog-item__frame {
+            .blog-item__frame,
+            picture {
                 margin-bottom: 5rem;
                 padding-bottom: 62.89308176100629%;
             }
         }
 
-        &__subtitle {
+        &__subtitle,
+        h3 {
             font-size: 2.25rem;
             line-height: 2.5rem;
             margin-bottom: 1.875rem;
@@ -304,24 +309,28 @@
             justify-content: space-between;
             align-items: end;
 
-            &-title {
+            &-title,
+            h3 {
                 grid-area: title;
             }
 
-            &-list {
+            &-list,
+            ul,
+            ol {
                 grid-area: list;
                 width: 100%;
                 align-items: flex-start;
                 margin-bottom: 0;
+
+                a {
+                    font-size: 1.125rem;
+                    text-align: left;
+                }
             }
 
-            &-line {
+            &-line,
+            li {
                 align-items: flex-start;
-            }
-
-            &-link {
-                font-size: 1.125rem;
-                text-align: left;
             }
 
             &-return {
@@ -339,130 +348,5 @@
 @include min-screen(1366px) {
     .blog-item {
         width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        display: grid;
-        grid-template-columns: 1fr 345px;
-        grid-column-gap: 4rem;
-        justify-content: space-between;
-        align-items: flex-start;
-
-        padding: 0 2.5rem;
-        max-width: 1480px;
-
-        &__aside {
-            display: flex;
-        }
-
-        &__wrapper {
-            padding: 0;
-        }
-
-        &__body {
-            padding-bottom: 5rem;
-        }
-
-        &__title {
-            font-size: 2.875rem;
-            line-height: 3.75rem;
-            margin-bottom: 2.5rem;
-            align-self: flex-start;
-            text-align: left;
-        }
-
-        &__start {
-            margin-bottom: 5rem;
-        }
-
-        &__frame {
-            margin-bottom: 5rem;
-            padding-bottom: 38.78406708595388%;
-        }
-
-        &__description {
-            font-size: 1rem;
-            line-height: 1.875rem;
-            margin-bottom: 1.875rem;
-        }
-
-        &__block {
-            margin-bottom: 1.875rem;
-
-            &-title {
-                font-size: 1rem;
-                line-height: 1.875rem;
-            }
-        }
-
-        &__note {
-            font-size: 1rem;
-            line-height: 1.875rem;
-        }
-
-        &__chapter {
-            margin-bottom: 5rem;
-
-            .blog-item__frame {
-                margin-bottom: 5rem;
-                padding-bottom: 62.89308176100629%;
-            }
-        }
-
-        &__subtitle {
-            font-size: 2.25rem;
-            line-height: 2.5rem;
-            margin-bottom: 1.875rem;
-            align-items: flex-start;
-            align-self: flex-start;
-            text-align: left;
-        }
-
-        &__bottom {
-            display: grid;
-            grid-template-areas:
-                'title ...'
-                'list link'
-            ;
-
-            justify-content: space-between;
-            align-items: end;
-
-            &-title {
-                grid-area: title;
-            }
-
-            &-list {
-                grid-area: list;
-                width: 100%;
-                align-items: flex-start;
-                margin-bottom: 0;
-            }
-
-            &-line {
-                align-items: flex-start;
-            }
-
-            &-link {
-                font-size: 1.125rem;
-                text-align: left;
-            }
-
-            &-return {
-                grid-area: link;
-                font-size: 1.5rem;
-
-                &::before {
-                    width: 209px;
-                }
-            }
-        }
-    }
-}
-
-@include min-screen(1680px) {
-    .blog-item {
-        padding: 0;
-        max-width: 1440px;
-        grid-column-gap: 8.875rem;
     }
 }
