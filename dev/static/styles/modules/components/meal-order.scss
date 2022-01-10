@@ -222,7 +222,7 @@
     .meal-order {
         &__wrapper {
             max-width: 1100px;
-            padding-top: 3.125rem;
+            padding-top: 2rem;
             padding-left: 3.125rem;
             padding-right: 3.125rem;
             padding-bottom: 0;
@@ -267,6 +267,7 @@
 
         .s-content__summary {
             padding-bottom: 1.25rem;
+            margin-bottom: 1.25rem;
         }
 
         .s-content__item {
@@ -282,6 +283,10 @@
             justify-content: center;
         }
 
+        .s-content__filter {
+            margin-bottom: 1.25rem;
+        }
+
         .s-content__filter-list {
             max-width: 820px;
         }
@@ -291,10 +296,33 @@
             padding-bottom: 8rem;
             max-height: 360px;
             justify-content: space-between;
+            grid-row-gap: 1.5rem;
 
             &::before {
                 display: none;
             }
+        }
+
+        .s-content__grid-item {
+            min-height: 290px;
+        }
+    }
+}
+
+@include min-screen(1680px) {
+    .meal-order {
+        &__content {
+            max-height: 800px;
+        }
+
+        .s-content__filter-list {
+            max-width: 820px;
+        }
+
+        .s-content__grid-list {
+            padding-left: 0;
+            padding-bottom: 0;
+            max-height: 620px;
         }
     }
 }

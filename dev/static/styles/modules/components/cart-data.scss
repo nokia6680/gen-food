@@ -95,6 +95,10 @@
             }
 
             &[data-sort="indMeal"] {
+                .cart-data__name {
+                    text-transform: none;
+                }
+
                 &::after {
                     background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 0C7.09223 0 4.72656 2.36566 4.72656 5.27344C4.72656 8.18121 7.09223 10.5469 10 10.5469C12.9078 10.5469 15.2734 8.18121 15.2734 5.27344C15.2734 2.36566 12.9078 0 10 0ZM10 9.375C7.7384 9.375 5.89844 7.53504 5.89844 5.27344C5.89844 3.01184 7.7384 1.17188 10 1.17188C12.2616 1.17188 14.1016 3.01184 14.1016 5.27344C14.1016 7.53504 12.2616 9.375 10 9.375Z' fill='%23222222'/%3E%3Cpath d='M16.5612 13.992C15.1174 12.5261 13.2035 11.7188 11.1719 11.7188H8.82812C6.79656 11.7188 4.88258 12.5261 3.43883 13.992C2.00215 15.4507 1.21094 17.3763 1.21094 19.4141C1.21094 19.7377 1.47328 20 1.79688 20H18.2031C18.5267 20 18.7891 19.7377 18.7891 19.4141C18.7891 17.3763 17.9979 15.4507 16.5612 13.992ZM2.40859 18.8281C2.70215 15.5045 5.46918 12.8906 8.82812 12.8906H11.1719C14.5308 12.8906 17.2979 15.5045 17.5914 18.8281H2.40859Z' fill='%23222222'/%3E%3C/svg%3E");
                 }
@@ -102,7 +106,8 @@
 
             .cart-data__name {
                 text-transform: uppercase;
-                font-size: 1.25rem;
+                font-size: 1.125rem;
+                line-height: 1.375rem;
             }
 
             .cart-data__count {
@@ -470,14 +475,35 @@
             }
 
             &.mealItem {
+                grid-template-areas:
+                    'frame name'
+                    'frame controls'
+                ;
+
+                justify-content: center;
+                align-items: end;
+
+                &[data-sort="indMeal"] {
+                    .cart-data__name {
+                        font-size: 1.5rem;
+                        line-height: 1.875rem;
+                    }
+                }
+
                 &::after {
                     width: 315px;
-                    height: 250px;
+                    height: 200px;
+
+                    background-size: contain;
+                }
+
+                .cart-data__info {
+                    margin-bottom: 0;
                 }
 
                 .cart-data__name {
-                    font-size: 4rem;
-                    line-height: 4.625rem;
+                    font-size: 3rem;
+                    line-height: 3.75rem;
                 }
 
                 .cart-data__count {
@@ -492,6 +518,7 @@
                 .cart-data__frame {
                     visibility: hidden;
                     pointer-events: none;
+                    padding-bottom: 63.492063492063494%;
                 }
             }
         }

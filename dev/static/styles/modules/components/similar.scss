@@ -78,6 +78,7 @@
 
             .item__name {
                 margin-bottom: 1.25rem;
+                min-height: 40px;
             }
 
             .item__summary {
@@ -200,6 +201,7 @@
             &-item {
                 min-width: 280px;
                 max-width: 280px;
+                height: auto;
 
                 .item__name {
                     margin-bottom: 1.875rem;
