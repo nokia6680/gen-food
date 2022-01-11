@@ -30,9 +30,21 @@
         &.--notEnoughDays {
             .s-content__days-start {
                 display: flex;
-                bottom: -4rem;
+                bottom: -2.5rem;
                 left: 50%;
                 transform: translateX(-50%);
+            }
+
+            .select__title,
+            .select__filter,
+            .s-content__pricing,
+            .s-content__filter,
+            .s-content__summary,
+            .s-content__grid,
+            .s-content__delivery,
+            .s-content__order {
+                opacity: 0.2;
+                pointer-events: none;
             }
         }
     }
@@ -202,6 +214,16 @@
             margin-bottom: 0;
             justify-content: start;
             align-items: start;
+
+            &.--notEnoughDays {
+                .s-content__days-start {
+                    left: auto;
+                    bottom: auto;
+                    top: 60%;
+                    right: -16rem;
+                    transform: translateX(0) translateY(-50%);
+                }
+            }
         }
     }
 }
@@ -272,6 +294,14 @@
         &__body {
             min-height: 1003px;
             justify-content: start;
+
+            &.--notEnoughDays {
+                .s-content__days-start {
+                    top: 60%;
+                    right: -28rem;
+                    transform: translateX(0) translateY(-50%);
+                }
+            }
         }
 
         &__checkout-link {

@@ -435,7 +435,7 @@
             padding: 0.875rem 1rem;
             width: max-content;
             background-color: $white;
-            filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
+            filter: drop-shadow(0px 5px 25px rgba(0, 0, 0, 0.25));
             display: none;
 
             &::after {
@@ -445,12 +445,12 @@
                 width: 0;
                 height: 0;
                 border-style: solid;
-                border-width: 14px 18px 14px 0;
-                border-color: transparent #ffffff transparent transparent;
+                border-width: 0 14px 18px 14px;
+                border-color: transparent transparent #ffffff transparent;
 
-                left: -1rem;
-                top: 50%;
-                transform: translateY(-50%);
+                left: 50%;
+                top: -1rem;
+                transform: translateX(-50%);
 
                 z-index: 0;
             }
@@ -1003,6 +1003,17 @@
 
             &-btn {
                 font-size: 1rem;
+            }
+
+            &-start {
+                &::after {
+                    border-width: 14px 18px 14px 0;
+                    border-color: transparent #ffffff transparent transparent;
+
+                    left: -1rem;
+                    top: 50%;
+                    transform: translateX(0) translateY(-50%);
+                }
             }
         }
 
@@ -1797,6 +1808,17 @@
 
         &__days {
             padding-bottom: 1.25rem;
+
+            &-start {
+                font-size: 1.5rem;
+                line-height: 1.875rem;
+                padding: 2.5rem 2.5rem;
+
+                &::after {
+                    border-width: 27px 36px 27px 0;
+                    left: -2rem;
+                }
+            }
         }
 
         &__days-title {
