@@ -22,6 +22,8 @@ html(lang="ru-RU")
         include ../modules/header/header
         main.main
             +introBlock('index-intro', 'intro-index', 'Готовим правильную еду на каждый день', '', 'От 700 руб. в день', 'Ежедневная доставка', 'Бесплатная доставка в любой день')
+            
+            include ../modules/blocks/how
             article.select
                 .select__wrapper
                     h2.select__title Выберите своё меню
@@ -45,6 +47,7 @@ html(lang="ru-RU")
         include ../modules/popup/change-meal
         include ../modules/popup/fast-order
         include ../modules/popup/form-reaction
+
         include ../modules/loader/loader
 
         script(src="static/js/vendor/jquery-3.3.1.min.js")

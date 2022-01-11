@@ -26,6 +26,15 @@
 
         @include flex-setting(column, flex-start, center);
         position: relative;
+
+        &.--notEnoughDays {
+            .s-content__days-start {
+                display: flex;
+                bottom: -4rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
     }
 
     &--create {
@@ -116,38 +125,6 @@
                     .s-content__days {
                         margin-bottom: 2.5rem;
                         position: relative;
-
-                        &-start {
-                            position: absolute;
-                            top: 2.75rem;
-                            right: -85%;
-                            z-index: 10;
-                            @include flex-setting(column, center, center);
-                            @include font-setting($primary-font, 1rem, 1.25rem, 500, $black);
-
-                            padding: 0.875rem 1rem;
-                            width: max-content;
-                            background-color: $white;
-                            filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
-                            display: none;
-
-                            &::after {
-                                position: absolute;
-                                content: '';
-
-                                width: 0;
-                                height: 0;
-                                border-style: solid;
-                                border-width: 14px 18px 14px 0;
-                                border-color: transparent #ffffff transparent transparent;
-
-                                left: -1rem;
-                                top: 50%;
-                                transform: translateY(-50%);
-
-                                z-index: 0;
-                            }
-                        }
                     }
 
                     .s-content__calendar {
@@ -190,6 +167,9 @@
 
                     .s-content__calendar-start {
                         display: flex;
+                        top: 2.75rem;
+                        right: -85%;
+                        z-index: 10;
                     }
                 }
             }

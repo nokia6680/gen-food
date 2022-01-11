@@ -369,6 +369,7 @@
         padding-bottom: 1.5625rem;
         margin-bottom: 1.5625rem;
         border-bottom: 1px dashed $lightgray;
+        position: relative;
 
         &-title {
             @include font-setting($secondary-font, 1.5rem, 1.875rem, 800, $black);
@@ -421,6 +422,37 @@
                 border-color: $lightgreen;
                 color: $white;
                 transition: 0.4s $cubic;
+            }
+        }
+
+        &-start {
+            position: absolute;
+            height: auto;
+            z-index: 10;
+            @include flex-setting(column, center, center);
+            @include font-setting($primary-font, 1rem, 1.25rem, 500, $black);
+
+            padding: 0.875rem 1rem;
+            width: max-content;
+            background-color: $white;
+            filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
+            display: none;
+
+            &::after {
+                position: absolute;
+                content: '';
+
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 14px 18px 14px 0;
+                border-color: transparent #ffffff transparent transparent;
+
+                left: -1rem;
+                top: 50%;
+                transform: translateY(-50%);
+
+                z-index: 0;
             }
         }
     }

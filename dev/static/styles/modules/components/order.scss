@@ -138,6 +138,7 @@
     }
 
     &__body {
+        width: 100%;
         max-height: 0;
         opacity: 0;
         overflow: hidden;
@@ -591,6 +592,8 @@
     .order {
         // Order-card-blocks
         &-card {
+            grid-template-columns: 315px 1fr;
+
             &__supplements {
                 &-fact {
                     margin-right: 2.5rem;

@@ -146,6 +146,7 @@
     }
 
     &__body {
+        width: 100%;
         max-height: 0;
         opacity: 0;
         overflow: hidden;
@@ -603,6 +604,12 @@
         // Order-card-blocks
         &-card {
             &.mealItem {
+                grid-template-areas:
+                    '... info bottom'
+                ;
+
+                grid-template-columns: 12.68343815513627% 49.68553459119497% 1fr;
+
                 &::after {
                     width: 121px;
                     height: 80px;
