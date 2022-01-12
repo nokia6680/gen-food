@@ -45,13 +45,10 @@
 
         transition: 0.4s $cubic;
 
-        &:valid {
+        &:hover,
+        &:active,
+        &:focus {
             border-color: $green;
-            transition: 0.4s $cubic;
-        }
-
-        &:invalid {
-            border-color: $red;
             transition: 0.4s $cubic;
         }
     }
@@ -72,6 +69,12 @@
         outline: none;
 
         transition: 0.4s $cubic;
+        &:hover,
+        &:active,
+        &:focus {
+            border-color: $green;
+            transition: 0.4s $cubic;
+        }
     }
 
     &__submit {

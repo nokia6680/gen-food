@@ -96,7 +96,7 @@ html(lang="ru-RU")
                                                 img(src="static/images/content/yl.png" alt="Яндекс лавка")
                                             a(href="#" target="_blank" title="delivery Club").itemcard__ratings-link
                                                 img(src="static/images/content/dc.svg" alt="delivery Club")
-                                            button(type="button").itemcard__ratings-new.js-new-feedback Написать отзыв
+                                            button(type="button" data-modal="#js-popup-feedback").itemcard__ratings-new.js-popup-opener Написать отзыв
             include ../modules/blocks/similar
 
             section.reasons
@@ -110,6 +110,7 @@ html(lang="ru-RU")
         include ../modules/popup/popup-callback
         include ../modules/popup/form-reaction
         include ../modules/popup/feedback
+        include ../modules/popup/add-review
         script(src="static/js/vendor/jquery-3.3.1.min.js")
         script(src="https://unpkg.com/swiper/swiper-bundle.js")
         script(src="static/js/main.js")
