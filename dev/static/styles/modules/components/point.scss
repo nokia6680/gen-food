@@ -308,7 +308,7 @@
             grid-area: info;
             width: 100%;
 
-            @include flex-setting(column, flex-start, flex-start);
+            @include flex-setting(column, space-between, flex-start);
         }
 
         &__name {

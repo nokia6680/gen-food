@@ -27,6 +27,35 @@
         @include flex-setting(column, flex-start, center);
         position: relative;
 
+        &.--idle {
+            .s-content__days-start {
+                display: flex;
+                bottom: -4.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .s-content__calendar-start {
+                display: flex;
+                bottom: -0.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .select__title,
+            .select__filter,
+            .s-content__pricing,
+            .s-content__filter,
+            .s-content__summary,
+            .s-content__grid,
+            .s-content__delivery,
+            .s-content__order,
+            .s-content__checkout-link {
+                opacity: 0.2;
+                pointer-events: none;
+            }
+        }
+
         &.--notEnoughDays {
             .s-content__days-start {
                 display: flex;
@@ -42,7 +71,8 @@
             .s-content__summary,
             .s-content__grid,
             .s-content__delivery,
-            .s-content__order {
+            .s-content__order,
+            .s-content__checkout-link {
                 opacity: 0.2;
                 pointer-events: none;
             }
@@ -63,10 +93,6 @@
                     margin-bottom: 3.75rem;
                     padding-bottom: 0;
                     border-bottom: none;
-
-                    &-start {
-                        display: none;
-                    }
                 }
 
                 .s-content__calendar {
@@ -161,29 +187,6 @@
                         margin-bottom: 1.25rem;
                     }
                 }
-
-                &.--idle {
-                    .select__content {
-                        opacity: 0.2;
-                        pointer-events: none;
-                    }
-
-                    .select__pricing {
-                        opacity: 0.2;
-                        pointer-events: none;
-                    }
-
-                    .s-content__days-start {
-                        display: flex;
-                    }
-
-                    .s-content__calendar-start {
-                        display: flex;
-                        top: 2.75rem;
-                        right: -85%;
-                        z-index: 10;
-                    }
-                }
             }
 
             .s-content__days {
@@ -215,6 +218,24 @@
             justify-content: start;
             align-items: start;
 
+            &.--idle {
+                .s-content__calendar-start {
+                    left: auto;
+                    bottom: auto;
+                    top: 19%;
+                    right: -22rem;
+                    transform: translateX(0) translateY(-50%);
+                }
+
+                .s-content__days-start {
+                    left: auto;
+                    bottom: auto;
+                    top: 75%;
+                    right: -20rem;
+                    transform: translateX(0) translateY(-50%);
+                }
+            }
+
             &.--notEnoughDays {
                 .s-content__days-start {
                     left: auto;
@@ -222,6 +243,12 @@
                     top: 60%;
                     right: -16rem;
                     transform: translateX(0) translateY(-50%);
+                }
+
+                .s-content__info,
+                .s-content__note {
+                    opacity: 0.2;
+                    pointer-events: none;
                 }
             }
         }
@@ -251,19 +278,6 @@
                 .select__dates {
                     .s-content__days {
                         margin-bottom: 2.5rem;
-
-                        &-start {;
-                            top: 1rem;
-                            right: -140%;
-                            font-size: 1.5rem;
-                            line-height: 1.875rem;
-                            padding: 2.5rem 2.5rem;
-
-                            &::after {
-                                border-width: 27px 36px 27px 0;
-                                left: -2rem;
-                            }
-                        }
                     }
 
                     .s-content__calendar {
@@ -274,6 +288,29 @@
                 .select__pricing {
                     .s-content__pricing-list {
                         margin-bottom: 4.375rem;
+                    }
+                }
+            }
+        }
+
+        &--meal {
+            .select__body {
+                &.--notEnoughDays {
+                    .s-content__days-start {
+                        top: 60%;
+                        right: auto;
+                        left: -26rem;
+                        transform: translateX(0) translateY(-50%);
+                        font-size: 1.5rem;
+                        line-height: 1.875rem;
+                        padding: 2.5rem 2.5rem;
+
+                        &::after {
+                            border-width: 27px 36px 27px 0;
+                            left: auto;
+                            transform: scaleX(-1) translateY(-50%);
+                            right: -2rem;
+                        }
                     }
                 }
             }
@@ -294,6 +331,24 @@
         &__body {
             min-height: 1003px;
             justify-content: start;
+
+            &.--idle {
+                .s-content__calendar-start {
+                    left: auto;
+                    bottom: auto;
+                    top: 6.5rem;
+                    right: -33rem;
+                    transform: translateX(0) translateY(-50%);
+                }
+
+                .s-content__days-start {
+                    left: auto;
+                    bottom: auto;
+                    top: 75%;
+                    right: -30rem;
+                    transform: translateX(0) translateY(-50%);
+                }
+            }
 
             &.--notEnoughDays {
                 .s-content__days-start {
@@ -402,6 +457,15 @@
 
             .s-content__pricing {
                 margin-bottom: 0;
+            }
+        }
+        &--meal {
+            .select__body {
+                &.--notEnoughDays {
+                    .s-content__days-start {
+                        left: -28rem;
+                    }
+                }
             }
         }
 

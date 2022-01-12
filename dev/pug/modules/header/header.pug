@@ -40,13 +40,15 @@ header.header
             li.nav__controls-item.nav__controls-item--login
                 a(href="cabinet.html" target="_self").nav__controls-link
             li.nav__controls-item.nav__controls-item--cart
-                a(href="cart.html" target="_self").nav__controls-link
+                a(href="" target="_self").nav__controls-link
                 span.nav__controls-nr 7
         .nav__cart.nav-cart
             ul.nav-cart__list
                 +navCartItem('fit', 'cart-1', 'FIT', '~ 1300 кКал', '1320 руб.')
                 +navCartItem('', 'cart-1', 'Котлетка из оленины запеченная с розмарином и картофельными дольками', 'Артикул: Б0859', '320 руб.')
                 +navCartItem('indMeal', 'cart-1', 'Индивидуальный рацион', '~ 4234 кКал', '3320 руб.')
+                +navCartItem('sert', 'sert-cart', 'Подарочный сертификат', '3000 руб', '3000 руб.')
+                
             .nav-cart__summary
                 .nav-cart__block
                     span.nav-cart__title Товаров на сумму:

@@ -167,6 +167,10 @@
         padding-top: 3.75rem;
         margin-bottom: 3.75rem;
 
+        &__wrapper {
+            justify-content: center;
+        }
+
         &__content {
             padding-left: 2.25rem;
             padding-right: 2.25rem;

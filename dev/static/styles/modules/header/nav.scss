@@ -625,6 +625,22 @@
                     background-position: left center;
                     background-repeat: no-repeat;
                     background-size: contain;
+
+                    .nav__controls-link {
+                        &::after {
+                            position: absolute;
+                            content: '';
+
+                            width: 100%;
+                            height: 1px;
+
+                            border-bottom: 1px dashed $black;
+
+                            left: 0;
+                            bottom: 0;
+                            transition: 0.4s $cubic;
+                        }
+                    }
                 }
             }
 
@@ -635,20 +651,6 @@
 
                 position: relative;
                 transition: 0.4s $cubic;
-
-                &::after {
-                    position: absolute;
-                    content: '';
-
-                    width: 100%;
-                    height: 1px;
-
-                    border-bottom: 1px dashed $black;
-
-                    left: 0;
-                    bottom: 0;
-                    transition: 0.4s $cubic;
-                }
 
                 &:hover,
                 &:active {

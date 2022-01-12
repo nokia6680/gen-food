@@ -126,3 +126,21 @@ if (consultSubmit) {
         consultAfterSending.classList.add('active');
     });
 };
+
+var fastOrderInfoOpener = document.querySelector('.fast-order__information-title');
+var fastOrderInfo = document.querySelector('.fast-order__information-wrap');
+var fastOrderInfoCloser = document.querySelector('.fast-order__information-close');
+
+if (fastOrderInfoOpener) {
+    fastOrderInfoOpener.addEventListener('click', function() {
+        event.preventDefault();
+        fastOrderInfo.classList.add('active');
+    });
+};
+
+if (fastOrderInfoCloser) {
+    fastOrderInfoCloser.addEventListener('click', function() {
+        event.preventDefault();
+        fastOrderInfo.classList.remove('active');
+    });
+};

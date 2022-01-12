@@ -124,6 +124,12 @@
                 pointer-events: none;
             }
         }
+
+        &.sertItem {
+            .cart-data__supplements {
+                display: none;
+            }
+        }
     }
 
     &__frame {

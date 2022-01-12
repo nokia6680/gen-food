@@ -279,9 +279,7 @@
         align-self: center;
         @include font-setting($primary-font, 0.875rem, 1.25rem, 500, $green);
         text-align: center;
-        text-decoration: underline;
-        text-decoration-style: dashed;
-        text-decoration-color: $green;
+        border-bottom: 1px dashed $green;
 
         background-color: transparent;
         border: none;
@@ -293,7 +291,7 @@
 
         &:hover,
         &:active {
-            text-decoration-style: solid;
+            color: $gold;
             transition: 0.4s $cubic;
         }
     }

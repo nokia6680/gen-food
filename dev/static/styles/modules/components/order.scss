@@ -342,6 +342,20 @@
             }
         }
 
+        &.sertItem {
+            .order-card__supplements {
+                display: none;
+            }
+
+            .order-card__name {
+                font-size: 1rem;
+            }
+
+            .order-card__articul {
+                font-size: 1rem;
+            }
+        }
+
         &__frame {
             grid-area: frame;
 
@@ -536,6 +550,18 @@
                 .order-card__btn {
                     font-size: 1.125rem;
                     padding: 0 2.125rem;
+                }
+            }
+
+            &.sertItem {
+                .order-card__name {
+                    font-size: 1.5rem;
+                    line-height: 2rem;
+                    margin-bottom: 1.25rem;
+                }
+
+                .order-card__articul {
+                    font-size: 1.25rem;
                 }
             }
 

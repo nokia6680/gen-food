@@ -184,6 +184,17 @@
                 line-height: 1.333;
             }
         }
+
+        &.sert {
+            .nav-cart__name {
+                font-size: 1rem;
+                line-height: 1.333;
+            }
+
+            .nav-cart__articul {
+                font-size: 0.875rem;
+            }
+        }
     }
 
     &__frame {

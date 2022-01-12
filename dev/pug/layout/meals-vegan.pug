@@ -94,7 +94,7 @@ html(lang="ru-RU")
                                 <!--Блок выбора дней и финальной стоимости, кешбека-->
                                 .s-content__checkout
                                     <!--Выбор дней-->
-                                    .s-content__days
+                                    .s-content__days#selectDays
                                         h3.s-content__days-title Количество дней:
                                         ul.s-content__days-list
                                             li.s-content__days-item
@@ -107,6 +107,7 @@ html(lang="ru-RU")
                                                 button(type="button" data-value="15").s-content__days-btn 15
                                             li.s-content__days-item
                                                 button(type="button" data-value="30").s-content__days-btn 30
+                                        span.s-content__days-start Выберите больше дней
                                     .s-content__pricing
                                         b.s-content__pricing-title Стоимость:
                                         ul.s-content__pricing-list
