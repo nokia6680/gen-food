@@ -43,6 +43,11 @@
             margin-right: 1.25rem;
             margin-bottom: 0;
 
+            b {
+                font-weight: 400;
+                color: $darkgray;
+            }
+
             &.active {
                 .faq__filter-btn {
                     background-color: $lightgreen;
@@ -372,9 +377,23 @@
     }
 }
 
+@include min-screen(1000px) {
+    .faq {
+        &__body {
+            &-list {
+                max-width: 60%;
+            }
+        }
+    }
+}
+
 @include min-screen(1366px) {
     .faq {
         margin-bottom: 6.25rem;
+
+        &__wrapper {
+            max-width: 1520px;
+        }
 
         &__title {
             font-size: 2.875rem;
@@ -385,14 +404,15 @@
 
         &__filter {
             margin-bottom: 3.75rem;
+            max-width: 1520px;
         }
 
         &__body {
             margin-right: 0;
-            max-width: 1480px;
+            max-width: 1520px;
 
             &-list {
-                max-width: 832px;
+                max-width: 64.69673405909798%;
             }
 
             &-item {
@@ -440,6 +460,7 @@
         &__body {
             &-list {
                 position: relative;
+                max-width: 57.77777777777778%;
 
                 &::after {
                     position: absolute;
