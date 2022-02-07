@@ -17,7 +17,7 @@
         margin-top: -1.25rem;
         margin-bottom: -1.25rem;
 
-        z-index: 10;
+        z-index: 111;
 
         &-image {
             width: inherit;
@@ -106,7 +106,7 @@
 
         padding-left: 3.75rem;
         padding-right: 3.75rem;
-        z-index: 9;
+        z-index: 110;
 
         &.opened {
             transition: 0.4s $cubic;
@@ -251,7 +251,7 @@
         margin-right: 0;
         padding: 0.625rem 0.9375rem;
 
-        z-index: 10;
+        z-index: 111;
         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
 
         &-item {

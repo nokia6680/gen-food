@@ -70,7 +70,7 @@
 
     &.personal-intro {
         margin-bottom: 3.125rem;
-        
+
         .intro__list {
             display: none;
         }
@@ -657,6 +657,260 @@
     }
 }
 
+@include min-screen(1024px) {
+    .intro {
+        &.index-intro {
+            margin-bottom: 6.75rem;
+        }
+
+        &.meals-intro {
+            .intro__title {
+                max-width: 80%;
+            }
+            .intro__info {
+                text-align: left;
+                font-weight: 300;
+                max-width: 300px;
+            }
+
+            .intro__bottom {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+
+            .intro__try {
+                margin-bottom: 1.25rem;
+            }
+
+            .intro__info {
+                max-width: 100%;
+            }
+        }
+
+        &.meal-type-intro {
+            .intro__details {
+                padding-top: 0;
+
+                &::after {
+                    width: 52px;
+                    height: 52px;
+                }
+            }
+
+            .intro__title {
+                font-size: 3.25rem;
+                line-height: 3.5rem;
+                padding-left: 4rem;
+                margin-bottom: 2rem;
+            }
+
+            .intro__description {
+                font-size: 1.875rem;
+                line-height: 2.25rem;
+                max-width: 100%;
+            }
+
+            .intro__subtitle {
+                font-size: 1.5rem;
+                line-height: 1.75rem;
+                margin-bottom: 2.625rem;
+            }
+
+            .intro__info {
+                text-align: left;
+                font-weight: 300;
+            }
+
+            .intro__bottom {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+
+            .intro__try {
+                margin-bottom: 2.25rem;
+            }
+
+            .intro__info {
+                max-width: 100%;
+            }
+        }
+
+        &.short {
+            margin-bottom: 0.9375rem;
+
+            .intro__wrapper {
+                &::after {
+                    z-index: 1;
+                    box-shadow: none;
+                }
+            }
+            .intro__title {
+                font-size: 3rem;
+                line-height: 3.75rem;
+                margin-bottom: 0;
+                max-width: 100%;
+            }
+
+            .intro__frame {
+                padding-bottom: 10.416666666666668%;
+                align-self: center;
+                max-width: 100%;
+                height: 0;
+                max-height: 200px;
+                z-index: 1;
+            }
+        }
+
+        &.personal-intro {
+            margin-bottom: 12rem;
+
+            .intro__subtitle {
+                margin-bottom: 6.25rem;
+            }
+
+            .intro__select {
+                margin-bottom: 0;
+                margin-right: 3.125rem;
+            }
+
+            .intro__info {
+                text-align: left;
+                font-weight: 300;
+                max-width: 38%;
+            }
+
+            .intro__details {
+                padding-top: 8.125rem;
+            }
+        }
+
+        &__bg {
+            position: absolute;
+            display: block;
+
+            &--1 {
+                left: 0;
+                top: -20%;
+
+                background-color: $white;
+                width: 70%;
+                height: 200%;
+                transform: rotate(-17deg);
+                z-index: 1;
+                //clip-path: polygon(0 0, 75% 0, 100% 100%, 0% 100%);
+                box-shadow: 20px 4px 20px rgba(0, 0, 0, 0.15);
+            }
+
+            &--2 {
+                left: 0;
+                top: -10%;
+                position: absolute;
+                background-color: $white;
+                width: 32.5%;
+                height: 200%;
+                transform: rotate(-17deg);
+                z-index: 1;
+                //clip-path: polygon(0 0, 75% 0, 100% 100%, 0% 100%);
+                box-shadow: 20px 4px 20px rgba(0, 0, 0, 0.04);
+            }
+
+            &--3 {
+                display: none;
+                position: absolute;
+                background-color: $white;
+                top: -20%;
+                right: -40%;
+                width: 200px;
+                height: 200%;
+                transform: rotate(-17deg);
+                z-index: 1;
+                //clip-path: polygon(0 0, 75% 0, 100% 100%, 0% 100%);
+                box-shadow: -20px -4px 20px rgba(0, 0, 0, 0.15);
+            }
+
+            &--4 {
+                display: none;
+            }
+        }
+
+        &__details {
+            width: 66.25%;
+            padding-left: 2.5rem;
+            max-width: 844px;
+        }
+
+        &__title {
+            font-size: 2.125rem;
+
+            line-height: 2.365rem;
+            margin-bottom: 3.125rem;
+            max-width: 80%;
+        }
+
+        &__subtitle {
+            font-size: 1.75rem;
+            line-height: 2.125rem;
+            font-weight: 300;
+            max-width: 620px;
+            margin-bottom: 2.375rem;
+        }
+
+        &__list {
+            align-items: flex-start;
+            margin-bottom: 2.5625rem;
+        }
+
+        &__item {
+            padding-left: 4rem;
+            margin-bottom: 2.125rem;
+
+            &::after {
+                width: 50px;
+                height: 50px;
+            }
+
+            &-text {
+                font-size: 1.75rem;
+                line-height: 2rem;
+                font-weight: 400;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &__bottom {
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        &__try {
+            white-space: nowrap;
+            margin-right: 2.3125rem;
+            margin-bottom: 0;
+        }
+
+        &__info {
+            text-align: left;
+            font-size: 1.25rem;
+            line-height: 1.5625rem;
+        }
+
+        &__frame {
+            max-width: 54.47916666666667%;
+            height: 480px;
+
+            &-image {
+                object-position: top;
+            }
+        }
+    }
+}
+
 @include min-screen(1366px) {
     .intro {
         &.index-intro {
@@ -677,11 +931,17 @@
         &.meal-type-intro {
             .intro__details {
                 padding-top: 0;
+
+                &::after {
+                    width: 80px;
+                    height: 80px;
+                }
             }
 
             .intro__title {
-                font-size: 6rem;
-                line-height: 6.25rem;
+                font-size: 5rem;
+                line-height: 5.625rem;
+                padding-left: 6rem;
             }
 
             .intro__description {

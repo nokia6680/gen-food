@@ -615,6 +615,7 @@
         &__list {
             grid-template-columns: repeat(3, 224px);
             align-items: stretch;
+            justify-content: space-between;
         }
 
         &__link {

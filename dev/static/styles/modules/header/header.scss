@@ -27,7 +27,7 @@
     }
 }
 
-@include min-screen(720px) {
+@include min-screen(768px) {
     .header {
         &__contacts {
             padding: 1.25rem 2.5rem;

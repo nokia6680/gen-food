@@ -28,6 +28,7 @@
         overflow: hidden;
 
         margin-bottom: 1.25rem;
+        border-radius: 15px;
 
         &-image {
             position: absolute;
@@ -38,7 +39,7 @@
             right: 0;
             bottom: 0;
 
-            object-fit: contain;
+            object-fit: cover;
         }
 
         &.special {
@@ -565,6 +566,7 @@
         &__frame {
             padding-bottom: 69.01408450704226%;
             margin-bottom: 1.25rem;
+            border-radius: 25px;
 
             &.special {
                 &::after {
