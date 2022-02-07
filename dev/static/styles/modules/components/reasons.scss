@@ -178,8 +178,9 @@
         }
 
         &__list {
-            padding-left: 2.5rem;
-            padding-right: 2.5rem;
+            padding-left: 0;
+            padding-right: 0;
+            max-width: 1286px;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
@@ -242,13 +243,11 @@
     }
 }
 
-@include min-screen(1680px) {
+@include min-screen(1500px) {
     .reasons {
         margin-bottom: 12.5rem;
 
         &__list {
-            padding-left: 0rem;
-            padding-right: 0rem;
             max-width: 1440px;
         }
 

@@ -354,10 +354,16 @@
         align-items: center;
         margin-bottom: 9.875rem;
 
+        &__shop {
+            .serts__title {
+                margin-left: 0;
+            }
+        }
+
         &__intro {
             grid-column-gap: 9.875rem;
-            padding: 0 2.5rem;
-            max-width: 1520px;
+            padding: 0;
+            max-width: 1286px;
             align-items: end;
 
             margin-bottom: 7.5rem;
@@ -367,6 +373,7 @@
             font-size: 2.875rem;
             line-height: 3.75rem;
             margin-bottom: 3.125rem;
+            margin-left: 0;
         }
 
         &__description {
@@ -385,13 +392,13 @@
             align-items: flex-start;
             margin-bottom: 7.5rem;
 
-            max-width: 1520px;
+            max-width: 1286px;
         }
 
         &__buy {
             justify-content: space-between;
-            padding-left: 2.5rem;
-            padding-right: 2.5rem;
+            padding-left: 0;
+            padding-right: 0;
 
             &-item {
                 margin-right: 2rem;
@@ -401,7 +408,9 @@
         //
 
         &__rules {
-            max-width: 1520px;
+            padding-left: 0;
+            padding-right: 0;
+            max-width: 1286px;
 
             &-list {
                 align-items: flex-start;
@@ -414,6 +423,14 @@
             span {
                 font-size: 1.125rem;
             }
+        }
+    }
+}
+
+@include min-screen(1500px) {
+    .serts {
+        &__intro {
+            max-width: 1440px;
         }
     }
 }

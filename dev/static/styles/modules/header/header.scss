@@ -63,7 +63,8 @@
 @include min-screen(1366px) {
     .header {
         &__contacts {
-            padding: 1.25rem 2.5rem;
+            padding: 1.25rem 0;
+            max-width: 1286px;
 
             &-note {
                 margin-right: 2.75rem;

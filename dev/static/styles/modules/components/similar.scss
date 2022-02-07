@@ -223,7 +223,9 @@
 @include min-screen(1366px) {
     .similar {
         &__wrapper {
-            max-width: 1440px;
+            padding-left: 0;
+            padding-right: 0;
+            max-width: 1286px;
             margin-bottom: 5rem;
         }
 
@@ -234,7 +236,9 @@
 
         &__slider {
             width: 100%;
-            max-width: 1440px;
+            padding-left: 0;
+            padding-right: 0;
+            max-width: 1286px;
 
             &-item {
                 min-width: 280px;
@@ -257,13 +261,15 @@
     }
 }
 
-@include min-screen(1680px) {
+@include min-screen(1500px) {
     .similar {
         &__wrapper {
+            max-width: 1440px;
             padding: 0;
         }
 
         &__slider {
+            max-width: 1440px;
             padding-left: 0;
             padding-right: 0;
         }

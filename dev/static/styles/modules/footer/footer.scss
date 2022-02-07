@@ -277,7 +277,8 @@
 @include min-screen(1366px) {
     .footer {
         &__heading {
-            padding: 5rem 2.5rem 4.375rem 2.5rem;
+            --width: calc(100% - 1286px);
+            padding: 5rem calc(var(--width) / 2) 4.375rem calc(var(--width) / 2);
             flex-direction: row;
             justify-content: space-between;
             align-items: flex-start;
@@ -389,8 +390,10 @@
         }
 
         &__bottom {
-            padding: 1.875rem 2.5rem;
+            --width: calc(100% - 1286px);
 
+            padding-left: calc(var(--width) / 2);
+            padding-right: calc(var(--width) / 2);
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
@@ -432,7 +435,7 @@
     }
 }
 
-@include min-screen(1680px) {
+@include min-screen(1500px) {
     .footer {
         &__heading {
             max-width: 1440px;

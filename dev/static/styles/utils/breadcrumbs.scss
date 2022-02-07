@@ -11,8 +11,10 @@
         margin: 0 auto;
         margin-bottom: 4.0625rem;
 
-        padding-left: 2.5rem;
-        padding-right: 2.5rem;
+        padding-left: 0;
+        padding-right: 0;
+
+        max-width: 1286px;
 
         &__list {
             width: 100%;
@@ -95,7 +97,7 @@
     }
 }
 
-@include min-screen(1680px) {
+@include min-screen(1500px) {
     .breadcrumbs {
         max-width: 1440px;
         padding-left: 0;

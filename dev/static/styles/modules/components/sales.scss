@@ -237,7 +237,8 @@
         margin-bottom: 12.5rem;
 
         &__wrapper {
-            max-width: 1440px;
+            padding: 0;
+            max-width: 1286px;
             grid-column-gap: 16.5rem;
             justify-content: center;
 
@@ -294,6 +295,14 @@
         &__note {
             font-size: 1.5rem;
             line-height: 2.5rem;
+        }
+    }
+}
+
+@include min-screen(1500px) {
+    .sales {
+        &__wrapper {
+            max-width: 1440px;
         }
     }
 }

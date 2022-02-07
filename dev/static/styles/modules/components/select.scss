@@ -261,8 +261,10 @@
 
         &--create {
             margin-bottom: 12.5rem;
+
             .select__wrapper {
-                padding: 0 2.5rem;
+                padding: 0;
+                max-width: 1286px;
             }
             .select__body {
                 grid-template-areas:
@@ -318,8 +320,9 @@
 
         &__wrapper {
             max-width: 100%;
-            padding-left: 2.5rem;
-            padding-right: 2.5rem;
+            padding-left: 0;
+            padding-right: 0;
+            max-width: 1286px;
         }
 
         &__title {

@@ -406,6 +406,11 @@
 
 @include min-screen(1366px) {
     .nav {
+        --width: calc(100% - 1286px);
+
+        padding-left: calc(var(--width) / 2);
+        padding-right: calc(var(--width) / 2);
+
         &__logo {
             margin-right: 1.375rem;
         }
