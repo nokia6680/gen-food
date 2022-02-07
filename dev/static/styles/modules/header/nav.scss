@@ -543,7 +543,7 @@
     }
 }
 
-@include min-screen(1680px) {
+@include min-screen(1500px) {
     .nav {
         --width: calc(100% - 1440px);
 

@@ -205,11 +205,15 @@
 
         &__filter {
             margin-bottom: 5rem;
-            max-width: 1520px;
+            max-width: 1286px;
             justify-content: flex-start;
+            padding-left: 0;
+            padding-right: 0;
 
             &::after {
-                bottom: -2px;
+                bottom: -1px;
+                width: 100%;
+                left: 0;
             }
 
             &-item {
@@ -227,7 +231,9 @@
         }
 
         &__body {
-            max-width: 1520px;
+            max-width: 1286px;
+            padding-left: 0;
+            padding-right: 0;
         }
 
         &-checkout {
@@ -247,6 +253,18 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
+        }
+    }
+}
+
+@include min-screen(1500px) {
+    .cart {
+        &__filter {
+            max-width: 1440px;
+        }
+
+        &__body {
+            max-width: 1440px;
         }
     }
 }

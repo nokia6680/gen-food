@@ -193,7 +193,8 @@
         }
 
         &__content {
-            padding-left: 2.5rem;
+            --width: calc(100% - 1286px);
+            padding-left: calc(var(--width) / 2);
             padding-right: 2.5rem;
         }
 

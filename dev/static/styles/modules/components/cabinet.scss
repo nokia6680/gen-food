@@ -540,8 +540,8 @@
         margin-bottom: 9.375rem;
 
         &__wrapper {
-            padding: 0 2.5rem;
-            max-width: 1480px;
+            padding: 0;
+            max-width: 1286px;
             flex-direction: row;
             justify-content: space-between;
             align-items: flex-start;
@@ -622,7 +622,7 @@
     }
 }
 
-@include min-screen(1680px) {
+@include min-screen(1500px) {
     .cabinet {
         &__wrapper {
             max-width: 1440px;

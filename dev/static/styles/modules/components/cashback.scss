@@ -445,6 +445,11 @@
 
 @include min-screen(1366px) {
     .cashback {
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 1286px;
+        margin-left: auto;
+        margin-right: auto;
         margin-bottom: 9.875rem;
 
         &__wrapper {
@@ -492,6 +497,10 @@
             &-item {
                 margin-bottom: 0;
 
+                &::after {
+                    display: none;
+                }
+
                 &:first-of-type {
                     &::after {
                         left: auto;
@@ -511,6 +520,18 @@
                         right: -5rem;
                     }
                 }
+            }
+        }
+    }
+}
+
+@include min-screen(1500px) {
+    .cashback {
+        max-width: 1440px;
+
+        &__steps-item {
+            &::after {
+                display: block;
             }
         }
     }

@@ -432,7 +432,7 @@
     }
 }
 
-@include min-screen(1680px) {
+@include min-screen(1500px) {
     .select {
         &--create {
             .select__content {

@@ -1647,7 +1647,7 @@
         }
     }
 }
-@include min-screen(1680px) {
+@include min-screen(1500px) {
     .s-content {
         grid-template-columns: 345px 960px;
         grid-template-areas: '... filter' 'item item';

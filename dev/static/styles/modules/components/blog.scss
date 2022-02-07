@@ -663,8 +663,8 @@
         justify-content: space-between;
         align-items: flex-start;
 
-        padding: 0 2.5rem;
-        max-width: 1520px;
+        padding: 0;
+        max-width: 1286px;
 
         &__part {
             width: 100%;
@@ -806,7 +806,7 @@
     }
 }
 
-@include min-screen(1680px) {
+@include min-screen(1500px) {
     .blog {
         padding: 0;
         max-width: 1440px;

@@ -123,9 +123,11 @@
 
 @include min-screen(1366px) {
     .offer {
+        padding-left: 0;
+        padding-right: 0;
         margin-left: auto;
         margin-right: auto;
-        max-width: 1520px;
+        max-width: 1286px;
 
         &__wrapper {
             display: grid;
@@ -181,8 +183,10 @@
     }
 }
 
-@include min-screen(1680px) {
+@include min-screen(1500px) {
     .offer {
+        max-width: 1440px;
+        
         &__wrapper {
             border-width: 15px;
             grid-column-gap: 19.125rem;

@@ -209,10 +209,10 @@
 
 }
 
-@include min-screen(1680px) {
+@include min-screen(1366px) {
     .pricelist {
         &__list {
-            padding-left: 0rem;
+            padding-left: 0;
         }
     }
 }

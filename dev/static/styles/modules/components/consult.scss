@@ -328,9 +328,9 @@
 @include min-screen(1366px) {
     .consult {
         margin-bottom: 8rem;
-        padding-left: 2.5rem;
-        padding-right: 2.5rem;
-        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 1286px;
 
         &--personal {
             margin-bottom: 12.5rem;
@@ -425,11 +425,11 @@
     }
 }
 
-@include min-screen(1680px) {
+@include min-screen(1500px) {
     .consult {
         margin-bottom: 9.625rem;
         --width: calc(100% - 1440px);
-
+        max-width: 100%;
         padding-left: calc(var(--width) / 2);
         padding-right: calc(var(--width) / 2);
 

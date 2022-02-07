@@ -116,10 +116,9 @@
     }
 }
 
-@include min-screen(1000px) {
+@include min-screen(1024px) {
     .how {
         padding: 0 2.5rem;
-        max-width: 1520px;
 
         &__list {
             grid-template-columns: repeat(4, 1fr);
@@ -145,6 +144,11 @@
         margin-right: auto;
         margin-bottom: 12.5rem;
 
+        padding-left: 0;
+        padding-right: 0;
+
+        max-width: 1286px;
+
         &__title {
             font-size: 2.875rem;
             line-height: 3.75rem;
@@ -159,5 +163,11 @@
             text-align: center;
             max-width: 90%;
         }
+    }
+}
+
+@include min-screen(1500px) {
+    .how {
+        max-width: 1440px;
     }
 }

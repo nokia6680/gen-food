@@ -303,7 +303,7 @@
         grid-template-columns: 710px 466px;
         grid-column-gap: 4.25rem;
 
-        max-width: 1520px;
+        max-width: 1286px;
 
         &__title {
             font-size: 2.875rem;
@@ -429,8 +429,10 @@
     }
 }
 
-@include min-screen(1680px) {
+@include min-screen(1500px) {
     .feedback {
+        max-width: 1440px;
+        
         &__wrapper {
             position: relative;
 

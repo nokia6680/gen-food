@@ -354,7 +354,7 @@
         overflow: hidden;
 
         padding: 10rem 0 9.375rem 0;
-        max-width: 1440px;
+        max-width: 1286px;
 
         &__wrapper {
             max-width: 1196px;
@@ -400,5 +400,11 @@
                 margin-top: 1.875rem;
             }
         }
+    }
+}
+
+@include min-screen(1500px) {
+    .discount {
+        max-width: 1440px;
     }
 }

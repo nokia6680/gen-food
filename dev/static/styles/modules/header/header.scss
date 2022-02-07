@@ -183,7 +183,7 @@
     }
 }
 
-@include min-screen(1680px) {
+@include min-screen(1500px) {
     .header {
         &__contacts {
             max-width: 1440px;

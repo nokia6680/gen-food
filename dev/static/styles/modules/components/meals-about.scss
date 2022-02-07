@@ -66,10 +66,11 @@
         margin-bottom: 7.5rem;
 
         &__wrapper {
+            max-width: 1286px;
             display: grid;
             grid-template-columns: 600px 1fr;
             grid-column-gap: 2.5rem;
-            padding: 0 2.5rem;
+            padding: 0;
             justify-content: center;
             align-items: center;
         }
@@ -99,11 +100,12 @@
 }
 
 
-@include min-screen(1680px) {
+@include min-screen(1500px) {
     .meals-about {
         margin-bottom: 12.125rem;
 
         &__wrapper {
+            max-width: 1440px;
             grid-template-columns: 600px 710px;
             grid-column-gap: 8.875rem;
             padding: 0;

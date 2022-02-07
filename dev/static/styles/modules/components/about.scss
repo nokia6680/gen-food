@@ -185,8 +185,9 @@
     .about {
         margin-left: auto;
         margin-right: auto;
-        max-width: 1520px;
-
+        max-width: 1286px;
+        padding-left: 0;
+        padding-right: 0;
         margin-bottom: 7.5rem;
 
         &__wrapper {
@@ -241,8 +242,10 @@
     }
 }
 
-@include min-screen(1680px) {
+@include min-screen(1500px) {
     .about {
+        max-width: 1440px;
+
         &-bottom {
             margin-bottom: 9.875rem;
             &__title {

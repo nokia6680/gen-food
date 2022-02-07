@@ -1136,7 +1136,7 @@
     }
 }
 
-@include min-screen(1680px) {
+@include min-screen(1500px) {
     .intro {
         &.index-intro {
             margin-bottom: 9.375rem;
@@ -1203,7 +1203,7 @@
         &__bg {
             &--1 {
                 width: 56.25vw;
-                left: -64px;
+                left: -32px;
             }
 
             &--2 {
@@ -1216,7 +1216,7 @@
                 position: absolute;
                 background-color: $white;
                 top: -20%;
-                right: -8.5%;
+                right: -10.5%;
                 width: 192px;
                 height: 200%;
                 transform: rotate(-17deg);
@@ -1264,6 +1264,19 @@
 
         &__info {
             max-width: 35%;
+        }
+    }
+}
+
+@include min-screen(1680px) {
+    .intro {
+        &__bg {
+            &--1 {
+                right: -64px;
+            }
+            &--3 {
+                right: -8.5%;
+            }
         }
     }
 }

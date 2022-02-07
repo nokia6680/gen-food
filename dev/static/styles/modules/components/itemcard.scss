@@ -783,7 +783,9 @@
 @include min-screen(1366px) {
     .itemcard {
         &__main {
-            max-width: 1440px;
+            padding-left: 0;
+            padding-right: 0;
+            max-width: 1286px;
             flex-direction: row;
             justify-content: space-between;
             align-items: flex-start;
@@ -863,9 +865,10 @@
 }
 
 
-@include min-screen(1680px) {
+@include min-screen(1500px) {
     .itemcard {
         &__main {
+            max-width: 1440px;
             align-items: center;
             padding-left: 0;
             padding-right: 0;

@@ -301,8 +301,9 @@
     .contacts {
         margin-left: auto;
         margin-right: auto;
-
-        max-width: 1520px;
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 1286px;
 
         &__title {
             font-size: 2.875rem;
@@ -334,5 +335,11 @@
         &__data {
             font-size: 1.5rem;
         }
+    }
+}
+
+@include min-screen(1500px) {
+    .contacts {
+        max-width: 1440px;
     }
 }
