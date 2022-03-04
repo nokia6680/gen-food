@@ -194,6 +194,29 @@
         margin-bottom: 1.875rem;
     }
 
+    &__order,
+    &__result,
+    &__point {
+        order: 2;
+        margin-bottom: 2rem;
+    }
+
+    &__return {
+        @include font-setting($primary-font, 1.25rem, 1.5rem, 700, $green);
+        padding: 0.125rem 0;
+        text-decoration: none;
+        border-bottom: 2px solid $green;
+        order: 3;
+        transition: 0.4s $cubic;
+
+        &:active,
+        &:hover {
+            color: $black;
+            border-color: $black;
+            transition: 0.4s $cubic;
+        }
+    }
+
     &__block {
         width: 100%;
         @include flex-setting(column, flex-start, flex-start);
@@ -458,6 +481,20 @@
                     margin-left: 0;
                 }
             }
+
+            &--points {
+                .cabinet__content {
+                    grid-template-areas:
+                        'title link'
+                        'content content'
+                        'faq faq'
+                    ;
+                }
+
+                .cabinet__faq {
+                    grid-area: faq;
+                }
+            }
         }
 
         &__bio {
@@ -472,8 +509,39 @@
             }
         }
 
+        &__content {
+            display: grid;
+            grid-template-areas:
+                'title link'
+                'content content'
+            ;
+
+            grid-template-columns: 1fr 70px;
+            justify-content: space-between;
+            align-items: center;
+            grid-row-gap: 2.5rem;
+
+            &--cabinet {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+            }
+        }
+
         &__title {
-            margin-bottom: 2.5rem;
+            grid-area: title;
+            margin-bottom: 0;
+        }
+
+        &__return {
+            grid-area: link;
+        }
+
+        &__order,
+        &__result,
+        &__point {
+            grid-area: content;
         }
 
         &__block {

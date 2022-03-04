@@ -122,6 +122,17 @@ const swiper2 = new Swiper('.s-content-filter-swiper', {
             },
         },
 
+        1280: {
+            spaceBetween: 30,
+            slidesPerView: 4,
+            speed: 1000,
+            centeredSlides: false,
+            navigation: {
+                nextEl: '.s-content__filter-next',
+                prevEl: '.s-content__filter-prev',
+            },
+        },
+
         1366: {
             spaceBetween: 30,
             slidesPerView: 4,
@@ -133,7 +144,7 @@ const swiper2 = new Swiper('.s-content-filter-swiper', {
             },
         },
 
-        1680: {
+        1500: {
             spaceBetween: 27,
             slidesPerView: 5,
             speed: 1000,
@@ -210,7 +221,7 @@ const swiper8 = new Swiper('.s-content-cabinet-swiper', {
             },
         },
 
-        1680: {
+        1500: {
             spaceBetween: 27,
             slidesPerView: 5,
             speed: 1000,
@@ -278,6 +289,22 @@ const enableSwiper = function() {
             768: {
                 loop: false,
                 slidesPerView: 2,
+                spaceBetween: 20,
+                centeredSlides: false,
+                initialSlide: 0,
+                a11y: true,
+                keyboardControl: true,
+                grabCursor: true,
+
+                navigation: {
+                    nextEl: '.meals__next',
+                    prevEl: '.meals__prev',
+                },
+            },
+
+            1280: {
+                loop: false,
+                slidesPerView: 3,
                 spaceBetween: 20,
                 centeredSlides: false,
                 initialSlide: 0,
@@ -395,7 +422,7 @@ const swiper5 = new Swiper('.swiper-container-similar', {
             },
         },
 
-        1680: {
+        1500: {
             spaceBetween: 106,
             slidesPerView: 4,
             speed: 1000,

@@ -1178,6 +1178,15 @@
             .intro__subtitle {
                 font-family: $primary-font;
             }
+
+            .intro__bottom {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .intro__try {
+                margin-bottom: 0;
+            }
         }
 
         &.personal-intro {

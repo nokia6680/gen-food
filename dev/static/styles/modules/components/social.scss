@@ -1,0 +1,188 @@
+.social {
+    position: fixed;
+
+    bottom: 1.25rem;
+    left: 1.25rem;
+
+    z-index: 99;
+
+    &__body {
+        position: relative;
+
+        @include flex-setting(row, center, center);
+    }
+
+    &__opener {
+        @include flex-setting(column, center, center);
+
+        width: 48px;
+        height: 48px;
+
+        border-radius: 24px;
+        background-color: $white;
+        border: none;
+        border: 1px solid $green;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+
+        padding: 0;
+        position: relative;
+        transition: 0.4s $cubic;
+
+        cursor: pointer;
+
+        .fa-comment-alt::before {
+            position: absolute;
+            content: '\f27a';
+            font-size: 1.25rem;
+            color: $black;
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:hover {
+            box-shadow: inset 0 0 5px 2px rgba(0, 0, 0, 0.5);
+            transition: 0.4s $cubic;
+        }
+
+        &.active {
+            box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.2);
+            transition: 0.4s $cubic;
+            opacity: 0;
+        }
+    }
+
+    &__list {
+        width: auto;
+        height: 50px;
+        @include flex-setting(row, flex-start, center);
+        background-color: $white;
+        margin-left: -3rem;
+        padding-left: 3rem;
+        border-radius: 24px;
+
+        transform-origin: left;
+        transform: scaleX(0);
+        overflow: hidden;
+        opacity: 0;
+        transition: 0.4s $cubic 0.5s;
+
+        &.active {
+            padding-left: 3rem;
+            transform: scaleX(1);
+            transform-origin: left;
+            transition: 0.4s $cubic;
+            opacity: 1;
+            border: 1px solid $green;
+
+            .social__item {
+                opacity: 1;
+                transition: opacity 0.4s $cubic 0.5s;
+
+                &.last {
+                    transition-delay: 0.1s;
+                }
+            }
+        }
+    }
+
+    &__item {
+        @include flex-setting(column, center, center);
+        width: 46px;
+        height: 46px;
+        border-radius: 23px;
+
+        background-color: $white;
+
+        margin: 0 0.125rem;
+        opacity: 0;
+        transition: 0.4s $cubic;
+
+        &.last {
+            position: absolute;
+            left: 1px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition-delay: 0.4s;
+        }
+    }
+
+    &__link {
+        @include flex-setting(column, center, center);
+        width: 46px;
+        height: 46px;
+        border-radius: 23px;
+
+        background-color: $white;
+        position: relative;
+        transition: 0.4s $cubic;
+
+        .fa-whatsapp::before {
+            position:absolute;
+            content: '\f232';
+
+            font-size: 1.5rem;
+            color: #128C7E;
+
+            top: 46%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: 0.4s $cubic;
+        }
+
+        .fa-telegram-plane::before {
+            position:absolute;
+            content: '\f3fe';
+
+            font-size: 1.5rem;
+            color: #0088cc;
+
+            top: 46%;
+            left: 46%;
+            transform: translate(-50%, -50%);
+            transition: 0.4s $cubic;
+        }
+
+        &--wa:hover,
+        &--wa:active {
+            background-color: #128C7E;
+            transition: 0.4s $cubic;
+            box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.2);
+
+            .fa-whatsapp::before {
+                color: $white;
+                transition: 0.4s $cubic;
+            }
+        }
+
+        &--tg:hover,
+        &--tg:active {
+            background-color: #0088cc;
+            transition: 0.4s $cubic;
+            box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.2);
+
+            .fa-telegram-plane::before {
+                color: $white;
+                transition: 0.4s $cubic;
+            }
+        }
+    }
+
+    &__closer {
+        width: 46px;
+        height: 46px;
+        box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.2);
+        border: none;
+        border-radius: 23px;
+        background-color: $white;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='94.926' height='94.926' style='enable-background:new 0 0 94.926 94.926' xml:space='preserve'%3E%3Cpath d='M55.931 47.463 94.306 9.09a2.118 2.118 0 0 0 0-2.994L88.833.62a2.123 2.123 0 0 0-2.996 0L47.463 38.994 9.089.62c-.795-.795-2.202-.794-2.995 0L.622 6.096a2.117 2.117 0 0 0 0 2.994l38.374 38.373L.622 85.836a2.117 2.117 0 0 0 0 2.994l5.473 5.476a2.123 2.123 0 0 0 2.995 0l38.374-38.374 38.374 38.374c.397.396.937.62 1.498.62s1.101-.224 1.498-.62l5.473-5.476a2.118 2.118 0 0 0 0-2.994L55.931 47.463z' fill='%23000'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: 40%;
+
+        cursor: pointer;
+        opacity: 1;
+        transition: opacity 0.4s $cubic 0.4s;
+    }
+}

@@ -144,3 +144,25 @@ if (fastOrderInfoCloser) {
         fastOrderInfo.classList.remove('active');
     });
 };
+
+var chatOpener = document.querySelector('.social__opener');
+var chatCloser = document.querySelector('.social__closer');
+var chatBody = document.querySelector('.social__list');
+
+if (chatOpener) {
+    chatOpener.addEventListener('click', function() {
+        event.preventDefault();
+        chatOpener.classList.add('active');
+        chatBody.classList.add('active');
+    });
+};
+
+if (chatCloser) {
+    chatCloser.addEventListener('click', function() {
+        event.preventDefault();
+
+
+        chatOpener.classList.remove('active');
+        chatBody.classList.remove('active');
+    });
+};

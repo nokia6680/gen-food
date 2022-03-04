@@ -404,9 +404,9 @@
     }
 }
 
-@include min-screen(1366px) {
+@include min-screen(1280px) {
     .nav {
-        --width: calc(100% - 1286px);
+        --width: calc(100% - 1200px);
 
         padding-left: calc(var(--width) / 2);
         padding-right: calc(var(--width) / 2);
@@ -545,6 +545,12 @@
                 font-size: 0;
             }
         }
+    }
+}
+
+@include min-screen(1366px) {
+    .nav {
+        --width: calc(100% - 1286px);
     }
 }
 
