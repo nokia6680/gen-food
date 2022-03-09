@@ -119,7 +119,7 @@ mixin reasonItem(name, description, image)
                 img(srcset="static/images/content/" +image +".png" alt="").reasons__frame-image
 
 mixin dateBtn(curDate, curDay, dateTime)
-    button(type="button" class="s-content__filter-btn swiper-slide " +curDay)
+    div(class="s-content__filter-btn swiper-slide " +curDay)
         time(datetime="" +dateTime).s-content__filter-btn-date=curDate
 
 mixin gridItem(type, itemServiceText, image, title, name, suppFirst, suppSecond, suppThird, suppFourth, price, weight)

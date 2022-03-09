@@ -82,6 +82,7 @@
     &--create {
         .select__body {
             .select__dates {
+                @include flex-setting(column, flex-start, center);
                 order: 1;
 
                 .s-content__days-title {
@@ -120,6 +121,10 @@
             }
         }
     }
+}
+
+@include min-screen(375px) {
+
 }
 
 @include min-screen(414px) {

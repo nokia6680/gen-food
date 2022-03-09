@@ -47,13 +47,12 @@
 
     &__body {
         width: 100%;
-        max-width: 335px;
+        max-width: 280px;
         @include flex-setting(column, flex-start, center);
     }
 
     &__info {
         width: 100%;
-
         @include flex-setting(column, flex-start, center);
         order: 2;
     }
@@ -96,6 +95,18 @@
 
             object-fit: cover;
         }
+    }
+}
+
+@include min-screen(360px) {
+    .reasons__body {
+        max-width: 320px;
+    }
+}
+
+@include min-screen(375px) {
+    .reasons__body {
+        max-width: 335px;
     }
 }
 

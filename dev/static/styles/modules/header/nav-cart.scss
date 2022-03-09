@@ -8,7 +8,7 @@
     right: 1.25rem;
 
     width: 100%;
-    max-width: 335px;
+    max-width: 280px;
 
     max-height: 0;
     overflow: hidden;
@@ -239,7 +239,7 @@
     }
 
     &__price {
-        @include font-setting($primary-font, 1.125rem, 1.875rem, 700, $black);
+        @include font-setting($primary-font, 1rem, 1.5rem, 700, $black);
     }
 
     &__count {
@@ -372,6 +372,22 @@
         &:active {
             background: linear-gradient(93.13deg, #4BAF50 0%, #92C64E 100%);
         }
+    }
+}
+@include min-screen(360px) {
+    .nav-cart {
+        max-width: 320px;
+
+        &__price {
+            font-size: 1.125rem;
+            line-height: 1.875rem;
+        }
+    }
+}
+
+@include min-screen(375px) {
+    .nav-cart {
+        max-width: 335px;
     }
 }
 

@@ -29,7 +29,7 @@
         text-align: center;
         text-transform: uppercase;
         max-width: 100%;
-        margin-bottom: 6.875rem;
+        margin-bottom: 9.875rem;
     }
 
     &__list {
@@ -42,7 +42,7 @@
         left: 50%;
         transform: translateX(-50%);
         margin-bottom: 2.5rem;
-        max-height: 40px;
+        max-height: 60px;
         overflow: hidden;
         transition: 0.4s $cubic;
 
@@ -63,7 +63,7 @@
             background-image: url("data:image/svg+xml,%3Csvg width='30' height='16' viewBox='0 0 30 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0.00671387L15.0001 15.2095L30 0.00671387H0Z' fill='%2392C64E'/%3E%3C/svg%3E");
 
             right: 1.25rem;
-            top: 0;
+            top: 15px;
 
             transition: 0.4s $cubic;
             z-index: 4;
@@ -84,7 +84,7 @@
         }
 
         &.active {
-            max-height: 140px;
+            max-height: 180px;
             transition: 0.4s $cubic;
             padding-bottom: 0;
 
@@ -127,7 +127,7 @@
         width: 100%;
 
         @include flex-setting(column, center, flex-start);
-        min-height: 40px;
+        min-height: 60px;
         padding-left: 1.25rem;
         padding-right: 1.25rem;
 
@@ -138,7 +138,8 @@
         z-index: 2;
 
         &-name {
-            @include font-setting($primary-font, 1.125rem, 1.875rem, 400, $black);
+            @include font-setting($primary-font, 0.875rem, 1.5rem, 400, $black);
+            //@include font-setting($primary-font, 1.125rem, 1.875rem, 400, $black);
             text-align: left;
             transition: 0.4s $cubic;
         }
@@ -276,6 +277,13 @@
         }
     }
 
+    &__subtitle {
+        @include font-setting($primary-font, 1rem, 1.25rem, 700, $black);
+        text-align: center;
+        max-width: 80%;
+        margin-bottom: 1rem;
+    }
+
     &__callback {
         @include flex-setting(column, center, center);
         @include font-setting($primary-font, 0.875rem, 1.25rem, 800, $white);
@@ -315,6 +323,17 @@
         &-frame {
             width: 100%;
             height: calc(89.33333333333333vw * (13 / 16));
+        }
+    }
+}
+
+@include min-screen(375px) {
+    .delivery {
+        &__item {
+            &-name {
+                font-size: 1.125rem;
+                line-height: 1.875rem;
+            }
         }
     }
 }
@@ -463,13 +482,17 @@
         &__list {
             top: 8.125rem;
 
+            &::before {
+                right: 1.25rem;
+            }
+
             &::after {
                 width: 100%;
                 left: 0;
             }
 
             &.active {
-                max-height: 172px;
+                max-height: 204px;
                 padding-top: 1.125rem;
                 padding-bottom: 1.125rem;
                 box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.12);
@@ -494,6 +517,15 @@
                         }
                     }
                 }
+            }
+        }
+
+        &__item {
+            padding-right: 20px;
+            padding-left: 20px;
+
+            &-name {
+                font-size: 1rem;
             }
         }
 
@@ -546,7 +578,7 @@
     .delivery {
         margin-bottom: 20.625rem;
         max-width: 1440px;
-        
+
         &--checkout {
             margin-bottom: 0;
         }

@@ -149,7 +149,7 @@
 
         @include flex-setting(column, flex-start, center);
 
-        padding: 0 1.25rem;
+        padding: 0;
 
         &-item {
             width: 100%;
@@ -173,7 +173,7 @@
             @include flex-setting(column, flex-end, center);
             width: 100%;
             max-width: 335px;
-            height: 360px;
+            height: 400px;
 
             border: 1px solid $lightgray;
 
@@ -316,6 +316,16 @@
 
         &:last-of-type {
             margin-bottom: 0;
+        }
+    }
+}
+
+@include min-screen(375px) {
+    .cashback {
+        &__steps {
+            &-item {
+                height: 360px;
+            }
         }
     }
 }

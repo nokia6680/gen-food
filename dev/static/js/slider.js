@@ -112,9 +112,9 @@ const swiper2 = new Swiper('.s-content-filter-swiper', {
 
     breakpoints: {
         320: {
+            centeredSlides: true,
             slidesPerView: 1,
             speed: 1000,
-            centeredSlides: true,
             navigation: {
                 nextEl: '.s-content__filter-next',
                 prevEl: '.s-content__filter-prev',
@@ -122,10 +122,10 @@ const swiper2 = new Swiper('.s-content-filter-swiper', {
         },
 
         1280: {
+            centeredSlides: false,
             spaceBetween: 30,
             slidesPerView: 4,
             speed: 1000,
-            centeredSlides: false,
             navigation: {
                 nextEl: '.s-content__filter-next',
                 prevEl: '.s-content__filter-prev',
@@ -136,7 +136,6 @@ const swiper2 = new Swiper('.s-content-filter-swiper', {
             spaceBetween: 30,
             slidesPerView: 4,
             speed: 1000,
-            centeredSlides: false,
             navigation: {
                 nextEl: '.s-content__filter-next',
                 prevEl: '.s-content__filter-prev',
@@ -147,7 +146,6 @@ const swiper2 = new Swiper('.s-content-filter-swiper', {
             spaceBetween: 27,
             slidesPerView: 5,
             speed: 1000,
-            centeredSlides: false,
             navigation: {
                 nextEl: '.s-content__filter-next',
                 prevEl: '.s-content__filter-prev',
