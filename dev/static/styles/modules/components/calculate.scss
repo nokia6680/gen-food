@@ -989,7 +989,11 @@
         max-width: 1440px;
 
         &__wrapper {
+            width: 100%;
+            grid-template-columns: 632px 388px;
+            justify-content: space-between;
             align-self: flex-start;
+            
             .calculate__body {
                 &::after {
                     display: none;

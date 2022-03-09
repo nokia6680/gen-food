@@ -10,7 +10,7 @@ const swiper1 = new Swiper('.swiper-container-reviews', {
     },
 
     breakpoints: {
-        375: {
+        320: {
             spaceBetween: 0,
             slidesPerView: 1,
             speed: 1000,
@@ -111,8 +111,7 @@ const swiper2 = new Swiper('.s-content-filter-swiper', {
     },
 
     breakpoints: {
-        375: {
-            slideToClickedSlide: true,
+        320: {
             slidesPerView: 1,
             speed: 1000,
             centeredSlides: true,
@@ -188,7 +187,7 @@ const swiper8 = new Swiper('.s-content-cabinet-swiper', {
     },
 
     breakpoints: {
-        375: {
+        320: {
             slideToClickedSlide: true,
             slidesPerView: 1,
             speed: 1000,
@@ -270,7 +269,7 @@ const enableSwiper = function() {
         },
 
         breakpoints: {
-            375: {
+            320: {
                 loop: false,
                 slidesPerView: 1,
                 spaceBetween: 40,
@@ -356,7 +355,7 @@ const swiper5 = new Swiper('.swiper-container-similar', {
     },
 
     breakpoints: {
-        375: {
+        320: {
             spaceBetween: 20,
             slidesPerView: 1,
             speed: 1000,
